@@ -67,6 +67,12 @@ The easiest thing to do is to copy a
 
 This is currently in a different repo
 
+There is a demo of a fork of the github pages repo with markdown generated in this repo copied over:
+
+[https://cmungall.github.io/gensc.github.io/mixs6/](https://cmungall.github.io/gensc.github.io/mixs6/)
+
+We can consider merging repos, but for now these are distinct, and docs are copied from one to another like this:
+
 ```bash
 make gen-docs
 cp docs/*.md ../gensc.github.io/mixs6/
