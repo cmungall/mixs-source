@@ -4,6 +4,7 @@ description: Minimal Information about any Sequence Standard
 imports:
 - linkml:types
 - checklists
+- core
 - air
 - built_environment
 - host_associated

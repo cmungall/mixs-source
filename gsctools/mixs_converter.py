@@ -265,7 +265,8 @@ class MIxS6Converter:
             'description': 'Minimal Information about any Sequence Standard',
             'imports': [
                 'linkml:types',
-                'checklists'
+                'checklists',
+                'core'
             ],
             'prefixes': {
                 'linkml': 'https://w3id.org/linkml/',
@@ -403,6 +404,12 @@ class MIxS6Converter:
         slot_schema['slots'] = slots
         slot_schema['enums'] = enums
         self.save_schema(slot_schema, 'terms.yaml')
+
+        core_schema = new_schema('core')
+        core_schema['imports'].append('terms')
+        core_schema['classes'] = {'core': obj['classes']['core'] }
+        del obj['classes']['core']
+        self.save_schema(core_schema, 'core.yaml')
 
         checklist_schema = new_schema('checklists')
         checklist_schema['imports'].append('terms')

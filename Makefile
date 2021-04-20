@@ -3,7 +3,7 @@
 # Model documentation and schema directory
 # ----------------------------------------
 SRC_DIR = src
-PKG_DIR = mixs
+PKG_DIR = .
 SCHEMA_DIR = $(SRC_DIR)/schema
 MODEL_DOCS_DIR = $(SRC_DIR)/docs
 SOURCE_FILES := $(shell find $(SCHEMA_DIR) -name '*.yaml')
@@ -96,7 +96,7 @@ gen-docs: docs/index.md env.lock
 
 docs/index.md: target/docs/index.md
 	cp -R $(MODEL_DOCS_DIR)/*.md target/docs
-	mkdocs build
+	$(RUN) mkdocs build
 target/docs/index.md: $(SCHEMA_DIR)/$(SCHEMA_NAME).yaml tdir-docs env.lock
 	$(RUN) gen-markdown $(GEN_OPTS) --no-mergeimports --dir target/docs $<
 
@@ -213,11 +213,11 @@ target/rdf/%.model.ttl: $(SCHEMA_DIR)/%.yaml $(PKG_DIR)/jsonld/%.model.context.j
 
 
 # test docs locally.
-#docserve:
-#	mkdocs serve
-#
-#gh-deploy:
-#	mkdocs gh-deploy
+docserve:
+	$(RUN) mkdocs serve
+
+gh-deploy:
+	$(RUN) mkdocs gh-deploy
 
 
 # ---------------------------------------
