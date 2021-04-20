@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Class: MISAG - MIxS</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../css/theme.css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Class: MISAG";
+    var mkdocs_page_input_path = "MISAG.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> MIxS</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="..">Index</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">MIxS</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Class: MISAG</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="class-misag">Class: MISAG</h1>
+<p>Minimum Information About a Single Amplified Genome</p>
+<p>URI: <a href="https://w3id.org/mixs/vocab/MISAG">mixs.vocab:MISAG</a></p>
+<p><img alt="img" src="http://yuml.me/diagram/nofunky;dir:TB/class/[QuantityValue],[QuantityValue]&lt;samp_size%200..1-++[MISAG&#124;submitted_to_insdc:string;investigation_type:investigation_type_enum;sample_name:string;project_name:string;experimental_factor:string%20%3F;lat_lon:string;geo_loc_name:string;collection_date:string;env_broad_scale:string;env_local_scale:string;env_medium:string;env_package:env_package_enum%20%3F;ref_biomaterial:string%20%3F;source_mat_id:string%20%3F;rel_to_oxygen:rel_to_oxygen_enum%20%3F;sample_collect_device:string%20%3F;sample_collect_method:string%20%3F;samp_mat_process:string%20%3F;size_frac:string%20%3F;nucl_acid_ext:string%20%3F;nucl_acid_amp:string%20%3F;lib_size:string%20%3F;lib_reads_seqd:string%20%3F;lib_layout:lib_layout_enum%20%3F;lib_vector:string%20%3F;lib_screen:string%20%3F;mid:string%20%3F;adapters:string%20%3F;seq_meth:seq_meth_enum;tax_ident:tax_ident_enum;assembly_qual:assembly_qual_enum;assembly_name:string%20%3F;assembly_software:string;annot:string%20%3F;number_contig:string%20%3F;feat_pred:string%20%3F;ref_db:string%20%3F;sim_search_meth:string%20%3F;tax_class:string%20%3F;x_16s_recover:string%20%3F;trnas:string%20%3F;trna_ext_software:string%20%3F;compl_score:compl_score_enum;compl_software:string;compl_appr:compl_appr_enum%20%3F;contam_score:string;contam_screen_input:string%20%3F;contam_screen_param:contam_screen_param_enum%20%3F;decontam_software:decontam_software_enum%20%3F;sort_tech:sort_tech_enum;single_cell_lysis_appr:single_cell_lysis_appr_enum;single_cell_lysis_prot:string%20%3F;wga_amp_appr:string;wga_amp_kit:string%20%3F;url:string%20%3F;sop:string%20%3F],[WaterMISAG]uses%20-.-&gt;[MISAG],[WastewaterSludgeMISAG]uses%20-.-&gt;[MISAG],[SoilMISAG]uses%20-.-&gt;[MISAG],[SedimentMISAG]uses%20-.-&gt;[MISAG],[Plant-associatedMISAG]uses%20-.-&gt;[MISAG],[MiscellaneousNaturalOrArtificialEnvironmentMISAG]uses%20-.-&gt;[MISAG],[MicrobialMatBiofilmMISAG]uses%20-.-&gt;[MISAG],[HydrocarbonResources-fluidsSwabsMISAG]uses%20-.-&gt;[MISAG],[HydrocarbonResources-coresMISAG]uses%20-.-&gt;[MISAG],[Human-vaginalMISAG]uses%20-.-&gt;[MISAG],[Human-skinMISAG]uses%20-.-&gt;[MISAG],[Human-oralMISAG]uses%20-.-&gt;[MISAG],[Human-gutMISAG]uses%20-.-&gt;[MISAG],[Human-associatedMISAG]uses%20-.-&gt;[MISAG],[Host-associatedMISAG]uses%20-.-&gt;[MISAG],[BuiltEnvironmentMISAG]uses%20-.-&gt;[MISAG],[AirMISAG]uses%20-.-&gt;[MISAG],[WaterMISAG],[WastewaterSludgeMISAG],[SoilMISAG],[SedimentMISAG],[Plant-associatedMISAG],[MiscellaneousNaturalOrArtificialEnvironmentMISAG],[MicrobialMatBiofilmMISAG],[HydrocarbonResources-fluidsSwabsMISAG],[HydrocarbonResources-coresMISAG],[Human-vaginalMISAG],[Human-skinMISAG],[Human-oralMISAG],[Human-gutMISAG],[Human-associatedMISAG],[Host-associatedMISAG],[BuiltEnvironmentMISAG],[AirMISAG]" /></p>
+<h2 id="mixin-for">Mixin for</h2>
+<ul>
+<li><a href="../AirMISAG/">AirMISAG</a> (mixin)  - Combinatorial checklist Minimum Information About a Single Amplified Genome with environmental package air</li>
+<li><a href="../BuiltEnvironmentMISAG/">BuiltEnvironmentMISAG</a> (mixin)  - Combinatorial checklist Minimum Information About a Single Amplified Genome with environmental package built environment</li>
+<li><a href="../Host-associatedMISAG/">Host-associatedMISAG</a> (mixin)  - Combinatorial checklist Minimum Information About a Single Amplified Genome with environmental package host-associated</li>
+<li><a href="../Human-associatedMISAG/">Human-associatedMISAG</a> (mixin)  - Combinatorial checklist Minimum Information About a Single Amplified Genome with environmental package human-associated</li>
+<li><a href="../Human-gutMISAG/">Human-gutMISAG</a> (mixin)  - Combinatorial checklist Minimum Information About a Single Amplified Genome with environmental package human-gut</li>
+<li><a href="../Human-oralMISAG/">Human-oralMISAG</a> (mixin)  - Combinatorial checklist Minimum Information About a Single Amplified Genome with environmental package human-oral</li>
+<li><a href="../Human-skinMISAG/">Human-skinMISAG</a> (mixin)  - Combinatorial checklist Minimum Information About a Single Amplified Genome with environmental package human-skin</li>
+<li><a href="../Human-vaginalMISAG/">Human-vaginalMISAG</a> (mixin)  - Combinatorial checklist Minimum Information About a Single Amplified Genome with environmental package human-vaginal</li>
+<li><a href="../HydrocarbonResources-coresMISAG/">HydrocarbonResources-coresMISAG</a> (mixin)  - Combinatorial checklist Minimum Information About a Single Amplified Genome with environmental package hydrocarbon resources-cores</li>
+<li><a href="../HydrocarbonResources-fluidsSwabsMISAG/">HydrocarbonResources-fluidsSwabsMISAG</a> (mixin)  - Combinatorial checklist Minimum Information About a Single Amplified Genome with environmental package hydrocarbon resources-fluids_swabs</li>
+<li><a href="../MicrobialMatBiofilmMISAG/">MicrobialMatBiofilmMISAG</a> (mixin)  - Combinatorial checklist Minimum Information About a Single Amplified Genome with environmental package microbial mat_biofilm</li>
+<li><a href="../MiscellaneousNaturalOrArtificialEnvironmentMISAG/">MiscellaneousNaturalOrArtificialEnvironmentMISAG</a> (mixin)  - Combinatorial checklist Minimum Information About a Single Amplified Genome with environmental package miscellaneous natural or artificial environment</li>
+<li><a href="../Plant-associatedMISAG/">Plant-associatedMISAG</a> (mixin)  - Combinatorial checklist Minimum Information About a Single Amplified Genome with environmental package plant-associated</li>
+<li><a href="../SedimentMISAG/">SedimentMISAG</a> (mixin)  - Combinatorial checklist Minimum Information About a Single Amplified Genome with environmental package sediment</li>
+<li><a href="../SoilMISAG/">SoilMISAG</a> (mixin)  - Combinatorial checklist Minimum Information About a Single Amplified Genome with environmental package soil</li>
+<li><a href="../WastewaterSludgeMISAG/">WastewaterSludgeMISAG</a> (mixin)  - Combinatorial checklist Minimum Information About a Single Amplified Genome with environmental package wastewater_sludge</li>
+<li><a href="../WaterMISAG/">WaterMISAG</a> (mixin)  - Combinatorial checklist Minimum Information About a Single Amplified Genome with environmental package water</li>
+</ul>
+<h2 id="referenced-by-class">Referenced by class</h2>
+<h2 id="attributes">Attributes</h2>
+<h3 id="own">Own</h3>
+<ul>
+<li><a href="../MISAG_adapters/">MISAG➞adapters</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+<li><a href="../MISAG_annot/">MISAG➞annot</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+<li><a href="../MISAG_assembly_name/">MISAG➞assembly_name</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+<li><a href="../MISAG_assembly_qual/">MISAG➞assembly_qual</a>  <sub>REQ</sub><ul>
+<li>range: </li>
+</ul>
+</li>
+<li><a href="../MISAG_assembly_software/">MISAG➞assembly_software</a>  <sub>REQ</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+<li><a href="../MISAG_collection_date/">MISAG➞collection_date</a>  <sub>REQ</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+<li><a href="../MISAG_compl_appr/">MISAG➞compl_appr</a>  <sub>OPT</sub><ul>
+<li>range: </li>
+</ul>
+</li>
+<li><a href="../MISAG_compl_score/">MISAG➞compl_score</a>  <sub>REQ</sub><ul>
+<li>range: </li>
+</ul>
+</li>
+<li><a href="../MISAG_compl_software/">MISAG➞compl_software</a>  <sub>REQ</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+<li><a href="../MISAG_contam_score/">MISAG➞contam_score</a>  <sub>REQ</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+<li><a href="../MISAG_contam_screen_input/">MISAG➞contam_screen_input</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+<li><a href="../MISAG_contam_screen_param/">MISAG➞contam_screen_param</a>  <sub>OPT</sub><ul>
+<li>range: </li>
+</ul>
+</li>
+<li><a href="../MISAG_decontam_software/">MISAG➞decontam_software</a>  <sub>OPT</sub><ul>
+<li>range: </li>
+</ul>
+</li>
+<li><a href="../MISAG_env_broad_scale/">MISAG➞env_broad_scale</a>  <sub>REQ</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+<li><a href="../MISAG_env_local_scale/">MISAG➞env_local_scale</a>  <sub>REQ</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+<li><a href="../MISAG_env_medium/">MISAG➞env_medium</a>  <sub>REQ</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+<li><a href="../MISAG_env_package/">MISAG➞env_package</a>  <sub>OPT</sub><ul>
+<li>range: </li>
+</ul>
+</li>
+<li><a href="../MISAG_experimental_factor/">MISAG➞experimental_factor</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+<li><a href="../MISAG_feat_pred/">MISAG➞feat_pred</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+<li><a href="../MISAG_geo_loc_name/">MISAG➞geo_loc_name</a>  <sub>REQ</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+<li><a href="../MISAG_investigation_type/">MISAG➞investigation_type</a>  <sub>REQ</sub><ul>
+<li>range: </li>
+</ul>
+</li>
+<li><a href="../MISAG_lat_lon/">MISAG➞lat_lon</a>  <sub>REQ</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+<li><a href="../MISAG_lib_layout/">MISAG➞lib_layout</a>  <sub>OPT</sub><ul>
+<li>range: </li>
+</ul>
+</li>
+<li><a href="../MISAG_lib_reads_seqd/">MISAG➞lib_reads_seqd</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+<li><a href="../MISAG_lib_screen/">MISAG➞lib_screen</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+<li><a href="../MISAG_lib_size/">MISAG➞lib_size</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+<li><a href="../MISAG_lib_vector/">MISAG➞lib_vector</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+<li><a href="../MISAG_mid/">MISAG➞mid</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+<li><a href="../MISAG_nucl_acid_amp/">MISAG➞nucl_acid_amp</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+<li><a href="../MISAG_nucl_acid_ext/">MISAG➞nucl_acid_ext</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+<li><a href="../MISAG_number_contig/">MISAG➞number_contig</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+<li><a href="../MISAG_project_name/">MISAG➞project_name</a>  <sub>REQ</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+<li><a href="../MISAG_ref_biomaterial/">MISAG➞ref_biomaterial</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+<li><a href="../MISAG_ref_db/">MISAG➞ref_db</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+<li><a href="../MISAG_rel_to_oxygen/">MISAG➞rel_to_oxygen</a>  <sub>OPT</sub><ul>
+<li>range: </li>
+</ul>
+</li>
+<li><a href="../MISAG_samp_mat_process/">MISAG➞samp_mat_process</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+<li><a href="../MISAG_samp_size/">MISAG➞samp_size</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../QuantityValue/">QuantityValue</a></li>
+</ul>
+</li>
+<li><a href="../MISAG_sample_collect_device/">MISAG➞sample_collect_device</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+<li><a href="../MISAG_sample_collect_method/">MISAG➞sample_collect_method</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+<li><a href="../MISAG_sample_name/">MISAG➞sample_name</a>  <sub>REQ</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+<li><a href="../MISAG_seq_meth/">MISAG➞seq_meth</a>  <sub>REQ</sub><ul>
+<li>range: </li>
+</ul>
+</li>
+<li><a href="../MISAG_sim_search_meth/">MISAG➞sim_search_meth</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+<li><a href="../MISAG_single_cell_lysis_appr/">MISAG➞single_cell_lysis_appr</a>  <sub>REQ</sub><ul>
+<li>range: </li>
+</ul>
+</li>
+<li><a href="../MISAG_single_cell_lysis_prot/">MISAG➞single_cell_lysis_prot</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+<li><a href="../MISAG_size_frac/">MISAG➞size_frac</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+<li><a href="../MISAG_sop/">MISAG➞sop</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+<li><a href="../MISAG_sort_tech/">MISAG➞sort_tech</a>  <sub>REQ</sub><ul>
+<li>range: </li>
+</ul>
+</li>
+<li><a href="../MISAG_source_mat_id/">MISAG➞source_mat_id</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+<li><a href="../MISAG_submitted_to_insdc/">MISAG➞submitted_to_insdc</a>  <sub>REQ</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+<li><a href="../MISAG_tax_class/">MISAG➞tax_class</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+<li><a href="../MISAG_tax_ident/">MISAG➞tax_ident</a>  <sub>REQ</sub><ul>
+<li>range: </li>
+</ul>
+</li>
+<li><a href="../MISAG_trna_ext_software/">MISAG➞trna_ext_software</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+<li><a href="../MISAG_trnas/">MISAG➞trnas</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+<li><a href="../MISAG_url/">MISAG➞url</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+<li><a href="../MISAG_wga_amp_appr/">MISAG➞wga_amp_appr</a>  <sub>REQ</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+<li><a href="../MISAG_wga_amp_kit/">MISAG➞wga_amp_kit</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+<li><a href="../MISAG_x_16s_recover/">MISAG➞x_16s_recover</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="other-properties">Other properties</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Aliases:</strong></td>
+<td></td>
+<td>MISAG</td>
+</tr>
+</tbody>
+</table>
+              
+            </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
