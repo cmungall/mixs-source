@@ -1,0 +1,80 @@
+id: http://w3id.org/mixs/soil
+name: soil
+imports:
+- linkml:types
+- terms
+prefixes:
+  linkml: https://w3id.org/linkml/
+  mixs.vocab: https://w3id.org/mixs/vocab/
+  MIXS: https://w3id.org/mixs/terms/
+default_prefix: mixs.vocab
+slots: {}
+classes:
+  soil:
+    description: soil
+    mappings: []
+    slots:
+    - lat_lon
+    - depth
+    - alt
+    - elev
+    - geo_loc_name
+    - collection_date
+    - env_broad_scale
+    - env_local_scale
+    - env_medium
+    - cur_land_use
+    - cur_vegetation
+    - cur_vegetation_meth
+    - previous_land_use
+    - previous_land_use_meth
+    - crop_rotation
+    - agrochem_addition
+    - tillage
+    - fire
+    - flooding
+    - extreme_event
+    - horizon
+    - horizon_meth
+    - sieving
+    - water_content
+    - water_content_soil_meth
+    - samp_vol_we_dna_ext
+    - pool_dna_extracts
+    - store_cond
+    - link_climate_info
+    - annual_temp
+    - season_temp
+    - annual_precpt
+    - season_precpt
+    - link_class_info
+    - fao_class
+    - local_class
+    - local_class_meth
+    - soil_type
+    - soil_type_meth
+    - slope_gradient
+    - slope_aspect
+    - profile_position
+    - drainage_class
+    - texture
+    - texture_meth
+    - ph
+    - ph_meth
+    - tot_org_carb
+    - tot_org_c_meth
+    - tot_nitro_content
+    - tot_nitro_content_meth
+    - microbial_biomass
+    - microbial_biomass_meth
+    - link_addit_analys
+    - extreme_salinity
+    - salinity_meth
+    - heavy_metals
+    - heavy_metals_meth
+    - al_sat
+    - al_sat_meth
+    - misc_param
+    slot_usage: {}
+subsets: {}
+enums: {}

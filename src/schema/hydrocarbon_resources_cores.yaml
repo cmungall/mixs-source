@@ -1,0 +1,107 @@
+id: http://w3id.org/mixs/hydrocarbon_resources_cores
+name: hydrocarbon_resources_cores
+imports:
+- linkml:types
+- terms
+prefixes:
+  linkml: https://w3id.org/linkml/
+  mixs.vocab: https://w3id.org/mixs/vocab/
+  MIXS: https://w3id.org/mixs/terms/
+default_prefix: mixs.vocab
+slots: {}
+classes:
+  hydrocarbon resources-cores:
+    description: hydrocarbon resources-cores
+    mappings: []
+    slots:
+    - lat_lon
+    - depth
+    - alt
+    - elev
+    - geo_loc_name
+    - collection_date
+    - env_broad_scale
+    - env_local_scale
+    - env_medium
+    - hcr
+    - hc_produced
+    - basin
+    - field
+    - reservoir
+    - hcr_temp
+    - tvdss_of_hcr_temp
+    - hcr_pressure
+    - tvdss_of_hcr_pressure
+    - permeability
+    - porosity
+    - lithology
+    - depos_env
+    - hcr_geol_age
+    - owc_tvdss
+    - hcr_fw_salinity
+    - sulfate_fw
+    - vfa_fw
+    - sr_kerog_type
+    - sr_lithology
+    - sr_dep_env
+    - sr_geol_age
+    - samp_well_name
+    - win
+    - samp_type
+    - samp_subtype
+    - temp
+    - pressure
+    - samp_tvdss
+    - samp_md
+    - oxy_stat_samp
+    - samp_transport_cond
+    - samp_store_temp
+    - samp_store_dur
+    - samp_store_loc
+    - samp_vol_we_dna_ext
+    - organism_count
+    - organism_count_qpcr_info
+    - ph
+    - samp_salinity
+    - alkalinity
+    - alkalinity_method
+    - sulfate
+    - sulfide
+    - tot_sulfur
+    - nitrate
+    - nitrite
+    - ammonium
+    - tot_nitro
+    - diss_iron
+    - sodium
+    - chloride
+    - potassium
+    - magnesium
+    - calcium
+    - tot_iron
+    - diss_org_carb
+    - diss_inorg_carb
+    - diss_inorg_phosp
+    - tot_phosp
+    - suspend_solids
+    - density
+    - diss_carb_dioxide
+    - diss_oxygen_fluid
+    - vfa
+    - benzene
+    - toluene
+    - ethylbenzene
+    - xylene
+    - api
+    - tan
+    - viscosity
+    - pour_point
+    - saturates_pc
+    - aromatics_pc
+    - resins_pc
+    - asphaltenes_pc
+    - misc_param
+    - additional_info
+    slot_usage: {}
+subsets: {}
+enums: {}

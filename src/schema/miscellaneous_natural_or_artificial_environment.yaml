@@ -1,0 +1,69 @@
+id: http://w3id.org/mixs/miscellaneous_natural_or_artificial_environment
+name: miscellaneous_natural_or_artificial_environment
+imports:
+- linkml:types
+- terms
+prefixes:
+  linkml: https://w3id.org/linkml/
+  mixs.vocab: https://w3id.org/mixs/vocab/
+  MIXS: https://w3id.org/mixs/terms/
+default_prefix: mixs.vocab
+slots: {}
+classes:
+  miscellaneous natural or artificial environment:
+    description: miscellaneous natural or artificial environment
+    mappings: []
+    slots:
+    - lat_lon
+    - depth
+    - alt
+    - elev
+    - geo_loc_name
+    - collection_date
+    - env_broad_scale
+    - env_local_scale
+    - env_medium
+    - alkalinity
+    - ammonium
+    - biomass
+    - bromide
+    - calcium
+    - chem_administration
+    - chloride
+    - chlorophyll
+    - density
+    - diether_lipids
+    - diss_carb_dioxide
+    - diss_hydrogen
+    - diss_inorg_carb
+    - diss_org_nitro
+    - diss_oxygen
+    - misc_param
+    - nitrate
+    - nitrite
+    - nitro
+    - org_carb
+    - org_matter
+    - org_nitro
+    - organism_count
+    - oxy_stat_samp
+    - ph
+    - perturbation
+    - phosphate
+    - phosplipid_fatt_acid
+    - potassium
+    - pressure
+    - salinity
+    - samp_store_dur
+    - samp_store_loc
+    - samp_store_temp
+    - samp_vol_we_dna_ext
+    - silicate
+    - sodium
+    - sulfate
+    - sulfide
+    - temp
+    - water_current
+    slot_usage: {}
+subsets: {}
+enums: {}

@@ -1,0 +1,6 @@
+site_name: "MIxS"
+theme: readthedocs
+docs_dir: target/docs
+site_dir: docs
+nav:
+  - Index: index.md
