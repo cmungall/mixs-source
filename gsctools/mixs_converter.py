@@ -104,13 +104,17 @@ def safe(s: str) -> str:
         s = s.replace("/", "_")
     return s
 
-def parse_value_syntax(s: str) -> Tuple[str,str]:
+def parse_value_syntax(s: str, slot_name: str = "") -> Tuple[str,str]:
     pattern = s
     range = 'string'
     if s == '{float} {unit}':
         return None, 'quantity value'
     elif s == '{float}':
         return None, 'double'
+    elif s == '{timestamp}':
+        return None, 'date'
+    elif slot_name == 'depth':
+        return None, 'quantity value'
     return pattern, range
 
 @dataclass
@@ -184,7 +188,7 @@ class MIxS6Converter:
             logging.warning(f'No section: {s_id}')
             section = 'core'
         is_a = f'{section} field'
-        pattern, range = parse_value_syntax(row['Value syntax'])
+        pattern, range = parse_value_syntax(row['Value syntax'], s_name)
         slot = {
             'is_a': is_a,
             'aliases': [s_name],
