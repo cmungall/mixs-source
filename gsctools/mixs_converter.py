@@ -164,7 +164,7 @@ class MIxS6Converter:
             return None, None
         comments = []
         for k in ('Expected value', 'Preferred unit', 'Occurrence', 'Position'):
-            if k in row:
+            if k in row and row[k] != '':
                 comments.append(f'{k}: {row[k]}')
 
         # the column header is not consistent between sheets here
