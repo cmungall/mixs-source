@@ -13,7 +13,7 @@ RUN = pipenv run
 SCHEMA_NAME = mixs
 SCHEMA_SRC = $(SCHEMA_DIR)/$(SCHEMA_NAME).yaml
 PKG_TGTS = graphql json jsonld jsonschema owl rdf shex
-TGTS = docs python $(PKG_TGTS)
+TGTS = docs $(PKG_TGTS)
 
 # Global generation options
 GEN_OPTS =
@@ -129,7 +129,7 @@ target/graphql/%.graphql: $(SCHEMA_DIR)/%.yaml tdir-graphql env.lock
 # ---------------------------------------
 # JSON Schema
 # ---------------------------------------
-gen-jsonschema: $(patsubst %, $(PKG_DIR)/jsonschema/%.schema.json, $(SCHEMA_NAMES))
+gen-jsonschema: $(PKG_DIR)/jsonschema/$(SCHEMA_NAME).schema.json
 .PHONY: gen-jsonschema
 $(PKG_DIR)/jsonschema/%.schema.json: target/jsonschema/%.schema.json
 	cp $< $@
@@ -139,7 +139,7 @@ target/jsonschema/%.schema.json: $(SCHEMA_DIR)/%.yaml tdir-jsonschema env.lock
 # ---------------------------------------
 # ShEx
 # ---------------------------------------
-gen-shex: $(patsubst %, $(PKG_DIR)/shex/%.shex, $(SCHEMA_NAMES)) $(patsubst %, $(PKG_DIR)/shex/%.shexj, $(SCHEMA_NAMES))
+gen-shex: $(PKG_DIR)/shex/$(SCHEMA_NAME).shex
 .PHONY: gen-shex
 
 $(PKG_DIR)/shex/%.shex: target/shex/%.shex
@@ -148,9 +148,9 @@ $(PKG_DIR)/shex/%.shexj: target/shex/%.shexj
 	cp $< $@
 
 target/shex/%.shex: $(SCHEMA_DIR)/%.yaml tdir-shex env.lock
-	$(RUN) gen-shex --no-mergeimports $(GEN_OPTS) $< > $@
+	$(RUN) gen-shex  $(GEN_OPTS) $< > $@
 target/shex/%.shexj: $(SCHEMA_DIR)/%.yaml tdir-shex env.lock
-	$(RUN) gen-shex --no-mergeimports $(GEN_OPTS) -f json $< > $@
+	$(RUN) gen-shex  $(GEN_OPTS) -f json $< > $@
 
 # ---------------------------------------
 # OWL
@@ -167,7 +167,7 @@ target/owl/%.owl.ttl: $(SCHEMA_DIR)/%.yaml tdir-owl env.lock
 # ---------------------------------------
 # JSON-LD Context
 # ---------------------------------------
-gen-jsonld: $(patsubst %, $(PKG_DIR)/jsonld/%.context.jsonld, $(SCHEMA_NAMES)) $(patsubst %, $(PKG_DIR)/jsonld/%.model.context.jsonld, $(SCHEMA_NAMES)) $(PKG_DIR)/jsonld/context.jsonld
+gen-jsonld: $(PKG_DIR)/jsonld/$(SCHEMA_NAME).context.jsonld
 .PHONY: gen-jsonld
 
 $(PKG_DIR)/jsonld/%.context.jsonld: target/jsonld/%.context.jsonld
@@ -180,9 +180,9 @@ $(PKG_DIR)/jsonld/context.jsonld: target/jsonld/meta.context.jsonld
 	cp $< $@
 
 target/jsonld/%.context.jsonld: $(SCHEMA_DIR)/%.yaml tdir-jsonld env.lock
-	$(RUN) gen-jsonld-context $(GEN_OPTS) --no-mergeimports $< > $@
+	$(RUN) gen-jsonld-context $(GEN_OPTS)  $< > $@
 target/jsonld/%.model.context.jsonld: $(SCHEMA_DIR)/%.yaml tdir-jsonld env.lock
-	$(RUN) gen-jsonld-context $(GEN_OPTS) --no-mergeimports $< > $@
+	$(RUN) gen-jsonld-context $(GEN_OPTS)  $< > $@
 
 # ---------------------------------------
 # Plain Old (PO) JSON
@@ -193,7 +193,7 @@ gen-json: $(patsubst %, $(PKG_DIR)/json/%.json, $(SCHEMA_NAMES))
 $(PKG_DIR)/json/%.json: target/json/%.json
 	cp $< $@
 target/json/%.json: $(SCHEMA_DIR)/%.yaml tdir-json env.lock
-	$(RUN) gen-jsonld $(GEN_OPTS) --no-mergeimports $< > $@
+	$(RUN) gen-jsonld $(GEN_OPTS)  $< > $@
 
 # ---------------------------------------
 # RDF
