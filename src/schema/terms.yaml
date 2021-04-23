@@ -9756,13 +9756,21 @@ enums:
       phototroph: {}
   rel_to_oxygen_enum:
     permissible_values:
-      aerobe: {}
-      anaerobe: {}
+      aerobe:
+        description: dependent on oxygen
+        meaning: PATO:0001455
+      anaerobe:
+        description: independent on oxygen
+        meaning: PATO:0001456      
       facultative: {}
       microaerophilic: {}
       microanaerobe: {}
-      obligate aerobe: {}
-      obligate anaerobe: {}
+      obligate aerobe:
+        description: requires oxygen to grow
+        meaning: ECOCORE:00000179
+      obligate anaerobe:
+        description: cannot grow in the presence of oxygen
+        meaning: ECOCORE:00000178    
   source_uvig_enum:
     permissible_values:
       metagenome (not viral targeted): {}
