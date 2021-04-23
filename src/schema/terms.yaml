@@ -40,7 +40,6 @@ slots:
     - value: 'yes'
     comments:
     - 'Expected value: boolean'
-    - 'Preferred unit: '
     - 'Position: 1.0'
     pattern: '{boolean}'
   investigation_type:
@@ -59,7 +58,6 @@ slots:
     - 'Expected value: eukaryote, bacteria_archaea, plasmid, virus, organelle, metagenome,mimarks-survey,
       mimarks-specimen, metatranscriptome, single amplified genome, metagenome-assembled
       genome, or uncultivated viral genomes'
-    - 'Preferred unit: '
     - 'Position: 2.0'
     pattern: '[eukaryote|bacteria_archaea|plasmid|virus|organelle|metagenome|metatranscriptome|mimarks-survey|mimarks-specimen|misag|mimag|miuvig]'
     see_also: https://github.com/GenomicsStandardsConsortium/mixs/issues/60
@@ -76,8 +74,6 @@ slots:
     - value: ISDsoil1
     comments:
     - 'Expected value: text'
-    - 'Preferred unit: '
-    - 'Position: '
     - This field is used in all packages
     pattern: '{text}'
     see_also: https://github.com/GenomicsStandardsConsortium/mixs/issues/78
@@ -90,8 +86,6 @@ slots:
     examples:
     - value: Forest soil metagenome
     comments:
-    - 'Expected value: '
-    - 'Preferred unit: '
     - 'Position: 3.0'
     - This field is used in all packages
     pattern: '{text}'
@@ -110,7 +104,6 @@ slots:
     - value: time series design [EFO:EFO_0001779]
     comments:
     - 'Expected value: text or EFO and/or OBI'
-    - 'Preferred unit: '
     - 'Position: 4.0'
     pattern: '{termLabel} {[termID]}|{text}'
   lat_lon:
@@ -124,7 +117,6 @@ slots:
     - value: 50.586825 6.408977
     comments:
     - 'Expected value: decimal degrees'
-    - 'Preferred unit: '
     - 'Position: 5.0'
     pattern: '{float} {float}'
     see_also: https://github.com/GenomicsStandardsConsortium/mixs/issues/62
@@ -140,7 +132,6 @@ slots:
     - value: ''
     comments:
     - 'Expected value: -'
-    - 'Preferred unit: '
     - 'Position: 6.0'
     - 'This field is used in: 8 packages: host-associated, microbial mat_biofilm,
       miscellaneous natural or artificial environment, plant-associated, sediment,
@@ -162,8 +153,6 @@ slots:
     - value: 100 meter
     comments:
     - 'Expected value: measurement value'
-    - 'Preferred unit: '
-    - 'Position: '
     - 'This field is used in: 3 packages: air, host-associated, miscellaneous natural
       or artificial environment'
   elev:
@@ -179,7 +168,6 @@ slots:
     - value: 100 meter
     comments:
     - 'Expected value: measurement value'
-    - 'Preferred unit: '
     - 'Position: 7.0'
     - 'This field is used in: 9 packages: air, host-associated, hydrocarbon resources-cores,
       microbial mat_biofilm, miscellaneous natural or artificial environment, plant-associated,
@@ -198,7 +186,6 @@ slots:
     comments:
     - 'Expected value: country or sea name (INSDC or GAZ);region(GAZ);specific location
       name'
-    - 'Preferred unit: '
     - 'Position: 8.0'
     pattern: '{term};{term};{text}'
     see_also: https://github.com/GenomicsStandardsConsortium/mixs/issues/17
@@ -215,7 +202,6 @@ slots:
     - value: '2018-05-11T10:00:00+01:00'
     comments:
     - 'Expected value: date and time'
-    - 'Preferred unit: '
     - 'Position: 9.0'
     pattern: '{timestamp}'
   env_broad_scale:
@@ -241,7 +227,6 @@ slots:
       your sample was collected. Recommend subclasses of biome [ENVO:00000428]. Multiple
       terms can be separated by one or more pipes e.g.: mangrove biome [ENVO:01000181]|estuarine
       biome [ENVO:01000020]'
-    - 'Preferred unit: '
     - 'Position: 10.0'
     pattern: '{termLabel} {[termID]}'
   env_local_scale:
@@ -265,7 +250,6 @@ slots:
     - 'Expected value: Add terms that identify environmental entities having causal
       influences upon the entity at time of sampling, multiple terms can be separated
       by pipes, e.g.: shoreline [ENVO:00000486]|intertidal zone [ENVO:00000316]'
-    - 'Preferred unit: '
     - 'Position: 11.0'
     pattern: '{termLabel} {[termID]}'
   env_medium:
@@ -289,7 +273,6 @@ slots:
       at time of sampling. Recommend subclasses of environmental material [ENVO:00010483].
       Multiple terms can be separated by pipes e.g.: estuarine water [ENVO:01000301]|estuarine
       mud [ENVO:00002160]'
-    - 'Preferred unit: '
     - 'Position: 12.0'
     pattern: '{termLabel} {[termID]}'
   env_package:
@@ -306,7 +289,6 @@ slots:
     - value: soil
     comments:
     - 'Expected value: enumeration'
-    - 'Preferred unit: '
     - 'Position: 13.0'
     pattern: '[air|built environment|host-associated|human-associated|human-skin|human-oral|human-gut|human-vaginal|hydrocarbon
       resources-cores|hydrocarbon resources-fluids/swabs|microbial mat/biofilm|misc
@@ -327,7 +309,6 @@ slots:
     comments:
     - 'Expected value: genetic lineage below lowest rank of NCBI taxonomy, which is
       subspecies, e.g. serovar, biotype, ecotype'
-    - 'Preferred unit: '
     - 'Position: 14.0'
     pattern: '{rank name}:{text}'
   ploidy:
@@ -345,7 +326,6 @@ slots:
     - value: allopolyploidy [PATO:0001379]
     comments:
     - 'Expected value: PATO'
-    - 'Preferred unit: '
     - 'Position: 15.0'
     pattern: '{termLabel} {[termID]}'
   num_replicons:
@@ -361,7 +341,6 @@ slots:
     comments:
     - 'Expected value: for eukaryotes and bacteria: chromosomes (haploid count); for
       viruses: segments'
-    - 'Preferred unit: '
     - 'Position: 16.0'
     pattern: '{integer}'
   extrachrom_elements:
@@ -376,7 +355,6 @@ slots:
     - value: '5'
     comments:
     - 'Expected value: number of extrachromosmal elements'
-    - 'Preferred unit: '
     - 'Position: 17.0'
     pattern: '{integer}'
   estimated_size:
@@ -391,7 +369,6 @@ slots:
     - value: 300000 bp
     comments:
     - 'Expected value: number of base pairs'
-    - 'Preferred unit: '
     - 'Position: 18.0'
     pattern: '{integer} bp'
   ref_biomaterial:
@@ -405,7 +382,6 @@ slots:
     - value: doi:10.1016/j.syapm.2018.01.009
     comments:
     - 'Expected value: PMID, DOI or URL'
-    - 'Preferred unit: '
     - 'Position: 19.0'
     pattern: '{PMID}|{DOI}|{URL}'
   source_mat_id:
@@ -430,7 +406,6 @@ slots:
     comments:
     - 'Expected value: for cultures of microorganisms: identifiers for two culture
       collections; for other material a unique arbitrary identifer'
-    - 'Preferred unit: '
     - 'Position: 20.0'
     pattern: '{text}'
   pathogenicity:
@@ -443,7 +418,6 @@ slots:
     - value: human, animal, plant, fungi, bacteria
     comments:
     - 'Expected value: names of organisms that the entity is pathogenic to'
-    - 'Preferred unit: '
     - 'Position: 21.0'
     pattern: '{text}'
     see_also: https://github.com/GenomicsStandardsConsortium/mixs/issues/65
@@ -460,7 +434,6 @@ slots:
     - value: free living
     comments:
     - 'Expected value: enumeration'
-    - 'Preferred unit: '
     - 'Position: 22.0'
     pattern: '[free living|parasitism|commensalism|symbiotic|mutualism]'
   specific_host:
@@ -476,7 +449,6 @@ slots:
     - value: '9606'
     comments:
     - 'Expected value: host taxid, unknown, environmental'
-    - 'Preferred unit: '
     - 'Position: 23.0'
     pattern: '{NCBI taxid}|{text}'
   host_spec_range:
@@ -489,7 +461,6 @@ slots:
     - value: '9606'
     comments:
     - 'Expected value: NCBI taxid'
-    - 'Preferred unit: '
     - 'Position: 24.0'
     pattern: '{integer}'
     see_also: https://github.com/GenomicsStandardsConsortium/mixs/issues/66
@@ -503,7 +474,6 @@ slots:
     - value: dead
     comments:
     - 'Expected value: enumeration'
-    - 'Preferred unit: '
     - 'Position: 25.0'
     pattern: '[healthy|diseased|dead|disease-free|undetermined|recovering|resolving|pre-existing
       condition|pathological|life threatening|congenital]'
@@ -518,7 +488,6 @@ slots:
     - value: heterotroph
     comments:
     - 'Expected value: enumeration'
-    - 'Preferred unit: '
     - 'Position: 26.0'
     pattern: '[autotroph|carboxydotroph|chemoautotroph|chemoheterotroph|chemolithoautotroph|chemolithotroph|chemoorganoheterotroph|chemoorganotroph|chemosynthetic|chemotroph|copiotroph|diazotroph|facultative|autotroph|heterotroph|lithoautotroph|lithoheterotroph|lithotroph|methanotroph|methylotroph|mixotroph|obligate|chemoautolithotroph|oligotroph|organoheterotroph|organotroph|photoautotroph|photoheterotroph|photolithoautotroph|photolithotroph|photosynthetic|phototroph]'
   propagation:
@@ -535,7 +504,6 @@ slots:
     comments:
     - 'Expected value: for virus: lytic, lysogenic, temperate, obligately lytic; for
       plasmid: incompatibility group; for eukaryote: asexual, sexual'
-    - 'Preferred unit: '
     - 'Position: 27.0'
     pattern: '{text}'
     see_also: https://github.com/GenomicsStandardsConsortium/mixs/issues/88
@@ -550,7 +518,6 @@ slots:
     - value: beta-lactamase class A
     comments:
     - 'Expected value: for plasmid: antibiotic resistance; for phage: converting genes'
-    - 'Preferred unit: '
     - 'Position: 28.0'
     pattern: '{text}'
   rel_to_oxygen:
@@ -564,7 +531,6 @@ slots:
     - value: aerobe
     comments:
     - 'Expected value: enumeration'
-    - 'Preferred unit: '
     - 'Position: 29.0'
     pattern: '[aerobe|anaerobe|facultative|microaerophilic|microanaerobe|obligate
       aerobe|obligate anaerobe]'
@@ -580,7 +546,6 @@ slots:
     - value: 'doi: 10.1016/j.syapm.2018.01.009'
     comments:
     - 'Expected value: PMID,DOI or URL'
-    - 'Preferred unit: '
     - 'Position: 30.0'
     pattern: '{PMID}|{DOI}|{URL}'
   sample_collect_device:
@@ -595,7 +560,6 @@ slots:
     - value: swab, biopsy, niskin bottle, push core, drag swab [GENEPIO:0002713]
     comments:
     - 'Expected value: device name'
-    - 'Preferred unit: '
     - 'Position: 31.0'
     pattern: '{termLabel} {[termID]}|{text}'
   sample_collect_method:
@@ -608,8 +572,6 @@ slots:
     - value: swabbing
     comments:
     - 'Expected value: PMID,DOI,url , or text'
-    - 'Preferred unit: '
-    - 'Position: '
     pattern: '{PMID}|{DOI}|{URL}|{text}'
   samp_mat_process:
     is_a: nucleic acid sequence source field
@@ -623,7 +585,6 @@ slots:
     - value: filtering of seawater, storing samples in ethanol
     comments:
     - 'Expected value: text'
-    - 'Preferred unit: '
     - 'Position: 32.0'
     pattern: '{text}'
   size_frac:
@@ -636,7 +597,6 @@ slots:
     - value: 0-0.22 micrometer
     comments:
     - 'Expected value: filter size value range'
-    - 'Preferred unit: '
     - 'Position: 33.0'
     pattern: '{float}-{float} {unit}'
   samp_size:
@@ -661,7 +621,6 @@ slots:
     - value: viral fraction metagenome (virome)
     comments:
     - 'Expected value: enumeration'
-    - 'Preferred unit: '
     - 'Position: 35.0'
     pattern: '[metagenome (not viral targeted)|viral fraction metagenome (virome)|sequence-targeted
       metagenome|metatranscriptome (not viral targeted)|viral fraction RNA metagenome
@@ -677,7 +636,6 @@ slots:
     - value: filtration + FeCl Precipitation + ultracentrifugation + DNAse
     comments:
     - 'Expected value: enumeration'
-    - 'Preferred unit: '
     - 'Position: 36.0'
     pattern: '[filtration|ultrafiltration|centrifugation|ultracentrifugation|PEG Precipitation|FeCl
       Precipitation|CsCl density gradient|DNAse|RNAse|targeted sequence capture|other|none]'
@@ -693,7 +651,6 @@ slots:
     - value: https://mobio.com/media/wysiwyg/pdfs/protocols/12888.pdf
     comments:
     - 'Expected value: PMID, DOI or URL'
-    - 'Preferred unit: '
     - 'Position: 37.0'
     pattern: '{PMID}|{DOI}|{URL}'
   nucl_acid_amp:
@@ -708,7 +665,6 @@ slots:
     - value: https://phylogenomics.me/protocols/16s-pcr-protocol/
     comments:
     - 'Expected value: PMID, DOI or URL'
-    - 'Preferred unit: '
     - 'Position: 38.0'
     pattern: '{PMID}|{DOI}|{URL}'
   lib_size:
@@ -721,7 +677,6 @@ slots:
     - value: '50'
     comments:
     - 'Expected value: number of clones'
-    - 'Preferred unit: '
     - 'Position: 39.0'
     pattern: '{integer}'
   lib_reads_seqd:
@@ -734,7 +689,6 @@ slots:
     - value: '20'
     comments:
     - 'Expected value: number of reads sequenced'
-    - 'Preferred unit: '
     - 'Position: 40.0'
     pattern: '{integer}'
   lib_layout:
@@ -748,7 +702,6 @@ slots:
     - value: paired
     comments:
     - 'Expected value: enumeration'
-    - 'Preferred unit: '
     - 'Position: 41.0'
     pattern: '[paired|single|vector|other]'
   lib_vector:
@@ -761,7 +714,6 @@ slots:
     - value: Bacteriophage P1
     comments:
     - 'Expected value: vector'
-    - 'Preferred unit: '
     - 'Position: 42.0'
     pattern: '{text}'
   lib_screen:
@@ -775,7 +727,6 @@ slots:
     - value: enriched, screened, normalized
     comments:
     - 'Expected value: screening strategy name'
-    - 'Preferred unit: '
     - 'Position: 43.0'
     pattern: '{text}'
   target_gene:
@@ -788,7 +739,6 @@ slots:
     - value: 16S rRNA, 18S rRNA, nif, amoA, rpo
     comments:
     - 'Expected value: gene name'
-    - 'Preferred unit: '
     - 'Position: 44.0'
     pattern: '{text}'
   target_subfragment:
@@ -802,7 +752,6 @@ slots:
     - value: V6, V9, ITS
     comments:
     - 'Expected value: gene fragment name'
-    - 'Preferred unit: '
     - 'Position: 45.0'
     pattern: '{text}'
   pcr_primers:
@@ -818,7 +767,6 @@ slots:
     - value: FWD:GTGCCAGCMGCCGCGGTAA;REV:GGACTACHVGGGTWTCTAAT
     comments:
     - 'Expected value: FWD: forward primer sequence;REV:reverse primer sequence'
-    - 'Preferred unit: '
     - 'Position: 46.0'
     pattern: FWD:{dna};REV:{dna}
   mid:
@@ -833,7 +781,6 @@ slots:
     - value: GTGAATAT
     comments:
     - 'Expected value: multiplex identifier sequence'
-    - 'Preferred unit: '
     - 'Position: 47.0'
     pattern: '{dna}'
   adapters:
@@ -848,7 +795,6 @@ slots:
     - value: AATGATACGGCGACCACCGAGATCTACACGCT;CAAGCAGAAGACGGCATACGAGAT
     comments:
     - 'Expected value: adapter A and B sequence'
-    - 'Preferred unit: '
     - 'Position: 48.0'
     pattern: '{dna};{dna}'
   pcr_cond:
@@ -863,7 +809,6 @@ slots:
     comments:
     - 'Expected value: initial denaturation:degrees_minutes;annealing:degrees_minutes;elongation:degrees_minutes;final
       elongation:degrees_minutes;total cycles'
-    - 'Preferred unit: '
     - 'Position: 49.0'
     pattern: initial denaturation:degrees_minutes;annealing:degrees_minutes;elongation:degrees_minutes;final
       elongation:degrees_minutes;total cycles
@@ -877,7 +822,6 @@ slots:
     - value: Illumina HiSeq 1500
     comments:
     - 'Expected value: enumeration'
-    - 'Preferred unit: '
     - 'Position: 50.0'
     pattern: '[454 GS|454 GS 20|454 GS FLX|454 GS FLX+|454 GS FLX Titanium|454 GS
       Junior|AB 310 Genetic Analyzer|AB 3130 Genetic Analyzer|AB 3130xL Genetic Analyzer|AB
@@ -904,7 +848,6 @@ slots:
     - value: none
     comments:
     - 'Expected value: none or manually edited'
-    - 'Preferred unit: '
     - 'Position: 51.0'
     pattern: '[none|manually edited]'
   chimera_check:
@@ -922,7 +865,6 @@ slots:
     - value: uchime;v4.1;default parameters
     comments:
     - 'Expected value: name and version of software, parameters used'
-    - 'Preferred unit: '
     - 'Position: 52.0'
     pattern: '{software};{version};{parameters}'
   tax_ident:
@@ -936,7 +878,6 @@ slots:
     - value: 'other: rpoB gene'
     comments:
     - 'Expected value: enumeration'
-    - 'Preferred unit: '
     - 'Position: 53.0'
     pattern: '[16S rRNA gene|multi-marker approach|other]'
   assembly_qual:
@@ -965,7 +906,6 @@ slots:
     - value: High-quality draft genome
     comments:
     - 'Expected value: enumeration'
-    - 'Preferred unit: '
     - 'Position: 54.0'
     pattern: '[Finished genome|High-quality draft genome|Medium-quality draft genome|Low-quality
       draft genome|Genome fragment(s)]'
@@ -980,7 +920,6 @@ slots:
     - value: HuRef, JCVI_ISG_i3_1.0
     comments:
     - 'Expected value: name and version of assembly'
-    - 'Preferred unit: '
     - 'Position: 55.0'
     pattern: '{text} {text}'
   assembly_software:
@@ -993,7 +932,6 @@ slots:
     - value: metaSPAdes;3.11.0;kmer set 21,33,55,77,99,121, default parameters otherwise
     comments:
     - 'Expected value: name and version of software, parameters used'
-    - 'Preferred unit: '
     - 'Position: 56.0'
     pattern: '{software};{version};{parameters}'
   annot:
@@ -1008,7 +946,6 @@ slots:
     - value: prokka
     comments:
     - 'Expected value: name of tool or pipeline used, or annotation source description'
-    - 'Preferred unit: '
     - 'Position: 57.0'
     pattern: '{text}'
   number_contig:
@@ -1022,7 +959,6 @@ slots:
     - value: '40'
     comments:
     - 'Expected value: value'
-    - 'Preferred unit: '
     - 'Position: 58.0'
     pattern: '{integer}'
   feat_pred:
@@ -1036,7 +972,6 @@ slots:
     - value: Prodigal;2.6.3;default parameters
     comments:
     - 'Expected value: names and versions of software(s), parameters used'
-    - 'Preferred unit: '
     - 'Position: 59.0'
     pattern: '{software};{version};{parameters}'
   ref_db:
@@ -1051,7 +986,6 @@ slots:
         doi:10.1093/nar/gkw975
     comments:
     - 'Expected value: names, versions, and references of databases'
-    - 'Preferred unit: '
     - 'Position: 60.0'
     pattern: '{database};{version};{reference}'
   sim_search_meth:
@@ -1065,7 +999,6 @@ slots:
     - value: HMMER3;3.1b2;hmmsearch, cutoff of 50 on score
     comments:
     - 'Expected value: names and versions of software(s), parameters used'
-    - 'Preferred unit: '
     - 'Position: 61.0'
     pattern: '{software};{version};{parameters}'
   tax_class:
@@ -1080,7 +1013,6 @@ slots:
         default parameters)
     comments:
     - 'Expected value: classification method, database name, and other parameters'
-    - 'Preferred unit: '
     - 'Position: 62.0'
     pattern: '{text}'
   x_16s_recover:
@@ -1093,7 +1025,6 @@ slots:
     - value: 'yes'
     comments:
     - 'Expected value: boolean'
-    - 'Preferred unit: '
     - 'Position: 63.0'
     pattern: '{boolean}'
   trnas:
@@ -1106,7 +1037,6 @@ slots:
     - value: '18'
     comments:
     - 'Expected value: value from 0-21'
-    - 'Preferred unit: '
     - 'Position: 65.0'
     pattern: '{integer}'
   trna_ext_software:
@@ -1119,7 +1049,6 @@ slots:
     - value: infernal;v2;default parameters
     comments:
     - 'Expected value: names and versions of software(s), parameters used'
-    - 'Preferred unit: '
     - 'Position: 66.0'
     pattern: '{software};{version};{parameters}'
   compl_score:
@@ -1136,7 +1065,6 @@ slots:
     - value: med;60%
     comments:
     - 'Expected value: quality;percent completeness'
-    - 'Preferred unit: '
     - 'Position: 67.0'
     pattern: '[high|med|low];{percentage}'
   compl_software:
@@ -1149,7 +1077,6 @@ slots:
     - value: checkm
     comments:
     - 'Expected value: names and versions of software(s) used'
-    - 'Preferred unit: '
     - 'Position: 68.0'
     pattern: '{software};{version}'
   compl_appr:
@@ -1166,7 +1093,6 @@ slots:
         from the P22virus genus (NCBI RefSeq v83)'
     comments:
     - 'Expected value: enumeration'
-    - 'Preferred unit: '
     - 'Position: 69.0'
     pattern: '[marker gene|reference based|other]'
   contam_score:
@@ -1183,7 +1109,6 @@ slots:
     - value: 1%
     comments:
     - 'Expected value: value'
-    - 'Preferred unit: '
     - 'Position: 70.0'
     pattern: '{float} percentage'
   contam_screen_input:
@@ -1196,7 +1121,6 @@ slots:
     - value: contigs
     comments:
     - 'Expected value: enumeration'
-    - 'Preferred unit: '
     - 'Position: 71.0'
     pattern: '[reads| contigs]'
   contam_screen_param:
@@ -1211,7 +1135,6 @@ slots:
     - value: kmer
     comments:
     - 'Expected value: enumeration;value or name'
-    - 'Preferred unit: '
     - 'Position: 72.0'
     pattern: '[ref db|kmer|coverage|combination];{text|integer}'
   decontam_software:
@@ -1224,7 +1147,6 @@ slots:
     - value: anvi'o
     comments:
     - 'Expected value: enumeration'
-    - 'Preferred unit: '
     - 'Position: 73.0'
     pattern: '[checkm/refinem|anvi''o|prodege|bbtools:decontaminate.sh|acdc|combination]'
   sort_tech:
@@ -1237,7 +1159,6 @@ slots:
     - value: optical manipulation
     comments:
     - 'Expected value: enumeration'
-    - 'Preferred unit: '
     - 'Position: 74.0'
     pattern: '[flow cytometric cell sorting|microfluidics|lazer-tweezing|optical manipulation|micromanipulation|other]'
   single_cell_lysis_appr:
@@ -1250,7 +1171,6 @@ slots:
     - value: enzymatic
     comments:
     - 'Expected value: enumeration'
-    - 'Preferred unit: '
     - 'Position: 75.0'
     pattern: '[chemical|enzymatic|physical|combination]'
   single_cell_lysis_prot:
@@ -1264,7 +1184,6 @@ slots:
     - value: ambion single cell lysis kit
     comments:
     - 'Expected value: kit, protocol name'
-    - 'Preferred unit: '
     - 'Position: 76.0'
     pattern: '{text}'
   wga_amp_appr:
@@ -1277,7 +1196,6 @@ slots:
     - value: mda based
     comments:
     - 'Expected value: enumeration'
-    - 'Preferred unit: '
     - 'Position: 77.0'
     pattern: '[pcr based|mda based]'
   wga_amp_kit:
@@ -1290,7 +1208,6 @@ slots:
     - value: qiagen repli-g
     comments:
     - 'Expected value: kit name'
-    - 'Preferred unit: '
     - 'Position: 78.0'
     pattern: '{text}'
   bin_param:
@@ -1304,7 +1221,6 @@ slots:
     - value: coverage and kmer
     comments:
     - 'Expected value: enumeration'
-    - 'Preferred unit: '
     - 'Position: 79.0'
     pattern: '[homology search|kmer|coverage|codon usage|combination]'
   bin_software:
@@ -1317,7 +1233,6 @@ slots:
     - value: concoct and maxbin
     comments:
     - 'Expected value: enumeration'
-    - 'Preferred unit: '
     - 'Position: 80.0'
     pattern: '[metabat|maxbin|concoct|groupm|esom|metawatt|combination|other]'
   reassembly_bin:
@@ -1331,7 +1246,6 @@ slots:
     - value: 'no'
     comments:
     - 'Expected value: boolean'
-    - 'Preferred unit: '
     - 'Position: 81.0'
     pattern: '{boolean}'
   mag_cov_software:
@@ -1345,7 +1259,6 @@ slots:
     - value: bbmap
     comments:
     - 'Expected value: enumeration'
-    - 'Preferred unit: '
     - 'Position: 82.0'
     pattern: '[bwa|bbmap|bowtie|other]'
   vir_ident_software:
@@ -1359,7 +1272,6 @@ slots:
     - value: VirSorter; 1.0.4; Virome database, category 2
     comments:
     - 'Expected value: software name, version and relevant parameters'
-    - 'Preferred unit: '
     - 'Position: 83.0'
     pattern: '{software};{version};{parameters}'
   pred_genome_type:
@@ -1372,7 +1284,6 @@ slots:
     - value: dsDNA
     comments:
     - 'Expected value: enumeration'
-    - 'Preferred unit: '
     - 'Position: 84.0'
     pattern: '[DNA|dsDNA|ssDNA|RNA|dsRNA|ssRNA|ssRNA (+)|ssRNA (-)|mixed|uncharacterized]'
   pred_genome_struc:
@@ -1385,7 +1296,6 @@ slots:
     - value: non-segmented
     comments:
     - 'Expected value: enumeration'
-    - 'Preferred unit: '
     - 'Position: 85.0'
     pattern: '[segmented|non-segmented|undetermined]'
   detec_type:
@@ -1398,7 +1308,6 @@ slots:
     - value: independent sequence (UViG)
     comments:
     - 'Expected value: enumeration'
-    - 'Preferred unit: '
     - 'Position: 86.0'
     pattern: '[independent sequence (UViG)|provirus (UpViG)]'
   votu_class_appr:
@@ -1414,7 +1323,6 @@ slots:
     - value: 95% ANI;85% AF; greedy incremental clustering
     comments:
     - 'Expected value: cutoffs and method used'
-    - 'Preferred unit: '
     - 'Position: 87.0'
     pattern: '{ANI cutoff};{AF cutoff};{clustering method}'
   votu_seq_comp_appr:
@@ -1428,7 +1336,6 @@ slots:
     - value: 'blastn;2.6.0+;e-value cutoff: 0.001'
     comments:
     - 'Expected value: software name, version and relevant parameters'
-    - 'Preferred unit: '
     - 'Position: 88.0'
     pattern: '{software};{version};{parameters}'
   votu_db:
@@ -1442,7 +1349,6 @@ slots:
     - value: NCBI Viral RefSeq;83
     comments:
     - 'Expected value: database and version'
-    - 'Preferred unit: '
     - 'Position: 89.0'
     pattern: '{database};{version}'
   host_pred_appr:
@@ -1455,7 +1361,6 @@ slots:
     - value: CRISPR spacer match
     comments:
     - 'Expected value: enumeration'
-    - 'Preferred unit: '
     - 'Position: 90.0'
     pattern: '[provirus|host sequence similarity|CRISPR spacer match|kmer similarity|co-occurrence|combination|other]'
   host_pred_est_acc:
@@ -1470,7 +1375,6 @@ slots:
         genus rank (Edwards et al. 2016 doi:10.1093/femsre/fuv048)'
     comments:
     - 'Expected value: false discovery rate'
-    - 'Preferred unit: '
     - 'Position: 91.0'
     pattern: '{text}'
   url:
@@ -1483,7 +1387,6 @@ slots:
     - value: http://www.earthmicrobiome.org/
     comments:
     - 'Expected value: URL'
-    - 'Preferred unit: '
     - 'Position: 92.0'
     pattern: '{URL}'
     see_also: https://github.com/GenomicsStandardsConsortium/mixs/issues/67
@@ -1498,7 +1401,6 @@ slots:
     - value: http://press.igsb.anl.gov/earthmicrobiome/protocols-and-standards/its/
     comments:
     - 'Expected value: reference to SOP'
-    - 'Preferred unit: '
     - 'Position: 93.0'
     pattern: '{PMID}|{DOI}|{URL}'
   barometric_press:
@@ -1560,7 +1462,6 @@ slots:
     - value: agar [CHEBI:2509];2018-05-11T20:00Z
     comments:
     - 'Expected value: CHEBI;timestamp'
-    - 'Preferred unit: '
     - 'Occurrence: m'
     - 'Position: 1.0'
     - 'This field is used in: 13 packages: air, host-associated, human-associated,
@@ -1648,7 +1549,6 @@ slots:
     - value: aerobic
     comments:
     - 'Expected value: enumeration'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 1.0'
     - 'This field is used in: 15 packages: air, host-associated, human-associated,
@@ -1670,7 +1570,6 @@ slots:
     - value: antibiotic addition;R2/2018-05-11T14:30Z/2018-05-11T19:30Z/P1H30M
     comments:
     - 'Expected value: perturbation type name;perturbation interval and duration'
-    - 'Preferred unit: '
     - 'Occurrence: m'
     - 'Position: 1.0'
     - 'This field is used in: 13 packages: air, host-associated, human-associated,
@@ -1748,7 +1647,6 @@ slots:
     - value: P1Y6M
     comments:
     - 'Expected value: duration'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 1.0'
     - 'This field is used in: 15 packages: air, host-associated, human-associated,
@@ -1767,7 +1665,6 @@ slots:
     - value: Freezer no:5
     comments:
     - 'Expected value: location name'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 1.0'
     - 'This field is used in: 15 packages: air, host-associated, human-associated,
@@ -1874,7 +1771,6 @@ slots:
     - value: Operable windows
     comments:
     - 'Expected value: ventilation type name'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 1.0'
     - 'This field is used in: 2 packages: air, built environment'
@@ -1909,7 +1805,6 @@ slots:
     - value: Northwest
     comments:
     - 'Expected value: wind direction name'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 1.0'
     - 'This field is used uniquely in: air'
@@ -1941,7 +1836,6 @@ slots:
     - value: Bicarbonate ion concentration;2075 micromole per kilogram
     comments:
     - 'Expected value: parameter name;measurement value'
-    - 'Preferred unit: '
     - 'Occurrence: m'
     - 'Position: 1.0'
     - 'This field is used in: 16 packages: air, host-associated, human-associated,
@@ -1961,7 +1855,6 @@ slots:
     - value: wood
     comments:
     - 'Expected value: enumeration'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 1.0'
     - 'This field is used uniquely in: built environment'
@@ -1978,7 +1871,6 @@ slots:
     - value: radon
     comments:
     - 'Expected value: enumeration'
-    - 'Preferred unit: '
     - 'Occurrence: m'
     - 'Position: 2.0'
     - 'This field is used uniquely in: built environment'
@@ -2072,7 +1964,6 @@ slots:
     - value: '7'
     comments:
     - 'Expected value: measurement value'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 8.0'
     - 'This field is used uniquely in: built environment'
@@ -2088,7 +1979,6 @@ slots:
     - value: market
     comments:
     - 'Expected value: enumeration'
-    - 'Preferred unit: '
     - 'Occurrence: m'
     - 'Position: 9.0'
     - 'This field is used uniquely in: built environment'
@@ -2137,7 +2027,6 @@ slots:
     - value: foyer
     comments:
     - 'Expected value: enumeration'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 15.0'
     - 'This field is used uniquely in: built environment'
@@ -2153,7 +2042,6 @@ slots:
     - value: wall
     comments:
     - 'Expected value: enumeration'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 16.0'
     - 'This field is used uniquely in: built environment'
@@ -2169,7 +2057,6 @@ slots:
     - value: HEPA
     comments:
     - 'Expected value: enumeration'
-    - 'Preferred unit: '
     - 'Occurrence: m'
     - 'Position: 17.0'
     - 'This field is used uniquely in: built environment'
@@ -2186,7 +2073,6 @@ slots:
     - value: heat pump
     comments:
     - 'Expected value: enumeration'
-    - 'Preferred unit: '
     - 'Occurrence: m'
     - 'Position: 18.0'
     - 'This field is used uniquely in: built environment'
@@ -2203,7 +2089,6 @@ slots:
     - value: basement
     comments:
     - 'Expected value: enumeration'
-    - 'Preferred unit: '
     - 'Occurrence: m'
     - 'Position: 19.0'
     - 'This field is used uniquely in: built environment'
@@ -2219,7 +2104,6 @@ slots:
     - value: rural
     comments:
     - 'Expected value: enumeration'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 20.0'
     - 'This field is used uniquely in: built environment'
@@ -2238,7 +2122,6 @@ slots:
     - value: desk lamp
     comments:
     - 'Expected value: enumeration'
-    - 'Preferred unit: '
     - 'Occurrence: m'
     - 'Position: 21.0'
     - 'This field is used uniquely in: built environment'
@@ -2257,7 +2140,6 @@ slots:
     - value: ''
     comments:
     - 'Expected value: description of method'
-    - 'Preferred unit: '
     - 'Occurrence: m'
     - 'Position: 22.0'
     - 'This field is used uniquely in: built environment'
@@ -2273,7 +2155,6 @@ slots:
     - value: typically occupied
     comments:
     - 'Expected value: enumeration'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 23.0'
     - 'This field is used uniquely in: built environment'
@@ -2289,7 +2170,6 @@ slots:
     - value: '25'
     comments:
     - 'Expected value: measurement value'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 24.0'
     - 'This field is used uniquely in: built environment'
@@ -2304,7 +2184,6 @@ slots:
     - value: '10'
     comments:
     - 'Expected value: measurement value'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 25.0'
     - 'This field is used uniquely in: built environment'
@@ -2320,7 +2199,6 @@ slots:
     - value: ''
     comments:
     - 'Expected value: measurement value'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 26.0'
     - 'This field is used uniquely in: built environment'
@@ -2335,7 +2213,6 @@ slots:
     - value: ''
     comments:
     - 'Expected value: value'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 27.0'
     - 'This field is used uniquely in: built environment'
@@ -2352,7 +2229,6 @@ slots:
     - value: ''
     comments:
     - 'Expected value: room name;room number'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 28.0'
     - 'This field is used uniquely in: built environment'
@@ -2370,7 +2246,6 @@ slots:
     - value: plane
     comments:
     - 'Expected value: enumeration'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 29.0'
     - 'This field is used uniquely in: built environment'
@@ -2403,7 +2278,6 @@ slots:
     - value: shed
     comments:
     - 'Expected value: enumeration'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 31.0'
     - 'This field is used uniquely in: built environment'
@@ -2419,7 +2293,6 @@ slots:
     - value: '2'
     comments:
     - 'Expected value: value'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 32.0'
     - 'This field is used uniquely in: built environment'
@@ -2466,7 +2339,6 @@ slots:
     - value: '1'
     comments:
     - 'Expected value: value'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 35.0'
     - 'This field is used uniquely in: built environment'
@@ -2482,7 +2354,6 @@ slots:
     - value: '2'
     comments:
     - 'Expected value: value'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 36.0'
     - 'This field is used uniquely in: built environment'
@@ -2514,7 +2385,6 @@ slots:
     - value: rural
     comments:
     - 'Expected value: enumeration'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 38.0'
     - 'This field is used uniquely in: built environment'
@@ -2531,7 +2401,6 @@ slots:
     - value: ''
     comments:
     - 'Expected value: free text'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 39.0'
     - 'This field is used uniquely in: built environment'
@@ -2563,7 +2432,6 @@ slots:
     - value: damaged
     comments:
     - 'Expected value: enumeration'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 41.0'
     - 'This field is used uniquely in: built environment'
@@ -2579,7 +2447,6 @@ slots:
     - value: stucco
     comments:
     - 'Expected value: enumeration'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 42.0'
     - 'This field is used uniquely in: built environment'
@@ -2596,7 +2463,6 @@ slots:
     - value: presence of mold visible
     comments:
     - 'Expected value: enumeration'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 43.0'
     - 'This field is used uniquely in: built environment'
@@ -2612,7 +2478,6 @@ slots:
     - value: concrete
     comments:
     - 'Expected value: enumeration'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 44.0'
     - 'This field is used uniquely in: built environment'
@@ -2628,7 +2493,6 @@ slots:
     - value: popcorn
     comments:
     - 'Expected value: enumeration'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 45.0'
     - 'This field is used uniquely in: built environment'
@@ -2663,7 +2527,6 @@ slots:
     - value: coffered
     comments:
     - 'Expected value: enumeration'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 47.0'
     - 'This field is used uniquely in: built environment'
@@ -2679,7 +2542,6 @@ slots:
     - value: '12345'
     comments:
     - 'Expected value: unique identifier'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 48.0'
     - 'This field is used uniquely in: built environment'
@@ -2695,7 +2557,6 @@ slots:
     - value: 2018-05-11:T14:30Z
     comments:
     - 'Expected value: timestamp'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 49.0'
     - 'This field is used uniquely in: built environment'
@@ -2711,7 +2572,6 @@ slots:
     - value: maintenance plans
     comments:
     - 'Expected value: enumeration'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 50.0'
     - 'This field is used uniquely in: built environment'
@@ -2744,7 +2604,6 @@ slots:
     - value: new
     comments:
     - 'Expected value: enumeration'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 52.0'
     - 'This field is used uniquely in: built environment'
@@ -2760,7 +2619,6 @@ slots:
     - value: inward
     comments:
     - 'Expected value: enumeration'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 53.0'
     - 'This field is used uniquely in: built environment'
@@ -2776,7 +2634,6 @@ slots:
     - value: north
     comments:
     - 'Expected value: enumeration'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 54.0'
     - 'This field is used uniquely in: built environment'
@@ -2792,7 +2649,6 @@ slots:
     - value: wood
     comments:
     - 'Expected value: enumeration'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 55.0'
     - 'This field is used uniquely in: built environment'
@@ -2809,7 +2665,6 @@ slots:
     - value: swinging
     comments:
     - 'Expected value: enumeration'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 56.0'
     - 'This field is used uniquely in: built environment'
@@ -2825,7 +2680,6 @@ slots:
     - value: presence of mold visible
     comments:
     - 'Expected value: enumeration'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 57.0'
     - 'This field is used uniquely in: built environment'
@@ -2841,7 +2695,6 @@ slots:
     - value: wooden
     comments:
     - 'Expected value: enumeration'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 58.0'
     - 'This field is used uniquely in: built environment'
@@ -2857,7 +2710,6 @@ slots:
     - value: revolving
     comments:
     - 'Expected value: enumeration'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 59.0'
     - 'This field is used uniquely in: built environment'
@@ -2873,7 +2725,6 @@ slots:
     - value: hollow
     comments:
     - 'Expected value: enumeration'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 60.0'
     - 'This field is used uniquely in: built environment'
@@ -2889,7 +2740,6 @@ slots:
     - value: battened
     comments:
     - 'Expected value: enumeration'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 61.0'
     - 'This field is used uniquely in: built environment'
@@ -2908,7 +2758,6 @@ slots:
     - value: sketch
     comments:
     - 'Expected value: enumeration'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 62.0'
     - 'This field is used uniquely in: built environment'
@@ -2924,7 +2773,6 @@ slots:
     - value: '2'
     comments:
     - 'Expected value: value'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 63.0'
     - 'This field is used uniquely in: built environment'
@@ -2940,7 +2788,6 @@ slots:
     - value: '4'
     comments:
     - 'Expected value: value'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 64.0'
     - 'This field is used uniquely in: built environment'
@@ -2971,7 +2818,6 @@ slots:
     - value: ''
     comments:
     - 'Expected value: measurement value'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 66.0'
     - 'This field is used uniquely in: built environment'
@@ -2987,7 +2833,6 @@ slots:
     - value: ''
     comments:
     - 'Expected value: value'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 67.0'
     - 'This field is used uniquely in: built environment'
@@ -3003,7 +2848,6 @@ slots:
     - value: wood burning
     comments:
     - 'Expected value: enumeration'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 68.0'
     - 'This field is used uniquely in: built environment'
@@ -3050,7 +2894,6 @@ slots:
     - value: new
     comments:
     - 'Expected value: enumeration'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 71.0'
     - 'This field is used uniquely in: built environment'
@@ -3067,7 +2910,6 @@ slots:
     - value: ''
     comments:
     - 'Expected value: value'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 72.0'
     - 'This field is used uniquely in: built environment'
@@ -3083,7 +2925,6 @@ slots:
     - value: carpet
     comments:
     - 'Expected value: enumeration'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 73.0'
     - 'This field is used uniquely in: built environment'
@@ -3101,7 +2942,6 @@ slots:
     - value: ceiling discoloration
     comments:
     - 'Expected value: enumeration'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 74.0'
     - 'This field is used uniquely in: built environment'
@@ -3119,7 +2959,6 @@ slots:
     - value: concrete
     comments:
     - 'Expected value: enumeration'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 75.0'
     - 'This field is used uniquely in: built environment'
@@ -3150,7 +2989,6 @@ slots:
     - value: ''
     comments:
     - 'Expected value: measurement value'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 77.0'
     - 'This field is used uniquely in: built environment'
@@ -3166,7 +3004,6 @@ slots:
     - value: ''
     comments:
     - 'Expected value: measurement value'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 78.0'
     - 'This field is used uniquely in: built environment'
@@ -3182,7 +3019,6 @@ slots:
     - value: chair
     comments:
     - 'Expected value: enumeration'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 79.0'
     - 'This field is used uniquely in: built environment'
@@ -3198,7 +3034,6 @@ slots:
     - value: male
     comments:
     - 'Expected value: enumeration'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 80.0'
     - 'This field is used uniquely in: built environment'
@@ -3214,7 +3049,6 @@ slots:
     - value: ''
     comments:
     - 'Expected value: value'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 81.0'
     - 'This field is used uniquely in: built environment'
@@ -3230,7 +3064,6 @@ slots:
     - value: right handedness
     comments:
     - 'Expected value: enumeration'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 82.0'
     - 'This field is used uniquely in: built environment'
@@ -3246,7 +3079,6 @@ slots:
     - value: north
     comments:
     - 'Expected value: enumeration'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 83.0'
     - 'This field is used uniquely in: built environment'
@@ -3262,7 +3094,6 @@ slots:
     - value: radiant
     comments:
     - 'Expected value: enumeration'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 84.0'
     - 'This field is used uniquely in: built environment'
@@ -3278,7 +3109,6 @@ slots:
     - value: ''
     comments:
     - 'Expected value: unique identifier'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 85.0'
     - 'This field is used uniquely in: built environment'
@@ -3325,7 +3155,6 @@ slots:
     - value: damaged
     comments:
     - 'Expected value: enumeration'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 88.0'
     - 'This field is used uniquely in: built environment'
@@ -3341,7 +3170,6 @@ slots:
     - value: 2018-05-11:T14:30Z
     comments:
     - 'Expected value: timestamp'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 89.0'
     - 'This field is used uniquely in: built environment'
@@ -3357,7 +3185,6 @@ slots:
     - value: ''
     comments:
     - 'Expected value: measurement value'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 90.0'
     - 'This field is used uniquely in: built environment'
@@ -3373,7 +3200,6 @@ slots:
     - value: elevator
     comments:
     - 'Expected value: enumeration'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 91.0'
     - 'This field is used uniquely in: built environment'
@@ -3389,7 +3215,6 @@ slots:
     - value: ''
     comments:
     - 'Expected value: measurement value'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 92.0'
     - 'This field is used uniquely in: built environment'
@@ -3405,7 +3230,6 @@ slots:
     - value: ''
     comments:
     - 'Expected value: measurement value'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 93.0'
     - 'This field is used uniquely in: built environment'
@@ -3421,7 +3245,6 @@ slots:
     - value: ''
     comments:
     - 'Expected value: measurement value'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 94.0'
     - 'This field is used uniquely in: built environment'
@@ -3437,7 +3260,6 @@ slots:
     - value: estimate
     comments:
     - 'Expected value: enumeration'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 95.0'
     - 'This field is used uniquely in: built environment'
@@ -3453,7 +3275,6 @@ slots:
     - value: northwest
     comments:
     - 'Expected value: enumeration'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 96.0'
     - 'This field is used uniquely in: built environment'
@@ -3469,7 +3290,6 @@ slots:
     - value: southwest
     comments:
     - 'Expected value: enumeration'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 97.0'
     - 'This field is used uniquely in: built environment'
@@ -3500,7 +3320,6 @@ slots:
     - value: cat;5
     comments:
     - 'Expected value: enumeration;count'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 99.0'
     - 'This field is used uniquely in: built environment'
@@ -3516,7 +3335,6 @@ slots:
     - value: West side
     comments:
     - 'Expected value: enumeration'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 100.0'
     - 'This field is used uniquely in: built environment'
@@ -3532,7 +3350,6 @@ slots:
     - value: center of car
     comments:
     - 'Expected value: enumeration'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 101.0'
     - 'This field is used uniquely in: built environment'
@@ -3564,7 +3381,6 @@ slots:
     - value: ''
     comments:
     - 'Expected value: free text'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 103.0'
     - 'This field is used uniquely in: built environment'
@@ -3580,7 +3396,6 @@ slots:
     - value: new
     comments:
     - 'Expected value: enumeration'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 104.0'
     - 'This field is used uniquely in: built environment'
@@ -3597,7 +3412,6 @@ slots:
     - value: ''
     comments:
     - 'Expected value: value'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 105.0'
     - 'This field is used uniquely in: built environment'
@@ -3646,7 +3460,6 @@ slots:
     - value: interior room
     comments:
     - 'Expected value: enumeration'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 108.0'
     - 'This field is used uniquely in: built environment'
@@ -3663,7 +3476,6 @@ slots:
     - value: ''
     comments:
     - 'Expected value: value'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 109.0'
     - 'This field is used uniquely in: built environment'
@@ -3695,7 +3507,6 @@ slots:
     - value: ''
     comments:
     - 'Expected value: measurement value'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 111.0'
     - 'This field is used uniquely in: built environment'
@@ -3712,7 +3523,6 @@ slots:
     - value: south corner
     comments:
     - 'Expected value: enumeration'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 112.0'
     - 'This field is used uniquely in: built environment'
@@ -3730,7 +3540,6 @@ slots:
     - value: bathroom
     comments:
     - 'Expected value: enumeration'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 113.0'
     - 'This field is used uniquely in: built environment'
@@ -3764,7 +3573,6 @@ slots:
     - value: ''
     comments:
     - 'Expected value: value'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 115.0'
     - 'This field is used uniquely in: built environment'
@@ -3780,7 +3588,6 @@ slots:
     - value: office
     comments:
     - 'Expected value: enumeration'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 116.0'
     - 'This field is used uniquely in: built environment'
@@ -3798,7 +3605,6 @@ slots:
     - value: ''
     comments:
     - 'Expected value: room name;room number'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 117.0'
     - 'This field is used uniquely in: built environment'
@@ -3815,7 +3621,6 @@ slots:
     - value: ''
     comments:
     - 'Expected value: room name;room number'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 118.0'
     - 'This field is used uniquely in: built environment'
@@ -3832,7 +3637,6 @@ slots:
     - value: ''
     comments:
     - 'Expected value: room name;room number'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 119.0'
     - 'This field is used uniquely in: built environment'
@@ -3848,7 +3652,6 @@ slots:
     - value: foggy
     comments:
     - 'Expected value: enumeration'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 120.0'
     - 'This field is used uniquely in: built environment'
@@ -3864,7 +3667,6 @@ slots:
     - value: 4th floor
     comments:
     - 'Expected value: enumeration'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 121.0'
     - 'This field is used uniquely in: built environment'
@@ -3881,7 +3683,6 @@ slots:
     - value: ''
     comments:
     - 'Expected value: value'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 122.0'
     - 'This field is used uniquely in: built environment'
@@ -3914,7 +3715,6 @@ slots:
     - value: autumn [NCIT:C94733]
     comments:
     - 'Expected value: NCIT:C94729'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 124.0'
     - 'This field is used uniquely in: built environment'
@@ -3930,7 +3730,6 @@ slots:
     - value: Winter
     comments:
     - 'Expected value: enumeration'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 125.0'
     - 'This field is used uniquely in: built environment'
@@ -3946,7 +3745,6 @@ slots:
     - value: new
     comments:
     - 'Expected value: enumeration'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 126.0'
     - 'This field is used uniquely in: built environment'
@@ -3962,7 +3760,6 @@ slots:
     - value: exterior
     comments:
     - 'Expected value: enumeration'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 127.0'
     - 'This field is used uniquely in: built environment'
@@ -3978,7 +3775,6 @@ slots:
     - value: ''
     comments:
     - 'Expected value: material name'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 128.0'
     - 'This field is used uniquely in: built environment'
@@ -3994,7 +3790,6 @@ slots:
     - value: no presence of mold visible
     comments:
     - 'Expected value: enumeration'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 129.0'
     - 'This field is used uniquely in: built environment'
@@ -4010,7 +3805,6 @@ slots:
     - value: slatted aluminum awning
     comments:
     - 'Expected value: enumeration'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 130.0'
     - 'This field is used uniquely in: built environment'
@@ -4046,7 +3840,6 @@ slots:
     - value: construction
     comments:
     - 'Expected value: enumeration'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 132.0'
     - 'This field is used uniquely in: built environment'
@@ -4077,7 +3870,6 @@ slots:
     - value: red
     comments:
     - 'Expected value: enumeration'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 134.0'
     - 'This field is used uniquely in: built environment'
@@ -4093,7 +3885,6 @@ slots:
     - value: forest hills
     comments:
     - 'Expected value: enumeration'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 135.0'
     - 'This field is used uniquely in: built environment'
@@ -4110,7 +3901,6 @@ slots:
     - value: end
     comments:
     - 'Expected value: enumeration'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 136.0'
     - 'This field is used uniquely in: built environment'
@@ -4126,7 +3916,6 @@ slots:
     - value: 3D scans
     comments:
     - 'Expected value: enumeration'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 137.0'
     - 'This field is used uniquely in: built environment'
@@ -4159,7 +3948,6 @@ slots:
     - value: fire resistive
     comments:
     - 'Expected value: enumeration'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 139.0'
     - 'This field is used uniquely in: built environment'
@@ -4176,7 +3964,6 @@ slots:
     - value: wood
     comments:
     - 'Expected value: enumeration'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 140.0'
     - 'This field is used uniquely in: built environment'
@@ -4208,7 +3995,6 @@ slots:
     - value: north
     comments:
     - 'Expected value: enumeration'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 142.0'
     - 'This field is used uniquely in: built environment'
@@ -4224,7 +4010,6 @@ slots:
     - value: no presence of mold visible
     comments:
     - 'Expected value: enumeration'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 143.0'
     - 'This field is used uniquely in: built environment'
@@ -4240,7 +4025,6 @@ slots:
     - value: paneling
     comments:
     - 'Expected value: enumeration'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 144.0'
     - 'This field is used uniquely in: built environment'
@@ -4256,7 +4040,6 @@ slots:
     - value: popcorn
     comments:
     - 'Expected value: enumeration'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 145.0'
     - 'This field is used uniquely in: built environment'
@@ -4305,7 +4088,6 @@ slots:
     - value: stream
     comments:
     - 'Expected value: enumeration'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 148.0'
     - 'This field is used uniquely in: built environment'
@@ -4321,7 +4103,6 @@ slots:
     - value: Sunday
     comments:
     - 'Expected value: enumeration'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 149.0'
     - 'This field is used uniquely in: built environment'
@@ -4353,7 +4134,6 @@ slots:
     - value: rupture
     comments:
     - 'Expected value: enumeration'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 151.0'
     - 'This field is used uniquely in: built environment'
@@ -4369,7 +4149,6 @@ slots:
     - value: curtains
     comments:
     - 'Expected value: enumeration'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 152.0'
     - 'This field is used uniquely in: built environment'
@@ -4385,7 +4164,6 @@ slots:
     - value: middle
     comments:
     - 'Expected value: enumeration'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 153.0'
     - 'This field is used uniquely in: built environment'
@@ -4401,7 +4179,6 @@ slots:
     - value: west
     comments:
     - 'Expected value: enumeration'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 154.0'
     - 'This field is used uniquely in: built environment'
@@ -4417,7 +4194,6 @@ slots:
     - value: wood
     comments:
     - 'Expected value: enumeration'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 155.0'
     - 'This field is used uniquely in: built environment'
@@ -4433,7 +4209,6 @@ slots:
     - value: ''
     comments:
     - 'Expected value: value'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 156.0'
     - 'This field is used uniquely in: built environment'
@@ -4449,7 +4224,6 @@ slots:
     - value: no presence of mold visible
     comments:
     - 'Expected value: enumeration'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 157.0'
     - 'This field is used uniquely in: built environment'
@@ -4466,7 +4240,6 @@ slots:
     - value: open
     comments:
     - 'Expected value: enumeration'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 158.0'
     - 'This field is used uniquely in: built environment'
@@ -4482,7 +4255,6 @@ slots:
     - value: fixed window
     comments:
     - 'Expected value: enumeration'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 159.0'
     - 'This field is used uniquely in: built environment'
@@ -4498,7 +4270,6 @@ slots:
     - value: middle
     comments:
     - 'Expected value: enumeration'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 160.0'
     - 'This field is used uniquely in: built environment'
@@ -4516,7 +4287,6 @@ slots:
     - value: A/3*B
     comments:
     - 'Expected value: free text'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 1.0'
     - 'This field is used in: 2 packages: host-associated, plant-associated'
@@ -4532,7 +4302,6 @@ slots:
     - value: natural
     comments:
     - 'Expected value: enumeration'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 2.0'
     - 'This field is used in: 2 packages: host-associated, plant-associated'
@@ -4552,7 +4321,6 @@ slots:
     - value: aox1A transgenic
     comments:
     - 'Expected value: PMID,DOI,url or free text'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 3.0'
     - 'This field is used in: 2 packages: host-associated, plant-associated'
@@ -4568,7 +4336,6 @@ slots:
     - value: mussel
     comments:
     - 'Expected value: common name'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 4.0'
     - 'This field is used in: 2 packages: host-associated, plant-associated'
@@ -4584,7 +4351,6 @@ slots:
     - value: farm sample
     comments:
     - 'Expected value: enumeration'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 5.0'
     - 'This field is used in: 2 packages: host-associated, plant-associated'
@@ -4602,7 +4368,6 @@ slots:
     - value: infection
     comments:
     - 'Expected value: enumeration'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 6.0'
     - 'This field is used in: 2 packages: host-associated, plant-associated'
@@ -4618,7 +4383,6 @@ slots:
     - value: '7955'
     comments:
     - 'Expected value: NCBI taxon identifier'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 7.0'
     - 'This field is used in: 2 packages: host-associated, plant-associated'
@@ -4635,7 +4399,6 @@ slots:
     - value: MPI123
     comments:
     - 'Expected value: unique identifier'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 8.0'
     - 'This field is used in: 6 packages: host-associated, human-associated, human-gut,
@@ -4669,7 +4432,6 @@ slots:
     - value: adult
     comments:
     - 'Expected value: stage'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 10.0'
     - 'This field is used in: 2 packages: host-associated, plant-associated'
@@ -4685,7 +4447,6 @@ slots:
     - value: female
     comments:
     - 'Expected value: enumeration'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 11.0'
     - 'This field is used in: 6 packages: host-associated, human-associated, human-gut,
@@ -4705,7 +4466,6 @@ slots:
     - value: rabies [DOID:11260]
     comments:
     - 'Expected value: disease name or DO'
-    - 'Preferred unit: '
     - 'Occurrence: m'
     - 'Position: 12.0'
     - 'This field is used in: 7 packages: host-associated, human-associated, human-gut,
@@ -4722,7 +4482,6 @@ slots:
     - value: nasopharynx
     comments:
     - 'Expected value: free text'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 14.0'
     - 'This field is used uniquely in: host-associated'
@@ -4741,7 +4500,6 @@ slots:
     - value: gill [UBERON:0002535]
     comments:
     - 'Expected value: FMA or UBERON'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 15.0'
     - 'This field is used in: 6 packages: host-associated, human-associated, human-gut,
@@ -4761,7 +4519,6 @@ slots:
     - value: Portion of mucus [fma66938]
     comments:
     - 'Expected value: FMA or UBERON'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 16.0'
     - 'This field is used in: 6 packages: host-associated, human-associated, human-gut,
@@ -4826,7 +4583,6 @@ slots:
     - value: herbivore
     comments:
     - 'Expected value: diet type'
-    - 'Preferred unit: '
     - 'Occurrence: m'
     - 'Position: 20.0'
     - 'This field is used in: 6 packages: host-associated, human-associated, human-gut,
@@ -4844,7 +4600,6 @@ slots:
     - value: corn feed;P2H
     comments:
     - 'Expected value: content;duration'
-    - 'Preferred unit: '
     - 'Occurrence: m'
     - 'Position: 21.0'
     - 'This field is used in: 6 packages: host-associated, human-associated, human-gut,
@@ -4861,7 +4616,6 @@ slots:
     - value: https://academic.oup.com/icesjms/article/68/2/349/617247
     comments:
     - 'Expected value: PMID,DOI,url or free text'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 22.0'
     - 'This field is used uniquely in: host-associated'
@@ -4877,7 +4631,6 @@ slots:
     - value: rock
     comments:
     - 'Expected value: substrate name'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 23.0'
     - 'This field is used uniquely in: host-associated'
@@ -4894,7 +4647,6 @@ slots:
     - value: offspring;Mussel25
     comments:
     - 'Expected value: relationship type;arbitrary identifier'
-    - 'Preferred unit: '
     - 'Occurrence: m'
     - 'Position: 24.0'
     - 'This field is used in: 6 packages: host-associated, human-associated, human-gut,
@@ -4911,7 +4663,6 @@ slots:
     - value: borealis
     comments:
     - 'Expected value: name'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 25.0'
     - 'This field is used in: 2 packages: host-associated, plant-associated'
@@ -4928,7 +4679,6 @@ slots:
     - value: subspecies
     comments:
     - 'Expected value: rank'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 26.0'
     - 'This field is used in: 2 packages: host-associated, plant-associated'
@@ -4944,7 +4694,6 @@ slots:
     - value: C57BL/6
     comments:
     - 'Expected value: genotype'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 27.0'
     - 'This field is used in: 7 packages: host-associated, human-associated, human-gut,
@@ -4963,7 +4712,6 @@ slots:
     - value: elongated [PATO:0001154]
     comments:
     - 'Expected value: PATO or HP'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 28.0'
     - 'This field is used in: 7 packages: host-associated, human-associated, human-gut,
@@ -5041,7 +4789,6 @@ slots:
     - value: ''
     comments:
     - 'Expected value: color'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 33.0'
     - 'This field is used uniquely in: host-associated'
@@ -5057,7 +4804,6 @@ slots:
     - value: round
     comments:
     - 'Expected value: shape'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 34.0'
     - 'This field is used uniquely in: host-associated'
@@ -5074,7 +4820,6 @@ slots:
     - value: yes;due date:2018-05-11
     comments:
     - 'Expected value: gravidity status;timestamp'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 35.0'
     - 'This field is used uniquely in: host-associated'
@@ -5091,9 +4836,7 @@ slots:
     - value: flukeworms
     comments:
     - 'Expected value: species name or common name'
-    - 'Preferred unit: '
     - 'Occurrence: m'
-    - 'Position: '
     - 'This field is used in: 7 packages: host-associated, human-associated, human-gut,
       human-oral, human-skin, human-vaginal, plant-associated'
     pattern: '{text}'
@@ -5107,7 +4850,6 @@ slots:
     - value: '810'
     comments:
     - 'Expected value: IHMC code'
-    - 'Preferred unit: '
     - 'Occurrence: m'
     - 'Position: 5.0'
     - 'This field is used in: 5 packages: human-associated, human-gut, human-oral,
@@ -5124,7 +4866,6 @@ slots:
     - value: 'yes'
     comments:
     - 'Expected value: smoking status'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 17.0'
     - 'This field is used uniquely in: human-associated'
@@ -5141,7 +4882,6 @@ slots:
     - value: yes;yes
     comments:
     - 'Expected value: HIV status;HAART initiation status'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 18.0'
     - 'This field is used uniquely in: human-associated'
@@ -5158,7 +4898,6 @@ slots:
     - value: Lipitor;2/day
     comments:
     - 'Expected value: drug name;frequency'
-    - 'Preferred unit: '
     - 'Occurrence: m'
     - 'Position: 19.0'
     - 'This field is used uniquely in: human-associated'
@@ -5191,7 +4930,6 @@ slots:
     - value: yes;vegetarian diet
     comments:
     - 'Expected value: diet change;current diet'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 21.0'
     - 'This field is used uniquely in: human-associated'
@@ -5224,7 +4962,6 @@ slots:
     - value: caucasian
     comments:
     - 'Expected value: IHMC code or free text'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 23.0'
     - 'This field is used in: 5 packages: human-associated, human-gut, human-oral,
@@ -5241,7 +4978,6 @@ slots:
     - value: veterinary
     comments:
     - 'Expected value: IHMC code'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 24.0'
     - 'This field is used in: 5 packages: human-associated, human-gut, human-oral,
@@ -5260,7 +4996,6 @@ slots:
     - value: yes; 5 cats
     comments:
     - 'Expected value: presence status;type of animal or pet'
-    - 'Preferred unit: '
     - 'Occurrence: m'
     - 'Position: 25.0'
     - 'This field is used uniquely in: human-associated'
@@ -5277,7 +5012,6 @@ slots:
     - value: ''
     comments:
     - 'Expected value: country name'
-    - 'Preferred unit: '
     - 'Occurrence: m'
     - 'Position: 26.0'
     - 'This field is used uniquely in: human-associated'
@@ -5293,7 +5027,6 @@ slots:
     - value: 'yes'
     comments:
     - 'Expected value: presence status'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 27.0'
     - 'This field is used uniquely in: human-associated'
@@ -5309,7 +5042,6 @@ slots:
     - value: 'TRUE'
     comments:
     - 'Expected value: true or false'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 28.0'
     - 'This field is used in: 5 packages: human-associated, human-gut, human-oral,
@@ -5328,7 +5060,6 @@ slots:
     comments:
     - 'Expected value: YES or NO due to (1)adverse event (2) non-compliance (3) lost
       to follow up (4)other-specify'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 29.0'
     - 'This field is used uniquely in: human-associated'
@@ -5346,7 +5077,6 @@ slots:
     - value: ''
     comments:
     - 'Expected value: disorder name'
-    - 'Preferred unit: '
     - 'Occurrence: m'
     - 'Position: 30.0'
     - 'This field is used uniquely in: human-associated'
@@ -5365,7 +5095,6 @@ slots:
     - value: ''
     comments:
     - 'Expected value: disorder name'
-    - 'Preferred unit: '
     - 'Occurrence: m'
     - 'Position: 31.0'
     - 'This field is used uniquely in: human-associated'
@@ -5383,7 +5112,6 @@ slots:
     - value: ''
     comments:
     - 'Expected value: disorder name'
-    - 'Preferred unit: '
     - 'Occurrence: m'
     - 'Position: 32.0'
     - 'This field is used uniquely in: human-associated'
@@ -5415,7 +5143,6 @@ slots:
     - value: ''
     comments:
     - 'Expected value: gestation state'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 36.0'
     - 'This field is used uniquely in: human-associated'
@@ -5431,7 +5158,6 @@ slots:
     - value: ''
     comments:
     - 'Expected value: health status'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 37.0'
     - 'This field is used uniquely in: human-associated'
@@ -5447,7 +5173,6 @@ slots:
     - value: ''
     comments:
     - 'Expected value: health status'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 38.0'
     - 'This field is used uniquely in: human-associated'
@@ -5463,7 +5188,6 @@ slots:
     - value: ''
     comments:
     - 'Expected value: color'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 39.0'
     - 'This field is used uniquely in: human-associated'
@@ -5481,7 +5205,6 @@ slots:
     - value: ''
     comments:
     - 'Expected value: disorder name'
-    - 'Preferred unit: '
     - 'Occurrence: m'
     - 'Position: 40.0'
     - 'This field is used uniquely in: human-associated'
@@ -5499,7 +5222,6 @@ slots:
     - value: ''
     comments:
     - 'Expected value: disorder name'
-    - 'Preferred unit: '
     - 'Occurrence: m'
     - 'Position: 41.0'
     - 'This field is used uniquely in: human-associated'
@@ -5515,7 +5237,6 @@ slots:
     - value: catheter
     comments:
     - 'Expected value: enumeration'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 43.0'
     - 'This field is used uniquely in: human-associated'
@@ -5534,7 +5255,6 @@ slots:
     - value: ''
     comments:
     - 'Expected value: disorder name'
-    - 'Preferred unit: '
     - 'Occurrence: m'
     - 'Position: 1.0'
     - 'This field is used uniquely in: human-gut'
@@ -5552,7 +5272,6 @@ slots:
     - value: ''
     comments:
     - 'Expected value: disorder name'
-    - 'Preferred unit: '
     - 'Occurrence: m'
     - 'Position: 2.0'
     - 'This field is used uniquely in: human-gut'
@@ -5568,7 +5287,6 @@ slots:
     - value: other:vegan
     comments:
     - 'Expected value: enumeration'
-    - 'Preferred unit: '
     - 'Occurrence: m'
     - 'Position: 3.0'
     - 'This field is used uniquely in: human-gut'
@@ -5588,7 +5306,6 @@ slots:
     - value: ''
     comments:
     - 'Expected value: disorder name'
-    - 'Preferred unit: '
     - 'Occurrence: m'
     - 'Position: 1.0'
     - 'This field is used uniquely in: human-oral'
@@ -5604,7 +5321,6 @@ slots:
     - value: P2H45M
     comments:
     - 'Expected value: duration'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 2.0'
     - 'This field is used uniquely in: human-oral'
@@ -5622,7 +5338,6 @@ slots:
     - value: ''
     comments:
     - 'Expected value: disorder name'
-    - 'Preferred unit: '
     - 'Occurrence: m'
     - 'Position: 1.0'
     - 'This field is used uniquely in: human-skin'
@@ -5638,7 +5353,6 @@ slots:
     - value: P1D
     comments:
     - 'Expected value: duration'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 2.0'
     - 'This field is used uniquely in: human-skin'
@@ -5654,7 +5368,6 @@ slots:
     - value: right
     comments:
     - 'Expected value: enumeration'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 3.0'
     - 'This field is used uniquely in: human-skin'
@@ -5670,7 +5383,6 @@ slots:
     - value: '2018-05-11'
     comments:
     - 'Expected value: timestamp'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 1.0'
     - 'This field is used uniquely in: human-vaginal'
@@ -5686,7 +5398,6 @@ slots:
     - value: ''
     comments:
     - 'Expected value: partner sex;frequency'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 2.0'
     - 'This field is used uniquely in: human-vaginal'
@@ -5702,7 +5413,6 @@ slots:
     - value: '2018-05-11'
     comments:
     - 'Expected value: timestamp'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 3.0'
     - 'This field is used uniquely in: human-vaginal'
@@ -5718,7 +5428,6 @@ slots:
     - value: '2018-05-11'
     comments:
     - 'Expected value: timestamp'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 4.0'
     - 'This field is used uniquely in: human-vaginal'
@@ -5734,7 +5443,6 @@ slots:
     - value: ''
     comments:
     - 'Expected value: medication name'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 5.0'
     - 'This field is used uniquely in: human-vaginal'
@@ -5750,7 +5458,6 @@ slots:
     - value: '2018-05-11'
     comments:
     - 'Expected value: timestamp'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 6.0'
     - 'This field is used uniquely in: human-vaginal'
@@ -5767,7 +5474,6 @@ slots:
     - value: '2018-05-11'
     comments:
     - 'Expected value: timestamp'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 7.0'
     - 'This field is used uniquely in: human-vaginal'
@@ -5783,7 +5489,6 @@ slots:
     - value: 'no'
     comments:
     - 'Expected value: hysterectomy status'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 8.0'
     - 'This field is used uniquely in: human-vaginal'
@@ -5801,7 +5506,6 @@ slots:
     - value: ''
     comments:
     - 'Expected value: gynecological disorder'
-    - 'Preferred unit: '
     - 'Occurrence: m'
     - 'Position: 9.0'
     - 'This field is used uniquely in: human-vaginal'
@@ -5820,7 +5524,6 @@ slots:
     - value: ''
     comments:
     - 'Expected value: disorder name'
-    - 'Preferred unit: '
     - 'Occurrence: m'
     - 'Position: 10.0'
     - 'This field is used uniquely in: human-vaginal'
@@ -5842,7 +5545,6 @@ slots:
     - value: Oil Sand
     comments:
     - 'Expected value: enumeration'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 1.0'
     - 'This field is used in: 2 packages: hydrocarbon resources-cores, hydrocarbon
@@ -5861,7 +5563,6 @@ slots:
     - value: Gas
     comments:
     - 'Expected value: enumeration'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 2.0'
     - 'This field is used in: 2 packages: hydrocarbon resources-cores, hydrocarbon
@@ -5878,7 +5579,6 @@ slots:
     - value: ''
     comments:
     - 'Expected value: name'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 3.0'
     - 'This field is used in: 2 packages: hydrocarbon resources-cores, hydrocarbon
@@ -5895,7 +5595,6 @@ slots:
     - value: ''
     comments:
     - 'Expected value: name'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 4.0'
     - 'This field is used in: 2 packages: hydrocarbon resources-cores, hydrocarbon
@@ -5912,7 +5611,6 @@ slots:
     - value: ''
     comments:
     - 'Expected value: name'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 5.0'
     - 'This field is used in: 2 packages: hydrocarbon resources-cores, hydrocarbon
@@ -6032,7 +5730,6 @@ slots:
     - value: Volcanic
     comments:
     - 'Expected value: enumeration'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 12.0'
     - 'This field is used in: 2 packages: hydrocarbon resources-cores, hydrocarbon
@@ -6050,7 +5747,6 @@ slots:
     - value: Continental - Alluvial
     comments:
     - 'Expected value: enumeration'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 13.0'
     - 'This field is used in: 2 packages: hydrocarbon resources-cores, hydrocarbon
@@ -6071,7 +5767,6 @@ slots:
     - value: Silurian
     comments:
     - 'Expected value: enumeration'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 14.0'
     - 'This field is used in: 2 packages: hydrocarbon resources-cores, hydrocarbon
@@ -6156,7 +5851,6 @@ slots:
     - value: Type IV
     comments:
     - 'Expected value: enumeration'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 19.0'
     - 'This field is used uniquely in: hydrocarbon resources-cores'
@@ -6173,7 +5867,6 @@ slots:
     - value: Coal
     comments:
     - 'Expected value: enumeration'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 20.0'
     - 'This field is used uniquely in: hydrocarbon resources-cores'
@@ -6190,7 +5883,6 @@ slots:
     - value: Marine
     comments:
     - 'Expected value: enumeration'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 21.0'
     - 'This field is used uniquely in: hydrocarbon resources-cores'
@@ -6207,7 +5899,6 @@ slots:
     - value: Silurian
     comments:
     - 'Expected value: enumeration'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 22.0'
     - 'This field is used uniquely in: hydrocarbon resources-cores'
@@ -6223,7 +5914,6 @@ slots:
     - value: ''
     comments:
     - 'Expected value: name'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 35.0'
     - 'This field is used in: 2 packages: hydrocarbon resources-cores, hydrocarbon
@@ -6243,7 +5933,6 @@ slots:
     - value: ''
     comments:
     - 'Expected value: text'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 36.0'
     - 'This field is used in: 2 packages: hydrocarbon resources-cores, hydrocarbon
@@ -6263,7 +5952,6 @@ slots:
     - value: solid deposit
     comments:
     - 'Expected value: enumeration'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 37.0'
     - 'This field is used in: 2 packages: hydrocarbon resources-cores, hydrocarbon
@@ -6284,7 +5972,6 @@ slots:
     - value: biofilm
     comments:
     - 'Expected value: enumeration'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 38.0'
     - 'This field is used in: 2 packages: hydrocarbon resources-cores, hydrocarbon
@@ -6400,7 +6087,6 @@ slots:
     - value: '7.2'
     comments:
     - 'Expected value: measurement value'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 54.0'
     - 'This field is used in: 8 packages: hydrocarbon resources-cores, hydrocarbon
@@ -6435,7 +6121,6 @@ slots:
     - value: titration
     comments:
     - 'Expected value: description of method'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 57.0'
     - 'This field is used in: 3 packages: hydrocarbon resources-cores, hydrocarbon
@@ -7068,7 +6753,6 @@ slots:
     - value: ''
     comments:
     - 'Expected value: text'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 94.0'
     - 'This field is used in: 2 packages: hydrocarbon resources-cores, hydrocarbon
@@ -7085,7 +6769,6 @@ slots:
     - value: '2018-05-11'
     comments:
     - 'Expected value: timestamp'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 23.0'
     - 'This field is used uniquely in: hydrocarbon resources-fluids_swabs'
@@ -7166,7 +6849,6 @@ slots:
     - value: Polymer Addition;2018-06-21T14:30Z
     comments:
     - 'Expected value: enumeration;timestamp'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 28.0'
     - 'This field is used uniquely in: hydrocarbon resources-fluids_swabs'
@@ -7184,7 +6866,6 @@ slots:
     - value: '2018-05-11'
     comments:
     - 'Expected value: timestamp'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 29.0'
     - 'This field is used uniquely in: hydrocarbon resources-fluids_swabs'
@@ -7201,7 +6882,6 @@ slots:
     - value: ALPHA 1427;Baker Hughes;2008-01-23
     comments:
     - 'Expected value: name;name;timestamp'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 30.0'
     - 'This field is used uniquely in: hydrocarbon resources-fluids_swabs'
@@ -7239,7 +6919,6 @@ slots:
     - value: ACCENT 1125;DOW;2010-11-17
     comments:
     - 'Expected value: name;name;timestamp'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 32.0'
     - 'This field is used uniquely in: hydrocarbon resources-fluids_swabs'
@@ -7297,7 +6976,6 @@ slots:
     - value: well
     comments:
     - 'Expected value: enumeration'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 39.0'
     - 'This field is used uniquely in: hydrocarbon resources-fluids_swabs'
@@ -7424,7 +7102,6 @@ slots:
     - value: '0.417361111'
     comments:
     - 'Expected value: measurement value'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 1.0'
     - 'This field is used in: 3 packages: microbial mat_biofilm, sediment, water'
@@ -7912,7 +7589,6 @@ slots:
     - value: sample inoculated with Rhizobium spp. Culture
     comments:
     - 'Expected value: free text'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 1.0'
     - 'This field is used uniquely in: plant-associated'
@@ -7950,7 +7626,6 @@ slots:
     - value: tropical climate;R2/2018-05-11T14:30/2018-05-11T19:30/P1H30M
     comments:
     - 'Expected value: climate name;treatment interval and duration'
-    - 'Preferred unit: '
     - 'Occurrence: m'
     - 'Position: 1.0'
     - 'This field is used uniquely in: plant-associated'
@@ -7969,7 +7644,6 @@ slots:
     - value: http://himedialabs.com/TD/PT158.pdf
     comments:
     - 'Expected value: name, PMID,DOI or url'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 1.0'
     - 'This field is used uniquely in: plant-associated'
@@ -8065,7 +7739,6 @@ slots:
     - value: Growth chamber [CO_715:0000189]
     comments:
     - 'Expected value: free text or CO'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 1.0'
     - 'This field is used uniquely in: plant-associated'
@@ -8081,7 +7754,6 @@ slots:
     - value: spreading
     comments:
     - 'Expected value: enumeration'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 1.0'
     - 'This field is used uniquely in: plant-associated'
@@ -8191,7 +7863,6 @@ slots:
     - value: pruning;bark
     comments:
     - 'Expected value: damage type;body site'
-    - 'Preferred unit: '
     - 'Occurrence: m'
     - 'Position: 1.0'
     - 'This field is used uniquely in: plant-associated'
@@ -8252,7 +7923,6 @@ slots:
     - value: 7.6;R2/2018-05-11:T14:30/2018-05-11T19:30/P1H30M
     comments:
     - 'Expected value: measurement value;treatment interval and duration'
-    - 'Preferred unit: '
     - 'Occurrence: m'
     - 'Position: 1.0'
     - 'This field is used uniquely in: plant-associated'
@@ -8292,7 +7962,6 @@ slots:
     - value: hydroponic plant culture media [EO:0007067]
     comments:
     - 'Expected value: EO or enumeration'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 1.0'
     - 'This field is used uniquely in: plant-associated'
@@ -8309,7 +7978,6 @@ slots:
     - value: xylem sap [PO:0025539]
     comments:
     - 'Expected value: product name'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 1.0'
     - 'This field is used uniquely in: plant-associated'
@@ -8326,7 +7994,6 @@ slots:
     - value: Hermaphroditic
     comments:
     - 'Expected value: enumeration'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 1.0'
     - 'This field is used uniquely in: plant-associated'
@@ -8345,7 +8012,6 @@ slots:
     - value: epidermis [PO:0005679]
     comments:
     - 'Expected value: PO'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 1.0'
     - 'This field is used uniquely in: plant-associated'
@@ -8402,7 +8068,6 @@ slots:
     - value: http://himedialabs.com/TD/PT158.pdf
     comments:
     - 'Expected value: PMID,DOI,url or free text'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 1.0'
     - 'This field is used uniquely in: plant-associated'
@@ -8486,7 +8151,6 @@ slots:
     - value: '7.5'
     comments:
     - 'Expected value: measurement value'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 1.0'
     - 'This field is used uniquely in: plant-associated'
@@ -8519,7 +8183,6 @@ slots:
     - value: agar
     comments:
     - 'Expected value: name'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 1.0'
     - 'This field is used uniquely in: plant-associated'
@@ -8558,7 +8221,6 @@ slots:
     - value: rainy;R2/2018-05-11T14:30/2018-05-11T19:30/P1H30M
     comments:
     - 'Expected value: seasonal environment name;treatment interval and duration'
-    - 'Preferred unit: '
     - 'Occurrence: m'
     - 'Position: 1.0'
     - 'This field is used uniquely in: plant-associated'
@@ -8577,7 +8239,6 @@ slots:
     - value: standing water;R2/2018-05-11T14:30/2018-05-11T19:30/P1H30M
     comments:
     - 'Expected value: standing water type;treatment interval and duration'
-    - 'Preferred unit: '
     - 'Occurrence: m'
     - 'Position: 1.0'
     - 'This field is used uniquely in: plant-associated'
@@ -8593,7 +8254,6 @@ slots:
     - value: https://link.springer.com/content/pdf/10.1007/BF02796489.pdf
     comments:
     - 'Expected value: PMID,DOI,url or free text'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 1.0'
     - 'This field is used uniquely in: plant-associated'
@@ -8665,7 +8325,6 @@ slots:
     - value: biogenous
     comments:
     - 'Expected value: enumeration'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 1.0'
     - 'This field is used uniquely in: sediment'
@@ -8681,7 +8340,6 @@ slots:
     - value: high tide
     comments:
     - 'Expected value: enumeration'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 1.0'
     - 'This field is used in: 2 packages: sediment, water'
@@ -8712,7 +8370,6 @@ slots:
     - value: conifers
     comments:
     - 'Expected value: enumeration'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 1.0'
     - 'This field is used uniquely in: soil'
@@ -8741,7 +8398,6 @@ slots:
     - value: ''
     comments:
     - 'Expected value: current vegetation type'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 2.0'
     - 'This field is used uniquely in: soil'
@@ -8757,7 +8413,6 @@ slots:
     - value: ''
     comments:
     - 'Expected value: PMID,DOI or url'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 3.0'
     - 'This field is used uniquely in: soil'
@@ -8773,7 +8428,6 @@ slots:
     - value: ''
     comments:
     - 'Expected value: land use name;date'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 4.0'
     - 'This field is used uniquely in: soil'
@@ -8789,7 +8443,6 @@ slots:
     - value: ''
     comments:
     - 'Expected value: PMID,DOI or url'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 5.0'
     - 'This field is used uniquely in: soil'
@@ -8805,7 +8458,6 @@ slots:
     - value: yes;R2/2017-01-01/2018-12-31/P6M
     comments:
     - 'Expected value: crop rotation status;schedule'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 6.0'
     - 'This field is used uniquely in: soil'
@@ -8837,7 +8489,6 @@ slots:
     - value: chisel
     comments:
     - 'Expected value: enumeration'
-    - 'Preferred unit: '
     - 'Occurrence: m'
     - 'Position: 8.0'
     - 'This field is used uniquely in: soil'
@@ -8854,7 +8505,6 @@ slots:
     - value: ''
     comments:
     - 'Expected value: date'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 9.0'
     - 'This field is used uniquely in: soil'
@@ -8870,7 +8520,6 @@ slots:
     - value: ''
     comments:
     - 'Expected value: date'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 10.0'
     - 'This field is used uniquely in: soil'
@@ -8886,7 +8535,6 @@ slots:
     - value: ''
     comments:
     - 'Expected value: date'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 11.0'
     - 'This field is used uniquely in: soil'
@@ -8904,7 +8552,6 @@ slots:
     - value: A horizon
     comments:
     - 'Expected value: enumeration'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 12.0'
     - 'This field is used uniquely in: soil'
@@ -8920,7 +8567,6 @@ slots:
     - value: ''
     comments:
     - 'Expected value: PMID,DOI or url'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 13.0'
     - 'This field is used uniquely in: soil'
@@ -8937,7 +8583,6 @@ slots:
     - value: ''
     comments:
     - 'Expected value: design name and/or size;amount'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 14.0'
     - 'This field is used uniquely in: soil'
@@ -8953,7 +8598,6 @@ slots:
     - value: ''
     comments:
     - 'Expected value: PMID,DOI or url'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 16.0'
     - 'This field is used uniquely in: soil'
@@ -8970,7 +8614,6 @@ slots:
     - value: yes;5
     comments:
     - 'Expected value: pooling status;number of pooled extracts'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 18.0'
     - 'This field is used uniquely in: soil'
@@ -8987,7 +8630,6 @@ slots:
     - value: -20 degree Celsius freezer;P2Y10D
     comments:
     - 'Expected value: storage condition type;duration'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 19.0'
     - 'This field is used uniquely in: soil'
@@ -9003,7 +8645,6 @@ slots:
     - value: ''
     comments:
     - 'Expected value: PMID,DOI or url'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 20.0'
     - 'This field is used uniquely in: soil'
@@ -9081,7 +8722,6 @@ slots:
     - value: ''
     comments:
     - 'Expected value: PMID,DOI or url'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 25.0'
     - 'This field is used uniquely in: soil'
@@ -9098,7 +8738,6 @@ slots:
     - value: Luvisols
     comments:
     - 'Expected value: enumeration'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 26.0'
     - 'This field is used uniquely in: soil'
@@ -9114,7 +8753,6 @@ slots:
     - value: ''
     comments:
     - 'Expected value: local classification name'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 27.0'
     - 'This field is used uniquely in: soil'
@@ -9130,7 +8768,6 @@ slots:
     - value: ''
     comments:
     - 'Expected value: PMID,DOI or url'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 28.0'
     - 'This field is used uniquely in: soil'
@@ -9146,7 +8783,6 @@ slots:
     - value: ''
     comments:
     - 'Expected value: soil type name'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 29.0'
     - 'This field is used uniquely in: soil'
@@ -9163,7 +8799,6 @@ slots:
     - value: ''
     comments:
     - 'Expected value: PMID,DOI or url'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 30.0'
     - 'This field is used uniquely in: soil'
@@ -9215,7 +8850,6 @@ slots:
     - value: summit
     comments:
     - 'Expected value: enumeration'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 33.0'
     - 'This field is used uniquely in: soil'
@@ -9231,7 +8865,6 @@ slots:
     - value: well
     comments:
     - 'Expected value: enumeration'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 34.0'
     - 'This field is used uniquely in: soil'
@@ -9251,7 +8884,6 @@ slots:
     - value: ''
     comments:
     - 'Expected value: measurement value'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 35.0'
     - 'This field is used uniquely in: soil'
@@ -9266,7 +8898,6 @@ slots:
     - value: ''
     comments:
     - 'Expected value: PMID,DOI or url'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 36.0'
     - 'This field is used uniquely in: soil'
@@ -9282,7 +8913,6 @@ slots:
     - value: ''
     comments:
     - 'Expected value: PMID,DOI or url'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 38.0'
     - 'This field is used uniquely in: soil'
@@ -9298,7 +8928,6 @@ slots:
     - value: ''
     comments:
     - 'Expected value: PMID,DOI or url'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 40.0'
     - 'This field is used uniquely in: soil'
@@ -9314,7 +8943,6 @@ slots:
     - value: ''
     comments:
     - 'Expected value: PMID,DOI or url'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 42.0'
     - 'This field is used uniquely in: soil'
@@ -9347,7 +8975,6 @@ slots:
     - value: ''
     comments:
     - 'Expected value: PMID,DOI or url'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 44.0'
     - 'This field is used uniquely in: soil'
@@ -9363,7 +8990,6 @@ slots:
     - value: ''
     comments:
     - 'Expected value: PMID,DOI or url'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 45.0'
     - 'This field is used uniquely in: soil'
@@ -9394,7 +9020,6 @@ slots:
     - value: ''
     comments:
     - 'Expected value: PMID,DOI or url'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 47.0'
     - 'This field is used uniquely in: soil'
@@ -9427,7 +9052,6 @@ slots:
     - value: ''
     comments:
     - 'Expected value: PMID,DOI or url'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 49.0'
     - 'This field is used uniquely in: soil'
@@ -9458,7 +9082,6 @@ slots:
     - value: ''
     comments:
     - 'Expected value: PMID,DOI or URL'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 51.0'
     - 'This field is used uniquely in: soil'
@@ -9609,7 +9232,6 @@ slots:
     - value: ''
     comments:
     - 'Expected value: pre-treatment type'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 1.0'
     - 'This field is used uniquely in: wastewater_sludge'
@@ -9627,7 +9249,6 @@ slots:
     - value: ''
     comments:
     - 'Expected value: primary treatment type'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 1.0'
     - 'This field is used uniquely in: wastewater_sludge'
@@ -9645,7 +9266,6 @@ slots:
     - value: ''
     comments:
     - 'Expected value: reactor type name'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 1.0'
     - 'This field is used uniquely in: wastewater_sludge'
@@ -9662,7 +9282,6 @@ slots:
     - value: ''
     comments:
     - 'Expected value: secondary treatment type'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 1.0'
     - 'This field is used uniquely in: wastewater_sludge'
@@ -9678,7 +9297,6 @@ slots:
     - value: ''
     comments:
     - 'Expected value: sewage type name'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 1.0'
     - 'This field is used uniquely in: wastewater_sludge'
@@ -9746,7 +9364,6 @@ slots:
     - value: ''
     comments:
     - 'Expected value: tertiary treatment type'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 1.0'
     - 'This field is used uniquely in: wastewater_sludge'
@@ -9778,7 +9395,6 @@ slots:
     - value: ''
     comments:
     - 'Expected value: wastewater type name'
-    - 'Preferred unit: '
     - 'Occurrence: 1'
     - 'Position: 1.0'
     - 'This field is used uniquely in: wastewater_sludge'
@@ -9794,7 +9410,6 @@ slots:
     - value: wind speed;9 knots
     comments:
     - 'Expected value: atmospheric data name;measurement value'
-    - 'Preferred unit: '
     - 'Occurrence: m'
     - 'Position: 1.0'
     - 'This field is used uniquely in: water'
