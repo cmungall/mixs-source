@@ -13,6 +13,6 @@ nbformat = "*"
 ipykernel = "*"
 
 [packages]
-linkml = "*"
+linkml = {path = "./../linkml"}
 pandas = "*"
 mkdocs = "*"
