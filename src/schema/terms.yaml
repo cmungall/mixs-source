@@ -70,11 +70,11 @@ slots:
   sample_name:
     is_a: investigation field
     aliases:
-    - 'sample name '
-    description: 'Sample Name is a name that you choose for the sample. It can have
+    - sample name
+    description: Sample Name is a name that you choose for the sample. It can have
       any format, but we suggest that you make it concise, unique and consistent within
       your lab, and as informative as possible. Every Sample Name from a single Submitter
-      must be unique. '
+      must be unique.
     range: string
     examples:
     - value: ISDsoil1
@@ -558,7 +558,7 @@ slots:
       condition|pathological|life threatening|congenital]'
     slot_uri: MIXS:0000031
   host_disease_stat:
-    is_a: '  field'
+    is_a: core field
     aliases:
     - host disease status
     description: List of diseases with which the host has been diagnosed; can include
@@ -5480,9 +5480,9 @@ slots:
     is_a: environment field
     aliases:
     - urine/kidney disorder
-    description: 'History of kidney disorders; can include multiple disorders. The
+    description: History of kidney disorders; can include multiple disorders. The
       terms should be chosen from the DO (Human Disease Ontology) at http://www.disease-ontology.org,
-      kidney disease (https://disease-ontology.org/?id=DOID:557). '
+      kidney disease (https://disease-ontology.org/?id=DOID:557).
     range: string
     examples:
     - value: ''
@@ -5497,9 +5497,9 @@ slots:
     is_a: environment field
     aliases:
     - urine/urogenital tract disorder
-    description: 'History of urogenital tract disorders; can include multiple disorders.
+    description: History of urogenital tract disorders; can include multiple disorders.
       The terms should be chosen from the DO (Human Disease Ontology) at http://www.disease-ontology.org,
-      urinary system disease (https://disease-ontology.org/?id=DOID:18). '
+      urinary system disease (https://disease-ontology.org/?id=DOID:18).
     range: string
     examples:
     - value: ''
@@ -5793,10 +5793,10 @@ slots:
     is_a: environment field
     aliases:
     - urogenital disorder
-    description: 'History of urogenital disorders, can include multiple disorders.
+    description: History of urogenital disorders, can include multiple disorders.
       The terms should be chosen from the DO (Human Disease Ontology) at http://www.disease-ontology.org,
       reproductive system disease (https://disease-ontology.org/?id=DOID:15) or urinary
-      system disease (https://disease-ontology.org/?id=DOID:18). '
+      system disease (https://disease-ontology.org/?id=DOID:18).
     range: string
     examples:
     - value: ''

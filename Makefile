@@ -12,7 +12,8 @@ RUN = pipenv run
 
 SCHEMA_NAME = mixs
 SCHEMA_SRC = $(SCHEMA_DIR)/$(SCHEMA_NAME).yaml
-PKG_TGTS = graphql json jsonld jsonschema owl rdf shex
+#PKG_TGTS = graphql json  jsonschema owl rdf jsonld shex
+PKG_TGTS = graphql json  jsonschema owl
 TGTS = docs $(PKG_TGTS)
 
 # Global generation options
@@ -187,7 +188,7 @@ target/jsonld/%.model.context.jsonld: $(SCHEMA_DIR)/%.yaml tdir-jsonld env.lock
 # ---------------------------------------
 # Plain Old (PO) JSON
 # ---------------------------------------
-gen-json: $(patsubst %, $(PKG_DIR)/json/%.json, $(SCHEMA_NAMES))
+gen-json: $(patsubst %, $(PKG_DIR)/json/%.json, $(SCHEMA_NAME))
 .PHONY: gen-json
 
 $(PKG_DIR)/json/%.json: target/json/%.json
@@ -198,7 +199,7 @@ target/json/%.json: $(SCHEMA_DIR)/%.yaml tdir-json env.lock
 # ---------------------------------------
 # RDF
 # ---------------------------------------
-gen-rdf: gen-jsonld $(patsubst %, $(PKG_DIR)/rdf/%.ttl, $(SCHEMA_NAMES)) $(patsubst %, $(PKG_DIR)/rdf/%.model.ttl, $(SCHEMA_NAMES))
+gen-rdf: gen-jsonld $(patsubst %, $(PKG_DIR)/rdf/%.ttl, $(SCHEMA_NAME)) $(patsubst %, $(PKG_DIR)/rdf/%.model.ttl, $(SCHEMA_NAME))
 .PHONY: gen-rdf
 
 $(PKG_DIR)/rdf/%.ttl: target/rdf/%.ttl
