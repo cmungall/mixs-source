@@ -41,6 +41,7 @@ classes:
     - specific_host
     - host_spec_range
     - health_disease_stat
+    - host_disease_stat
     - trophic_level
     - propagation
     - encoded_traits

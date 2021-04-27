@@ -41,7 +41,10 @@ slots:
     comments:
     - 'Expected value: boolean'
     - 'Position: 1.0'
+    exact_mappings:
+    - MIGS:MIGS-1
     pattern: '{boolean}'
+    slot_uri: MIXS:0000004
   investigation_type:
     is_a: investigation field
     aliases:
@@ -59,8 +62,11 @@ slots:
       mimarks-specimen, metatranscriptome, single amplified genome, metagenome-assembled
       genome, or uncultivated viral genomes'
     - 'Position: 2.0'
+    exact_mappings:
+    - MIGS:MIGS-2
     pattern: '[eukaryote|bacteria_archaea|plasmid|virus|organelle|metagenome|metatranscriptome|mimarks-survey|mimarks-specimen|misag|mimag|miuvig]'
     see_also: https://github.com/GenomicsStandardsConsortium/mixs/issues/60
+    slot_uri: MIXS:0000007
   sample_name:
     is_a: investigation field
     aliases:
@@ -75,8 +81,11 @@ slots:
     comments:
     - 'Expected value: text'
     - This field is used in all packages
+    exact_mappings:
+    - 'MIGS:'
     pattern: '{text}'
     see_also: https://github.com/GenomicsStandardsConsortium/mixs/issues/78
+    slot_uri: MIXS:0001107
   project_name:
     is_a: investigation field
     aliases:
@@ -88,7 +97,10 @@ slots:
     comments:
     - 'Position: 3.0'
     - This field is used in all packages
+    exact_mappings:
+    - MIGS:MIGS-3
     pattern: '{text}'
+    slot_uri: MIXS:0000092
   experimental_factor:
     is_a: investigation field
     aliases:
@@ -105,7 +117,10 @@ slots:
     comments:
     - 'Expected value: text or EFO and/or OBI'
     - 'Position: 4.0'
+    exact_mappings:
+    - 'MIGS:'
     pattern: '{termLabel} {[termID]}|{text}'
+    slot_uri: MIXS:0000008
   lat_lon:
     is_a: environment field
     aliases:
@@ -118,8 +133,11 @@ slots:
     comments:
     - 'Expected value: decimal degrees'
     - 'Position: 5.0'
+    exact_mappings:
+    - MIGS:MIGS-4.1 Latitude. MIGS-4.2 Longitude
     pattern: '{float} {float}'
     see_also: https://github.com/GenomicsStandardsConsortium/mixs/issues/62
+    slot_uri: MIXS:0000009
   depth:
     is_a: environment field
     aliases:
@@ -136,8 +154,11 @@ slots:
     - 'This field is used in: 8 packages: host-associated, microbial mat_biofilm,
       miscellaneous natural or artificial environment, plant-associated, sediment,
       soil, wastewater_sludge, water'
+    exact_mappings:
+    - MIGS:MIGS-4.3
     pattern: '-'
     see_also: https://github.com/GenomicsStandardsConsortium/mixs/issues/63
+    slot_uri: MIXS:0000018
   alt:
     is_a: environment field
     aliases:
@@ -155,6 +176,9 @@ slots:
     - 'Expected value: measurement value'
     - 'This field is used in: 3 packages: air, host-associated, miscellaneous natural
       or artificial environment'
+    exact_mappings:
+    - MIGS:MIGS-4.4
+    slot_uri: MIXS:0000094
   elev:
     is_a: environment field
     aliases:
@@ -172,6 +196,9 @@ slots:
     - 'This field is used in: 9 packages: air, host-associated, hydrocarbon resources-cores,
       microbial mat_biofilm, miscellaneous natural or artificial environment, plant-associated,
       sediment, soil, water'
+    exact_mappings:
+    - 'MIGS:'
+    slot_uri: MIXS:0000093
   geo_loc_name:
     is_a: environment field
     aliases:
@@ -182,13 +209,16 @@ slots:
       (v 1.512) (http://purl.bioontology.org/ontology/GAZ)
     range: string
     examples:
-    - value: Germany;North Rhine-Westphalia;Eifel National Park
+    - value: 'USA: Maryland, Bethesda'
     comments:
-    - 'Expected value: country or sea name (INSDC or GAZ);region(GAZ);specific location
+    - 'Expected value: country or sea name (INSDC or GAZ): region(GAZ), specific location
       name'
     - 'Position: 8.0'
-    pattern: '{term};{term};{text}'
+    exact_mappings:
+    - MIGS:MIGS-4
+    pattern: '{term}: {term}, {text}'
     see_also: https://github.com/GenomicsStandardsConsortium/mixs/issues/17
+    slot_uri: MIXS:0000010
   collection_date:
     is_a: environment field
     aliases:
@@ -203,6 +233,9 @@ slots:
     comments:
     - 'Expected value: date and time'
     - 'Position: 9.0'
+    exact_mappings:
+    - MIGS:MIGS-5
+    slot_uri: MIXS:0000011
   env_broad_scale:
     is_a: environment field
     aliases:
@@ -227,7 +260,10 @@ slots:
       terms can be separated by one or more pipes e.g.: mangrove biome [ENVO:01000181]|estuarine
       biome [ENVO:01000020]'
     - 'Position: 10.0'
+    exact_mappings:
+    - 'MIGS:'
     pattern: '{termLabel} {[termID]}'
+    slot_uri: MIXS:0000012
   env_local_scale:
     is_a: environment field
     aliases:
@@ -250,7 +286,10 @@ slots:
       influences upon the entity at time of sampling, multiple terms can be separated
       by pipes, e.g.: shoreline [ENVO:00000486]|intertidal zone [ENVO:00000316]'
     - 'Position: 11.0'
+    exact_mappings:
+    - MIGS:MIGS-6 (habitat)
     pattern: '{termLabel} {[termID]}'
+    slot_uri: MIXS:0000013
   env_medium:
     is_a: environment field
     aliases:
@@ -273,7 +312,10 @@ slots:
       Multiple terms can be separated by pipes e.g.: estuarine water [ENVO:01000301]|estuarine
       mud [ENVO:00002160]'
     - 'Position: 12.0'
+    exact_mappings:
+    - 'MIGS:'
     pattern: '{termLabel} {[termID]}'
+    slot_uri: MIXS:0000014
   env_package:
     is_a: mixs extension field
     aliases:
@@ -289,10 +331,13 @@ slots:
     comments:
     - 'Expected value: enumeration'
     - 'Position: 13.0'
+    exact_mappings:
+    - 'MIGS:'
     pattern: '[air|built environment|host-associated|human-associated|human-skin|human-oral|human-gut|human-vaginal|hydrocarbon
       resources-cores|hydrocarbon resources-fluids/swabs|microbial mat/biofilm|misc
       environment|plant-associated|sediment|soil|wastewater/sludge|water]'
     see_also: https://github.com/GenomicsStandardsConsortium/mixs/issues/64
+    slot_uri: MIXS:0000019
   subspecf_gen_lin:
     is_a: nucleic acid sequence source field
     aliases:
@@ -309,7 +354,10 @@ slots:
     - 'Expected value: genetic lineage below lowest rank of NCBI taxonomy, which is
       subspecies, e.g. serovar, biotype, ecotype'
     - 'Position: 14.0'
+    exact_mappings:
+    - 'MIGS:'
     pattern: '{rank name}:{text}'
+    slot_uri: MIXS:0000020
   ploidy:
     is_a: nucleic acid sequence source field
     aliases:
@@ -326,7 +374,10 @@ slots:
     comments:
     - 'Expected value: PATO'
     - 'Position: 15.0'
+    exact_mappings:
+    - 'MIGS:'
     pattern: '{termLabel} {[termID]}'
+    slot_uri: MIXS:0000021
   num_replicons:
     is_a: nucleic acid sequence source field
     aliases:
@@ -341,7 +392,10 @@ slots:
     - 'Expected value: for eukaryotes and bacteria: chromosomes (haploid count); for
       viruses: segments'
     - 'Position: 16.0'
+    exact_mappings:
+    - 'MIGS:'
     pattern: '{integer}'
+    slot_uri: MIXS:0000022
   extrachrom_elements:
     is_a: nucleic acid sequence source field
     aliases:
@@ -355,7 +409,10 @@ slots:
     comments:
     - 'Expected value: number of extrachromosmal elements'
     - 'Position: 17.0'
+    exact_mappings:
+    - 'MIGS:'
     pattern: '{integer}'
+    slot_uri: MIXS:0000023
   estimated_size:
     is_a: nucleic acid sequence source field
     aliases:
@@ -369,7 +426,10 @@ slots:
     comments:
     - 'Expected value: number of base pairs'
     - 'Position: 18.0'
+    exact_mappings:
+    - 'MIGS:'
     pattern: '{integer} bp'
+    slot_uri: MIXS:0000024
   ref_biomaterial:
     is_a: nucleic acid sequence source field
     aliases:
@@ -382,7 +442,10 @@ slots:
     comments:
     - 'Expected value: PMID, DOI or URL'
     - 'Position: 19.0'
+    exact_mappings:
+    - 'MIGS:'
     pattern: '{PMID}|{DOI}|{URL}'
+    slot_uri: MIXS:0000025
   source_mat_id:
     is_a: nucleic acid sequence source field
     aliases:
@@ -406,7 +469,10 @@ slots:
     - 'Expected value: for cultures of microorganisms: identifiers for two culture
       collections; for other material a unique arbitrary identifer'
     - 'Position: 20.0'
+    exact_mappings:
+    - MIGS:MIGS-13
     pattern: '{text}'
+    slot_uri: MIXS:0000026
   pathogenicity:
     is_a: nucleic acid sequence source field
     aliases:
@@ -418,8 +484,11 @@ slots:
     comments:
     - 'Expected value: names of organisms that the entity is pathogenic to'
     - 'Position: 21.0'
+    exact_mappings:
+    - MIGS:MIGS-14
     pattern: '{text}'
     see_also: https://github.com/GenomicsStandardsConsortium/mixs/issues/65
+    slot_uri: MIXS:0000027
   biotic_relationship:
     is_a: nucleic acid sequence source field
     aliases:
@@ -434,7 +503,10 @@ slots:
     comments:
     - 'Expected value: enumeration'
     - 'Position: 22.0'
+    exact_mappings:
+    - MIGS:MIGS-15
     pattern: '[free living|parasitism|commensalism|symbiotic|mutualism]'
+    slot_uri: MIXS:0000028
   specific_host:
     is_a: nucleic acid sequence source field
     aliases:
@@ -449,7 +521,10 @@ slots:
     comments:
     - 'Expected value: host taxid, unknown, environmental'
     - 'Position: 23.0'
+    exact_mappings:
+    - MIGS:MIGS-16
     pattern: '{NCBI taxid}|{text}'
+    slot_uri: MIXS:0000029
   host_spec_range:
     is_a: nucleic acid sequence source field
     aliases:
@@ -461,8 +536,11 @@ slots:
     comments:
     - 'Expected value: NCBI taxid'
     - 'Position: 24.0'
+    exact_mappings:
+    - 'MIGS:'
     pattern: '{integer}'
     see_also: https://github.com/GenomicsStandardsConsortium/mixs/issues/66
+    slot_uri: MIXS:0000030
   health_disease_stat:
     is_a: nucleic acid sequence source field
     aliases:
@@ -474,8 +552,30 @@ slots:
     comments:
     - 'Expected value: enumeration'
     - 'Position: 25.0'
+    exact_mappings:
+    - 'MIGS:'
     pattern: '[healthy|diseased|dead|disease-free|undetermined|recovering|resolving|pre-existing
       condition|pathological|life threatening|congenital]'
+    slot_uri: MIXS:0000031
+  host_disease_stat:
+    is_a: '  field'
+    aliases:
+    - host disease status
+    description: List of diseases with which the host has been diagnosed; can include
+      multiple diagnoses. The value of the field depends on host; for humans the terms
+      should be chosen from the DO (Human Disease Ontology) at https://www.disease-ontology.org,
+      non-human host diseases are free text
+    range: string
+    examples:
+    - value: rabies [DOID:11260]
+    comments:
+    - 'Expected value: disease name or Disease Ontology term'
+    - 'This field is used in: 7 packages: host-associated, human-associated, human-gut,
+      human-oral, human-skin, human-vaginal, plant-associated'
+    exact_mappings:
+    - 'MIGS:'
+    pattern: '{termLabel} {[termID]}|{text}'
+    slot_uri: MIXS:0000031
   trophic_level:
     is_a: nucleic acid sequence source field
     aliases:
@@ -488,7 +588,10 @@ slots:
     comments:
     - 'Expected value: enumeration'
     - 'Position: 26.0'
+    exact_mappings:
+    - 'MIGS:'
     pattern: '[autotroph|carboxydotroph|chemoautotroph|chemoheterotroph|chemolithoautotroph|chemolithotroph|chemoorganoheterotroph|chemoorganotroph|chemosynthetic|chemotroph|copiotroph|diazotroph|facultative|autotroph|heterotroph|lithoautotroph|lithoheterotroph|lithotroph|methanotroph|methylotroph|mixotroph|obligate|chemoautolithotroph|oligotroph|organoheterotroph|organotroph|photoautotroph|photoheterotroph|photolithoautotroph|photolithotroph|photosynthetic|phototroph]'
+    slot_uri: MIXS:0000032
   propagation:
     is_a: nucleic acid sequence source field
     aliases:
@@ -504,8 +607,11 @@ slots:
     - 'Expected value: for virus: lytic, lysogenic, temperate, obligately lytic; for
       plasmid: incompatibility group; for eukaryote: asexual, sexual'
     - 'Position: 27.0'
+    exact_mappings:
+    - 'MIGS:'
     pattern: '{text}'
     see_also: https://github.com/GenomicsStandardsConsortium/mixs/issues/88
+    slot_uri: MIXS:0000033
   encoded_traits:
     is_a: nucleic acid sequence source field
     aliases:
@@ -518,7 +624,10 @@ slots:
     comments:
     - 'Expected value: for plasmid: antibiotic resistance; for phage: converting genes'
     - 'Position: 28.0'
+    exact_mappings:
+    - 'MIGS:'
     pattern: '{text}'
+    slot_uri: MIXS:0000034
   rel_to_oxygen:
     is_a: nucleic acid sequence source field
     aliases:
@@ -531,8 +640,11 @@ slots:
     comments:
     - 'Expected value: enumeration'
     - 'Position: 29.0'
+    exact_mappings:
+    - MIGS:MIGS-22
     pattern: '[aerobe|anaerobe|facultative|microaerophilic|microanaerobe|obligate
       aerobe|obligate anaerobe]'
+    slot_uri: MIXS:0000015
   isol_growth_condt:
     is_a: nucleic acid sequence source field
     aliases:
@@ -546,7 +658,10 @@ slots:
     comments:
     - 'Expected value: PMID,DOI or URL'
     - 'Position: 30.0'
+    exact_mappings:
+    - MIGS:MIGS-23
     pattern: '{PMID}|{DOI}|{URL}'
+    slot_uri: MIXS:0000003
   sample_collect_device:
     is_a: nucleic acid sequence source field
     aliases:
@@ -560,7 +675,10 @@ slots:
     comments:
     - 'Expected value: device name'
     - 'Position: 31.0'
+    exact_mappings:
+    - 'MIGS:'
     pattern: '{termLabel} {[termID]}|{text}'
+    slot_uri: MIXS:0000002
   sample_collect_method:
     is_a: nucleic acid sequence source field
     aliases:
@@ -571,7 +689,10 @@ slots:
     - value: swabbing
     comments:
     - 'Expected value: PMID,DOI,url , or text'
+    exact_mappings:
+    - 'MIGS:'
     pattern: '{PMID}|{DOI}|{URL}|{text}'
+    slot_uri: MIXS:0001225
   samp_mat_process:
     is_a: nucleic acid sequence source field
     aliases:
@@ -585,7 +706,10 @@ slots:
     comments:
     - 'Expected value: text'
     - 'Position: 32.0'
+    exact_mappings:
+    - 'MIGS:'
     pattern: '{text}'
+    slot_uri: MIXS:0000016
   size_frac:
     is_a: nucleic acid sequence source field
     aliases:
@@ -597,7 +721,10 @@ slots:
     comments:
     - 'Expected value: filter size value range'
     - 'Position: 33.0'
+    exact_mappings:
+    - 'MIGS:'
     pattern: '{float}-{float} {unit}'
+    slot_uri: MIXS:0000017
   samp_size:
     is_a: nucleic acid sequence source field
     aliases:
@@ -610,6 +737,9 @@ slots:
     - 'Expected value: measurement value'
     - 'Preferred unit: millliter, gram, milligram, liter'
     - 'Position: 34.0'
+    exact_mappings:
+    - 'MIGS:'
+    slot_uri: MIXS:0000001
   source_uvig:
     is_a: nucleic acid sequence source field
     aliases:
@@ -621,10 +751,13 @@ slots:
     comments:
     - 'Expected value: enumeration'
     - 'Position: 35.0'
+    exact_mappings:
+    - 'MIGS:'
     pattern: '[metagenome (not viral targeted)|viral fraction metagenome (virome)|sequence-targeted
       metagenome|metatranscriptome (not viral targeted)|viral fraction RNA metagenome
       (RNA virome)|sequence-targeted RNA metagenome|microbial single amplified genome
       (SAG)|viral single amplified genome (vSAG)|isolate microbial genome|other]'
+    slot_uri: MIXS:0000035
   virus_enrich_appr:
     is_a: nucleic acid sequence source field
     aliases:
@@ -636,8 +769,11 @@ slots:
     comments:
     - 'Expected value: enumeration'
     - 'Position: 36.0'
+    exact_mappings:
+    - 'MIGS:'
     pattern: '[filtration|ultrafiltration|centrifugation|ultracentrifugation|PEG Precipitation|FeCl
       Precipitation|CsCl density gradient|DNAse|RNAse|targeted sequence capture|other|none]'
+    slot_uri: MIXS:0000036
   nucl_acid_ext:
     is_a: sequencing field
     aliases:
@@ -651,7 +787,10 @@ slots:
     comments:
     - 'Expected value: PMID, DOI or URL'
     - 'Position: 37.0'
+    exact_mappings:
+    - 'MIGS:'
     pattern: '{PMID}|{DOI}|{URL}'
+    slot_uri: MIXS:0000037
   nucl_acid_amp:
     is_a: sequencing field
     aliases:
@@ -665,7 +804,10 @@ slots:
     comments:
     - 'Expected value: PMID, DOI or URL'
     - 'Position: 38.0'
+    exact_mappings:
+    - MIGS:MIGS-27
     pattern: '{PMID}|{DOI}|{URL}'
+    slot_uri: MIXS:0000038
   lib_size:
     is_a: sequencing field
     aliases:
@@ -677,7 +819,10 @@ slots:
     comments:
     - 'Expected value: number of clones'
     - 'Position: 39.0'
+    exact_mappings:
+    - MIGS:MIGS-28
     pattern: '{integer}'
+    slot_uri: MIXS:0000039
   lib_reads_seqd:
     is_a: sequencing field
     aliases:
@@ -689,7 +834,10 @@ slots:
     comments:
     - 'Expected value: number of reads sequenced'
     - 'Position: 40.0'
+    exact_mappings:
+    - 'MIGS:'
     pattern: '{integer}'
+    slot_uri: MIXS:0000040
   lib_layout:
     is_a: sequencing field
     aliases:
@@ -702,7 +850,10 @@ slots:
     comments:
     - 'Expected value: enumeration'
     - 'Position: 41.0'
+    exact_mappings:
+    - 'MIGS:'
     pattern: '[paired|single|vector|other]'
+    slot_uri: MIXS:0000041
   lib_vector:
     is_a: sequencing field
     aliases:
@@ -714,7 +865,10 @@ slots:
     comments:
     - 'Expected value: vector'
     - 'Position: 42.0'
+    exact_mappings:
+    - 'MIGS:'
     pattern: '{text}'
+    slot_uri: MIXS:0000042
   lib_screen:
     is_a: sequencing field
     aliases:
@@ -727,7 +881,10 @@ slots:
     comments:
     - 'Expected value: screening strategy name'
     - 'Position: 43.0'
+    exact_mappings:
+    - 'MIGS:'
     pattern: '{text}'
+    slot_uri: MIXS:0000043
   target_gene:
     is_a: sequencing field
     aliases:
@@ -739,7 +896,10 @@ slots:
     comments:
     - 'Expected value: gene name'
     - 'Position: 44.0'
+    exact_mappings:
+    - 'MIGS:'
     pattern: '{text}'
+    slot_uri: MIXS:0000044
   target_subfragment:
     is_a: sequencing field
     aliases:
@@ -752,7 +912,10 @@ slots:
     comments:
     - 'Expected value: gene fragment name'
     - 'Position: 45.0'
+    exact_mappings:
+    - 'MIGS:'
     pattern: '{text}'
+    slot_uri: MIXS:0000045
   pcr_primers:
     is_a: sequencing field
     aliases:
@@ -767,7 +930,10 @@ slots:
     comments:
     - 'Expected value: FWD: forward primer sequence;REV:reverse primer sequence'
     - 'Position: 46.0'
+    exact_mappings:
+    - 'MIGS:'
     pattern: FWD:{dna};REV:{dna}
+    slot_uri: MIXS:0000046
   mid:
     is_a: sequencing field
     aliases:
@@ -781,7 +947,10 @@ slots:
     comments:
     - 'Expected value: multiplex identifier sequence'
     - 'Position: 47.0'
+    exact_mappings:
+    - 'MIGS:'
     pattern: '{dna}'
+    slot_uri: MIXS:0000047
   adapters:
     is_a: sequencing field
     aliases:
@@ -795,7 +964,10 @@ slots:
     comments:
     - 'Expected value: adapter A and B sequence'
     - 'Position: 48.0'
+    exact_mappings:
+    - 'MIGS:'
     pattern: '{dna};{dna}'
+    slot_uri: MIXS:0000048
   pcr_cond:
     is_a: sequencing field
     aliases:
@@ -809,8 +981,11 @@ slots:
     - 'Expected value: initial denaturation:degrees_minutes;annealing:degrees_minutes;elongation:degrees_minutes;final
       elongation:degrees_minutes;total cycles'
     - 'Position: 49.0'
+    exact_mappings:
+    - 'MIGS:'
     pattern: initial denaturation:degrees_minutes;annealing:degrees_minutes;elongation:degrees_minutes;final
       elongation:degrees_minutes;total cycles
+    slot_uri: MIXS:0000049
   seq_meth:
     is_a: sequencing field
     aliases:
@@ -822,6 +997,8 @@ slots:
     comments:
     - 'Expected value: enumeration'
     - 'Position: 50.0'
+    exact_mappings:
+    - MIGS:MIGS-29
     pattern: '[454 GS|454 GS 20|454 GS FLX|454 GS FLX+|454 GS FLX Titanium|454 GS
       Junior|AB 310 Genetic Analyzer|AB 3130 Genetic Analyzer|AB 3130xL Genetic Analyzer|AB
       3500 Genetic Analyzer|AB 3500xL Genetic Analyzer|AB 3730 Genetic Analyzer|AB
@@ -834,6 +1011,7 @@ slots:
       HiScanSQ|Illumina MiSeq|Illumina HiSeq X Five|Illumina HiSeq X Ten|Illumina
       NextSeq 500|Illumina NextSeq 550|Ion Torrent PGM|Ion Torrent Proton|Ion Torrent
       S5|Ion Torrent S5 XL|MinION|PacBio RS|PacBio RS II|PromethION|Sequel]'
+    slot_uri: MIXS:0000050
   seq_quality_check:
     is_a: sequencing field
     aliases:
@@ -848,7 +1026,10 @@ slots:
     comments:
     - 'Expected value: none or manually edited'
     - 'Position: 51.0'
+    exact_mappings:
+    - 'MIGS:'
     pattern: '[none|manually edited]'
+    slot_uri: MIXS:0000051
   chimera_check:
     is_a: sequencing field
     aliases:
@@ -865,7 +1046,10 @@ slots:
     comments:
     - 'Expected value: name and version of software, parameters used'
     - 'Position: 52.0'
+    exact_mappings:
+    - 'MIGS:'
     pattern: '{software};{version};{parameters}'
+    slot_uri: MIXS:0000052
   tax_ident:
     is_a: sequencing field
     aliases:
@@ -878,7 +1062,10 @@ slots:
     comments:
     - 'Expected value: enumeration'
     - 'Position: 53.0'
+    exact_mappings:
+    - 'MIGS:'
     pattern: '[16S rRNA gene|multi-marker approach|other]'
+    slot_uri: MIXS:0000053
   assembly_qual:
     is_a: sequencing field
     aliases:
@@ -906,8 +1093,11 @@ slots:
     comments:
     - 'Expected value: enumeration'
     - 'Position: 54.0'
+    exact_mappings:
+    - 'MIGS:'
     pattern: '[Finished genome|High-quality draft genome|Medium-quality draft genome|Low-quality
       draft genome|Genome fragment(s)]'
+    slot_uri: MIXS:0000056
   assembly_name:
     is_a: sequencing field
     aliases:
@@ -920,7 +1110,10 @@ slots:
     comments:
     - 'Expected value: name and version of assembly'
     - 'Position: 55.0'
+    exact_mappings:
+    - MIGS:MIGS-30
     pattern: '{text} {text}'
+    slot_uri: MIXS:0000057
   assembly_software:
     is_a: sequencing field
     aliases:
@@ -932,7 +1125,10 @@ slots:
     comments:
     - 'Expected value: name and version of software, parameters used'
     - 'Position: 56.0'
+    exact_mappings:
+    - 'MIGS:'
     pattern: '{software};{version};{parameters}'
+    slot_uri: MIXS:0000058
   annot:
     is_a: sequencing field
     aliases:
@@ -946,7 +1142,10 @@ slots:
     comments:
     - 'Expected value: name of tool or pipeline used, or annotation source description'
     - 'Position: 57.0'
+    exact_mappings:
+    - 'MIGS:'
     pattern: '{text}'
+    slot_uri: MIXS:0000059
   number_contig:
     is_a: sequencing field
     aliases:
@@ -959,7 +1158,10 @@ slots:
     comments:
     - 'Expected value: value'
     - 'Position: 58.0'
+    exact_mappings:
+    - 'MIGS:'
     pattern: '{integer}'
+    slot_uri: MIXS:0000060
   feat_pred:
     is_a: sequencing field
     aliases:
@@ -972,7 +1174,10 @@ slots:
     comments:
     - 'Expected value: names and versions of software(s), parameters used'
     - 'Position: 59.0'
+    exact_mappings:
+    - 'MIGS:'
     pattern: '{software};{version};{parameters}'
+    slot_uri: MIXS:0000061
   ref_db:
     is_a: sequencing field
     aliases:
@@ -986,7 +1191,10 @@ slots:
     comments:
     - 'Expected value: names, versions, and references of databases'
     - 'Position: 60.0'
+    exact_mappings:
+    - 'MIGS:'
     pattern: '{database};{version};{reference}'
+    slot_uri: MIXS:0000062
   sim_search_meth:
     is_a: sequencing field
     aliases:
@@ -999,7 +1207,10 @@ slots:
     comments:
     - 'Expected value: names and versions of software(s), parameters used'
     - 'Position: 61.0'
+    exact_mappings:
+    - 'MIGS:'
     pattern: '{software};{version};{parameters}'
+    slot_uri: MIXS:0000063
   tax_class:
     is_a: sequencing field
     aliases:
@@ -1013,7 +1224,10 @@ slots:
     comments:
     - 'Expected value: classification method, database name, and other parameters'
     - 'Position: 62.0'
+    exact_mappings:
+    - 'MIGS:'
     pattern: '{text}'
+    slot_uri: MIXS:0000064
   x_16s_recover:
     is_a: sequencing field
     aliases:
@@ -1025,7 +1239,10 @@ slots:
     comments:
     - 'Expected value: boolean'
     - 'Position: 63.0'
+    exact_mappings:
+    - 'MIGS:'
     pattern: '{boolean}'
+    slot_uri: MIXS:0000065
   trnas:
     is_a: sequencing field
     aliases:
@@ -1037,7 +1254,10 @@ slots:
     comments:
     - 'Expected value: value from 0-21'
     - 'Position: 65.0'
+    exact_mappings:
+    - 'MIGS:'
     pattern: '{integer}'
+    slot_uri: MIXS:0000067
   trna_ext_software:
     is_a: sequencing field
     aliases:
@@ -1049,7 +1269,10 @@ slots:
     comments:
     - 'Expected value: names and versions of software(s), parameters used'
     - 'Position: 66.0'
+    exact_mappings:
+    - 'MIGS:'
     pattern: '{software};{version};{parameters}'
+    slot_uri: MIXS:0000068
   compl_score:
     is_a: sequencing field
     aliases:
@@ -1065,7 +1288,10 @@ slots:
     comments:
     - 'Expected value: quality;percent completeness'
     - 'Position: 67.0'
+    exact_mappings:
+    - 'MIGS:'
     pattern: '[high|med|low];{percentage}'
+    slot_uri: MIXS:0000069
   compl_software:
     is_a: sequencing field
     aliases:
@@ -1077,7 +1303,10 @@ slots:
     comments:
     - 'Expected value: names and versions of software(s) used'
     - 'Position: 68.0'
+    exact_mappings:
+    - 'MIGS:'
     pattern: '{software};{version}'
+    slot_uri: MIXS:0000070
   compl_appr:
     is_a: sequencing field
     aliases:
@@ -1093,7 +1322,10 @@ slots:
     comments:
     - 'Expected value: enumeration'
     - 'Position: 69.0'
+    exact_mappings:
+    - 'MIGS:'
     pattern: '[marker gene|reference based|other]'
+    slot_uri: MIXS:0000071
   contam_score:
     is_a: sequencing field
     aliases:
@@ -1109,7 +1341,10 @@ slots:
     comments:
     - 'Expected value: value'
     - 'Position: 70.0'
+    exact_mappings:
+    - 'MIGS:'
     pattern: '{float} percentage'
+    slot_uri: MIXS:0000072
   contam_screen_input:
     is_a: sequencing field
     aliases:
@@ -1121,7 +1356,10 @@ slots:
     comments:
     - 'Expected value: enumeration'
     - 'Position: 71.0'
+    exact_mappings:
+    - 'MIGS:'
     pattern: '[reads| contigs]'
+    slot_uri: MIXS:0000005
   contam_screen_param:
     is_a: sequencing field
     aliases:
@@ -1135,7 +1373,10 @@ slots:
     comments:
     - 'Expected value: enumeration;value or name'
     - 'Position: 72.0'
+    exact_mappings:
+    - 'MIGS:'
     pattern: '[ref db|kmer|coverage|combination];{text|integer}'
+    slot_uri: MIXS:0000073
   decontam_software:
     is_a: sequencing field
     aliases:
@@ -1147,7 +1388,10 @@ slots:
     comments:
     - 'Expected value: enumeration'
     - 'Position: 73.0'
+    exact_mappings:
+    - 'MIGS:'
     pattern: '[checkm/refinem|anvi''o|prodege|bbtools:decontaminate.sh|acdc|combination]'
+    slot_uri: MIXS:0000074
   sort_tech:
     is_a: sequencing field
     aliases:
@@ -1159,7 +1403,10 @@ slots:
     comments:
     - 'Expected value: enumeration'
     - 'Position: 74.0'
+    exact_mappings:
+    - 'MIGS:'
     pattern: '[flow cytometric cell sorting|microfluidics|lazer-tweezing|optical manipulation|micromanipulation|other]'
+    slot_uri: MIXS:0000075
   single_cell_lysis_appr:
     is_a: sequencing field
     aliases:
@@ -1171,7 +1418,10 @@ slots:
     comments:
     - 'Expected value: enumeration'
     - 'Position: 75.0'
+    exact_mappings:
+    - 'MIGS:'
     pattern: '[chemical|enzymatic|physical|combination]'
+    slot_uri: MIXS:0000076
   single_cell_lysis_prot:
     is_a: sequencing field
     aliases:
@@ -1184,7 +1434,10 @@ slots:
     comments:
     - 'Expected value: kit, protocol name'
     - 'Position: 76.0'
+    exact_mappings:
+    - 'MIGS:'
     pattern: '{text}'
+    slot_uri: MIXS:0000054
   wga_amp_appr:
     is_a: sequencing field
     aliases:
@@ -1196,7 +1449,10 @@ slots:
     comments:
     - 'Expected value: enumeration'
     - 'Position: 77.0'
+    exact_mappings:
+    - 'MIGS:'
     pattern: '[pcr based|mda based]'
+    slot_uri: MIXS:0000055
   wga_amp_kit:
     is_a: sequencing field
     aliases:
@@ -1208,7 +1464,10 @@ slots:
     comments:
     - 'Expected value: kit name'
     - 'Position: 78.0'
+    exact_mappings:
+    - 'MIGS:'
     pattern: '{text}'
+    slot_uri: MIXS:0000006
   bin_param:
     is_a: sequencing field
     aliases:
@@ -1221,7 +1480,10 @@ slots:
     comments:
     - 'Expected value: enumeration'
     - 'Position: 79.0'
+    exact_mappings:
+    - 'MIGS:'
     pattern: '[homology search|kmer|coverage|codon usage|combination]'
+    slot_uri: MIXS:0000077
   bin_software:
     is_a: sequencing field
     aliases:
@@ -1233,7 +1495,10 @@ slots:
     comments:
     - 'Expected value: enumeration'
     - 'Position: 80.0'
+    exact_mappings:
+    - 'MIGS:'
     pattern: '[metabat|maxbin|concoct|groupm|esom|metawatt|combination|other]'
+    slot_uri: MIXS:0000078
   reassembly_bin:
     is_a: sequencing field
     aliases:
@@ -1246,7 +1511,10 @@ slots:
     comments:
     - 'Expected value: boolean'
     - 'Position: 81.0'
+    exact_mappings:
+    - 'MIGS:'
     pattern: '{boolean}'
+    slot_uri: MIXS:0000079
   mag_cov_software:
     is_a: sequencing field
     aliases:
@@ -1259,7 +1527,10 @@ slots:
     comments:
     - 'Expected value: enumeration'
     - 'Position: 82.0'
+    exact_mappings:
+    - 'MIGS:'
     pattern: '[bwa|bbmap|bowtie|other]'
+    slot_uri: MIXS:0000080
   vir_ident_software:
     is_a: sequencing field
     aliases:
@@ -1272,7 +1543,10 @@ slots:
     comments:
     - 'Expected value: software name, version and relevant parameters'
     - 'Position: 83.0'
+    exact_mappings:
+    - 'MIGS:'
     pattern: '{software};{version};{parameters}'
+    slot_uri: MIXS:0000081
   pred_genome_type:
     is_a: sequencing field
     aliases:
@@ -1284,7 +1558,10 @@ slots:
     comments:
     - 'Expected value: enumeration'
     - 'Position: 84.0'
+    exact_mappings:
+    - 'MIGS:'
     pattern: '[DNA|dsDNA|ssDNA|RNA|dsRNA|ssRNA|ssRNA (+)|ssRNA (-)|mixed|uncharacterized]'
+    slot_uri: MIXS:0000082
   pred_genome_struc:
     is_a: sequencing field
     aliases:
@@ -1296,7 +1573,10 @@ slots:
     comments:
     - 'Expected value: enumeration'
     - 'Position: 85.0'
+    exact_mappings:
+    - 'MIGS:'
     pattern: '[segmented|non-segmented|undetermined]'
+    slot_uri: MIXS:0000083
   detec_type:
     is_a: sequencing field
     aliases:
@@ -1308,7 +1588,10 @@ slots:
     comments:
     - 'Expected value: enumeration'
     - 'Position: 86.0'
+    exact_mappings:
+    - 'MIGS:'
     pattern: '[independent sequence (UViG)|provirus (UpViG)]'
+    slot_uri: MIXS:0000084
   votu_class_appr:
     is_a: sequencing field
     aliases:
@@ -1323,7 +1606,10 @@ slots:
     comments:
     - 'Expected value: cutoffs and method used'
     - 'Position: 87.0'
+    exact_mappings:
+    - 'MIGS:'
     pattern: '{ANI cutoff};{AF cutoff};{clustering method}'
+    slot_uri: MIXS:0000085
   votu_seq_comp_appr:
     is_a: sequencing field
     aliases:
@@ -1336,7 +1622,10 @@ slots:
     comments:
     - 'Expected value: software name, version and relevant parameters'
     - 'Position: 88.0'
+    exact_mappings:
+    - 'MIGS:'
     pattern: '{software};{version};{parameters}'
+    slot_uri: MIXS:0000086
   votu_db:
     is_a: sequencing field
     aliases:
@@ -1349,7 +1638,10 @@ slots:
     comments:
     - 'Expected value: database and version'
     - 'Position: 89.0'
+    exact_mappings:
+    - 'MIGS:'
     pattern: '{database};{version}'
+    slot_uri: MIXS:0000087
   host_pred_appr:
     is_a: sequencing field
     aliases:
@@ -1361,7 +1653,10 @@ slots:
     comments:
     - 'Expected value: enumeration'
     - 'Position: 90.0'
+    exact_mappings:
+    - 'MIGS:'
     pattern: '[provirus|host sequence similarity|CRISPR spacer match|kmer similarity|co-occurrence|combination|other]'
+    slot_uri: MIXS:0000088
   host_pred_est_acc:
     is_a: sequencing field
     aliases:
@@ -1375,7 +1670,10 @@ slots:
     comments:
     - 'Expected value: false discovery rate'
     - 'Position: 91.0'
+    exact_mappings:
+    - 'MIGS:'
     pattern: '{text}'
+    slot_uri: MIXS:0000089
   url:
     is_a: sequencing field
     aliases:
@@ -1387,8 +1685,11 @@ slots:
     comments:
     - 'Expected value: URL'
     - 'Position: 92.0'
+    exact_mappings:
+    - 'MIGS:'
     pattern: '{URL}'
     see_also: https://github.com/GenomicsStandardsConsortium/mixs/issues/67
+    slot_uri: MIXS:0000091
   sop:
     is_a: sequencing field
     aliases:
@@ -1401,7 +1702,10 @@ slots:
     comments:
     - 'Expected value: reference to SOP'
     - 'Position: 93.0'
+    exact_mappings:
+    - 'MIGS:'
     pattern: '{PMID}|{DOI}|{URL}'
+    slot_uri: MIXS:0000090
   barometric_press:
     is_a: environment field
     aliases:
@@ -4438,37 +4742,19 @@ slots:
     is_a: environment field
     aliases:
     - host sex
-    description: Physical sex of the host
+    description: Gender or physical sex of the host.
     range: host_sex_enum
     examples:
-    - value: female
+    - value: non-binary
     comments:
     - 'Expected value: enumeration'
     - 'Occurrence: 1'
     - 'Position: 11.0'
     - 'This field is used in: 6 packages: host-associated, human-associated, human-gut,
       human-oral, human-skin, human-vaginal'
-    pattern: '[male|female|neuter|hermaphrodite|not determined]'
+    pattern: '[female|hermaphrodite|non-binary|male|transgender|transgender (female
+      to male)|transgender (male to female) |undeclared]'
     slot_uri: MIXS:0000811
-  host_disease_stat:
-    is_a: environment field
-    aliases:
-    - host disease status
-    description: List of diseases with which the host has been diagnosed; can include
-      multiple diagnoses. The value of the field depends on host; for humans the terms
-      should be chosen from the DO (Human Disease Ontology) at https://www.disease-ontology.org,
-      non-human host diseases are free text
-    range: string
-    examples:
-    - value: rabies [DOID:11260]
-    comments:
-    - 'Expected value: disease name or DO'
-    - 'Occurrence: m'
-    - 'Position: 12.0'
-    - 'This field is used in: 7 packages: host-associated, human-associated, human-gut,
-      human-oral, human-skin, human-vaginal, plant-associated'
-    pattern: '{termLabel} {[termID]}|{text}'
-    slot_uri: MIXS:0000031
   host_body_habitat:
     is_a: environment field
     aliases:
@@ -8562,7 +8848,7 @@ slots:
   sieving:
     is_a: environment field
     aliases:
-    - composite design/sieving (if any)
+    - composite design/sieving
     description: Collection design of pooled samples and/or sieve size and amount
       of sample sieved
     range: string
@@ -8609,9 +8895,9 @@ slots:
   store_cond:
     is_a: environment field
     aliases:
-    - storage conditions (fresh/frozen/other)
+    - storage conditions
     description: Explain how and for how long the soil sample was stored before DNA
-      extraction
+      extraction (fresh/frozen/other).
     range: string
     examples:
     - value: -20 degree Celsius freezer;P2Y10D
@@ -10596,11 +10882,14 @@ enums:
       other: {}
   host_sex_enum:
     permissible_values:
-      male: {}
       female: {}
-      neuter: {}
       hermaphrodite: {}
-      not determined: {}
+      non-binary: {}
+      male: {}
+      transgender: {}
+      transgender (female to male): {}
+      transgender (male to female): {}
+      undeclared: {}
   drug_usage_enum:
     permissible_values:
       month: {}

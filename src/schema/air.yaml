@@ -48,6 +48,64 @@ classes:
     - wind_direction
     - wind_speed
     - misc_param
-    slot_usage: {}
+    slot_usage:
+      sample_name:
+        required: true
+      project_name:
+        required: true
+      alt:
+        required: true
+      elev:
+        required: false
+      barometric_press:
+        required: false
+      carb_dioxide:
+        required: false
+      carb_monoxide:
+        required: false
+      chem_administration:
+        required: false
+      humidity:
+        required: false
+      methane:
+        required: false
+      organism_count:
+        required: false
+      oxygen:
+        required: false
+      oxy_stat_samp:
+        required: false
+      perturbation:
+        required: false
+      pollutants:
+        required: false
+      resp_part_matter:
+        required: false
+      samp_salinity:
+        required: false
+      samp_store_dur:
+        required: false
+      samp_store_loc:
+        required: false
+      samp_store_temp:
+        required: false
+      samp_vol_we_dna_ext:
+        required: false
+      solar_irradiance:
+        required: false
+      temp:
+        required: false
+      ventilation_rate:
+        required: false
+      ventilation_type:
+        required: false
+      volatile_org_comp:
+        required: false
+      wind_direction:
+        required: false
+      wind_speed:
+        required: false
+      misc_param:
+        required: false
 subsets: {}
 enums: {}

@@ -43,7 +43,6 @@ classes:
     - herbicide_regm
     - host_age
     - host_common_name
-    - host_disease_stat
     - host_dry_mass
     - host_genotype
     - host_height
@@ -96,6 +95,158 @@ classes:
     - watering_regm
     - host_symbiont
     - misc_param
-    slot_usage: {}
+    slot_usage:
+      sample_name:
+        required: true
+      project_name:
+        required: true
+      depth:
+        required: false
+      elev:
+        required: false
+      air_temp_regm:
+        required: false
+      ances_data:
+        required: false
+      antibiotic_regm:
+        required: false
+      biol_stat:
+        required: false
+      biotic_regm:
+        required: false
+      chem_administration:
+        required: false
+      chem_mutagen:
+        required: false
+      climate_environment:
+        required: false
+      cult_root_med:
+        required: false
+      fertilizer_regm:
+        required: false
+      fungicide_regm:
+        required: false
+      gaseous_environment:
+        required: false
+      genetic_mod:
+        required: false
+      gravity:
+        required: false
+      growth_facil:
+        required: false
+      growth_habit:
+        required: false
+      growth_hormone_regm:
+        required: false
+      herbicide_regm:
+        required: false
+      host_age:
+        required: false
+      host_common_name:
+        required: false
+      host_disease_stat:
+        required: false
+      host_dry_mass:
+        required: false
+      host_genotype:
+        required: false
+      host_height:
+        required: false
+      host_infra_specific_name:
+        required: false
+      host_infra_specific_rank:
+        required: false
+      host_length:
+        required: false
+      host_life_stage:
+        required: false
+      host_phenotype:
+        required: false
+      host_taxid:
+        required: false
+      host_tot_mass:
+        required: false
+      host_wet_mass:
+        required: false
+      humidity_regm:
+        required: false
+      light_regm:
+        required: false
+      mechanical_damage:
+        required: false
+      mineral_nutr_regm:
+        required: false
+      misc_param:
+        required: false
+      non_mineral_nutr_regm:
+        required: false
+      organism_count:
+        required: false
+      oxy_stat_samp:
+        required: false
+      ph_regm:
+        required: false
+      perturbation:
+        required: false
+      pesticide_regm:
+        required: false
+      plant_growth_med:
+        required: false
+      plant_product:
+        required: false
+      plant_sex:
+        required: false
+      plant_struc:
+        required: false
+      radiation_regm:
+        required: false
+      rainfall_regm:
+        required: false
+      root_cond:
+        required: false
+      root_med_carbon:
+        required: false
+      root_med_macronutr:
+        required: false
+      root_med_micronutr:
+        required: false
+      root_med_suppl:
+        required: false
+      root_med_ph:
+        required: false
+      root_med_regl:
+        required: false
+      root_med_solid:
+        required: false
+      salt_regm:
+        required: false
+      samp_capt_status:
+        required: false
+      samp_dis_stage:
+        required: false
+      samp_salinity:
+        required: false
+      samp_store_dur:
+        required: false
+      samp_store_loc:
+        required: false
+      samp_store_temp:
+        required: false
+      samp_vol_we_dna_ext:
+        required: false
+      season_environment:
+        required: false
+      standing_water_regm:
+        required: false
+      temp:
+        required: false
+      tiss_cult_growth_med:
+        required: false
+      water_temp_regm:
+        required: false
+      watering_regm:
+        required: false
+      host_symbiont:
+        required: false
 subsets: {}
 enums: {}

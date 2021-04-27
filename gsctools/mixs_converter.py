@@ -182,6 +182,9 @@ class MIxS6Converter:
         else:
             None
             #logging.error(f'No ID: {slot_uri}')
+        exact_mappings = []
+        if 'MIGS ID (mapping to GOLD)' in row:
+            exact_mappings.append(f'MIGS:{row["MIGS ID (mapping to GOLD)"]}')
 
         section = row['Section'] if 'Section' in row else 'environment'
         if section == '':
@@ -199,6 +202,8 @@ class MIxS6Converter:
             ],
             'comments': comments
         }
+        if len(exact_mappings) > 0:
+            slot['exact_mappings'] = exact_mappings
         if pattern is not None:
             slot['pattern'] = pattern
         LINK = 'Link to GH issue'
@@ -221,6 +226,8 @@ class MIxS6Converter:
                 }
         if slot_uri is not None and slot_uri != '':
             slot['slot_uri'] = slot_uri
+        else:
+            logging.error(f'No slot_uri for {row}')
         if 'Expected value' in row:
             range = row['Expected value']
 
@@ -235,8 +242,9 @@ class MIxS6Converter:
 
         :return: link schema as a python Dictionary
         """
-        core_df = pd.read_csv(self.core_filename, sep="\t").fillna("")
-        pkg_df  = pd.read_csv(self.packages_filename, sep="\t").fillna("")
+        trim_strings = lambda x: x.strip() if isinstance(x, str) else x
+        core_df = pd.read_csv(self.core_filename, sep="\t").fillna("").applymap(trim_strings)
+        pkg_df  = pd.read_csv(self.packages_filename, sep="\t").fillna("").applymap(trim_strings)
         slots = {
             'core field': {
                 'abstract': True,
@@ -297,6 +305,7 @@ class MIxS6Converter:
         core_env_slots = []
 
         core_slot_dict = {}
+        # PARSE CORE
         for _, row in core_df.iterrows():
             s_id, slot = self.create_slot(row, enums=enums)
             if s_id is None:
@@ -336,7 +345,9 @@ class MIxS6Converter:
             'slots': core_slots
         }
         env_packages = []
+        # PARSE PACKAGES
         for _, row in pkg_df.iterrows():
+            in_core_and_package = False
             p = row['Environmental package']
             req = row['Requirement']
             is_required = req == 'M'
@@ -356,14 +367,15 @@ class MIxS6Converter:
             s_id, slot = self.create_slot(row, enums=enums)
 
             if s_id is not None:
-                # TODO: this makes the documentation odd
-                #c['slot_usage'][s_id] = {'required': is_required}
+                c['slot_usage'][s_id] = {'required': is_required}
                 cls_slot_req[cn][s_id] = req
 
                 if s_id not in slots:
                     slots[s_id] = slot
                 else:
-                    None ## TODO: compare
+                    in_core_and_package = True
+                    slot['todos'] = ['this is in both core and packages']
+
                 if s_id not in slot_cls_req:
                     slot_cls_req[s_id] = {}
                 slot_cls_req[s_id][cn] = req

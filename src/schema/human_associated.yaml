@@ -26,7 +26,6 @@ classes:
     - host_subject_id
     - host_age
     - host_sex
-    - host_disease_stat
     - ihmc_medication_code
     - chem_administration
     - host_body_site
@@ -74,6 +73,112 @@ classes:
     - host_symbiont
     - samp_store_loc
     - misc_param
-    slot_usage: {}
+    slot_usage:
+      sample_name:
+        required: true
+      project_name:
+        required: true
+      host_subject_id:
+        required: false
+      host_age:
+        required: false
+      host_sex:
+        required: false
+      host_disease_stat:
+        required: false
+      ihmc_medication_code:
+        required: false
+      chem_administration:
+        required: false
+      host_body_site:
+        required: false
+      host_body_product:
+        required: false
+      host_tot_mass:
+        required: false
+      host_height:
+        required: false
+      host_diet:
+        required: false
+      host_last_meal:
+        required: false
+      host_family_relationship:
+        required: false
+      host_genotype:
+        required: false
+      host_phenotype:
+        required: false
+      host_body_temp:
+        required: false
+      smoker:
+        required: false
+      host_hiv_stat:
+        required: false
+      drug_usage:
+        required: false
+      host_body_mass_index:
+        required: false
+      diet_last_six_month:
+        required: false
+      weight_loss_3_month:
+        required: false
+      ihmc_ethnicity:
+        required: false
+      host_occupation:
+        required: false
+      pet_farm_animal:
+        required: false
+      travel_out_six_month:
+        required: false
+      twin_sibling:
+        required: false
+      medic_hist_perform:
+        required: false
+      study_complt_stat:
+        required: false
+      pulmonary_disord:
+        required: false
+      nose_throat_disord:
+        required: false
+      blood_blood_disord:
+        required: false
+      host_pulse:
+        required: false
+      gestation_state:
+        required: false
+      maternal_health_stat:
+        required: false
+      foetal_health_stat:
+        required: false
+      amniotic_fluid_color:
+        required: false
+      kidney_disord:
+        required: false
+      urogenit_tract_disor:
+        required: false
+      urine_collect_meth:
+        required: false
+      perturbation:
+        required: false
+      samp_salinity:
+        required: false
+      oxy_stat_samp:
+        required: false
+      temp:
+        required: false
+      organism_count:
+        required: false
+      samp_vol_we_dna_ext:
+        required: false
+      samp_store_temp:
+        required: false
+      samp_store_dur:
+        required: false
+      host_symbiont:
+        required: false
+      samp_store_loc:
+        required: false
+      misc_param:
+        required: false
 subsets: {}
 enums: {}

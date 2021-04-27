@@ -104,6 +104,176 @@ classes:
     - tot_phosp
     - turbidity
     - water_current
-    slot_usage: {}
+    slot_usage:
+      sample_name:
+        required: true
+      project_name:
+        required: true
+      depth:
+        required: true
+      elev:
+        required: false
+      alkalinity:
+        required: false
+      alkalinity_method:
+        required: false
+      alkyl_diethers:
+        required: false
+      aminopept_act:
+        required: false
+      ammonium:
+        required: false
+      atmospheric_data:
+        required: false
+      bacteria_carb_prod:
+        required: false
+      bac_prod:
+        required: false
+      bac_resp:
+        required: false
+      biomass:
+        required: false
+      bishomohopanol:
+        required: false
+      bromide:
+        required: false
+      calcium:
+        required: false
+      carb_nitro_ratio:
+        required: false
+      chem_administration:
+        required: false
+      chloride:
+        required: false
+      chlorophyll:
+        required: false
+      conduc:
+        required: false
+      density:
+        required: false
+      diether_lipids:
+        required: false
+      diss_carb_dioxide:
+        required: false
+      diss_hydrogen:
+        required: false
+      diss_inorg_carb:
+        required: false
+      diss_inorg_nitro:
+        required: false
+      diss_inorg_phosp:
+        required: false
+      diss_org_carb:
+        required: false
+      diss_org_nitro:
+        required: false
+      diss_oxygen:
+        required: false
+      down_par:
+        required: false
+      fluor:
+        required: false
+      glucosidase_act:
+        required: false
+      light_intensity:
+        required: false
+      magnesium:
+        required: false
+      mean_frict_vel:
+        required: false
+      mean_peak_frict_vel:
+        required: false
+      misc_param:
+        required: false
+      n_alkanes:
+        required: false
+      nitrate:
+        required: false
+      nitrite:
+        required: false
+      nitro:
+        required: false
+      org_carb:
+        required: false
+      org_matter:
+        required: false
+      org_nitro:
+        required: false
+      organism_count:
+        required: false
+      oxy_stat_samp:
+        required: false
+      ph:
+        required: false
+      part_org_carb:
+        required: false
+      part_org_nitro:
+        required: false
+      perturbation:
+        required: false
+      petroleum_hydrocarb:
+        required: false
+      phaeopigments:
+        required: false
+      phosphate:
+        required: false
+      phosplipid_fatt_acid:
+        required: false
+      photon_flux:
+        required: false
+      potassium:
+        required: false
+      pressure:
+        required: false
+      primary_prod:
+        required: false
+      redox_potential:
+        required: false
+      salinity:
+        required: false
+      samp_store_dur:
+        required: false
+      samp_store_loc:
+        required: false
+      samp_store_temp:
+        required: false
+      samp_vol_we_dna_ext:
+        required: false
+      silicate:
+        required: false
+      size_frac_low:
+        required: false
+      size_frac_up:
+        required: false
+      sodium:
+        required: false
+      soluble_react_phosp:
+        required: false
+      sulfate:
+        required: false
+      sulfide:
+        required: false
+      suspend_part_matter:
+        required: false
+      temp:
+        required: false
+      tidal_stage:
+        required: false
+      tot_depth_water_col:
+        required: false
+      tot_diss_nitro:
+        required: false
+      tot_inorg_nitro:
+        required: false
+      tot_nitro:
+        required: false
+      tot_part_carb:
+        required: false
+      tot_phosp:
+        required: false
+      turbidity:
+        required: false
+      water_current:
+        required: false
 subsets: {}
 enums: {}

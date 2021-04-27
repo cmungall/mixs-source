@@ -40,6 +40,7 @@ classes:
     - specific_host
     - host_spec_range
     - health_disease_stat
+    - host_disease_stat
     - trophic_level
     - propagation
     - isol_growth_condt
@@ -123,6 +124,7 @@ classes:
         required: false
       health_disease_stat:
         required: false
+      host_disease_stat: {}
       trophic_level:
         comments:
         - conditional mandatory
@@ -222,6 +224,7 @@ classes:
     - specific_host
     - host_spec_range
     - health_disease_stat
+    - host_disease_stat
     - trophic_level
     - encoded_traits
     - rel_to_oxygen
@@ -308,6 +311,7 @@ classes:
       health_disease_stat:
         comments:
         - conditional mandatory
+      host_disease_stat: {}
       trophic_level:
         comments:
         - conditional mandatory
@@ -404,6 +408,7 @@ classes:
     - source_mat_id
     - specific_host
     - host_spec_range
+    - host_disease_stat
     - propagation
     - encoded_traits
     - isol_growth_condt
@@ -475,6 +480,7 @@ classes:
         - conditional mandatory
       host_spec_range:
         required: false
+      host_disease_stat: {}
       propagation:
         required: true
       encoded_traits:
@@ -572,6 +578,7 @@ classes:
     - specific_host
     - host_spec_range
     - health_disease_stat
+    - host_disease_stat
     - propagation
     - encoded_traits
     - isol_growth_condt
@@ -656,6 +663,7 @@ classes:
       health_disease_stat:
         comments:
         - conditional mandatory
+      host_disease_stat: {}
       propagation:
         required: true
       encoded_traits:
@@ -751,6 +759,7 @@ classes:
     - estimated_size
     - ref_biomaterial
     - source_mat_id
+    - host_disease_stat
     - isol_growth_condt
     - sample_collect_device
     - sample_collect_method
@@ -818,6 +827,7 @@ classes:
       source_mat_id:
         comments:
         - conditional mandatory
+      host_disease_stat: {}
       isol_growth_condt:
         required: true
       sample_collect_device:
@@ -902,6 +912,7 @@ classes:
     - env_package
     - ref_biomaterial
     - source_mat_id
+    - host_disease_stat
     - rel_to_oxygen
     - sample_collect_device
     - sample_collect_method
@@ -961,6 +972,7 @@ classes:
       source_mat_id:
         comments:
         - conditional mandatory
+      host_disease_stat: {}
       rel_to_oxygen:
         required: false
       sample_collect_device:
@@ -1054,6 +1066,7 @@ classes:
     - env_medium
     - env_package
     - source_mat_id
+    - host_disease_stat
     - rel_to_oxygen
     - sample_collect_device
     - sample_collect_method
@@ -1109,6 +1122,7 @@ classes:
       source_mat_id:
         comments:
         - conditional mandatory
+      host_disease_stat: {}
       rel_to_oxygen:
         required: false
       sample_collect_device:
@@ -1202,6 +1216,7 @@ classes:
     - extrachrom_elements
     - source_mat_id
     - biotic_relationship
+    - host_disease_stat
     - trophic_level
     - rel_to_oxygen
     - isol_growth_condt
@@ -1257,6 +1272,7 @@ classes:
       biotic_relationship:
         comments:
         - conditional mandatory
+      host_disease_stat: {}
       trophic_level:
         comments:
         - conditional mandatory
@@ -1325,6 +1341,7 @@ classes:
     - env_package
     - ref_biomaterial
     - source_mat_id
+    - host_disease_stat
     - rel_to_oxygen
     - sample_collect_device
     - sample_collect_method
@@ -1400,6 +1417,7 @@ classes:
       source_mat_id:
         comments:
         - conditional mandatory
+      host_disease_stat: {}
       rel_to_oxygen:
         required: false
       sample_collect_device:
@@ -1522,6 +1540,7 @@ classes:
     - env_package
     - ref_biomaterial
     - source_mat_id
+    - host_disease_stat
     - rel_to_oxygen
     - sample_collect_device
     - sample_collect_method
@@ -1596,6 +1615,7 @@ classes:
       source_mat_id:
         comments:
         - conditional mandatory
+      host_disease_stat: {}
       rel_to_oxygen:
         required: false
       sample_collect_device:
@@ -1721,6 +1741,7 @@ classes:
     - biotic_relationship
     - specific_host
     - host_spec_range
+    - host_disease_stat
     - sample_collect_device
     - sample_collect_method
     - samp_mat_process
@@ -1815,6 +1836,7 @@ classes:
         required: false
       host_spec_range:
         required: false
+      host_disease_stat: {}
       sample_collect_device:
         comments:
         - conditional mandatory
