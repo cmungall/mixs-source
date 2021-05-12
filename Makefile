@@ -12,8 +12,7 @@ RUN = pipenv run
 
 SCHEMA_NAME = mixs
 SCHEMA_SRC = $(SCHEMA_DIR)/$(SCHEMA_NAME).yaml
-#PKG_TGTS = graphql json  jsonschema owl rdf jsonld shex
-PKG_TGTS = graphql json  jsonschema owl
+PKG_TGTS = graphql json  jsonschema owl rdf jsonld shex csv
 TGTS = docs $(PKG_TGTS)
 
 # Global generation options
@@ -195,6 +194,15 @@ $(PKG_DIR)/json/%.json: target/json/%.json
 	cp $< $@
 target/json/%.json: $(SCHEMA_DIR)/%.yaml tdir-json env.lock
 	$(RUN) gen-jsonld $(GEN_OPTS)  $< > $@
+
+# ---------------------------------------
+# CSV
+# ---------------------------------------
+# one file per module
+gen-csv: $(patsubst %, target/csv/%.csv, $(SCHEMA_NAMES))
+target/csv/%.csv: $(SCHEMA_DIR)/%.yaml tdir-csv
+	gen-csv $(GEN_OPTS) $< > $@
+
 
 # ---------------------------------------
 # RDF
