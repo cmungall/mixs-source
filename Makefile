@@ -91,6 +91,8 @@ move-model:
 # MARKDOWN DOCS
 #      Generate documentation ready for mkdocs
 # ---------------------------------------
+# For help with mkdocs see https://www.mkdocs.org/.
+
 gen-docs: docs/index.md env.lock
 .PHONY: gen-docs
 
@@ -99,6 +101,13 @@ docs/index.md: target/docs/index.md
 	$(RUN) mkdocs build
 target/docs/index.md: $(SCHEMA_DIR)/$(SCHEMA_NAME).yaml tdir-docs env.lock
 	$(RUN) gen-markdown $(GEN_OPTS) --no-mergeimports --dir target/docs $<
+
+# test docs locally.
+docserve:
+	$(RUN) mkdocs serve
+
+gh-deploy:
+	$(RUN) mkdocs gh-deploy
 
 # ---------------------------------------
 # PYTHON Source
@@ -220,13 +229,6 @@ target/rdf/%.ttl: $(SCHEMA_DIR)/%.yaml $(PKG_DIR)/jsonld/%.context.jsonld tdir-r
 target/rdf/%.model.ttl: $(SCHEMA_DIR)/%.yaml $(PKG_DIR)/jsonld/%.model.context.jsonld tdir-rdf env.lock
 	$(RUN) gen-rdf $(GEN_OPTS) --context $(realpath $(word 2,$^)) $< > $@
 
-
-# test docs locally.
-docserve:
-	$(RUN) mkdocs serve
-
-gh-deploy:
-	$(RUN) mkdocs gh-deploy
 
 
 # ---------------------------------------
