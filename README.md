@@ -56,11 +56,6 @@ The range field will be one of:
  - quantity value
  - an enum
 
-
-### Seeding original term list
-
-An early version of terms.yaml was by converting the legacy spreadhseet for MIxS6 using [mixs_converter.py](https://github.com/GenomicsStandardsConsortium/mixs-source/blob/main/gsctools/mixs_converter.py).
-
 ## Workflow for creating a new ENUM
 
 TODO
@@ -88,6 +83,6 @@ cp docs/*.md ../gensc.github.io/mixs6/
 
 ## Seeding the schema from google sheets
 
-The schema here has been seeded from google sheets. The idea is that the yaml with switch to being Source of Truth, and there will be no need to generate from sheets.
+An early version of terms.yaml was by converting the legacy spreadhseet for MIxS6 using [mixs_converter.py](https://github.com/GenomicsStandardsConsortium/mixs-source/blob/main/gsctools/mixs_converter.py). After the release of MIxS6, the yaml will switch to being Source of Truth, and there will be no need to generate from sheets.
 
-However, in the interim phase, see the Makefile for details on regenerating the yaml from google sheets/excel
+In the interim phase, see the Makefile for details on regenerating the yaml from google sheets/excel.
