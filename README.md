@@ -56,6 +56,11 @@ The range field will be one of:
  - quantity value
  - an enum
 
+
+### Seeding original term list
+
+An early version of terms.yaml was by converting the legacy spreadhseet for MIxS6 using [mixs_converter.py](https://github.com/GenomicsStandardsConsortium/mixs-source/blob/main/gsctools/mixs_converter.py).
+
 ## Workflow for creating a new ENUM
 
 TODO
