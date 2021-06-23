@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="img/favicon.ico">
+  <title>Class: SedimentMISAG - MIxS</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="css/theme.css" />
+  <link rel="stylesheet" href="css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Class: SedimentMISAG";
+    var mkdocs_page_input_path = "SedimentMISAG.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="js/jquery-2.1.1.min.js" defer></script>
+  <script src="js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href="index.html" class="icon icon-home"> MIxS</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="./search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="index.html">Index</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">MIxS</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Class: SedimentMISAG</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="class-sedimentmisag">Class: SedimentMISAG</h1>
+<p>Combinatorial checklist Minimum Information About a Single Amplified Genome with environmental package sediment</p>
+<p>URI: <a href="https://w3id.org/mixs/vocab/SedimentMISAG">mixs.vocab:SedimentMISAG</a></p>
+<p><img alt="img" src="http://yuml.me/diagram/nofunky;dir:TB/class/[SedimentMISAG&#124;submitted_to_insdc:string;investigation_type:investigation_type_enum;experimental_factor:string%20%3F;env_package:env_package_enum%20%3F;ref_biomaterial:string%20%3F;source_mat_id:string%20%3F;host_disease_stat:string%20%3F;rel_to_oxygen:rel_to_oxygen_enum%20%3F;sample_collect_device:string%20%3F;sample_collect_method:string%20%3F;samp_mat_process:string%20%3F;size_frac:string%20%3F;nucl_acid_ext:string%20%3F;nucl_acid_amp:string%20%3F;lib_size:string%20%3F;lib_reads_seqd:string%20%3F;lib_layout:lib_layout_enum%20%3F;lib_vector:string%20%3F;lib_screen:string%20%3F;mid:string%20%3F;adapters:string%20%3F;seq_meth:seq_meth_enum;tax_ident:tax_ident_enum;assembly_qual:assembly_qual_enum;assembly_name:string%20%3F;assembly_software:string;annot:string%20%3F;number_contig:string%20%3F;feat_pred:string%20%3F;ref_db:string%20%3F;sim_search_meth:string%20%3F;tax_class:string%20%3F;x_16s_recover:string%20%3F;trnas:string%20%3F;trna_ext_software:string%20%3F;compl_score:compl_score_enum;compl_software:string;compl_appr:compl_appr_enum%20%3F;contam_score:string;contam_screen_input:string%20%3F;contam_screen_param:contam_screen_param_enum%20%3F;decontam_software:decontam_software_enum%20%3F;sort_tech:sort_tech_enum;single_cell_lysis_appr:single_cell_lysis_appr_enum;single_cell_lysis_prot:string%20%3F;wga_amp_appr:string;wga_amp_kit:string%20%3F;url:string%20%3F;sop:string%20%3F;lat_lon(i):string%20%3F;depth(i):string;geo_loc_name(i):string%20%3F;collection_date(i):date%20%3F;env_broad_scale(i):string%20%3F;env_local_scale(i):string%20%3F;env_medium(i):string%20%3F;biomass(i):string%20%3F;chem_administration(i):string%20%3F;diether_lipids(i):string%20%3F;misc_param(i):string%20%3F;n_alkanes(i):string%20%3F;organism_count(i):organism_count_enum%20%3F;oxy_stat_samp(i):oxy_stat_samp_enum%20%3F;ph(i):double%20%3F;particle_class(i):string%20%3F;perturbation(i):string%20%3F;phaeopigments(i):string%20%3F;phosplipid_fatt_acid(i):string%20%3F;porosity(i):string%20%3F;samp_store_dur(i):string%20%3F;samp_store_loc(i):string%20%3F;sediment_type(i):sediment_type_enum%20%3F;tidal_stage(i):tidal_stage_enum%20%3F;sample_name(i):string;project_name(i):string]uses%20-.-&gt;[MISAG],[Sediment]^-[SedimentMISAG],[Sediment],[QuantityValue],[MISAG]" /></p>
+<h2 id="parents">Parents</h2>
+<ul>
+<li>is_a: <a href="Sediment.html">Sediment</a> - sediment</li>
+</ul>
+<h2 id="uses-mixins">Uses Mixins</h2>
+<ul>
+<li>mixin: <a href="MISAG.html">MISAG</a> - Minimum Information About a Single Amplified Genome</li>
+</ul>
+<h2 id="attributes">Attributes</h2>
+<h3 id="inherited-from-sediment">Inherited from sediment:</h3>
+<ul>
+<li><a href="alt.html">alt</a>  <sub>OPT</sub><ul>
+<li>Description: Altitude is a term used to identify heights of objects such as airplanes, space shuttles, rockets, atmospheric balloons and heights of places such as atmospheric layers and clouds. It is used to measure the height of an object which is above the earth's surface. In this context, the altitude measurement is the vertical distance between the earth's surface above sea level and the sampled position in the air</li>
+<li>Range: <a href="QuantityValue.html">QuantityValue</a></li>
+<li>Example: 100 meter None</li>
+</ul>
+</li>
+<li><a href="collection_date.html">collection_date</a>  <sub>OPT</sub><ul>
+<li>Description: The time of sampling, either as an instance (single point in time) or interval. In case no exact time is available, the date/time can be right truncated i.e. all of these are valid times: 2008-01-23T19:23:10+00:00; 2008-01-23T19:23:10; 2008-01-23; 2008-01; 2008; Except: 2008-01; 2008 all are ISO8601 compliant</li>
+<li>Range: <a href="types/Date.html">Date</a></li>
+<li>Example: 2018-05-11T10:00:00+01:00 None</li>
+</ul>
+</li>
+<li><a href="env_broad_scale.html">env_broad_scale</a>  <sub>OPT</sub><ul>
+<li>Description: In this field, report which major environmental system your sample or specimen came from. The systems identified should have a coarse spatial grain, to provide the general environmental context of where the sampling was done (e.g. were you in the desert or a rainforest?). We recommend using subclasses of ENVO’s biome class: http://purl.obolibrary.org/obo/ENVO_00000428. Format (one term): termLabel [termID], Format (multiple terms): termLabel [termID]|termLabel [termID]|termLabel [termID]. Example: Annotating a water sample from the photic zone in middle of the Atlantic Ocean, consider: oceanic epipelagic zone biome [ENVO:01000033]. Example: Annotating a sample from the Amazon rainforest consider: tropical moist broadleaf forest biome [ENVO:01000228]. If needed, request new terms on the ENVO tracker, identified here: http://www.obofoundry.org/ontology/envo.html</li>
+<li>Range: <a href="types/String.html">String</a></li>
+<li>Example: forest biome [ENVO:01000174] None</li>
+</ul>
+</li>
+<li><a href="env_local_scale.html">env_local_scale</a>  <sub>OPT</sub><ul>
+<li>Description: In this field, report the entity or entities which are in your sample or specimen’s local vicinity and which you believe have significant causal influences on your sample or specimen. Please use terms that are present in ENVO and which are of smaller spatial grain than your entry for env_broad_scale. Format (one term): termLabel [termID]; Format (multiple terms): termLabel [termID]|termLabel [termID]|termLabel [termID]. Example: Annotating a pooled sample taken from various vegetation layers in a forest consider: canopy [ENVO:00000047]|herb and fern layer [ENVO:01000337]|litter layer [ENVO:01000338]|understory [01000335]|shrub layer [ENVO:01000336]. If needed, request new terms on the ENVO tracker, identified here: http://www.obofoundry.org/ontology/envo.html</li>
+<li>Range: <a href="types/String.html">String</a></li>
+<li>Example: litter layer [ENVO:01000338] None</li>
+</ul>
+</li>
+<li><a href="env_medium.html">env_medium</a>  <sub>OPT</sub><ul>
+<li>Description: In this field, report which environmental material or materials (pipe separated) immediately surrounded your sample or specimen prior to sampling, using one or more subclasses of ENVO’s environmental material class: http://purl.obolibrary.org/obo/ENVO_00010483. Format (one term): termLabel [termID]; Format (multiple terms): termLabel [termID]|termLabel [termID]|termLabel [termID]. Example: Annotating a fish swimming in the upper 100 m of the Atlantic Ocean, consider: ocean water [ENVO:00002151]. Example: Annotating a duck on a pond consider: pond water [ENVO:00002228]|air ENVO_00002005. If needed, request new terms on the ENVO tracker, identified here: http://www.obofoundry.org/ontology/envo.html</li>
+<li>Range: <a href="types/String.html">String</a></li>
+<li>Example: soil [ENVO:00001998] None</li>
+</ul>
+</li>
+<li><a href="geo_loc_name.html">geo_loc_name</a>  <sub>OPT</sub><ul>
+<li>Description: The geographical origin of the sample as defined by the country or sea name followed by specific region name. Country or sea names should be chosen from the INSDC country list (http://insdc.org/country.html), or the GAZ ontology (v 1.512) (http://purl.bioontology.org/ontology/GAZ)</li>
+<li>Range: <a href="types/String.html">String</a></li>
+<li>Example: USA: Maryland, Bethesda None</li>
+</ul>
+</li>
+<li><a href="lat_lon.html">lat_lon</a>  <sub>OPT</sub><ul>
+<li>Description: The geographical origin of the sample as defined by latitude and longitude. The values should be reported in decimal degrees and in WGS84 system</li>
+<li>Range: <a href="types/String.html">String</a></li>
+<li>Example: 50.586825 6.408977 None</li>
+</ul>
+</li>
+<li><a href="sediment_alkalinity.html">sediment➞alkalinity</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="QuantityValue.html">QuantityValue</a></li>
+</ul>
+</li>
+<li><a href="sediment_alkyl_diethers.html">sediment➞alkyl_diethers</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="QuantityValue.html">QuantityValue</a></li>
+</ul>
+</li>
+<li><a href="sediment_aminopept_act.html">sediment➞aminopept_act</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="QuantityValue.html">QuantityValue</a></li>
+</ul>
+</li>
+<li><a href="sediment_ammonium.html">sediment➞ammonium</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="QuantityValue.html">QuantityValue</a></li>
+</ul>
+</li>
+<li><a href="sediment_bacteria_carb_prod.html">sediment➞bacteria_carb_prod</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="QuantityValue.html">QuantityValue</a></li>
+</ul>
+</li>
+<li><a href="sediment_biomass.html">sediment➞biomass</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="types/String.html">String</a></li>
+</ul>
+</li>
+<li><a href="sediment_bishomohopanol.html">sediment➞bishomohopanol</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="QuantityValue.html">QuantityValue</a></li>
+</ul>
+</li>
+<li><a href="sediment_bromide.html">sediment➞bromide</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="QuantityValue.html">QuantityValue</a></li>
+</ul>
+</li>
+<li><a href="sediment_calcium.html">sediment➞calcium</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="QuantityValue.html">QuantityValue</a></li>
+</ul>
+</li>
+<li><a href="sediment_carb_nitro_ratio.html">sediment➞carb_nitro_ratio</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="QuantityValue.html">QuantityValue</a></li>
+</ul>
+</li>
+<li><a href="sediment_chem_administration.html">sediment➞chem_administration</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="types/String.html">String</a></li>
+</ul>
+</li>
+<li><a href="sediment_chloride.html">sediment➞chloride</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="QuantityValue.html">QuantityValue</a></li>
+</ul>
+</li>
+<li><a href="sediment_chlorophyll.html">sediment➞chlorophyll</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="QuantityValue.html">QuantityValue</a></li>
+</ul>
+</li>
+<li><a href="sediment_density.html">sediment➞density</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="QuantityValue.html">QuantityValue</a></li>
+</ul>
+</li>
+<li><a href="sediment_depth.html">sediment➞depth</a>  <sub>REQ</sub><ul>
+<li>Range: <a href="types/String.html">String</a></li>
+</ul>
+</li>
+<li><a href="sediment_diether_lipids.html">sediment➞diether_lipids</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="types/String.html">String</a></li>
+</ul>
+</li>
+<li><a href="sediment_diss_carb_dioxide.html">sediment➞diss_carb_dioxide</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="QuantityValue.html">QuantityValue</a></li>
+</ul>
+</li>
+<li><a href="sediment_diss_hydrogen.html">sediment➞diss_hydrogen</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="QuantityValue.html">QuantityValue</a></li>
+</ul>
+</li>
+<li><a href="sediment_diss_inorg_carb.html">sediment➞diss_inorg_carb</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="QuantityValue.html">QuantityValue</a></li>
+</ul>
+</li>
+<li><a href="sediment_diss_org_carb.html">sediment➞diss_org_carb</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="QuantityValue.html">QuantityValue</a></li>
+</ul>
+</li>
+<li><a href="sediment_diss_org_nitro.html">sediment➞diss_org_nitro</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="QuantityValue.html">QuantityValue</a></li>
+</ul>
+</li>
+<li><a href="sediment_diss_oxygen.html">sediment➞diss_oxygen</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="QuantityValue.html">QuantityValue</a></li>
+</ul>
+</li>
+<li><a href="sediment_elev.html">sediment➞elev</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="QuantityValue.html">QuantityValue</a></li>
+</ul>
+</li>
+<li><a href="sediment_glucosidase_act.html">sediment➞glucosidase_act</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="QuantityValue.html">QuantityValue</a></li>
+</ul>
+</li>
+<li><a href="sediment_magnesium.html">sediment➞magnesium</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="QuantityValue.html">QuantityValue</a></li>
+</ul>
+</li>
+<li><a href="sediment_mean_frict_vel.html">sediment➞mean_frict_vel</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="QuantityValue.html">QuantityValue</a></li>
+</ul>
+</li>
+<li><a href="sediment_mean_peak_frict_vel.html">sediment➞mean_peak_frict_vel</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="QuantityValue.html">QuantityValue</a></li>
+</ul>
+</li>
+<li><a href="sediment_methane.html">sediment➞methane</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="QuantityValue.html">QuantityValue</a></li>
+</ul>
+</li>
+<li><a href="sediment_misc_param.html">sediment➞misc_param</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="types/String.html">String</a></li>
+</ul>
+</li>
+<li><a href="sediment_n_alkanes.html">sediment➞n_alkanes</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="types/String.html">String</a></li>
+</ul>
+</li>
+<li><a href="sediment_nitrate.html">sediment➞nitrate</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="QuantityValue.html">QuantityValue</a></li>
+</ul>
+</li>
+<li><a href="sediment_nitrite.html">sediment➞nitrite</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="QuantityValue.html">QuantityValue</a></li>
+</ul>
+</li>
+<li><a href="sediment_nitro.html">sediment➞nitro</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="QuantityValue.html">QuantityValue</a></li>
+</ul>
+</li>
+<li><a href="sediment_org_carb.html">sediment➞org_carb</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="QuantityValue.html">QuantityValue</a></li>
+</ul>
+</li>
+<li><a href="sediment_org_matter.html">sediment➞org_matter</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="QuantityValue.html">QuantityValue</a></li>
+</ul>
+</li>
+<li><a href="sediment_org_nitro.html">sediment➞org_nitro</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="QuantityValue.html">QuantityValue</a></li>
+</ul>
+</li>
+<li><a href="sediment_organism_count.html">sediment➞organism_count</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="organism_count_enum.html">organism_count_enum</a></li>
+</ul>
+</li>
+<li><a href="sediment_oxy_stat_samp.html">sediment➞oxy_stat_samp</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="oxy_stat_samp_enum.html">oxy_stat_samp_enum</a></li>
+</ul>
+</li>
+<li><a href="sediment_part_org_carb.html">sediment➞part_org_carb</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="QuantityValue.html">QuantityValue</a></li>
+</ul>
+</li>
+<li><a href="sediment_particle_class.html">sediment➞particle_class</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="types/String.html">String</a></li>
+</ul>
+</li>
+<li><a href="sediment_perturbation.html">sediment➞perturbation</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="types/String.html">String</a></li>
+</ul>
+</li>
+<li><a href="sediment_petroleum_hydrocarb.html">sediment➞petroleum_hydrocarb</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="QuantityValue.html">QuantityValue</a></li>
+</ul>
+</li>
+<li><a href="sediment_ph.html">sediment➞ph</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="types/Double.html">Double</a></li>
+</ul>
+</li>
+<li><a href="sediment_phaeopigments.html">sediment➞phaeopigments</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="types/String.html">String</a></li>
+</ul>
+</li>
+<li><a href="sediment_phosphate.html">sediment➞phosphate</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="QuantityValue.html">QuantityValue</a></li>
+</ul>
+</li>
+<li><a href="sediment_phosplipid_fatt_acid.html">sediment➞phosplipid_fatt_acid</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="types/String.html">String</a></li>
+</ul>
+</li>
+<li><a href="sediment_porosity.html">sediment➞porosity</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="types/String.html">String</a></li>
+</ul>
+</li>
+<li><a href="sediment_potassium.html">sediment➞potassium</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="QuantityValue.html">QuantityValue</a></li>
+</ul>
+</li>
+<li><a href="sediment_pressure.html">sediment➞pressure</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="QuantityValue.html">QuantityValue</a></li>
+</ul>
+</li>
+<li><a href="sediment_project_name.html">sediment➞project_name</a>  <sub>REQ</sub><ul>
+<li>Range: <a href="types/String.html">String</a></li>
+</ul>
+</li>
+<li><a href="sediment_redox_potential.html">sediment➞redox_potential</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="QuantityValue.html">QuantityValue</a></li>
+</ul>
+</li>
+<li><a href="sediment_salinity.html">sediment➞salinity</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="QuantityValue.html">QuantityValue</a></li>
+</ul>
+</li>
+<li><a href="sediment_samp_store_dur.html">sediment➞samp_store_dur</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="types/String.html">String</a></li>
+</ul>
+</li>
+<li><a href="sediment_samp_store_loc.html">sediment➞samp_store_loc</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="types/String.html">String</a></li>
+</ul>
+</li>
+<li><a href="sediment_samp_store_temp.html">sediment➞samp_store_temp</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="QuantityValue.html">QuantityValue</a></li>
+</ul>
+</li>
+<li><a href="sediment_samp_vol_we_dna_ext.html">sediment➞samp_vol_we_dna_ext</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="QuantityValue.html">QuantityValue</a></li>
+</ul>
+</li>
+<li><a href="sediment_sample_name.html">sediment➞sample_name</a>  <sub>REQ</sub><ul>
+<li>Range: <a href="types/String.html">String</a></li>
+</ul>
+</li>
+<li><a href="sediment_sediment_type.html">sediment➞sediment_type</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="sediment_type_enum.html">sediment_type_enum</a></li>
+</ul>
+</li>
+<li><a href="sediment_silicate.html">sediment➞silicate</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="QuantityValue.html">QuantityValue</a></li>
+</ul>
+</li>
+<li><a href="sediment_sodium.html">sediment➞sodium</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="QuantityValue.html">QuantityValue</a></li>
+</ul>
+</li>
+<li><a href="sediment_sulfate.html">sediment➞sulfate</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="QuantityValue.html">QuantityValue</a></li>
+</ul>
+</li>
+<li><a href="sediment_sulfide.html">sediment➞sulfide</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="QuantityValue.html">QuantityValue</a></li>
+</ul>
+</li>
+<li><a href="sediment_temp.html">sediment➞temp</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="QuantityValue.html">QuantityValue</a></li>
+</ul>
+</li>
+<li><a href="sediment_tidal_stage.html">sediment➞tidal_stage</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="tidal_stage_enum.html">tidal_stage_enum</a></li>
+</ul>
+</li>
+<li><a href="sediment_tot_carb.html">sediment➞tot_carb</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="QuantityValue.html">QuantityValue</a></li>
+</ul>
+</li>
+<li><a href="sediment_tot_depth_water_col.html">sediment➞tot_depth_water_col</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="QuantityValue.html">QuantityValue</a></li>
+</ul>
+</li>
+<li><a href="sediment_tot_nitro_content.html">sediment➞tot_nitro_content</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="QuantityValue.html">QuantityValue</a></li>
+</ul>
+</li>
+<li><a href="sediment_tot_org_carb.html">sediment➞tot_org_carb</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="QuantityValue.html">QuantityValue</a></li>
+</ul>
+</li>
+<li><a href="sediment_turbidity.html">sediment➞turbidity</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="QuantityValue.html">QuantityValue</a></li>
+</ul>
+</li>
+<li><a href="sediment_water_content.html">sediment➞water_content</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="QuantityValue.html">QuantityValue</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-misag">Mixed in from MISAG:</h3>
+<ul>
+<li><a href="MISAG_adapters.html">MISAG➞adapters</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="types/String.html">String</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-misag_1">Mixed in from MISAG:</h3>
+<ul>
+<li><a href="MISAG_annot.html">MISAG➞annot</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="types/String.html">String</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-misag_2">Mixed in from MISAG:</h3>
+<ul>
+<li><a href="MISAG_assembly_name.html">MISAG➞assembly_name</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="types/String.html">String</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-misag_3">Mixed in from MISAG:</h3>
+<ul>
+<li><a href="MISAG_assembly_qual.html">MISAG➞assembly_qual</a>  <sub>REQ</sub><ul>
+<li>Range: <a href="assembly_qual_enum.html">assembly_qual_enum</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-misag_4">Mixed in from MISAG:</h3>
+<ul>
+<li><a href="MISAG_assembly_software.html">MISAG➞assembly_software</a>  <sub>REQ</sub><ul>
+<li>Range: <a href="types/String.html">String</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-misag_5">Mixed in from MISAG:</h3>
+<ul>
+<li><a href="MISAG_compl_appr.html">MISAG➞compl_appr</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="compl_appr_enum.html">compl_appr_enum</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-misag_6">Mixed in from MISAG:</h3>
+<ul>
+<li><a href="MISAG_compl_score.html">MISAG➞compl_score</a>  <sub>REQ</sub><ul>
+<li>Range: <a href="compl_score_enum.html">compl_score_enum</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-misag_7">Mixed in from MISAG:</h3>
+<ul>
+<li><a href="MISAG_compl_software.html">MISAG➞compl_software</a>  <sub>REQ</sub><ul>
+<li>Range: <a href="types/String.html">String</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-misag_8">Mixed in from MISAG:</h3>
+<ul>
+<li><a href="MISAG_contam_score.html">MISAG➞contam_score</a>  <sub>REQ</sub><ul>
+<li>Range: <a href="types/String.html">String</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-misag_9">Mixed in from MISAG:</h3>
+<ul>
+<li><a href="MISAG_contam_screen_input.html">MISAG➞contam_screen_input</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="types/String.html">String</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-misag_10">Mixed in from MISAG:</h3>
+<ul>
+<li><a href="MISAG_contam_screen_param.html">MISAG➞contam_screen_param</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="contam_screen_param_enum.html">contam_screen_param_enum</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-misag_11">Mixed in from MISAG:</h3>
+<ul>
+<li><a href="MISAG_decontam_software.html">MISAG➞decontam_software</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="decontam_software_enum.html">decontam_software_enum</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-misag_12">Mixed in from MISAG:</h3>
+<ul>
+<li><a href="MISAG_env_package.html">MISAG➞env_package</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="env_package_enum.html">env_package_enum</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-misag_13">Mixed in from MISAG:</h3>
+<ul>
+<li><a href="MISAG_experimental_factor.html">MISAG➞experimental_factor</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="types/String.html">String</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-misag_14">Mixed in from MISAG:</h3>
+<ul>
+<li><a href="MISAG_feat_pred.html">MISAG➞feat_pred</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="types/String.html">String</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-misag_15">Mixed in from MISAG:</h3>
+<ul>
+<li><a href="MISAG_host_disease_stat.html">MISAG➞host_disease_stat</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="types/String.html">String</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-misag_16">Mixed in from MISAG:</h3>
+<ul>
+<li><a href="MISAG_investigation_type.html">MISAG➞investigation_type</a>  <sub>REQ</sub><ul>
+<li>Range: <a href="investigation_type_enum.html">investigation_type_enum</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-misag_17">Mixed in from MISAG:</h3>
+<ul>
+<li><a href="MISAG_lib_layout.html">MISAG➞lib_layout</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="lib_layout_enum.html">lib_layout_enum</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-misag_18">Mixed in from MISAG:</h3>
+<ul>
+<li><a href="MISAG_lib_reads_seqd.html">MISAG➞lib_reads_seqd</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="types/String.html">String</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-misag_19">Mixed in from MISAG:</h3>
+<ul>
+<li><a href="MISAG_lib_screen.html">MISAG➞lib_screen</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="types/String.html">String</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-misag_20">Mixed in from MISAG:</h3>
+<ul>
+<li><a href="MISAG_lib_size.html">MISAG➞lib_size</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="types/String.html">String</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-misag_21">Mixed in from MISAG:</h3>
+<ul>
+<li><a href="MISAG_lib_vector.html">MISAG➞lib_vector</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="types/String.html">String</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-misag_22">Mixed in from MISAG:</h3>
+<ul>
+<li><a href="MISAG_mid.html">MISAG➞mid</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="types/String.html">String</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-misag_23">Mixed in from MISAG:</h3>
+<ul>
+<li><a href="MISAG_nucl_acid_amp.html">MISAG➞nucl_acid_amp</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="types/String.html">String</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-misag_24">Mixed in from MISAG:</h3>
+<ul>
+<li><a href="MISAG_nucl_acid_ext.html">MISAG➞nucl_acid_ext</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="types/String.html">String</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-misag_25">Mixed in from MISAG:</h3>
+<ul>
+<li><a href="MISAG_number_contig.html">MISAG➞number_contig</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="types/String.html">String</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-misag_26">Mixed in from MISAG:</h3>
+<ul>
+<li><a href="MISAG_ref_biomaterial.html">MISAG➞ref_biomaterial</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="types/String.html">String</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-misag_27">Mixed in from MISAG:</h3>
+<ul>
+<li><a href="MISAG_ref_db.html">MISAG➞ref_db</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="types/String.html">String</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-misag_28">Mixed in from MISAG:</h3>
+<ul>
+<li><a href="MISAG_rel_to_oxygen.html">MISAG➞rel_to_oxygen</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="rel_to_oxygen_enum.html">rel_to_oxygen_enum</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-misag_29">Mixed in from MISAG:</h3>
+<ul>
+<li><a href="MISAG_samp_mat_process.html">MISAG➞samp_mat_process</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="types/String.html">String</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-misag_30">Mixed in from MISAG:</h3>
+<ul>
+<li><a href="MISAG_samp_size.html">MISAG➞samp_size</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="QuantityValue.html">QuantityValue</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-misag_31">Mixed in from MISAG:</h3>
+<ul>
+<li><a href="MISAG_sample_collect_device.html">MISAG➞sample_collect_device</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="types/String.html">String</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-misag_32">Mixed in from MISAG:</h3>
+<ul>
+<li><a href="MISAG_sample_collect_method.html">MISAG➞sample_collect_method</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="types/String.html">String</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-misag_33">Mixed in from MISAG:</h3>
+<ul>
+<li><a href="MISAG_seq_meth.html">MISAG➞seq_meth</a>  <sub>REQ</sub><ul>
+<li>Range: <a href="seq_meth_enum.html">seq_meth_enum</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-misag_34">Mixed in from MISAG:</h3>
+<ul>
+<li><a href="MISAG_sim_search_meth.html">MISAG➞sim_search_meth</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="types/String.html">String</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-misag_35">Mixed in from MISAG:</h3>
+<ul>
+<li><a href="MISAG_single_cell_lysis_appr.html">MISAG➞single_cell_lysis_appr</a>  <sub>REQ</sub><ul>
+<li>Range: <a href="single_cell_lysis_appr_enum.html">single_cell_lysis_appr_enum</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-misag_36">Mixed in from MISAG:</h3>
+<ul>
+<li><a href="MISAG_single_cell_lysis_prot.html">MISAG➞single_cell_lysis_prot</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="types/String.html">String</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-misag_37">Mixed in from MISAG:</h3>
+<ul>
+<li><a href="MISAG_size_frac.html">MISAG➞size_frac</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="types/String.html">String</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-misag_38">Mixed in from MISAG:</h3>
+<ul>
+<li><a href="MISAG_sop.html">MISAG➞sop</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="types/String.html">String</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-misag_39">Mixed in from MISAG:</h3>
+<ul>
+<li><a href="MISAG_sort_tech.html">MISAG➞sort_tech</a>  <sub>REQ</sub><ul>
+<li>Range: <a href="sort_tech_enum.html">sort_tech_enum</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-misag_40">Mixed in from MISAG:</h3>
+<ul>
+<li><a href="MISAG_source_mat_id.html">MISAG➞source_mat_id</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="types/String.html">String</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-misag_41">Mixed in from MISAG:</h3>
+<ul>
+<li><a href="MISAG_submitted_to_insdc.html">MISAG➞submitted_to_insdc</a>  <sub>REQ</sub><ul>
+<li>Range: <a href="types/String.html">String</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-misag_42">Mixed in from MISAG:</h3>
+<ul>
+<li><a href="MISAG_tax_class.html">MISAG➞tax_class</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="types/String.html">String</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-misag_43">Mixed in from MISAG:</h3>
+<ul>
+<li><a href="MISAG_tax_ident.html">MISAG➞tax_ident</a>  <sub>REQ</sub><ul>
+<li>Range: <a href="tax_ident_enum.html">tax_ident_enum</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-misag_44">Mixed in from MISAG:</h3>
+<ul>
+<li><a href="MISAG_trna_ext_software.html">MISAG➞trna_ext_software</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="types/String.html">String</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-misag_45">Mixed in from MISAG:</h3>
+<ul>
+<li><a href="MISAG_trnas.html">MISAG➞trnas</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="types/String.html">String</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-misag_46">Mixed in from MISAG:</h3>
+<ul>
+<li><a href="MISAG_url.html">MISAG➞url</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="types/String.html">String</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-misag_47">Mixed in from MISAG:</h3>
+<ul>
+<li><a href="MISAG_wga_amp_appr.html">MISAG➞wga_amp_appr</a>  <sub>REQ</sub><ul>
+<li>Range: <a href="types/String.html">String</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-misag_48">Mixed in from MISAG:</h3>
+<ul>
+<li><a href="MISAG_wga_amp_kit.html">MISAG➞wga_amp_kit</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="types/String.html">String</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-misag_49">Mixed in from MISAG:</h3>
+<ul>
+<li><a href="MISAG_x_16s_recover.html">MISAG➞x_16s_recover</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="types/String.html">String</a></li>
+</ul>
+</li>
+</ul>
+              
+            </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+    
+  </span>
+</div>
+    <script>var base_url = '.';</script>
+    <script src="js/theme_extra.js" defer></script>
+    <script src="js/theme.js" defer></script>
+      <script src="search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

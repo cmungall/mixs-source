@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="img/favicon.ico">
+  <title>Class: WaterMIGSVirus - MIxS</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="css/theme.css" />
+  <link rel="stylesheet" href="css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Class: WaterMIGSVirus";
+    var mkdocs_page_input_path = "WaterMIGSVirus.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="js/jquery-2.1.1.min.js" defer></script>
+  <script src="js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href="index.html" class="icon icon-home"> MIxS</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="./search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="index.html">Index</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">MIxS</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Class: WaterMIGSVirus</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="class-watermigsvirus">Class: WaterMIGSVirus</h1>
+<p>Combinatorial checklist Minimal Information about a Genome Sequence: cultured bacteria/archaea with environmental package water</p>
+<p>URI: <a href="https://w3id.org/mixs/vocab/WaterMIGSVirus">mixs.vocab:WaterMIGSVirus</a></p>
+<p><img alt="img" src="http://yuml.me/diagram/nofunky;dir:TB/class/[WaterMIGSVirus&#124;submitted_to_insdc:string;investigation_type:investigation_type_enum;experimental_factor:string%20%3F;env_package:env_package_enum%20%3F;subspecf_gen_lin:string%20%3F;num_replicons:string%20%3F;estimated_size:string%20%3F;ref_biomaterial:string%20%3F;source_mat_id:string%20%3F;pathogenicity:string%20%3F;biotic_relationship:biotic_relationship_enum%20%3F;specific_host:string%20%3F;host_spec_range:string%20%3F;health_disease_stat:health_disease_stat_enum%20%3F;host_disease_stat:string%20%3F;propagation:string;encoded_traits:string%20%3F;isol_growth_condt:string;sample_collect_device:string%20%3F;sample_collect_method:string%20%3F;samp_mat_process:string%20%3F;virus_enrich_appr:virus_enrich_appr_enum%20%3F;nucl_acid_ext:string%20%3F;nucl_acid_amp:string%20%3F;lib_size:string%20%3F;lib_reads_seqd:string%20%3F;lib_layout:lib_layout_enum%20%3F;lib_vector:string%20%3F;lib_screen:string%20%3F;adapters:string%20%3F;seq_meth:seq_meth_enum;tax_ident:tax_ident_enum%20%3F;assembly_qual:assembly_qual_enum%20%3F;assembly_name:string%20%3F;assembly_software:string;annot:string%20%3F;number_contig:string%20%3F;feat_pred:string%20%3F;ref_db:string%20%3F;sim_search_meth:string%20%3F;tax_class:string%20%3F;compl_score:compl_score_enum%20%3F;compl_software:string%20%3F;url:string%20%3F;sop:string%20%3F;lat_lon(i):string%20%3F;depth(i):string;geo_loc_name(i):string%20%3F;collection_date(i):date%20%3F;env_broad_scale(i):string%20%3F;env_local_scale(i):string%20%3F;env_medium(i):string%20%3F;alkalinity_method(i):string%20%3F;atmospheric_data(i):string%20%3F;biomass(i):string%20%3F;chem_administration(i):string%20%3F;diether_lipids(i):string%20%3F;misc_param(i):string%20%3F;n_alkanes(i):string%20%3F;organism_count(i):organism_count_enum%20%3F;oxy_stat_samp(i):oxy_stat_samp_enum%20%3F;ph(i):double%20%3F;perturbation(i):string%20%3F;phaeopigments(i):string%20%3F;phosplipid_fatt_acid(i):string%20%3F;samp_store_dur(i):string%20%3F;samp_store_loc(i):string%20%3F;tidal_stage(i):tidal_stage_enum%20%3F;sample_name(i):string;project_name(i):string]uses%20-.-&gt;[MIGSVirus],[Water]^-[WaterMIGSVirus],[Water],[QuantityValue],[MIGSVirus]" /></p>
+<h2 id="parents">Parents</h2>
+<ul>
+<li>is_a: <a href="Water.html">Water</a> - water</li>
+</ul>
+<h2 id="uses-mixins">Uses Mixins</h2>
+<ul>
+<li>mixin: <a href="MIGSVirus.html">MIGSVirus</a> - Minimal Information about a Genome Sequence: cultured bacteria/archaea</li>
+</ul>
+<h2 id="attributes">Attributes</h2>
+<h3 id="inherited-from-water">Inherited from water:</h3>
+<ul>
+<li><a href="alt.html">alt</a>  <sub>OPT</sub><ul>
+<li>Description: Altitude is a term used to identify heights of objects such as airplanes, space shuttles, rockets, atmospheric balloons and heights of places such as atmospheric layers and clouds. It is used to measure the height of an object which is above the earth's surface. In this context, the altitude measurement is the vertical distance between the earth's surface above sea level and the sampled position in the air</li>
+<li>Range: <a href="QuantityValue.html">QuantityValue</a></li>
+<li>Example: 100 meter None</li>
+</ul>
+</li>
+<li><a href="collection_date.html">collection_date</a>  <sub>OPT</sub><ul>
+<li>Description: The time of sampling, either as an instance (single point in time) or interval. In case no exact time is available, the date/time can be right truncated i.e. all of these are valid times: 2008-01-23T19:23:10+00:00; 2008-01-23T19:23:10; 2008-01-23; 2008-01; 2008; Except: 2008-01; 2008 all are ISO8601 compliant</li>
+<li>Range: <a href="types/Date.html">Date</a></li>
+<li>Example: 2018-05-11T10:00:00+01:00 None</li>
+</ul>
+</li>
+<li><a href="env_broad_scale.html">env_broad_scale</a>  <sub>OPT</sub><ul>
+<li>Description: In this field, report which major environmental system your sample or specimen came from. The systems identified should have a coarse spatial grain, to provide the general environmental context of where the sampling was done (e.g. were you in the desert or a rainforest?). We recommend using subclasses of ENVO’s biome class: http://purl.obolibrary.org/obo/ENVO_00000428. Format (one term): termLabel [termID], Format (multiple terms): termLabel [termID]|termLabel [termID]|termLabel [termID]. Example: Annotating a water sample from the photic zone in middle of the Atlantic Ocean, consider: oceanic epipelagic zone biome [ENVO:01000033]. Example: Annotating a sample from the Amazon rainforest consider: tropical moist broadleaf forest biome [ENVO:01000228]. If needed, request new terms on the ENVO tracker, identified here: http://www.obofoundry.org/ontology/envo.html</li>
+<li>Range: <a href="types/String.html">String</a></li>
+<li>Example: forest biome [ENVO:01000174] None</li>
+</ul>
+</li>
+<li><a href="env_local_scale.html">env_local_scale</a>  <sub>OPT</sub><ul>
+<li>Description: In this field, report the entity or entities which are in your sample or specimen’s local vicinity and which you believe have significant causal influences on your sample or specimen. Please use terms that are present in ENVO and which are of smaller spatial grain than your entry for env_broad_scale. Format (one term): termLabel [termID]; Format (multiple terms): termLabel [termID]|termLabel [termID]|termLabel [termID]. Example: Annotating a pooled sample taken from various vegetation layers in a forest consider: canopy [ENVO:00000047]|herb and fern layer [ENVO:01000337]|litter layer [ENVO:01000338]|understory [01000335]|shrub layer [ENVO:01000336]. If needed, request new terms on the ENVO tracker, identified here: http://www.obofoundry.org/ontology/envo.html</li>
+<li>Range: <a href="types/String.html">String</a></li>
+<li>Example: litter layer [ENVO:01000338] None</li>
+</ul>
+</li>
+<li><a href="env_medium.html">env_medium</a>  <sub>OPT</sub><ul>
+<li>Description: In this field, report which environmental material or materials (pipe separated) immediately surrounded your sample or specimen prior to sampling, using one or more subclasses of ENVO’s environmental material class: http://purl.obolibrary.org/obo/ENVO_00010483. Format (one term): termLabel [termID]; Format (multiple terms): termLabel [termID]|termLabel [termID]|termLabel [termID]. Example: Annotating a fish swimming in the upper 100 m of the Atlantic Ocean, consider: ocean water [ENVO:00002151]. Example: Annotating a duck on a pond consider: pond water [ENVO:00002228]|air ENVO_00002005. If needed, request new terms on the ENVO tracker, identified here: http://www.obofoundry.org/ontology/envo.html</li>
+<li>Range: <a href="types/String.html">String</a></li>
+<li>Example: soil [ENVO:00001998] None</li>
+</ul>
+</li>
+<li><a href="geo_loc_name.html">geo_loc_name</a>  <sub>OPT</sub><ul>
+<li>Description: The geographical origin of the sample as defined by the country or sea name followed by specific region name. Country or sea names should be chosen from the INSDC country list (http://insdc.org/country.html), or the GAZ ontology (v 1.512) (http://purl.bioontology.org/ontology/GAZ)</li>
+<li>Range: <a href="types/String.html">String</a></li>
+<li>Example: USA: Maryland, Bethesda None</li>
+</ul>
+</li>
+<li><a href="lat_lon.html">lat_lon</a>  <sub>OPT</sub><ul>
+<li>Description: The geographical origin of the sample as defined by latitude and longitude. The values should be reported in decimal degrees and in WGS84 system</li>
+<li>Range: <a href="types/String.html">String</a></li>
+<li>Example: 50.586825 6.408977 None</li>
+</ul>
+</li>
+<li><a href="water_alkalinity.html">water➞alkalinity</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="QuantityValue.html">QuantityValue</a></li>
+</ul>
+</li>
+<li><a href="water_alkalinity_method.html">water➞alkalinity_method</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="types/String.html">String</a></li>
+</ul>
+</li>
+<li><a href="water_alkyl_diethers.html">water➞alkyl_diethers</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="QuantityValue.html">QuantityValue</a></li>
+</ul>
+</li>
+<li><a href="water_aminopept_act.html">water➞aminopept_act</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="QuantityValue.html">QuantityValue</a></li>
+</ul>
+</li>
+<li><a href="water_ammonium.html">water➞ammonium</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="QuantityValue.html">QuantityValue</a></li>
+</ul>
+</li>
+<li><a href="water_atmospheric_data.html">water➞atmospheric_data</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="types/String.html">String</a></li>
+</ul>
+</li>
+<li><a href="water_bac_prod.html">water➞bac_prod</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="QuantityValue.html">QuantityValue</a></li>
+</ul>
+</li>
+<li><a href="water_bac_resp.html">water➞bac_resp</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="QuantityValue.html">QuantityValue</a></li>
+</ul>
+</li>
+<li><a href="water_bacteria_carb_prod.html">water➞bacteria_carb_prod</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="QuantityValue.html">QuantityValue</a></li>
+</ul>
+</li>
+<li><a href="water_biomass.html">water➞biomass</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="types/String.html">String</a></li>
+</ul>
+</li>
+<li><a href="water_bishomohopanol.html">water➞bishomohopanol</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="QuantityValue.html">QuantityValue</a></li>
+</ul>
+</li>
+<li><a href="water_bromide.html">water➞bromide</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="QuantityValue.html">QuantityValue</a></li>
+</ul>
+</li>
+<li><a href="water_calcium.html">water➞calcium</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="QuantityValue.html">QuantityValue</a></li>
+</ul>
+</li>
+<li><a href="water_carb_nitro_ratio.html">water➞carb_nitro_ratio</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="QuantityValue.html">QuantityValue</a></li>
+</ul>
+</li>
+<li><a href="water_chem_administration.html">water➞chem_administration</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="types/String.html">String</a></li>
+</ul>
+</li>
+<li><a href="water_chloride.html">water➞chloride</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="QuantityValue.html">QuantityValue</a></li>
+</ul>
+</li>
+<li><a href="water_chlorophyll.html">water➞chlorophyll</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="QuantityValue.html">QuantityValue</a></li>
+</ul>
+</li>
+<li><a href="water_conduc.html">water➞conduc</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="QuantityValue.html">QuantityValue</a></li>
+</ul>
+</li>
+<li><a href="water_density.html">water➞density</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="QuantityValue.html">QuantityValue</a></li>
+</ul>
+</li>
+<li><a href="water_depth.html">water➞depth</a>  <sub>REQ</sub><ul>
+<li>Range: <a href="types/String.html">String</a></li>
+</ul>
+</li>
+<li><a href="water_diether_lipids.html">water➞diether_lipids</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="types/String.html">String</a></li>
+</ul>
+</li>
+<li><a href="water_diss_carb_dioxide.html">water➞diss_carb_dioxide</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="QuantityValue.html">QuantityValue</a></li>
+</ul>
+</li>
+<li><a href="water_diss_hydrogen.html">water➞diss_hydrogen</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="QuantityValue.html">QuantityValue</a></li>
+</ul>
+</li>
+<li><a href="water_diss_inorg_carb.html">water➞diss_inorg_carb</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="QuantityValue.html">QuantityValue</a></li>
+</ul>
+</li>
+<li><a href="water_diss_inorg_nitro.html">water➞diss_inorg_nitro</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="QuantityValue.html">QuantityValue</a></li>
+</ul>
+</li>
+<li><a href="water_diss_inorg_phosp.html">water➞diss_inorg_phosp</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="QuantityValue.html">QuantityValue</a></li>
+</ul>
+</li>
+<li><a href="water_diss_org_carb.html">water➞diss_org_carb</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="QuantityValue.html">QuantityValue</a></li>
+</ul>
+</li>
+<li><a href="water_diss_org_nitro.html">water➞diss_org_nitro</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="QuantityValue.html">QuantityValue</a></li>
+</ul>
+</li>
+<li><a href="water_diss_oxygen.html">water➞diss_oxygen</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="QuantityValue.html">QuantityValue</a></li>
+</ul>
+</li>
+<li><a href="water_down_par.html">water➞down_par</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="QuantityValue.html">QuantityValue</a></li>
+</ul>
+</li>
+<li><a href="water_elev.html">water➞elev</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="QuantityValue.html">QuantityValue</a></li>
+</ul>
+</li>
+<li><a href="water_fluor.html">water➞fluor</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="QuantityValue.html">QuantityValue</a></li>
+</ul>
+</li>
+<li><a href="water_glucosidase_act.html">water➞glucosidase_act</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="QuantityValue.html">QuantityValue</a></li>
+</ul>
+</li>
+<li><a href="water_light_intensity.html">water➞light_intensity</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="QuantityValue.html">QuantityValue</a></li>
+</ul>
+</li>
+<li><a href="water_magnesium.html">water➞magnesium</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="QuantityValue.html">QuantityValue</a></li>
+</ul>
+</li>
+<li><a href="water_mean_frict_vel.html">water➞mean_frict_vel</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="QuantityValue.html">QuantityValue</a></li>
+</ul>
+</li>
+<li><a href="water_mean_peak_frict_vel.html">water➞mean_peak_frict_vel</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="QuantityValue.html">QuantityValue</a></li>
+</ul>
+</li>
+<li><a href="water_misc_param.html">water➞misc_param</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="types/String.html">String</a></li>
+</ul>
+</li>
+<li><a href="water_n_alkanes.html">water➞n_alkanes</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="types/String.html">String</a></li>
+</ul>
+</li>
+<li><a href="water_nitrate.html">water➞nitrate</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="QuantityValue.html">QuantityValue</a></li>
+</ul>
+</li>
+<li><a href="water_nitrite.html">water➞nitrite</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="QuantityValue.html">QuantityValue</a></li>
+</ul>
+</li>
+<li><a href="water_nitro.html">water➞nitro</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="QuantityValue.html">QuantityValue</a></li>
+</ul>
+</li>
+<li><a href="water_org_carb.html">water➞org_carb</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="QuantityValue.html">QuantityValue</a></li>
+</ul>
+</li>
+<li><a href="water_org_matter.html">water➞org_matter</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="QuantityValue.html">QuantityValue</a></li>
+</ul>
+</li>
+<li><a href="water_org_nitro.html">water➞org_nitro</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="QuantityValue.html">QuantityValue</a></li>
+</ul>
+</li>
+<li><a href="water_organism_count.html">water➞organism_count</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="organism_count_enum.html">organism_count_enum</a></li>
+</ul>
+</li>
+<li><a href="water_oxy_stat_samp.html">water➞oxy_stat_samp</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="oxy_stat_samp_enum.html">oxy_stat_samp_enum</a></li>
+</ul>
+</li>
+<li><a href="water_part_org_carb.html">water➞part_org_carb</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="QuantityValue.html">QuantityValue</a></li>
+</ul>
+</li>
+<li><a href="water_part_org_nitro.html">water➞part_org_nitro</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="QuantityValue.html">QuantityValue</a></li>
+</ul>
+</li>
+<li><a href="water_perturbation.html">water➞perturbation</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="types/String.html">String</a></li>
+</ul>
+</li>
+<li><a href="water_petroleum_hydrocarb.html">water➞petroleum_hydrocarb</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="QuantityValue.html">QuantityValue</a></li>
+</ul>
+</li>
+<li><a href="water_ph.html">water➞ph</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="types/Double.html">Double</a></li>
+</ul>
+</li>
+<li><a href="water_phaeopigments.html">water➞phaeopigments</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="types/String.html">String</a></li>
+</ul>
+</li>
+<li><a href="water_phosphate.html">water➞phosphate</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="QuantityValue.html">QuantityValue</a></li>
+</ul>
+</li>
+<li><a href="water_phosplipid_fatt_acid.html">water➞phosplipid_fatt_acid</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="types/String.html">String</a></li>
+</ul>
+</li>
+<li><a href="water_photon_flux.html">water➞photon_flux</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="QuantityValue.html">QuantityValue</a></li>
+</ul>
+</li>
+<li><a href="water_potassium.html">water➞potassium</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="QuantityValue.html">QuantityValue</a></li>
+</ul>
+</li>
+<li><a href="water_pressure.html">water➞pressure</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="QuantityValue.html">QuantityValue</a></li>
+</ul>
+</li>
+<li><a href="water_primary_prod.html">water➞primary_prod</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="QuantityValue.html">QuantityValue</a></li>
+</ul>
+</li>
+<li><a href="water_project_name.html">water➞project_name</a>  <sub>REQ</sub><ul>
+<li>Range: <a href="types/String.html">String</a></li>
+</ul>
+</li>
+<li><a href="water_redox_potential.html">water➞redox_potential</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="QuantityValue.html">QuantityValue</a></li>
+</ul>
+</li>
+<li><a href="water_salinity.html">water➞salinity</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="QuantityValue.html">QuantityValue</a></li>
+</ul>
+</li>
+<li><a href="water_samp_store_dur.html">water➞samp_store_dur</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="types/String.html">String</a></li>
+</ul>
+</li>
+<li><a href="water_samp_store_loc.html">water➞samp_store_loc</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="types/String.html">String</a></li>
+</ul>
+</li>
+<li><a href="water_samp_store_temp.html">water➞samp_store_temp</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="QuantityValue.html">QuantityValue</a></li>
+</ul>
+</li>
+<li><a href="water_samp_vol_we_dna_ext.html">water➞samp_vol_we_dna_ext</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="QuantityValue.html">QuantityValue</a></li>
+</ul>
+</li>
+<li><a href="water_sample_name.html">water➞sample_name</a>  <sub>REQ</sub><ul>
+<li>Range: <a href="types/String.html">String</a></li>
+</ul>
+</li>
+<li><a href="water_silicate.html">water➞silicate</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="QuantityValue.html">QuantityValue</a></li>
+</ul>
+</li>
+<li><a href="water_size_frac_low.html">water➞size_frac_low</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="QuantityValue.html">QuantityValue</a></li>
+</ul>
+</li>
+<li><a href="water_size_frac_up.html">water➞size_frac_up</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="QuantityValue.html">QuantityValue</a></li>
+</ul>
+</li>
+<li><a href="water_sodium.html">water➞sodium</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="QuantityValue.html">QuantityValue</a></li>
+</ul>
+</li>
+<li><a href="water_soluble_react_phosp.html">water➞soluble_react_phosp</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="QuantityValue.html">QuantityValue</a></li>
+</ul>
+</li>
+<li><a href="water_sulfate.html">water➞sulfate</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="QuantityValue.html">QuantityValue</a></li>
+</ul>
+</li>
+<li><a href="water_sulfide.html">water➞sulfide</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="QuantityValue.html">QuantityValue</a></li>
+</ul>
+</li>
+<li><a href="water_suspend_part_matter.html">water➞suspend_part_matter</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="QuantityValue.html">QuantityValue</a></li>
+</ul>
+</li>
+<li><a href="water_temp.html">water➞temp</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="QuantityValue.html">QuantityValue</a></li>
+</ul>
+</li>
+<li><a href="water_tidal_stage.html">water➞tidal_stage</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="tidal_stage_enum.html">tidal_stage_enum</a></li>
+</ul>
+</li>
+<li><a href="water_tot_depth_water_col.html">water➞tot_depth_water_col</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="QuantityValue.html">QuantityValue</a></li>
+</ul>
+</li>
+<li><a href="water_tot_diss_nitro.html">water➞tot_diss_nitro</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="QuantityValue.html">QuantityValue</a></li>
+</ul>
+</li>
+<li><a href="water_tot_inorg_nitro.html">water➞tot_inorg_nitro</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="QuantityValue.html">QuantityValue</a></li>
+</ul>
+</li>
+<li><a href="water_tot_nitro.html">water➞tot_nitro</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="QuantityValue.html">QuantityValue</a></li>
+</ul>
+</li>
+<li><a href="water_tot_part_carb.html">water➞tot_part_carb</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="QuantityValue.html">QuantityValue</a></li>
+</ul>
+</li>
+<li><a href="water_tot_phosp.html">water➞tot_phosp</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="QuantityValue.html">QuantityValue</a></li>
+</ul>
+</li>
+<li><a href="water_turbidity.html">water➞turbidity</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="QuantityValue.html">QuantityValue</a></li>
+</ul>
+</li>
+<li><a href="water_water_current.html">water➞water_current</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="QuantityValue.html">QuantityValue</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-migs-virus">Mixed in from MIGS virus:</h3>
+<ul>
+<li><a href="MIGS_virus_adapters.html">MIGS virus➞adapters</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="types/String.html">String</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-migs-virus_1">Mixed in from MIGS virus:</h3>
+<ul>
+<li><a href="MIGS_virus_annot.html">MIGS virus➞annot</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="types/String.html">String</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-migs-virus_2">Mixed in from MIGS virus:</h3>
+<ul>
+<li><a href="MIGS_virus_assembly_name.html">MIGS virus➞assembly_name</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="types/String.html">String</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-migs-virus_3">Mixed in from MIGS virus:</h3>
+<ul>
+<li><a href="MIGS_virus_assembly_qual.html">MIGS virus➞assembly_qual</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="assembly_qual_enum.html">assembly_qual_enum</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-migs-virus_4">Mixed in from MIGS virus:</h3>
+<ul>
+<li><a href="MIGS_virus_assembly_software.html">MIGS virus➞assembly_software</a>  <sub>REQ</sub><ul>
+<li>Range: <a href="types/String.html">String</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-migs-virus_5">Mixed in from MIGS virus:</h3>
+<ul>
+<li><a href="MIGS_virus_biotic_relationship.html">MIGS virus➞biotic_relationship</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="biotic_relationship_enum.html">biotic_relationship_enum</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-migs-virus_6">Mixed in from MIGS virus:</h3>
+<ul>
+<li><a href="MIGS_virus_compl_score.html">MIGS virus➞compl_score</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="compl_score_enum.html">compl_score_enum</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-migs-virus_7">Mixed in from MIGS virus:</h3>
+<ul>
+<li><a href="MIGS_virus_compl_software.html">MIGS virus➞compl_software</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="types/String.html">String</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-migs-virus_8">Mixed in from MIGS virus:</h3>
+<ul>
+<li><a href="MIGS_virus_encoded_traits.html">MIGS virus➞encoded_traits</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="types/String.html">String</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-migs-virus_9">Mixed in from MIGS virus:</h3>
+<ul>
+<li><a href="MIGS_virus_env_package.html">MIGS virus➞env_package</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="env_package_enum.html">env_package_enum</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-migs-virus_10">Mixed in from MIGS virus:</h3>
+<ul>
+<li><a href="MIGS_virus_estimated_size.html">MIGS virus➞estimated_size</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="types/String.html">String</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-migs-virus_11">Mixed in from MIGS virus:</h3>
+<ul>
+<li><a href="MIGS_virus_experimental_factor.html">MIGS virus➞experimental_factor</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="types/String.html">String</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-migs-virus_12">Mixed in from MIGS virus:</h3>
+<ul>
+<li><a href="MIGS_virus_feat_pred.html">MIGS virus➞feat_pred</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="types/String.html">String</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-migs-virus_13">Mixed in from MIGS virus:</h3>
+<ul>
+<li><a href="MIGS_virus_health_disease_stat.html">MIGS virus➞health_disease_stat</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="health_disease_stat_enum.html">health_disease_stat_enum</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-migs-virus_14">Mixed in from MIGS virus:</h3>
+<ul>
+<li><a href="MIGS_virus_host_disease_stat.html">MIGS virus➞host_disease_stat</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="types/String.html">String</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-migs-virus_15">Mixed in from MIGS virus:</h3>
+<ul>
+<li><a href="MIGS_virus_host_spec_range.html">MIGS virus➞host_spec_range</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="types/String.html">String</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-migs-virus_16">Mixed in from MIGS virus:</h3>
+<ul>
+<li><a href="MIGS_virus_investigation_type.html">MIGS virus➞investigation_type</a>  <sub>REQ</sub><ul>
+<li>Range: <a href="investigation_type_enum.html">investigation_type_enum</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-migs-virus_17">Mixed in from MIGS virus:</h3>
+<ul>
+<li><a href="MIGS_virus_isol_growth_condt.html">MIGS virus➞isol_growth_condt</a>  <sub>REQ</sub><ul>
+<li>Range: <a href="types/String.html">String</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-migs-virus_18">Mixed in from MIGS virus:</h3>
+<ul>
+<li><a href="MIGS_virus_lib_layout.html">MIGS virus➞lib_layout</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="lib_layout_enum.html">lib_layout_enum</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-migs-virus_19">Mixed in from MIGS virus:</h3>
+<ul>
+<li><a href="MIGS_virus_lib_reads_seqd.html">MIGS virus➞lib_reads_seqd</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="types/String.html">String</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-migs-virus_20">Mixed in from MIGS virus:</h3>
+<ul>
+<li><a href="MIGS_virus_lib_screen.html">MIGS virus➞lib_screen</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="types/String.html">String</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-migs-virus_21">Mixed in from MIGS virus:</h3>
+<ul>
+<li><a href="MIGS_virus_lib_size.html">MIGS virus➞lib_size</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="types/String.html">String</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-migs-virus_22">Mixed in from MIGS virus:</h3>
+<ul>
+<li><a href="MIGS_virus_lib_vector.html">MIGS virus➞lib_vector</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="types/String.html">String</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-migs-virus_23">Mixed in from MIGS virus:</h3>
+<ul>
+<li><a href="MIGS_virus_nucl_acid_amp.html">MIGS virus➞nucl_acid_amp</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="types/String.html">String</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-migs-virus_24">Mixed in from MIGS virus:</h3>
+<ul>
+<li><a href="MIGS_virus_nucl_acid_ext.html">MIGS virus➞nucl_acid_ext</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="types/String.html">String</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-migs-virus_25">Mixed in from MIGS virus:</h3>
+<ul>
+<li><a href="MIGS_virus_num_replicons.html">MIGS virus➞num_replicons</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="types/String.html">String</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-migs-virus_26">Mixed in from MIGS virus:</h3>
+<ul>
+<li><a href="MIGS_virus_number_contig.html">MIGS virus➞number_contig</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="types/String.html">String</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-migs-virus_27">Mixed in from MIGS virus:</h3>
+<ul>
+<li><a href="MIGS_virus_pathogenicity.html">MIGS virus➞pathogenicity</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="types/String.html">String</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-migs-virus_28">Mixed in from MIGS virus:</h3>
+<ul>
+<li><a href="MIGS_virus_propagation.html">MIGS virus➞propagation</a>  <sub>REQ</sub><ul>
+<li>Range: <a href="types/String.html">String</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-migs-virus_29">Mixed in from MIGS virus:</h3>
+<ul>
+<li><a href="MIGS_virus_ref_biomaterial.html">MIGS virus➞ref_biomaterial</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="types/String.html">String</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-migs-virus_30">Mixed in from MIGS virus:</h3>
+<ul>
+<li><a href="MIGS_virus_ref_db.html">MIGS virus➞ref_db</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="types/String.html">String</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-migs-virus_31">Mixed in from MIGS virus:</h3>
+<ul>
+<li><a href="MIGS_virus_samp_mat_process.html">MIGS virus➞samp_mat_process</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="types/String.html">String</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-migs-virus_32">Mixed in from MIGS virus:</h3>
+<ul>
+<li><a href="MIGS_virus_samp_size.html">MIGS virus➞samp_size</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="QuantityValue.html">QuantityValue</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-migs-virus_33">Mixed in from MIGS virus:</h3>
+<ul>
+<li><a href="MIGS_virus_sample_collect_device.html">MIGS virus➞sample_collect_device</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="types/String.html">String</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-migs-virus_34">Mixed in from MIGS virus:</h3>
+<ul>
+<li><a href="MIGS_virus_sample_collect_method.html">MIGS virus➞sample_collect_method</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="types/String.html">String</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-migs-virus_35">Mixed in from MIGS virus:</h3>
+<ul>
+<li><a href="MIGS_virus_seq_meth.html">MIGS virus➞seq_meth</a>  <sub>REQ</sub><ul>
+<li>Range: <a href="seq_meth_enum.html">seq_meth_enum</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-migs-virus_36">Mixed in from MIGS virus:</h3>
+<ul>
+<li><a href="MIGS_virus_sim_search_meth.html">MIGS virus➞sim_search_meth</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="types/String.html">String</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-migs-virus_37">Mixed in from MIGS virus:</h3>
+<ul>
+<li><a href="MIGS_virus_sop.html">MIGS virus➞sop</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="types/String.html">String</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-migs-virus_38">Mixed in from MIGS virus:</h3>
+<ul>
+<li><a href="MIGS_virus_source_mat_id.html">MIGS virus➞source_mat_id</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="types/String.html">String</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-migs-virus_39">Mixed in from MIGS virus:</h3>
+<ul>
+<li><a href="MIGS_virus_specific_host.html">MIGS virus➞specific_host</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="types/String.html">String</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-migs-virus_40">Mixed in from MIGS virus:</h3>
+<ul>
+<li><a href="MIGS_virus_submitted_to_insdc.html">MIGS virus➞submitted_to_insdc</a>  <sub>REQ</sub><ul>
+<li>Range: <a href="types/String.html">String</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-migs-virus_41">Mixed in from MIGS virus:</h3>
+<ul>
+<li><a href="MIGS_virus_subspecf_gen_lin.html">MIGS virus➞subspecf_gen_lin</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="types/String.html">String</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-migs-virus_42">Mixed in from MIGS virus:</h3>
+<ul>
+<li><a href="MIGS_virus_tax_class.html">MIGS virus➞tax_class</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="types/String.html">String</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-migs-virus_43">Mixed in from MIGS virus:</h3>
+<ul>
+<li><a href="MIGS_virus_tax_ident.html">MIGS virus➞tax_ident</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="tax_ident_enum.html">tax_ident_enum</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-migs-virus_44">Mixed in from MIGS virus:</h3>
+<ul>
+<li><a href="MIGS_virus_url.html">MIGS virus➞url</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="types/String.html">String</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-migs-virus_45">Mixed in from MIGS virus:</h3>
+<ul>
+<li><a href="MIGS_virus_virus_enrich_appr.html">MIGS virus➞virus_enrich_appr</a>  <sub>OPT</sub><ul>
+<li>Range: <a href="virus_enrich_appr_enum.html">virus_enrich_appr_enum</a></li>
+</ul>
+</li>
+</ul>
+              
+            </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+    
+  </span>
+</div>
+    <script>var base_url = '.';</script>
+    <script src="js/theme_extra.js" defer></script>
+    <script src="js/theme.js" defer></script>
+      <script src="search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
