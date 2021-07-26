@@ -18,6 +18,7 @@ classes:
     - depth
     - alt
     - elev
+    - temp
     - geo_loc_name
     - collection_date
     - env_broad_scale
@@ -31,7 +32,7 @@ classes:
     - hcr_temp
     - tvdss_of_hcr_temp
     - hcr_pressure
-    - tvdss_of_hcr_pressure
+    - tvdss_of_hcr_press
     - permeability
     - porosity
     - lithology
@@ -49,7 +50,6 @@ classes:
     - win
     - samp_type
     - samp_subtype
-    - temp
     - pressure
     - samp_tvdss
     - samp_md
@@ -58,11 +58,11 @@ classes:
     - samp_store_temp
     - samp_store_dur
     - samp_store_loc
-    - samp_vol_we_dna_ext
     - organism_count
-    - organism_count_qpcr_info
+    - org_count_qpcr_info
     - ph
     - samp_salinity
+    - salinity
     - alkalinity
     - alkalinity_method
     - sulfate
@@ -103,7 +103,7 @@ classes:
     - misc_param
     - additional_info
     slot_usage:
-      sample_name:
+      samp_name:
         required: true
       project_name:
         required: true
@@ -123,7 +123,7 @@ classes:
         required: false
       hcr_pressure:
         required: false
-      tvdss_of_hcr_pressure:
+      tvdss_of_hcr_press:
         required: false
       permeability:
         required: false
@@ -183,12 +183,14 @@ classes:
         required: false
       organism_count:
         required: false
-      organism_count_qpcr_info:
+      org_count_qpcr_info:
         required: false
       ph:
         required: false
       samp_salinity:
         required: true
+      salinity:
+        required: false
       alkalinity:
         required: false
       alkalinity_method:

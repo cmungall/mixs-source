@@ -1,5 +1,5 @@
-id: http://w3id.org/mixs/human_associated
-name: human_associated
+id: http://w3id.org/mixs/human_gut
+name: human_gut
 imports:
 - linkml:types
 - terms
@@ -10,19 +10,23 @@ prefixes:
 default_prefix: mixs.vocab
 slots: {}
 classes:
-  human-associated:
-    description: human-associated
+  human-gut:
+    description: human-gut
     mappings: []
     slots:
     - lat_lon
     - depth
     - alt
     - elev
+    - temp
     - geo_loc_name
     - collection_date
     - env_broad_scale
     - env_local_scale
     - env_medium
+    - gastrointest_disord
+    - liver_disord
+    - special_diet
     - host_subject_id
     - host_age
     - host_sex
@@ -34,50 +38,36 @@ classes:
     - host_height
     - host_diet
     - host_last_meal
-    - host_family_relationship
+    - host_family_relation
     - host_genotype
     - host_phenotype
     - host_body_temp
-    - smoker
-    - host_hiv_stat
-    - drug_usage
     - host_body_mass_index
-    - diet_last_six_month
-    - weight_loss_3_month
-    - ihmc_ethnicity
+    - ethnicity
     - host_occupation
-    - pet_farm_animal
-    - travel_out_six_month
-    - twin_sibling
     - medic_hist_perform
-    - study_complt_stat
-    - pulmonary_disord
-    - nose_throat_disord
-    - blood_blood_disord
     - host_pulse
-    - gestation_state
-    - maternal_health_stat
-    - foetal_health_stat
-    - amniotic_fluid_color
-    - kidney_disord
-    - urogenit_tract_disor
-    - urine_collect_meth
     - perturbation
     - samp_salinity
+    - salinity
     - oxy_stat_samp
-    - temp
     - organism_count
-    - samp_vol_we_dna_ext
     - samp_store_temp
     - samp_store_dur
     - host_symbiont
     - samp_store_loc
     - misc_param
     slot_usage:
-      sample_name:
+      samp_name:
         required: true
       project_name:
         required: true
+      gastrointest_disord:
+        required: false
+      liver_disord:
+        required: false
+      special_diet:
+        required: false
       host_subject_id:
         required: false
       host_age:
@@ -102,7 +92,7 @@ classes:
         required: false
       host_last_meal:
         required: false
-      host_family_relationship:
+      host_family_relation:
         required: false
       host_genotype:
         required: false
@@ -110,57 +100,21 @@ classes:
         required: false
       host_body_temp:
         required: false
-      smoker:
-        required: false
-      host_hiv_stat:
-        required: false
-      drug_usage:
-        required: false
       host_body_mass_index:
         required: false
-      diet_last_six_month:
-        required: false
-      weight_loss_3_month:
-        required: false
-      ihmc_ethnicity:
+      ethnicity:
         required: false
       host_occupation:
         required: false
-      pet_farm_animal:
-        required: false
-      travel_out_six_month:
-        required: false
-      twin_sibling:
-        required: false
       medic_hist_perform:
         required: false
-      study_complt_stat:
-        required: false
-      pulmonary_disord:
-        required: false
-      nose_throat_disord:
-        required: false
-      blood_blood_disord:
-        required: false
       host_pulse:
-        required: false
-      gestation_state:
-        required: false
-      maternal_health_stat:
-        required: false
-      foetal_health_stat:
-        required: false
-      amniotic_fluid_color:
-        required: false
-      kidney_disord:
-        required: false
-      urogenit_tract_disor:
-        required: false
-      urine_collect_meth:
         required: false
       perturbation:
         required: false
       samp_salinity:
+        required: false
+      salinity:
         required: false
       oxy_stat_samp:
         required: false
@@ -168,9 +122,9 @@ classes:
         required: false
       organism_count:
         required: false
-      samp_vol_we_dna_ext:
-        required: false
       samp_store_temp:
+        required: false
+      samp_vol_we_dna_ext:
         required: false
       samp_store_dur:
         required: false

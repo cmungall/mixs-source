@@ -1,5 +1,5 @@
-id: http://w3id.org/mixs/sediment
-name: sediment
+id: http://w3id.org/mixs/microbial_mat_biofilm
+name: microbial_mat_biofilm
 imports:
 - linkml:types
 - terms
@@ -10,14 +10,15 @@ prefixes:
 default_prefix: mixs.vocab
 slots: {}
 classes:
-  sediment:
-    description: sediment
+  microbial mat_biofilm:
+    description: microbial mat/biofilm
     mappings: []
     slots:
     - lat_lon
     - depth
     - alt
     - elev
+    - temp
     - geo_loc_name
     - collection_date
     - env_broad_scale
@@ -36,7 +37,6 @@ classes:
     - chem_administration
     - chloride
     - chlorophyll
-    - density
     - diether_lipids
     - diss_carb_dioxide
     - diss_hydrogen
@@ -60,14 +60,12 @@ classes:
     - organism_count
     - oxy_stat_samp
     - ph
-    - particle_class
     - part_org_carb
     - perturbation
     - petroleum_hydrocarb
     - phaeopigments
     - phosphate
     - phosplipid_fatt_acid
-    - porosity
     - potassium
     - pressure
     - redox_potential
@@ -75,27 +73,22 @@ classes:
     - samp_store_dur
     - samp_store_loc
     - samp_store_temp
-    - samp_vol_we_dna_ext
-    - sediment_type
     - silicate
     - sodium
     - sulfate
     - sulfide
-    - temp
-    - tidal_stage
     - tot_carb
-    - tot_depth_water_col
     - tot_nitro_content
     - tot_org_carb
     - turbidity
     - water_content
     slot_usage:
-      sample_name:
+      samp_name:
         required: true
       project_name:
         required: true
       depth:
-        required: true
+        required: false
       elev:
         required: false
       alkalinity:
@@ -123,8 +116,6 @@ classes:
       chloride:
         required: false
       chlorophyll:
-        required: false
-      density:
         required: false
       diether_lipids:
         required: false
@@ -172,8 +163,6 @@ classes:
         required: false
       ph:
         required: false
-      particle_class:
-        required: false
       part_org_carb:
         required: false
       perturbation:
@@ -185,8 +174,6 @@ classes:
       phosphate:
         required: false
       phosplipid_fatt_acid:
-        required: false
-      porosity:
         required: false
       potassium:
         required: false
@@ -204,8 +191,6 @@ classes:
         required: false
       samp_vol_we_dna_ext:
         required: false
-      sediment_type:
-        required: false
       silicate:
         required: false
       sodium:
@@ -216,11 +201,7 @@ classes:
         required: false
       temp:
         required: false
-      tidal_stage:
-        required: false
       tot_carb:
-        required: false
-      tot_depth_water_col:
         required: false
       tot_nitro_content:
         required: false

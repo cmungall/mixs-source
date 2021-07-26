@@ -18,6 +18,7 @@ classes:
     - depth
     - alt
     - elev
+    - temp
     - geo_loc_name
     - collection_date
     - env_broad_scale
@@ -36,12 +37,11 @@ classes:
     - pollutants
     - resp_part_matter
     - samp_salinity
+    - salinity
     - samp_store_dur
     - samp_store_loc
     - samp_store_temp
-    - samp_vol_we_dna_ext
     - solar_irradiance
-    - temp
     - ventilation_rate
     - ventilation_type
     - volatile_org_comp
@@ -49,7 +49,7 @@ classes:
     - wind_speed
     - misc_param
     slot_usage:
-      sample_name:
+      samp_name:
         required: true
       project_name:
         required: true
@@ -82,6 +82,8 @@ classes:
       resp_part_matter:
         required: false
       samp_salinity:
+        required: false
+      salinity:
         required: false
       samp_store_dur:
         required: false

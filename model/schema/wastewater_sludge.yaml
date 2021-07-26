@@ -18,6 +18,7 @@ classes:
     - depth
     - alt
     - elev
+    - temp
     - geo_loc_name
     - collection_date
     - env_broad_scale
@@ -44,10 +45,10 @@ classes:
     - primary_treatment
     - reactor_type
     - samp_salinity
+    - salinity
     - samp_store_dur
     - samp_store_loc
     - samp_store_temp
-    - samp_vol_we_dna_ext
     - secondary_treatment
     - sewage_type
     - sludge_retent_time
@@ -55,13 +56,12 @@ classes:
     - soluble_inorg_mat
     - soluble_org_mat
     - suspend_solids
-    - temp
     - tertiary_treatment
     - tot_nitro
     - tot_phosphate
     - wastewater_type
     slot_usage:
-      sample_name:
+      samp_name:
         required: true
       project_name:
         required: true
@@ -108,6 +108,8 @@ classes:
       reactor_type:
         required: false
       samp_salinity:
+        required: false
+      salinity:
         required: false
       samp_store_dur:
         required: false

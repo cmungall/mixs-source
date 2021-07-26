@@ -1,5 +1,5 @@
-id: http://w3id.org/mixs/microbial_mat_biofilm
-name: microbial_mat_biofilm
+id: http://w3id.org/mixs/water
+name: water
 imports:
 - linkml:types
 - terms
@@ -10,24 +10,29 @@ prefixes:
 default_prefix: mixs.vocab
 slots: {}
 classes:
-  microbial mat_biofilm:
-    description: microbial mat/biofilm
+  water:
+    description: water
     mappings: []
     slots:
     - lat_lon
     - depth
     - alt
     - elev
+    - temp
     - geo_loc_name
     - collection_date
     - env_broad_scale
     - env_local_scale
     - env_medium
     - alkalinity
+    - alkalinity_method
     - alkyl_diethers
     - aminopept_act
     - ammonium
+    - atmospheric_data
     - bacteria_carb_prod
+    - bac_prod
+    - bac_resp
     - biomass
     - bishomohopanol
     - bromide
@@ -36,18 +41,24 @@ classes:
     - chem_administration
     - chloride
     - chlorophyll
+    - conduc
+    - density
     - diether_lipids
     - diss_carb_dioxide
     - diss_hydrogen
     - diss_inorg_carb
+    - diss_inorg_nitro
+    - diss_inorg_phosp
     - diss_org_carb
     - diss_org_nitro
     - diss_oxygen
+    - down_par
+    - fluor
     - glucosidase_act
+    - light_intensity
     - magnesium
     - mean_frict_vel
     - mean_peak_frict_vel
-    - methane
     - misc_param
     - n_alkanes
     - nitrate
@@ -60,39 +71,50 @@ classes:
     - oxy_stat_samp
     - ph
     - part_org_carb
+    - part_org_nitro
     - perturbation
     - petroleum_hydrocarb
     - phaeopigments
     - phosphate
     - phosplipid_fatt_acid
+    - photon_flux
     - potassium
     - pressure
+    - primary_prod
     - redox_potential
     - salinity
     - samp_store_dur
     - samp_store_loc
     - samp_store_temp
-    - samp_vol_we_dna_ext
     - silicate
+    - size_frac_low
+    - size_frac_up
     - sodium
+    - soluble_react_phosp
     - sulfate
     - sulfide
-    - temp
-    - tot_carb
-    - tot_nitro_content
-    - tot_org_carb
+    - suspend_part_matter
+    - tidal_stage
+    - tot_depth_water_col
+    - tot_diss_nitro
+    - tot_inorg_nitro
+    - tot_nitro
+    - tot_part_carb
+    - tot_phosp
     - turbidity
-    - water_content
+    - water_current
     slot_usage:
-      sample_name:
+      samp_name:
         required: true
       project_name:
         required: true
       depth:
-        required: false
+        required: true
       elev:
         required: false
       alkalinity:
+        required: false
+      alkalinity_method:
         required: false
       alkyl_diethers:
         required: false
@@ -100,7 +122,13 @@ classes:
         required: false
       ammonium:
         required: false
+      atmospheric_data:
+        required: false
       bacteria_carb_prod:
+        required: false
+      bac_prod:
+        required: false
+      bac_resp:
         required: false
       biomass:
         required: false
@@ -118,6 +146,10 @@ classes:
         required: false
       chlorophyll:
         required: false
+      conduc:
+        required: false
+      density:
+        required: false
       diether_lipids:
         required: false
       diss_carb_dioxide:
@@ -126,21 +158,29 @@ classes:
         required: false
       diss_inorg_carb:
         required: false
+      diss_inorg_nitro:
+        required: false
+      diss_inorg_phosp:
+        required: false
       diss_org_carb:
         required: false
       diss_org_nitro:
         required: false
       diss_oxygen:
         required: false
+      down_par:
+        required: false
+      fluor:
+        required: false
       glucosidase_act:
+        required: false
+      light_intensity:
         required: false
       magnesium:
         required: false
       mean_frict_vel:
         required: false
       mean_peak_frict_vel:
-        required: false
-      methane:
         required: false
       misc_param:
         required: false
@@ -166,6 +206,8 @@ classes:
         required: false
       part_org_carb:
         required: false
+      part_org_nitro:
+        required: false
       perturbation:
         required: false
       petroleum_hydrocarb:
@@ -176,9 +218,13 @@ classes:
         required: false
       phosplipid_fatt_acid:
         required: false
+      photon_flux:
+        required: false
       potassium:
         required: false
       pressure:
+        required: false
+      primary_prod:
         required: false
       redox_potential:
         required: false
@@ -194,23 +240,39 @@ classes:
         required: false
       silicate:
         required: false
+      size_frac_low:
+        required: false
+      size_frac_up:
+        required: false
       sodium:
+        required: false
+      soluble_react_phosp:
         required: false
       sulfate:
         required: false
       sulfide:
         required: false
+      suspend_part_matter:
+        required: false
       temp:
         required: false
-      tot_carb:
+      tidal_stage:
         required: false
-      tot_nitro_content:
+      tot_depth_water_col:
         required: false
-      tot_org_carb:
+      tot_diss_nitro:
+        required: false
+      tot_inorg_nitro:
+        required: false
+      tot_nitro:
+        required: false
+      tot_part_carb:
+        required: false
+      tot_phosp:
         required: false
       turbidity:
         required: false
-      water_content:
+      water_current:
         required: false
 subsets: {}
 enums: {}

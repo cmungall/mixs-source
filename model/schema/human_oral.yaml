@@ -1,5 +1,5 @@
-id: http://w3id.org/mixs/human_vaginal
-name: human_vaginal
+id: http://w3id.org/mixs/human_oral
+name: human_oral
 imports:
 - linkml:types
 - terms
@@ -10,29 +10,22 @@ prefixes:
 default_prefix: mixs.vocab
 slots: {}
 classes:
-  human-vaginal:
-    description: human-vaginal
+  human-oral:
+    description: human-oral
     mappings: []
     slots:
     - lat_lon
     - depth
     - alt
     - elev
+    - temp
     - geo_loc_name
     - collection_date
     - env_broad_scale
     - env_local_scale
     - env_medium
-    - menarche
-    - sexual_act
-    - pregnancy
-    - douche
-    - birth_control
-    - menopause
-    - hrt
-    - hysterectomy
-    - gynecologic_disord
-    - urogenit_disord
+    - nose_throat_disord
+    - time_last_toothbrush
     - host_subject_id
     - host_age
     - host_sex
@@ -44,50 +37,33 @@ classes:
     - host_height
     - host_diet
     - host_last_meal
-    - host_family_relationship
+    - host_family_relation
     - host_genotype
     - host_phenotype
     - host_body_temp
     - host_body_mass_index
-    - ihmc_ethnicity
+    - ethnicity
     - host_occupation
     - medic_hist_perform
     - host_pulse
     - perturbation
     - samp_salinity
+    - salinity
     - oxy_stat_samp
-    - temp
     - organism_count
-    - samp_vol_we_dna_ext
     - samp_store_temp
-    - samp_store_loc
     - samp_store_dur
     - host_symbiont
+    - samp_store_loc
     - misc_param
     slot_usage:
-      sample_name:
+      samp_name:
         required: true
       project_name:
         required: true
-      menarche:
+      nose_throat_disord:
         required: false
-      sexual_act:
-        required: false
-      pregnancy:
-        required: false
-      douche:
-        required: false
-      birth_control:
-        required: false
-      menopause:
-        required: false
-      hrt:
-        required: false
-      hysterectomy:
-        required: false
-      gynecologic_disord:
-        required: false
-      urogenit_disord:
+      time_last_toothbrush:
         required: false
       host_subject_id:
         required: false
@@ -113,7 +89,7 @@ classes:
         required: false
       host_last_meal:
         required: false
-      host_family_relationship:
+      host_family_relation:
         required: false
       host_genotype:
         required: false
@@ -123,7 +99,7 @@ classes:
         required: false
       host_body_mass_index:
         required: false
-      ihmc_ethnicity:
+      ethnicity:
         required: false
       host_occupation:
         required: false
@@ -135,6 +111,8 @@ classes:
         required: false
       samp_salinity:
         required: false
+      salinity:
+        required: false
       oxy_stat_samp:
         required: false
       temp:
@@ -145,11 +123,11 @@ classes:
         required: false
       samp_store_temp:
         required: false
-      samp_store_loc:
-        required: false
       samp_store_dur:
         required: false
       host_symbiont:
+        required: false
+      samp_store_loc:
         required: false
       misc_param:
         required: false
