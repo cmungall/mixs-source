@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Class: MIGSPlant - MIxS</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../css/theme.css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Class: MIGSPlant";
+    var mkdocs_page_input_path = "MIGSPlant.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> MIxS</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="..">Index</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">MIxS</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Class: MIGSPlant</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="class-migsplant">Class: MIGSPlant</h1>
+<p>Minimal Information about a Genome Sequence: plant</p>
+<p>URI: <a href="https://w3id.org/mixs/vocab/MIGSPlant">mixs.vocab:MIGSPlant</a></p>
+<p><img alt="img" src="http://yuml.me/diagram/nofunky;dir:TB/class/[QuantityValue],[QuantityValue]&lt;samp_vol_we_dna_ext%200..1-++[MIGSPlant&#124;submitted_to_insdc:string;investigation_type:investigation_type_enum;samp_name:string;samp_taxon_id:string;project_name:string;experimental_factor:string%20%3F;lat_lon:string;geo_loc_name:string;collection_date:date;env_broad_scale:string;env_local_scale:string;env_medium:string;env_package:env_package_enum%20%3F;subspecf_gen_lin:string%20%3F;estimated_size:string%20%3F;ref_biomaterial:string%20%3F;source_mat_id:string%20%3F;specific_host:string%20%3F;host_spec_range:string%20%3F;propagation:string;encoded_traits:string%20%3F;isol_growth_condt:string;samp_collec_device:string%20%3F;samp_collec_method:string%20%3F;samp_mat_process:string%20%3F;nucl_acid_ext:string%20%3F;nucl_acid_amp:string%20%3F;lib_size:string%20%3F;lib_reads_seqd:string%20%3F;lib_layout:lib_layout_enum%20%3F;lib_vector:string%20%3F;lib_screen:string%20%3F;adapters:string%20%3F;seq_meth:string;tax_ident:tax_ident_enum%20%3F;assembly_qual:assembly_qual_enum%20%3F;assembly_name:string%20%3F;assembly_software:string;annot:string%20%3F;number_contig:string%20%3F;feat_pred:string%20%3F;ref_db:string%20%3F;sim_search_meth:string%20%3F;tax_class:string%20%3F;compl_score:compl_score_enum%20%3F;compl_software:string%20%3F;associated_resource:string%20%3F;sop:string%20%3F],[QuantityValue]&lt;samp_size%200..1-++[MIGSPlant],[WaterMIGSPlant]uses%20-.-&gt;[MIGSPlant],[WastewaterSludgeMIGSPlant]uses%20-.-&gt;[MIGSPlant],[SoilMIGSPlant]uses%20-.-&gt;[MIGSPlant],[SedimentMIGSPlant]uses%20-.-&gt;[MIGSPlant],[Plant-associatedMIGSPlant]uses%20-.-&gt;[MIGSPlant],[MiscellaneousNaturalOrArtificialEnvironmentMIGSPlant]uses%20-.-&gt;[MIGSPlant],[MicrobialMatBiofilmMIGSPlant]uses%20-.-&gt;[MIGSPlant],[HydrocarbonResources-fluidsSwabsMIGSPlant]uses%20-.-&gt;[MIGSPlant],[HydrocarbonResources-coresMIGSPlant]uses%20-.-&gt;[MIGSPlant],[Human-vaginalMIGSPlant]uses%20-.-&gt;[MIGSPlant],[Human-skinMIGSPlant]uses%20-.-&gt;[MIGSPlant],[Human-oralMIGSPlant]uses%20-.-&gt;[MIGSPlant],[Human-gutMIGSPlant]uses%20-.-&gt;[MIGSPlant],[Human-associatedMIGSPlant]uses%20-.-&gt;[MIGSPlant],[Host-associatedMIGSPlant]uses%20-.-&gt;[MIGSPlant],[BuiltEnvironmentMIGSPlant]uses%20-.-&gt;[MIGSPlant],[AirMIGSPlant]uses%20-.-&gt;[MIGSPlant],[WaterMIGSPlant],[WastewaterSludgeMIGSPlant],[SoilMIGSPlant],[SedimentMIGSPlant],[Plant-associatedMIGSPlant],[MiscellaneousNaturalOrArtificialEnvironmentMIGSPlant],[MicrobialMatBiofilmMIGSPlant],[HydrocarbonResources-fluidsSwabsMIGSPlant],[HydrocarbonResources-coresMIGSPlant],[Human-vaginalMIGSPlant],[Human-skinMIGSPlant],[Human-oralMIGSPlant],[Human-gutMIGSPlant],[Human-associatedMIGSPlant],[Host-associatedMIGSPlant],[BuiltEnvironmentMIGSPlant],[AirMIGSPlant]" /></p>
+<h2 id="mixin-for">Mixin for</h2>
+<ul>
+<li><a href="../AirMIGSPlant/">AirMIGSPlant</a> (mixin)  - Combinatorial checklist Minimal Information about a Genome Sequence: plant with environmental package air</li>
+<li><a href="../BuiltEnvironmentMIGSPlant/">BuiltEnvironmentMIGSPlant</a> (mixin)  - Combinatorial checklist Minimal Information about a Genome Sequence: plant with environmental package built environment</li>
+<li><a href="../Host-associatedMIGSPlant/">Host-associatedMIGSPlant</a> (mixin)  - Combinatorial checklist Minimal Information about a Genome Sequence: plant with environmental package host-associated</li>
+<li><a href="../Human-associatedMIGSPlant/">Human-associatedMIGSPlant</a> (mixin)  - Combinatorial checklist Minimal Information about a Genome Sequence: plant with environmental package human-associated</li>
+<li><a href="../Human-gutMIGSPlant/">Human-gutMIGSPlant</a> (mixin)  - Combinatorial checklist Minimal Information about a Genome Sequence: plant with environmental package human-gut</li>
+<li><a href="../Human-oralMIGSPlant/">Human-oralMIGSPlant</a> (mixin)  - Combinatorial checklist Minimal Information about a Genome Sequence: plant with environmental package human-oral</li>
+<li><a href="../Human-skinMIGSPlant/">Human-skinMIGSPlant</a> (mixin)  - Combinatorial checklist Minimal Information about a Genome Sequence: plant with environmental package human-skin</li>
+<li><a href="../Human-vaginalMIGSPlant/">Human-vaginalMIGSPlant</a> (mixin)  - Combinatorial checklist Minimal Information about a Genome Sequence: plant with environmental package human-vaginal</li>
+<li><a href="../HydrocarbonResources-coresMIGSPlant/">HydrocarbonResources-coresMIGSPlant</a> (mixin)  - Combinatorial checklist Minimal Information about a Genome Sequence: plant with environmental package hydrocarbon resources-cores</li>
+<li><a href="../HydrocarbonResources-fluidsSwabsMIGSPlant/">HydrocarbonResources-fluidsSwabsMIGSPlant</a> (mixin)  - Combinatorial checklist Minimal Information about a Genome Sequence: plant with environmental package hydrocarbon resources-fluids_swabs</li>
+<li><a href="../MicrobialMatBiofilmMIGSPlant/">MicrobialMatBiofilmMIGSPlant</a> (mixin)  - Combinatorial checklist Minimal Information about a Genome Sequence: plant with environmental package microbial mat_biofilm</li>
+<li><a href="../MiscellaneousNaturalOrArtificialEnvironmentMIGSPlant/">MiscellaneousNaturalOrArtificialEnvironmentMIGSPlant</a> (mixin)  - Combinatorial checklist Minimal Information about a Genome Sequence: plant with environmental package miscellaneous natural or artificial environment</li>
+<li><a href="../Plant-associatedMIGSPlant/">Plant-associatedMIGSPlant</a> (mixin)  - Combinatorial checklist Minimal Information about a Genome Sequence: plant with environmental package plant-associated</li>
+<li><a href="../SedimentMIGSPlant/">SedimentMIGSPlant</a> (mixin)  - Combinatorial checklist Minimal Information about a Genome Sequence: plant with environmental package sediment</li>
+<li><a href="../SoilMIGSPlant/">SoilMIGSPlant</a> (mixin)  - Combinatorial checklist Minimal Information about a Genome Sequence: plant with environmental package soil</li>
+<li><a href="../WastewaterSludgeMIGSPlant/">WastewaterSludgeMIGSPlant</a> (mixin)  - Combinatorial checklist Minimal Information about a Genome Sequence: plant with environmental package wastewater_sludge</li>
+<li><a href="../WaterMIGSPlant/">WaterMIGSPlant</a> (mixin)  - Combinatorial checklist Minimal Information about a Genome Sequence: plant with environmental package water</li>
+</ul>
+<h2 id="referenced-by-class">Referenced by class</h2>
+<h2 id="attributes">Attributes</h2>
+<h3 id="own">Own</h3>
+<ul>
+<li><a href="../MIGS_plant_adapters/">MIGS plant➞adapters</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+<li><a href="../MIGS_plant_annot/">MIGS plant➞annot</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+<li><a href="../MIGS_plant_assembly_name/">MIGS plant➞assembly_name</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+<li><a href="../MIGS_plant_assembly_qual/">MIGS plant➞assembly_qual</a>  <sub>OPT</sub><ul>
+<li>range: </li>
+</ul>
+</li>
+<li><a href="../MIGS_plant_assembly_software/">MIGS plant➞assembly_software</a>  <sub>REQ</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+<li><a href="../MIGS_plant_associated_resource/">MIGS plant➞associated resource</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+<li><a href="../MIGS_plant_collection_date/">MIGS plant➞collection_date</a>  <sub>REQ</sub><ul>
+<li>range: <a href="../types/Date/">Date</a></li>
+</ul>
+</li>
+<li><a href="../MIGS_plant_compl_score/">MIGS plant➞compl_score</a>  <sub>OPT</sub><ul>
+<li>range: </li>
+</ul>
+</li>
+<li><a href="../MIGS_plant_compl_software/">MIGS plant➞compl_software</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+<li><a href="../MIGS_plant_encoded_traits/">MIGS plant➞encoded_traits</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+<li><a href="../MIGS_plant_env_broad_scale/">MIGS plant➞env_broad_scale</a>  <sub>REQ</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+<li><a href="../MIGS_plant_env_local_scale/">MIGS plant➞env_local_scale</a>  <sub>REQ</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+<li><a href="../MIGS_plant_env_medium/">MIGS plant➞env_medium</a>  <sub>REQ</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+<li><a href="../MIGS_plant_env_package/">MIGS plant➞env_package</a>  <sub>OPT</sub><ul>
+<li>range: </li>
+</ul>
+</li>
+<li><a href="../MIGS_plant_estimated_size/">MIGS plant➞estimated_size</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+<li><a href="../MIGS_plant_experimental_factor/">MIGS plant➞experimental_factor</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+<li><a href="../MIGS_plant_feat_pred/">MIGS plant➞feat_pred</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+<li><a href="../MIGS_plant_geo_loc_name/">MIGS plant➞geo_loc_name</a>  <sub>REQ</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+<li><a href="../MIGS_plant_host_spec_range/">MIGS plant➞host_spec_range</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+<li><a href="../MIGS_plant_investigation_type/">MIGS plant➞investigation_type</a>  <sub>REQ</sub><ul>
+<li>range: </li>
+</ul>
+</li>
+<li><a href="../MIGS_plant_isol_growth_condt/">MIGS plant➞isol_growth_condt</a>  <sub>REQ</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+<li><a href="../MIGS_plant_lat_lon/">MIGS plant➞lat_lon</a>  <sub>REQ</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+<li><a href="../MIGS_plant_lib_layout/">MIGS plant➞lib_layout</a>  <sub>OPT</sub><ul>
+<li>range: </li>
+</ul>
+</li>
+<li><a href="../MIGS_plant_lib_reads_seqd/">MIGS plant➞lib_reads_seqd</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+<li><a href="../MIGS_plant_lib_screen/">MIGS plant➞lib_screen</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+<li><a href="../MIGS_plant_lib_size/">MIGS plant➞lib_size</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+<li><a href="../MIGS_plant_lib_vector/">MIGS plant➞lib_vector</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+<li><a href="../MIGS_plant_nucl_acid_amp/">MIGS plant➞nucl_acid_amp</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+<li><a href="../MIGS_plant_nucl_acid_ext/">MIGS plant➞nucl_acid_ext</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+<li><a href="../MIGS_plant_number_contig/">MIGS plant➞number_contig</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+<li><a href="../MIGS_plant_project_name/">MIGS plant➞project_name</a>  <sub>REQ</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+<li><a href="../MIGS_plant_propagation/">MIGS plant➞propagation</a>  <sub>REQ</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+<li><a href="../MIGS_plant_ref_biomaterial/">MIGS plant➞ref_biomaterial</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+<li><a href="../MIGS_plant_ref_db/">MIGS plant➞ref_db</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+<li><a href="../MIGS_plant_samp_collec_device/">MIGS plant➞samp_collec_device</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+<li><a href="../MIGS_plant_samp_collec_method/">MIGS plant➞samp_collec_method</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+<li><a href="../MIGS_plant_samp_mat_process/">MIGS plant➞samp_mat_process</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+<li><a href="../MIGS_plant_samp_name/">MIGS plant➞samp_name</a>  <sub>REQ</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+<li><a href="../MIGS_plant_samp_size/">MIGS plant➞samp_size</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../QuantityValue/">QuantityValue</a></li>
+</ul>
+</li>
+<li><a href="../MIGS_plant_samp_taxon_id/">MIGS plant➞samp_taxon_id</a>  <sub>REQ</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+<li><a href="../MIGS_plant_samp_vol_we_dna_ext/">MIGS plant➞samp_vol_we_dna_ext</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../QuantityValue/">QuantityValue</a></li>
+</ul>
+</li>
+<li><a href="../MIGS_plant_seq_meth/">MIGS plant➞seq_meth</a>  <sub>REQ</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+<li><a href="../MIGS_plant_sim_search_meth/">MIGS plant➞sim_search_meth</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+<li><a href="../MIGS_plant_sop/">MIGS plant➞sop</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+<li><a href="../MIGS_plant_source_mat_id/">MIGS plant➞source_mat_id</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+<li><a href="../MIGS_plant_specific_host/">MIGS plant➞specific_host</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+<li><a href="../MIGS_plant_submitted_to_insdc/">MIGS plant➞submitted_to_insdc</a>  <sub>REQ</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+<li><a href="../MIGS_plant_subspecf_gen_lin/">MIGS plant➞subspecf_gen_lin</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+<li><a href="../MIGS_plant_tax_class/">MIGS plant➞tax_class</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+<li><a href="../MIGS_plant_tax_ident/">MIGS plant➞tax_ident</a>  <sub>OPT</sub><ul>
+<li>range: </li>
+</ul>
+</li>
+</ul>
+<h2 id="other-properties">Other properties</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Aliases:</strong></td>
+<td></td>
+<td>MIGS.pl</td>
+</tr>
+</tbody>
+</table>
+              
+            </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+    
+  </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme_extra.js" defer></script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

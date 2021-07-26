@@ -1,0 +1,888 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Class: HydrocarbonResources-fluidsSwabsMIMAG - MIxS</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../css/theme.css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Class: HydrocarbonResources-fluidsSwabsMIMAG";
+    var mkdocs_page_input_path = "HydrocarbonResources-fluidsSwabsMIMAG.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> MIxS</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="..">Index</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">MIxS</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Class: HydrocarbonResources-fluidsSwabsMIMAG</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="class-hydrocarbonresources-fluidsswabsmimag">Class: HydrocarbonResources-fluidsSwabsMIMAG</h1>
+<p>Combinatorial checklist Minimum Information About a Metagenome-Assembled Genome with environmental package hydrocarbon resources-fluids_swabs</p>
+<p>URI: <a href="https://w3id.org/mixs/vocab/HydrocarbonResources-fluidsSwabsMIMAG">mixs.vocab:HydrocarbonResources-fluidsSwabsMIMAG</a></p>
+<p><img alt="img" src="http://yuml.me/diagram/nofunky;dir:TB/class/[QuantityValue],[HydrocarbonResources-fluidsSwabsMIMAG&#124;submitted_to_insdc:string;investigation_type:investigation_type_enum;samp_taxon_id:string;experimental_factor:string%20%3F;env_package:env_package_enum%20%3F;ref_biomaterial:string%20%3F;source_mat_id:string%20%3F;rel_to_oxygen:rel_to_oxygen_enum%20%3F;samp_collec_device:string%20%3F;samp_collec_method:string%20%3F;samp_mat_process:string%20%3F;size_frac:string%20%3F;nucl_acid_ext:string%20%3F;nucl_acid_amp:string%20%3F;lib_size:string%20%3F;lib_reads_seqd:string%20%3F;lib_layout:lib_layout_enum%20%3F;lib_vector:string%20%3F;lib_screen:string%20%3F;mid:string%20%3F;adapters:string%20%3F;seq_meth:string;tax_ident:tax_ident_enum;assembly_qual:assembly_qual_enum;assembly_name:string%20%3F;assembly_software:string;annot:string%20%3F;number_contig:string%20%3F;feat_pred:string%20%3F;ref_db:string%20%3F;sim_search_meth:string%20%3F;tax_class:string%20%3F;x_16s_recover:string%20%3F;trnas:string%20%3F;trna_ext_software:string%20%3F;compl_score:compl_score_enum;compl_software:string;compl_appr:compl_appr_enum%20%3F;contam_score:string;contam_screen_input:string%20%3F;contam_screen_param:contam_screen_param_enum%20%3F;decontam_software:decontam_software_enum%20%3F;bin_param:bin_param_enum;bin_software:string;reassembly_bin:string%20%3F;mag_cov_software:mag_cov_software_enum%20%3F;associated_resource:string%20%3F;sop:string%20%3F;lat_lon(i):string%20%3F;geo_loc_name(i):string%20%3F;collection_date(i):date%20%3F;env_broad_scale(i):string%20%3F;env_local_scale(i):string%20%3F;env_medium(i):string%20%3F;hcr(i):hcr_enum;hc_produced(i):hc_produced_enum;basin(i):string;field(i):string%20%3F;reservoir(i):string%20%3F;hcr_temp(i):string%20%3F;hcr_pressure(i):string%20%3F;lithology(i):lithology_enum%20%3F;depos_env(i):depos_env_enum%20%3F;hcr_geol_age(i):hcr_geol_age_enum%20%3F;prod_start_date(i):date%20%3F;add_recov_method(i):add_recov_method_enum;iw_bt_date_well(i):date%20%3F;biocide(i):string%20%3F;biocide_admin_method(i):string%20%3F;chem_treatment(i):string%20%3F;chem_treat_method(i):string%20%3F;samp_loc_corr_rate(i):string%20%3F;samp_well_name(i):string%20%3F;win(i):string%20%3F;samp_type(i):samp_type_enum;samp_subtype(i):samp_subtype_enum%20%3F;samp_collect_point(i):samp_collect_point_enum;oxy_stat_samp(i):oxy_stat_samp_enum%20%3F;samp_preserv(i):string%20%3F;samp_transport_cond(i):string%20%3F;samp_store_dur(i):string%20%3F;samp_store_loc(i):string%20%3F;organism_count(i):organism_count_enum%20%3F;org_count_qpcr_info(i):string%20%3F;ph(i):double%20%3F;alkalinity_method(i):string%20%3F;suspend_solids(i):string%20%3F;viscosity(i):string%20%3F;saturates_pc(i):string%20%3F;aromatics_pc(i):string%20%3F;resins_pc(i):string%20%3F;asphaltenes_pc(i):string%20%3F;misc_param(i):string%20%3F;additional_info(i):string%20%3F;samp_name(i):string;project_name(i):string]uses%20-.-&gt;[MIMAG],[HydrocarbonResources-fluidsSwabs]^-[HydrocarbonResources-fluidsSwabsMIMAG],[HydrocarbonResources-fluidsSwabs],[MIMAG]" /></p>
+<h2 id="parents">Parents</h2>
+<ul>
+<li>is_a: <a href="../HydrocarbonResources-fluidsSwabs/">HydrocarbonResources-fluidsSwabs</a> - hydrocarbon resources-fluids/swabs</li>
+</ul>
+<h2 id="uses-mixins">Uses Mixins</h2>
+<ul>
+<li>mixin: <a href="../MIMAG/">MIMAG</a> - Minimum Information About a Metagenome-Assembled Genome</li>
+</ul>
+<h2 id="attributes">Attributes</h2>
+<h3 id="inherited-from-hydrocarbon-resources-fluids_swabs">Inherited from hydrocarbon resources-fluids_swabs:</h3>
+<ul>
+<li><a href="../alt/">alt</a>  <sub>OPT</sub><ul>
+<li>Description: Altitude is a term used to identify heights of objects such as airplanes, space shuttles, rockets, atmospheric balloons and heights of places such as atmospheric layers and clouds. It is used to measure the height of an object which is above the earth's surface. In this context, the altitude measurement is the vertical distance between the earth's surface above sea level and the sampled position in the air</li>
+<li>range: <a href="../QuantityValue/">QuantityValue</a></li>
+<li>Example: 100 meter None</li>
+</ul>
+</li>
+<li><a href="../collection_date/">collection_date</a>  <sub>OPT</sub><ul>
+<li>Description: The time of sampling, either as an instance (single point in time) or interval. In case no exact time is available, the date/time can be right truncated i.e. all of these are valid times: 2008-01-23T19:23:10+00:00; 2008-01-23T19:23:10; 2008-01-23; 2008-01; 2008; Except: 2008-01; 2008 all are ISO8601 compliant</li>
+<li>range: <a href="../types/Date/">Date</a></li>
+<li>Example: 2018-05-11T10:00:00+01:00; 2018-05-11 None</li>
+</ul>
+</li>
+<li><a href="../depth/">depth</a>  <sub>OPT</sub><ul>
+<li>Description: The vertical distance below local surface, e.g. for sediment or soil samples depth is measured from sediment or soil surface, respectively. Depth can be reported as an interval for subsurface samples.</li>
+<li>range: <a href="../QuantityValue/">QuantityValue</a></li>
+<li>Example: 10 meter None</li>
+</ul>
+</li>
+<li><a href="../elev/">elev</a>  <sub>OPT</sub><ul>
+<li>Description: Elevation of the sampling site is its height above a fixed reference point, most commonly the mean sea level. Elevation is mainly used when referring to points on the earth's surface, while altitude is used for points above the surface, such as an aircraft in flight or a spacecraft in orbit.</li>
+<li>range: <a href="../QuantityValue/">QuantityValue</a></li>
+<li>Example: 100 meter None</li>
+</ul>
+</li>
+<li><a href="../env_broad_scale/">env_broad_scale</a>  <sub>OPT</sub><ul>
+<li>Description: Report the major environmental system the sample or specimen came from. The system(s) identified should have a coarse spatial grain, to provide the general environmental context of where the sampling was done (e.g. in the desert or a rainforest). We recommend using subclasses of EnvO’s biome class:  http://purl.obolibrary.org/obo/ENVO_00000428. EnvO documentation about how to use the field: https://github.com/EnvironmentOntology/envo/wiki/Using-ENVO-with-MIxS</li>
+<li>range: <a href="../types/String/">String</a></li>
+<li>Example: oceanic epipelagic zone biome [ENVO:01000033] for annotating a water sample from the photic zone in middle of the Atlantic Ocean None</li>
+</ul>
+</li>
+<li><a href="../env_local_scale/">env_local_scale</a>  <sub>OPT</sub><ul>
+<li>Description: Report the entity or entities which are in the sample or specimen’s local vicinity and which you believe have significant causal influences on your sample or specimen. We recommend using EnvO terms which are of smaller spatial grain than your entry for env_broad_scale. Terms, such as anatomical sites, from other OBO Library ontologies which interoperate with EnvO (e.g. UBERON) are accepted in this field. EnvO documentation about how to use the field: https://github.com/EnvironmentOntology/envo/wiki/Using-ENVO-with-MIxS</li>
+<li>range: <a href="../types/String/">String</a></li>
+<li>Example: litter layer [ENVO:01000338]; Annotating a pooled sample taken from various vegetation layers in a forest consider: canopy [ENVO:00000047]|herb and fern layer [ENVO:01000337]|litter layer [ENVO:01000338]|understory [01000335]|shrub layer [ENVO:01000336]. None</li>
+</ul>
+</li>
+<li><a href="../env_medium/">env_medium</a>  <sub>OPT</sub><ul>
+<li>Description: Report the environmental material(s) immediately surrounding the sample or specimen at the time of sampling. We recommend using subclasses of 'environmental material' (http://purl.obolibrary.org/obo/ENVO_00010483). EnvO documentation about how to use the field: https://github.com/EnvironmentOntology/envo/wiki/Using-ENVO-with-MIxS . Terms from other OBO ontologies are permissible as long as they reference mass/volume nouns (e.g. air, water, blood) and not discrete, countable entities (e.g. a tree, a leaf, a table top).</li>
+<li>range: <a href="../types/String/">String</a></li>
+<li>Example: soil [ENVO:00001998]; Annotating a fish swimming in the upper 100 m of the Atlantic Ocean, consider: ocean water [ENVO:00002151]. Example: Annotating a duck on a pond consider: pond water [ENVO:00002228]|air [ENVO_00002005] None</li>
+</ul>
+</li>
+<li><a href="../geo_loc_name/">geo_loc_name</a>  <sub>OPT</sub><ul>
+<li>Description: The geographical origin of the sample as defined by the country or sea name followed by specific region name. Country or sea names should be chosen from the INSDC country list (http://insdc.org/country.html), or the GAZ ontology (http://purl.bioontology.org/ontology/GAZ)</li>
+<li>range: <a href="../types/String/">String</a></li>
+<li>Example: USA: Maryland, Bethesda None</li>
+</ul>
+</li>
+<li><a href="../hydrocarbon_resources-fluids_swabs_add_recov_method/">hydrocarbon resources-fluids_swabs➞add_recov_method</a>  <sub>REQ</sub><ul>
+<li>range: </li>
+</ul>
+</li>
+<li><a href="../hydrocarbon_resources-fluids_swabs_additional_info/">hydrocarbon resources-fluids_swabs➞additional_info</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+<li><a href="../hydrocarbon_resources-fluids_swabs_alkalinity/">hydrocarbon resources-fluids_swabs➞alkalinity</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../QuantityValue/">QuantityValue</a></li>
+</ul>
+</li>
+<li><a href="../hydrocarbon_resources-fluids_swabs_alkalinity_method/">hydrocarbon resources-fluids_swabs➞alkalinity_method</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+<li><a href="../hydrocarbon_resources-fluids_swabs_ammonium/">hydrocarbon resources-fluids_swabs➞ammonium</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../QuantityValue/">QuantityValue</a></li>
+</ul>
+</li>
+<li><a href="../hydrocarbon_resources-fluids_swabs_api/">hydrocarbon resources-fluids_swabs➞api</a>  <sub>REQ</sub><ul>
+<li>range: <a href="../QuantityValue/">QuantityValue</a></li>
+</ul>
+</li>
+<li><a href="../hydrocarbon_resources-fluids_swabs_aromatics_pc/">hydrocarbon resources-fluids_swabs➞aromatics_pc</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+<li><a href="../hydrocarbon_resources-fluids_swabs_asphaltenes_pc/">hydrocarbon resources-fluids_swabs➞asphaltenes_pc</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+<li><a href="../hydrocarbon_resources-fluids_swabs_basin/">hydrocarbon resources-fluids_swabs➞basin</a>  <sub>REQ</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+<li><a href="../hydrocarbon_resources-fluids_swabs_benzene/">hydrocarbon resources-fluids_swabs➞benzene</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../QuantityValue/">QuantityValue</a></li>
+</ul>
+</li>
+<li><a href="../hydrocarbon_resources-fluids_swabs_biocide/">hydrocarbon resources-fluids_swabs➞biocide</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+<li><a href="../hydrocarbon_resources-fluids_swabs_biocide_admin_method/">hydrocarbon resources-fluids_swabs➞biocide_admin_method</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+<li><a href="../hydrocarbon_resources-fluids_swabs_calcium/">hydrocarbon resources-fluids_swabs➞calcium</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../QuantityValue/">QuantityValue</a></li>
+</ul>
+</li>
+<li><a href="../hydrocarbon_resources-fluids_swabs_chem_treat_method/">hydrocarbon resources-fluids_swabs➞chem_treat_method</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+<li><a href="../hydrocarbon_resources-fluids_swabs_chem_treatment/">hydrocarbon resources-fluids_swabs➞chem_treatment</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+<li><a href="../hydrocarbon_resources-fluids_swabs_chloride/">hydrocarbon resources-fluids_swabs➞chloride</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../QuantityValue/">QuantityValue</a></li>
+</ul>
+</li>
+<li><a href="../hydrocarbon_resources-fluids_swabs_density/">hydrocarbon resources-fluids_swabs➞density</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../QuantityValue/">QuantityValue</a></li>
+</ul>
+</li>
+<li><a href="../hydrocarbon_resources-fluids_swabs_depos_env/">hydrocarbon resources-fluids_swabs➞depos_env</a>  <sub>OPT</sub><ul>
+<li>range: </li>
+</ul>
+</li>
+<li><a href="../hydrocarbon_resources-fluids_swabs_diss_carb_dioxide/">hydrocarbon resources-fluids_swabs➞diss_carb_dioxide</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../QuantityValue/">QuantityValue</a></li>
+</ul>
+</li>
+<li><a href="../hydrocarbon_resources-fluids_swabs_diss_inorg_carb/">hydrocarbon resources-fluids_swabs➞diss_inorg_carb</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../QuantityValue/">QuantityValue</a></li>
+</ul>
+</li>
+<li><a href="../hydrocarbon_resources-fluids_swabs_diss_inorg_phosp/">hydrocarbon resources-fluids_swabs➞diss_inorg_phosp</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../QuantityValue/">QuantityValue</a></li>
+</ul>
+</li>
+<li><a href="../hydrocarbon_resources-fluids_swabs_diss_iron/">hydrocarbon resources-fluids_swabs➞diss_iron</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../QuantityValue/">QuantityValue</a></li>
+</ul>
+</li>
+<li><a href="../hydrocarbon_resources-fluids_swabs_diss_org_carb/">hydrocarbon resources-fluids_swabs➞diss_org_carb</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../QuantityValue/">QuantityValue</a></li>
+</ul>
+</li>
+<li><a href="../hydrocarbon_resources-fluids_swabs_diss_oxygen_fluid/">hydrocarbon resources-fluids_swabs➞diss_oxygen_fluid</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../QuantityValue/">QuantityValue</a></li>
+</ul>
+</li>
+<li><a href="../hydrocarbon_resources-fluids_swabs_ethylbenzene/">hydrocarbon resources-fluids_swabs➞ethylbenzene</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../QuantityValue/">QuantityValue</a></li>
+</ul>
+</li>
+<li><a href="../hydrocarbon_resources-fluids_swabs_field/">hydrocarbon resources-fluids_swabs➞field</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+<li><a href="../hydrocarbon_resources-fluids_swabs_hc_produced/">hydrocarbon resources-fluids_swabs➞hc_produced</a>  <sub>REQ</sub><ul>
+<li>range: </li>
+</ul>
+</li>
+<li><a href="../hydrocarbon_resources-fluids_swabs_hcr/">hydrocarbon resources-fluids_swabs➞hcr</a>  <sub>REQ</sub><ul>
+<li>range: </li>
+</ul>
+</li>
+<li><a href="../hydrocarbon_resources-fluids_swabs_hcr_fw_salinity/">hydrocarbon resources-fluids_swabs➞hcr_fw_salinity</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../QuantityValue/">QuantityValue</a></li>
+</ul>
+</li>
+<li><a href="../hydrocarbon_resources-fluids_swabs_hcr_geol_age/">hydrocarbon resources-fluids_swabs➞hcr_geol_age</a>  <sub>OPT</sub><ul>
+<li>range: </li>
+</ul>
+</li>
+<li><a href="../hydrocarbon_resources-fluids_swabs_hcr_pressure/">hydrocarbon resources-fluids_swabs➞hcr_pressure</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+<li><a href="../hydrocarbon_resources-fluids_swabs_hcr_temp/">hydrocarbon resources-fluids_swabs➞hcr_temp</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+<li><a href="../hydrocarbon_resources-fluids_swabs_iw_bt_date_well/">hydrocarbon resources-fluids_swabs➞iw_bt_date_well</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../types/Date/">Date</a></li>
+</ul>
+</li>
+<li><a href="../hydrocarbon_resources-fluids_swabs_iwf/">hydrocarbon resources-fluids_swabs➞iwf</a>  <sub>REQ</sub><ul>
+<li>range: <a href="../QuantityValue/">QuantityValue</a></li>
+</ul>
+</li>
+<li><a href="../hydrocarbon_resources-fluids_swabs_lithology/">hydrocarbon resources-fluids_swabs➞lithology</a>  <sub>OPT</sub><ul>
+<li>range: </li>
+</ul>
+</li>
+<li><a href="../hydrocarbon_resources-fluids_swabs_magnesium/">hydrocarbon resources-fluids_swabs➞magnesium</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../QuantityValue/">QuantityValue</a></li>
+</ul>
+</li>
+<li><a href="../hydrocarbon_resources-fluids_swabs_misc_param/">hydrocarbon resources-fluids_swabs➞misc_param</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+<li><a href="../hydrocarbon_resources-fluids_swabs_nitrate/">hydrocarbon resources-fluids_swabs➞nitrate</a>  <sub>REQ</sub><ul>
+<li>range: <a href="../QuantityValue/">QuantityValue</a></li>
+</ul>
+</li>
+<li><a href="../hydrocarbon_resources-fluids_swabs_nitrite/">hydrocarbon resources-fluids_swabs➞nitrite</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../QuantityValue/">QuantityValue</a></li>
+</ul>
+</li>
+<li><a href="../hydrocarbon_resources-fluids_swabs_org_count_qpcr_info/">hydrocarbon resources-fluids_swabs➞org_count_qpcr_info</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+<li><a href="../hydrocarbon_resources-fluids_swabs_organism_count/">hydrocarbon resources-fluids_swabs➞organism_count</a>  <sub>OPT</sub><ul>
+<li>range: </li>
+</ul>
+</li>
+<li><a href="../hydrocarbon_resources-fluids_swabs_oxy_stat_samp/">hydrocarbon resources-fluids_swabs➞oxy_stat_samp</a>  <sub>OPT</sub><ul>
+<li>range: </li>
+</ul>
+</li>
+<li><a href="../hydrocarbon_resources-fluids_swabs_ph/">hydrocarbon resources-fluids_swabs➞ph</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../types/Double/">Double</a></li>
+</ul>
+</li>
+<li><a href="../hydrocarbon_resources-fluids_swabs_potassium/">hydrocarbon resources-fluids_swabs➞potassium</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../QuantityValue/">QuantityValue</a></li>
+</ul>
+</li>
+<li><a href="../hydrocarbon_resources-fluids_swabs_pour_point/">hydrocarbon resources-fluids_swabs➞pour_point</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../QuantityValue/">QuantityValue</a></li>
+</ul>
+</li>
+<li><a href="../hydrocarbon_resources-fluids_swabs_pressure/">hydrocarbon resources-fluids_swabs➞pressure</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../QuantityValue/">QuantityValue</a></li>
+</ul>
+</li>
+<li><a href="../hydrocarbon_resources-fluids_swabs_prod_rate/">hydrocarbon resources-fluids_swabs➞prod_rate</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../QuantityValue/">QuantityValue</a></li>
+</ul>
+</li>
+<li><a href="../hydrocarbon_resources-fluids_swabs_prod_start_date/">hydrocarbon resources-fluids_swabs➞prod_start_date</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../types/Date/">Date</a></li>
+</ul>
+</li>
+<li><a href="../hydrocarbon_resources-fluids_swabs_project_name/">hydrocarbon resources-fluids_swabs➞project_name</a>  <sub>REQ</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+<li><a href="../hydrocarbon_resources-fluids_swabs_reservoir/">hydrocarbon resources-fluids_swabs➞reservoir</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+<li><a href="../hydrocarbon_resources-fluids_swabs_resins_pc/">hydrocarbon resources-fluids_swabs➞resins_pc</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+<li><a href="../hydrocarbon_resources-fluids_swabs_salinity/">hydrocarbon resources-fluids_swabs➞salinity</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../QuantityValue/">QuantityValue</a></li>
+</ul>
+</li>
+<li><a href="../hydrocarbon_resources-fluids_swabs_samp_collect_point/">hydrocarbon resources-fluids_swabs➞samp_collect_point</a>  <sub>REQ</sub><ul>
+<li>range: </li>
+</ul>
+</li>
+<li><a href="../hydrocarbon_resources-fluids_swabs_samp_loc_corr_rate/">hydrocarbon resources-fluids_swabs➞samp_loc_corr_rate</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+<li><a href="../hydrocarbon_resources-fluids_swabs_samp_name/">hydrocarbon resources-fluids_swabs➞samp_name</a>  <sub>REQ</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+<li><a href="../hydrocarbon_resources-fluids_swabs_samp_preserv/">hydrocarbon resources-fluids_swabs➞samp_preserv</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+<li><a href="../hydrocarbon_resources-fluids_swabs_samp_salinity/">hydrocarbon resources-fluids_swabs➞samp_salinity</a>  <sub>REQ</sub><ul>
+<li>range: <a href="../QuantityValue/">QuantityValue</a></li>
+</ul>
+</li>
+<li><a href="../hydrocarbon_resources-fluids_swabs_samp_store_dur/">hydrocarbon resources-fluids_swabs➞samp_store_dur</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+<li><a href="../hydrocarbon_resources-fluids_swabs_samp_store_loc/">hydrocarbon resources-fluids_swabs➞samp_store_loc</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+<li><a href="../hydrocarbon_resources-fluids_swabs_samp_store_temp/">hydrocarbon resources-fluids_swabs➞samp_store_temp</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../QuantityValue/">QuantityValue</a></li>
+</ul>
+</li>
+<li><a href="../hydrocarbon_resources-fluids_swabs_samp_subtype/">hydrocarbon resources-fluids_swabs➞samp_subtype</a>  <sub>OPT</sub><ul>
+<li>range: </li>
+</ul>
+</li>
+<li><a href="../hydrocarbon_resources-fluids_swabs_samp_transport_cond/">hydrocarbon resources-fluids_swabs➞samp_transport_cond</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+<li><a href="../hydrocarbon_resources-fluids_swabs_samp_type/">hydrocarbon resources-fluids_swabs➞samp_type</a>  <sub>REQ</sub><ul>
+<li>range: </li>
+</ul>
+</li>
+<li><a href="../hydrocarbon_resources-fluids_swabs_samp_vol_we_dna_ext/">hydrocarbon resources-fluids_swabs➞samp_vol_we_dna_ext</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../QuantityValue/">QuantityValue</a></li>
+</ul>
+</li>
+<li><a href="../hydrocarbon_resources-fluids_swabs_samp_well_name/">hydrocarbon resources-fluids_swabs➞samp_well_name</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+<li><a href="../hydrocarbon_resources-fluids_swabs_saturates_pc/">hydrocarbon resources-fluids_swabs➞saturates_pc</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+<li><a href="../hydrocarbon_resources-fluids_swabs_sodium/">hydrocarbon resources-fluids_swabs➞sodium</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../QuantityValue/">QuantityValue</a></li>
+</ul>
+</li>
+<li><a href="../hydrocarbon_resources-fluids_swabs_sulfate/">hydrocarbon resources-fluids_swabs➞sulfate</a>  <sub>REQ</sub><ul>
+<li>range: <a href="../QuantityValue/">QuantityValue</a></li>
+</ul>
+</li>
+<li><a href="../hydrocarbon_resources-fluids_swabs_sulfate_fw/">hydrocarbon resources-fluids_swabs➞sulfate_fw</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../QuantityValue/">QuantityValue</a></li>
+</ul>
+</li>
+<li><a href="../hydrocarbon_resources-fluids_swabs_sulfide/">hydrocarbon resources-fluids_swabs➞sulfide</a>  <sub>REQ</sub><ul>
+<li>range: <a href="../QuantityValue/">QuantityValue</a></li>
+</ul>
+</li>
+<li><a href="../hydrocarbon_resources-fluids_swabs_suspend_solids/">hydrocarbon resources-fluids_swabs➞suspend_solids</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+<li><a href="../hydrocarbon_resources-fluids_swabs_tan/">hydrocarbon resources-fluids_swabs➞tan</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../QuantityValue/">QuantityValue</a></li>
+</ul>
+</li>
+<li><a href="../hydrocarbon_resources-fluids_swabs_temp/">hydrocarbon resources-fluids_swabs➞temp</a>  <sub>REQ</sub><ul>
+<li>range: <a href="../QuantityValue/">QuantityValue</a></li>
+</ul>
+</li>
+<li><a href="../hydrocarbon_resources-fluids_swabs_toluene/">hydrocarbon resources-fluids_swabs➞toluene</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../QuantityValue/">QuantityValue</a></li>
+</ul>
+</li>
+<li><a href="../hydrocarbon_resources-fluids_swabs_tot_iron/">hydrocarbon resources-fluids_swabs➞tot_iron</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../QuantityValue/">QuantityValue</a></li>
+</ul>
+</li>
+<li><a href="../hydrocarbon_resources-fluids_swabs_tot_nitro/">hydrocarbon resources-fluids_swabs➞tot_nitro</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../QuantityValue/">QuantityValue</a></li>
+</ul>
+</li>
+<li><a href="../hydrocarbon_resources-fluids_swabs_tot_phosp/">hydrocarbon resources-fluids_swabs➞tot_phosp</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../QuantityValue/">QuantityValue</a></li>
+</ul>
+</li>
+<li><a href="../hydrocarbon_resources-fluids_swabs_tot_sulfur/">hydrocarbon resources-fluids_swabs➞tot_sulfur</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../QuantityValue/">QuantityValue</a></li>
+</ul>
+</li>
+<li><a href="../hydrocarbon_resources-fluids_swabs_tvdss_of_hcr_press/">hydrocarbon resources-fluids_swabs➞tvdss_of_hcr_press</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../QuantityValue/">QuantityValue</a></li>
+</ul>
+</li>
+<li><a href="../hydrocarbon_resources-fluids_swabs_tvdss_of_hcr_temp/">hydrocarbon resources-fluids_swabs➞tvdss_of_hcr_temp</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../QuantityValue/">QuantityValue</a></li>
+</ul>
+</li>
+<li><a href="../hydrocarbon_resources-fluids_swabs_vfa/">hydrocarbon resources-fluids_swabs➞vfa</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../QuantityValue/">QuantityValue</a></li>
+</ul>
+</li>
+<li><a href="../hydrocarbon_resources-fluids_swabs_vfa_fw/">hydrocarbon resources-fluids_swabs➞vfa_fw</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../QuantityValue/">QuantityValue</a></li>
+</ul>
+</li>
+<li><a href="../hydrocarbon_resources-fluids_swabs_viscosity/">hydrocarbon resources-fluids_swabs➞viscosity</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+<li><a href="../hydrocarbon_resources-fluids_swabs_water_cut/">hydrocarbon resources-fluids_swabs➞water_cut</a>  <sub>REQ</sub><ul>
+<li>range: <a href="../QuantityValue/">QuantityValue</a></li>
+</ul>
+</li>
+<li><a href="../hydrocarbon_resources-fluids_swabs_water_prod_rate/">hydrocarbon resources-fluids_swabs➞water_prod_rate</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../QuantityValue/">QuantityValue</a></li>
+</ul>
+</li>
+<li><a href="../hydrocarbon_resources-fluids_swabs_win/">hydrocarbon resources-fluids_swabs➞win</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+<li><a href="../hydrocarbon_resources-fluids_swabs_xylene/">hydrocarbon resources-fluids_swabs➞xylene</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../QuantityValue/">QuantityValue</a></li>
+</ul>
+</li>
+<li><a href="../lat_lon/">lat_lon</a>  <sub>OPT</sub><ul>
+<li>Description: The geographical origin of the sample as defined by latitude and longitude. The values should be reported in decimal degrees and in WGS84 system</li>
+<li>range: <a href="../types/String/">String</a></li>
+<li>Example: 50.586825 6.408977 None</li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-mimag">Mixed in from MIMAG:</h3>
+<ul>
+<li><a href="../MIMAG_adapters/">MIMAG➞adapters</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-mimag_1">Mixed in from MIMAG:</h3>
+<ul>
+<li><a href="../MIMAG_annot/">MIMAG➞annot</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-mimag_2">Mixed in from MIMAG:</h3>
+<ul>
+<li><a href="../MIMAG_assembly_name/">MIMAG➞assembly_name</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-mimag_3">Mixed in from MIMAG:</h3>
+<ul>
+<li><a href="../MIMAG_assembly_qual/">MIMAG➞assembly_qual</a>  <sub>REQ</sub><ul>
+<li>range: </li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-mimag_4">Mixed in from MIMAG:</h3>
+<ul>
+<li><a href="../MIMAG_assembly_software/">MIMAG➞assembly_software</a>  <sub>REQ</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-mimag_5">Mixed in from MIMAG:</h3>
+<ul>
+<li><a href="../MIMAG_associated_resource/">MIMAG➞associated resource</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-mimag_6">Mixed in from MIMAG:</h3>
+<ul>
+<li><a href="../MIMAG_bin_param/">MIMAG➞bin_param</a>  <sub>REQ</sub><ul>
+<li>range: </li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-mimag_7">Mixed in from MIMAG:</h3>
+<ul>
+<li><a href="../MIMAG_bin_software/">MIMAG➞bin_software</a>  <sub>REQ</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-mimag_8">Mixed in from MIMAG:</h3>
+<ul>
+<li><a href="../MIMAG_compl_appr/">MIMAG➞compl_appr</a>  <sub>OPT</sub><ul>
+<li>range: </li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-mimag_9">Mixed in from MIMAG:</h3>
+<ul>
+<li><a href="../MIMAG_compl_score/">MIMAG➞compl_score</a>  <sub>REQ</sub><ul>
+<li>range: </li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-mimag_10">Mixed in from MIMAG:</h3>
+<ul>
+<li><a href="../MIMAG_compl_software/">MIMAG➞compl_software</a>  <sub>REQ</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-mimag_11">Mixed in from MIMAG:</h3>
+<ul>
+<li><a href="../MIMAG_contam_score/">MIMAG➞contam_score</a>  <sub>REQ</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-mimag_12">Mixed in from MIMAG:</h3>
+<ul>
+<li><a href="../MIMAG_contam_screen_input/">MIMAG➞contam_screen_input</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-mimag_13">Mixed in from MIMAG:</h3>
+<ul>
+<li><a href="../MIMAG_contam_screen_param/">MIMAG➞contam_screen_param</a>  <sub>OPT</sub><ul>
+<li>range: </li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-mimag_14">Mixed in from MIMAG:</h3>
+<ul>
+<li><a href="../MIMAG_decontam_software/">MIMAG➞decontam_software</a>  <sub>OPT</sub><ul>
+<li>range: </li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-mimag_15">Mixed in from MIMAG:</h3>
+<ul>
+<li><a href="../MIMAG_env_package/">MIMAG➞env_package</a>  <sub>OPT</sub><ul>
+<li>range: </li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-mimag_16">Mixed in from MIMAG:</h3>
+<ul>
+<li><a href="../MIMAG_experimental_factor/">MIMAG➞experimental_factor</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-mimag_17">Mixed in from MIMAG:</h3>
+<ul>
+<li><a href="../MIMAG_feat_pred/">MIMAG➞feat_pred</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-mimag_18">Mixed in from MIMAG:</h3>
+<ul>
+<li><a href="../MIMAG_investigation_type/">MIMAG➞investigation_type</a>  <sub>REQ</sub><ul>
+<li>range: </li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-mimag_19">Mixed in from MIMAG:</h3>
+<ul>
+<li><a href="../MIMAG_lib_layout/">MIMAG➞lib_layout</a>  <sub>OPT</sub><ul>
+<li>range: </li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-mimag_20">Mixed in from MIMAG:</h3>
+<ul>
+<li><a href="../MIMAG_lib_reads_seqd/">MIMAG➞lib_reads_seqd</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-mimag_21">Mixed in from MIMAG:</h3>
+<ul>
+<li><a href="../MIMAG_lib_screen/">MIMAG➞lib_screen</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-mimag_22">Mixed in from MIMAG:</h3>
+<ul>
+<li><a href="../MIMAG_lib_size/">MIMAG➞lib_size</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-mimag_23">Mixed in from MIMAG:</h3>
+<ul>
+<li><a href="../MIMAG_lib_vector/">MIMAG➞lib_vector</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-mimag_24">Mixed in from MIMAG:</h3>
+<ul>
+<li><a href="../MIMAG_mag_cov_software/">MIMAG➞mag_cov_software</a>  <sub>OPT</sub><ul>
+<li>range: </li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-mimag_25">Mixed in from MIMAG:</h3>
+<ul>
+<li><a href="../MIMAG_mid/">MIMAG➞mid</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-mimag_26">Mixed in from MIMAG:</h3>
+<ul>
+<li><a href="../MIMAG_nucl_acid_amp/">MIMAG➞nucl_acid_amp</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-mimag_27">Mixed in from MIMAG:</h3>
+<ul>
+<li><a href="../MIMAG_nucl_acid_ext/">MIMAG➞nucl_acid_ext</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-mimag_28">Mixed in from MIMAG:</h3>
+<ul>
+<li><a href="../MIMAG_number_contig/">MIMAG➞number_contig</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-mimag_29">Mixed in from MIMAG:</h3>
+<ul>
+<li><a href="../MIMAG_reassembly_bin/">MIMAG➞reassembly_bin</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-mimag_30">Mixed in from MIMAG:</h3>
+<ul>
+<li><a href="../MIMAG_ref_biomaterial/">MIMAG➞ref_biomaterial</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-mimag_31">Mixed in from MIMAG:</h3>
+<ul>
+<li><a href="../MIMAG_ref_db/">MIMAG➞ref_db</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-mimag_32">Mixed in from MIMAG:</h3>
+<ul>
+<li><a href="../MIMAG_rel_to_oxygen/">MIMAG➞rel_to_oxygen</a>  <sub>OPT</sub><ul>
+<li>range: </li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-mimag_33">Mixed in from MIMAG:</h3>
+<ul>
+<li><a href="../MIMAG_samp_collec_device/">MIMAG➞samp_collec_device</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-mimag_34">Mixed in from MIMAG:</h3>
+<ul>
+<li><a href="../MIMAG_samp_collec_method/">MIMAG➞samp_collec_method</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-mimag_35">Mixed in from MIMAG:</h3>
+<ul>
+<li><a href="../MIMAG_samp_mat_process/">MIMAG➞samp_mat_process</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-mimag_36">Mixed in from MIMAG:</h3>
+<ul>
+<li><a href="../MIMAG_samp_size/">MIMAG➞samp_size</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../QuantityValue/">QuantityValue</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-mimag_37">Mixed in from MIMAG:</h3>
+<ul>
+<li><a href="../MIMAG_samp_taxon_id/">MIMAG➞samp_taxon_id</a>  <sub>REQ</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-mimag_38">Mixed in from MIMAG:</h3>
+<ul>
+<li><a href="../MIMAG_seq_meth/">MIMAG➞seq_meth</a>  <sub>REQ</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-mimag_39">Mixed in from MIMAG:</h3>
+<ul>
+<li><a href="../MIMAG_sim_search_meth/">MIMAG➞sim_search_meth</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-mimag_40">Mixed in from MIMAG:</h3>
+<ul>
+<li><a href="../MIMAG_size_frac/">MIMAG➞size_frac</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-mimag_41">Mixed in from MIMAG:</h3>
+<ul>
+<li><a href="../MIMAG_sop/">MIMAG➞sop</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-mimag_42">Mixed in from MIMAG:</h3>
+<ul>
+<li><a href="../MIMAG_source_mat_id/">MIMAG➞source_mat_id</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-mimag_43">Mixed in from MIMAG:</h3>
+<ul>
+<li><a href="../MIMAG_submitted_to_insdc/">MIMAG➞submitted_to_insdc</a>  <sub>REQ</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-mimag_44">Mixed in from MIMAG:</h3>
+<ul>
+<li><a href="../MIMAG_tax_class/">MIMAG➞tax_class</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-mimag_45">Mixed in from MIMAG:</h3>
+<ul>
+<li><a href="../MIMAG_tax_ident/">MIMAG➞tax_ident</a>  <sub>REQ</sub><ul>
+<li>range: </li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-mimag_46">Mixed in from MIMAG:</h3>
+<ul>
+<li><a href="../MIMAG_trna_ext_software/">MIMAG➞trna_ext_software</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-mimag_47">Mixed in from MIMAG:</h3>
+<ul>
+<li><a href="../MIMAG_trnas/">MIMAG➞trnas</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-mimag_48">Mixed in from MIMAG:</h3>
+<ul>
+<li><a href="../MIMAG_x_16s_recover/">MIMAG➞x_16s_recover</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+</ul>
+              
+            </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+    
+  </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme_extra.js" defer></script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Class: AirMIGSBacteria - MIxS</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../css/theme.css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Class: AirMIGSBacteria";
+    var mkdocs_page_input_path = "AirMIGSBacteria.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> MIxS</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="..">Index</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">MIxS</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Class: AirMIGSBacteria</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="class-airmigsbacteria">Class: AirMIGSBacteria</h1>
+<p>Combinatorial checklist Minimal Information about a Genome Sequence: cultured bacteria/archaea with environmental package air</p>
+<p>URI: <a href="https://w3id.org/mixs/vocab/AirMIGSBacteria">mixs.vocab:AirMIGSBacteria</a></p>
+<p><img alt="img" src="http://yuml.me/diagram/nofunky;dir:TB/class/[QuantityValue],[AirMIGSBacteria&#124;submitted_to_insdc:string;investigation_type:investigation_type_enum;samp_taxon_id:string;experimental_factor:string%20%3F;env_package:env_package_enum%20%3F;subspecf_gen_lin:string%20%3F;num_replicons:string;extrachrom_elements:string%20%3F;estimated_size:string%20%3F;ref_biomaterial:string;source_mat_id:string%20%3F;pathogenicity:string%20%3F;biotic_relationship:biotic_relationship_enum%20%3F;specific_host:string%20%3F;host_spec_range:string%20%3F;health_disease_stat:health_disease_stat_enum%20%3F;host_disease_stat:string%20%3F;trophic_level:trophic_level_enum%20%3F;encoded_traits:string%20%3F;rel_to_oxygen:rel_to_oxygen_enum%20%3F;isol_growth_condt:string;samp_collec_device:string%20%3F;samp_collec_method:string%20%3F;samp_mat_process:string%20%3F;nucl_acid_ext:string%20%3F;nucl_acid_amp:string%20%3F;lib_size:string%20%3F;lib_reads_seqd:string%20%3F;lib_layout:lib_layout_enum%20%3F;lib_vector:string%20%3F;lib_screen:string%20%3F;adapters:string%20%3F;seq_meth:string;tax_ident:tax_ident_enum%20%3F;assembly_qual:assembly_qual_enum;assembly_name:string%20%3F;assembly_software:string;annot:string%20%3F;number_contig:string;feat_pred:string%20%3F;ref_db:string%20%3F;sim_search_meth:string%20%3F;tax_class:string%20%3F;compl_score:compl_score_enum%20%3F;compl_software:string%20%3F;associated_resource:string%20%3F;sop:string%20%3F;lat_lon(i):string%20%3F;geo_loc_name(i):string%20%3F;collection_date(i):date%20%3F;env_broad_scale(i):string%20%3F;env_local_scale(i):string%20%3F;env_medium(i):string%20%3F;chem_administration(i):string%20%3F;organism_count(i):organism_count_enum%20%3F;oxy_stat_samp(i):oxy_stat_samp_enum%20%3F;perturbation(i):string%20%3F;pollutants(i):string%20%3F;resp_part_matter(i):string%20%3F;samp_store_dur(i):string%20%3F;samp_store_loc(i):string%20%3F;ventilation_type(i):string%20%3F;volatile_org_comp(i):string%20%3F;wind_direction(i):string%20%3F;misc_param(i):string%20%3F;samp_name(i):string;project_name(i):string]uses%20-.-&gt;[MIGSBacteria],[Air]^-[AirMIGSBacteria],[Air],[MIGSBacteria]" /></p>
+<h2 id="parents">Parents</h2>
+<ul>
+<li>is_a: <a href="../Air/">Air</a> - air</li>
+</ul>
+<h2 id="uses-mixins">Uses Mixins</h2>
+<ul>
+<li>mixin: <a href="../MIGSBacteria/">MIGSBacteria</a> - Minimal Information about a Genome Sequence: cultured bacteria/archaea</li>
+</ul>
+<h2 id="attributes">Attributes</h2>
+<h3 id="inherited-from-air">Inherited from air:</h3>
+<ul>
+<li><a href="../air_alt/">air➞alt</a>  <sub>REQ</sub><ul>
+<li>range: <a href="../QuantityValue/">QuantityValue</a></li>
+</ul>
+</li>
+<li><a href="../air_barometric_press/">air➞barometric_press</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../QuantityValue/">QuantityValue</a></li>
+</ul>
+</li>
+<li><a href="../air_carb_dioxide/">air➞carb_dioxide</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../QuantityValue/">QuantityValue</a></li>
+</ul>
+</li>
+<li><a href="../air_carb_monoxide/">air➞carb_monoxide</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../QuantityValue/">QuantityValue</a></li>
+</ul>
+</li>
+<li><a href="../air_chem_administration/">air➞chem_administration</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+<li><a href="../air_elev/">air➞elev</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../QuantityValue/">QuantityValue</a></li>
+</ul>
+</li>
+<li><a href="../air_humidity/">air➞humidity</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../QuantityValue/">QuantityValue</a></li>
+</ul>
+</li>
+<li><a href="../air_methane/">air➞methane</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../QuantityValue/">QuantityValue</a></li>
+</ul>
+</li>
+<li><a href="../air_misc_param/">air➞misc_param</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+<li><a href="../air_organism_count/">air➞organism_count</a>  <sub>OPT</sub><ul>
+<li>range: </li>
+</ul>
+</li>
+<li><a href="../air_oxy_stat_samp/">air➞oxy_stat_samp</a>  <sub>OPT</sub><ul>
+<li>range: </li>
+</ul>
+</li>
+<li><a href="../air_oxygen/">air➞oxygen</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../QuantityValue/">QuantityValue</a></li>
+</ul>
+</li>
+<li><a href="../air_perturbation/">air➞perturbation</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+<li><a href="../air_pollutants/">air➞pollutants</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+<li><a href="../air_project_name/">air➞project_name</a>  <sub>REQ</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+<li><a href="../air_resp_part_matter/">air➞resp_part_matter</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+<li><a href="../air_salinity/">air➞salinity</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../QuantityValue/">QuantityValue</a></li>
+</ul>
+</li>
+<li><a href="../air_samp_name/">air➞samp_name</a>  <sub>REQ</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+<li><a href="../air_samp_salinity/">air➞samp_salinity</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../QuantityValue/">QuantityValue</a></li>
+</ul>
+</li>
+<li><a href="../air_samp_store_dur/">air➞samp_store_dur</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+<li><a href="../air_samp_store_loc/">air➞samp_store_loc</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+<li><a href="../air_samp_store_temp/">air➞samp_store_temp</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../QuantityValue/">QuantityValue</a></li>
+</ul>
+</li>
+<li><a href="../air_samp_vol_we_dna_ext/">air➞samp_vol_we_dna_ext</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../QuantityValue/">QuantityValue</a></li>
+</ul>
+</li>
+<li><a href="../air_solar_irradiance/">air➞solar_irradiance</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../QuantityValue/">QuantityValue</a></li>
+</ul>
+</li>
+<li><a href="../air_temp/">air➞temp</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../QuantityValue/">QuantityValue</a></li>
+</ul>
+</li>
+<li><a href="../air_ventilation_rate/">air➞ventilation_rate</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../QuantityValue/">QuantityValue</a></li>
+</ul>
+</li>
+<li><a href="../air_ventilation_type/">air➞ventilation_type</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+<li><a href="../air_volatile_org_comp/">air➞volatile_org_comp</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+<li><a href="../air_wind_direction/">air➞wind_direction</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+<li><a href="../air_wind_speed/">air➞wind_speed</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../QuantityValue/">QuantityValue</a></li>
+</ul>
+</li>
+<li><a href="../collection_date/">collection_date</a>  <sub>OPT</sub><ul>
+<li>Description: The time of sampling, either as an instance (single point in time) or interval. In case no exact time is available, the date/time can be right truncated i.e. all of these are valid times: 2008-01-23T19:23:10+00:00; 2008-01-23T19:23:10; 2008-01-23; 2008-01; 2008; Except: 2008-01; 2008 all are ISO8601 compliant</li>
+<li>range: <a href="../types/Date/">Date</a></li>
+<li>Example: 2018-05-11T10:00:00+01:00; 2018-05-11 None</li>
+</ul>
+</li>
+<li><a href="../depth/">depth</a>  <sub>OPT</sub><ul>
+<li>Description: The vertical distance below local surface, e.g. for sediment or soil samples depth is measured from sediment or soil surface, respectively. Depth can be reported as an interval for subsurface samples.</li>
+<li>range: <a href="../QuantityValue/">QuantityValue</a></li>
+<li>Example: 10 meter None</li>
+</ul>
+</li>
+<li><a href="../env_broad_scale/">env_broad_scale</a>  <sub>OPT</sub><ul>
+<li>Description: Report the major environmental system the sample or specimen came from. The system(s) identified should have a coarse spatial grain, to provide the general environmental context of where the sampling was done (e.g. in the desert or a rainforest). We recommend using subclasses of EnvO’s biome class:  http://purl.obolibrary.org/obo/ENVO_00000428. EnvO documentation about how to use the field: https://github.com/EnvironmentOntology/envo/wiki/Using-ENVO-with-MIxS</li>
+<li>range: <a href="../types/String/">String</a></li>
+<li>Example: oceanic epipelagic zone biome [ENVO:01000033] for annotating a water sample from the photic zone in middle of the Atlantic Ocean None</li>
+</ul>
+</li>
+<li><a href="../env_local_scale/">env_local_scale</a>  <sub>OPT</sub><ul>
+<li>Description: Report the entity or entities which are in the sample or specimen’s local vicinity and which you believe have significant causal influences on your sample or specimen. We recommend using EnvO terms which are of smaller spatial grain than your entry for env_broad_scale. Terms, such as anatomical sites, from other OBO Library ontologies which interoperate with EnvO (e.g. UBERON) are accepted in this field. EnvO documentation about how to use the field: https://github.com/EnvironmentOntology/envo/wiki/Using-ENVO-with-MIxS</li>
+<li>range: <a href="../types/String/">String</a></li>
+<li>Example: litter layer [ENVO:01000338]; Annotating a pooled sample taken from various vegetation layers in a forest consider: canopy [ENVO:00000047]|herb and fern layer [ENVO:01000337]|litter layer [ENVO:01000338]|understory [01000335]|shrub layer [ENVO:01000336]. None</li>
+</ul>
+</li>
+<li><a href="../env_medium/">env_medium</a>  <sub>OPT</sub><ul>
+<li>Description: Report the environmental material(s) immediately surrounding the sample or specimen at the time of sampling. We recommend using subclasses of 'environmental material' (http://purl.obolibrary.org/obo/ENVO_00010483). EnvO documentation about how to use the field: https://github.com/EnvironmentOntology/envo/wiki/Using-ENVO-with-MIxS . Terms from other OBO ontologies are permissible as long as they reference mass/volume nouns (e.g. air, water, blood) and not discrete, countable entities (e.g. a tree, a leaf, a table top).</li>
+<li>range: <a href="../types/String/">String</a></li>
+<li>Example: soil [ENVO:00001998]; Annotating a fish swimming in the upper 100 m of the Atlantic Ocean, consider: ocean water [ENVO:00002151]. Example: Annotating a duck on a pond consider: pond water [ENVO:00002228]|air [ENVO_00002005] None</li>
+</ul>
+</li>
+<li><a href="../geo_loc_name/">geo_loc_name</a>  <sub>OPT</sub><ul>
+<li>Description: The geographical origin of the sample as defined by the country or sea name followed by specific region name. Country or sea names should be chosen from the INSDC country list (http://insdc.org/country.html), or the GAZ ontology (http://purl.bioontology.org/ontology/GAZ)</li>
+<li>range: <a href="../types/String/">String</a></li>
+<li>Example: USA: Maryland, Bethesda None</li>
+</ul>
+</li>
+<li><a href="../lat_lon/">lat_lon</a>  <sub>OPT</sub><ul>
+<li>Description: The geographical origin of the sample as defined by latitude and longitude. The values should be reported in decimal degrees and in WGS84 system</li>
+<li>range: <a href="../types/String/">String</a></li>
+<li>Example: 50.586825 6.408977 None</li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-migs-bacteria">Mixed in from MIGS bacteria:</h3>
+<ul>
+<li><a href="../MIGS_bacteria_adapters/">MIGS bacteria➞adapters</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-migs-bacteria_1">Mixed in from MIGS bacteria:</h3>
+<ul>
+<li><a href="../MIGS_bacteria_annot/">MIGS bacteria➞annot</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-migs-bacteria_2">Mixed in from MIGS bacteria:</h3>
+<ul>
+<li><a href="../MIGS_bacteria_assembly_name/">MIGS bacteria➞assembly_name</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-migs-bacteria_3">Mixed in from MIGS bacteria:</h3>
+<ul>
+<li><a href="../MIGS_bacteria_assembly_qual/">MIGS bacteria➞assembly_qual</a>  <sub>REQ</sub><ul>
+<li>range: </li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-migs-bacteria_4">Mixed in from MIGS bacteria:</h3>
+<ul>
+<li><a href="../MIGS_bacteria_assembly_software/">MIGS bacteria➞assembly_software</a>  <sub>REQ</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-migs-bacteria_5">Mixed in from MIGS bacteria:</h3>
+<ul>
+<li><a href="../MIGS_bacteria_associated_resource/">MIGS bacteria➞associated resource</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-migs-bacteria_6">Mixed in from MIGS bacteria:</h3>
+<ul>
+<li><a href="../MIGS_bacteria_biotic_relationship/">MIGS bacteria➞biotic_relationship</a>  <sub>OPT</sub><ul>
+<li>range: </li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-migs-bacteria_7">Mixed in from MIGS bacteria:</h3>
+<ul>
+<li><a href="../MIGS_bacteria_compl_score/">MIGS bacteria➞compl_score</a>  <sub>OPT</sub><ul>
+<li>range: </li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-migs-bacteria_8">Mixed in from MIGS bacteria:</h3>
+<ul>
+<li><a href="../MIGS_bacteria_compl_software/">MIGS bacteria➞compl_software</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-migs-bacteria_9">Mixed in from MIGS bacteria:</h3>
+<ul>
+<li><a href="../MIGS_bacteria_encoded_traits/">MIGS bacteria➞encoded_traits</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-migs-bacteria_10">Mixed in from MIGS bacteria:</h3>
+<ul>
+<li><a href="../MIGS_bacteria_env_package/">MIGS bacteria➞env_package</a>  <sub>OPT</sub><ul>
+<li>range: </li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-migs-bacteria_11">Mixed in from MIGS bacteria:</h3>
+<ul>
+<li><a href="../MIGS_bacteria_estimated_size/">MIGS bacteria➞estimated_size</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-migs-bacteria_12">Mixed in from MIGS bacteria:</h3>
+<ul>
+<li><a href="../MIGS_bacteria_experimental_factor/">MIGS bacteria➞experimental_factor</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-migs-bacteria_13">Mixed in from MIGS bacteria:</h3>
+<ul>
+<li><a href="../MIGS_bacteria_extrachrom_elements/">MIGS bacteria➞extrachrom_elements</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-migs-bacteria_14">Mixed in from MIGS bacteria:</h3>
+<ul>
+<li><a href="../MIGS_bacteria_feat_pred/">MIGS bacteria➞feat_pred</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-migs-bacteria_15">Mixed in from MIGS bacteria:</h3>
+<ul>
+<li><a href="../MIGS_bacteria_health_disease_stat/">MIGS bacteria➞health_disease_stat</a>  <sub>OPT</sub><ul>
+<li>range: </li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-migs-bacteria_16">Mixed in from MIGS bacteria:</h3>
+<ul>
+<li><a href="../MIGS_bacteria_host_disease_stat/">MIGS bacteria➞host_disease_stat</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-migs-bacteria_17">Mixed in from MIGS bacteria:</h3>
+<ul>
+<li><a href="../MIGS_bacteria_host_spec_range/">MIGS bacteria➞host_spec_range</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-migs-bacteria_18">Mixed in from MIGS bacteria:</h3>
+<ul>
+<li><a href="../MIGS_bacteria_investigation_type/">MIGS bacteria➞investigation_type</a>  <sub>REQ</sub><ul>
+<li>range: </li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-migs-bacteria_19">Mixed in from MIGS bacteria:</h3>
+<ul>
+<li><a href="../MIGS_bacteria_isol_growth_condt/">MIGS bacteria➞isol_growth_condt</a>  <sub>REQ</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-migs-bacteria_20">Mixed in from MIGS bacteria:</h3>
+<ul>
+<li><a href="../MIGS_bacteria_lib_layout/">MIGS bacteria➞lib_layout</a>  <sub>OPT</sub><ul>
+<li>range: </li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-migs-bacteria_21">Mixed in from MIGS bacteria:</h3>
+<ul>
+<li><a href="../MIGS_bacteria_lib_reads_seqd/">MIGS bacteria➞lib_reads_seqd</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-migs-bacteria_22">Mixed in from MIGS bacteria:</h3>
+<ul>
+<li><a href="../MIGS_bacteria_lib_screen/">MIGS bacteria➞lib_screen</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-migs-bacteria_23">Mixed in from MIGS bacteria:</h3>
+<ul>
+<li><a href="../MIGS_bacteria_lib_size/">MIGS bacteria➞lib_size</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-migs-bacteria_24">Mixed in from MIGS bacteria:</h3>
+<ul>
+<li><a href="../MIGS_bacteria_lib_vector/">MIGS bacteria➞lib_vector</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-migs-bacteria_25">Mixed in from MIGS bacteria:</h3>
+<ul>
+<li><a href="../MIGS_bacteria_nucl_acid_amp/">MIGS bacteria➞nucl_acid_amp</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-migs-bacteria_26">Mixed in from MIGS bacteria:</h3>
+<ul>
+<li><a href="../MIGS_bacteria_nucl_acid_ext/">MIGS bacteria➞nucl_acid_ext</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-migs-bacteria_27">Mixed in from MIGS bacteria:</h3>
+<ul>
+<li><a href="../MIGS_bacteria_num_replicons/">MIGS bacteria➞num_replicons</a>  <sub>REQ</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-migs-bacteria_28">Mixed in from MIGS bacteria:</h3>
+<ul>
+<li><a href="../MIGS_bacteria_number_contig/">MIGS bacteria➞number_contig</a>  <sub>REQ</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-migs-bacteria_29">Mixed in from MIGS bacteria:</h3>
+<ul>
+<li><a href="../MIGS_bacteria_pathogenicity/">MIGS bacteria➞pathogenicity</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-migs-bacteria_30">Mixed in from MIGS bacteria:</h3>
+<ul>
+<li><a href="../MIGS_bacteria_ref_biomaterial/">MIGS bacteria➞ref_biomaterial</a>  <sub>REQ</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-migs-bacteria_31">Mixed in from MIGS bacteria:</h3>
+<ul>
+<li><a href="../MIGS_bacteria_ref_db/">MIGS bacteria➞ref_db</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-migs-bacteria_32">Mixed in from MIGS bacteria:</h3>
+<ul>
+<li><a href="../MIGS_bacteria_rel_to_oxygen/">MIGS bacteria➞rel_to_oxygen</a>  <sub>OPT</sub><ul>
+<li>range: </li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-migs-bacteria_33">Mixed in from MIGS bacteria:</h3>
+<ul>
+<li><a href="../MIGS_bacteria_samp_collec_device/">MIGS bacteria➞samp_collec_device</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-migs-bacteria_34">Mixed in from MIGS bacteria:</h3>
+<ul>
+<li><a href="../MIGS_bacteria_samp_collec_method/">MIGS bacteria➞samp_collec_method</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-migs-bacteria_35">Mixed in from MIGS bacteria:</h3>
+<ul>
+<li><a href="../MIGS_bacteria_samp_mat_process/">MIGS bacteria➞samp_mat_process</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-migs-bacteria_36">Mixed in from MIGS bacteria:</h3>
+<ul>
+<li><a href="../MIGS_bacteria_samp_size/">MIGS bacteria➞samp_size</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../QuantityValue/">QuantityValue</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-migs-bacteria_37">Mixed in from MIGS bacteria:</h3>
+<ul>
+<li><a href="../MIGS_bacteria_samp_taxon_id/">MIGS bacteria➞samp_taxon_id</a>  <sub>REQ</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-migs-bacteria_38">Mixed in from MIGS bacteria:</h3>
+<ul>
+<li><a href="../MIGS_bacteria_seq_meth/">MIGS bacteria➞seq_meth</a>  <sub>REQ</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-migs-bacteria_39">Mixed in from MIGS bacteria:</h3>
+<ul>
+<li><a href="../MIGS_bacteria_sim_search_meth/">MIGS bacteria➞sim_search_meth</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-migs-bacteria_40">Mixed in from MIGS bacteria:</h3>
+<ul>
+<li><a href="../MIGS_bacteria_sop/">MIGS bacteria➞sop</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-migs-bacteria_41">Mixed in from MIGS bacteria:</h3>
+<ul>
+<li><a href="../MIGS_bacteria_source_mat_id/">MIGS bacteria➞source_mat_id</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-migs-bacteria_42">Mixed in from MIGS bacteria:</h3>
+<ul>
+<li><a href="../MIGS_bacteria_specific_host/">MIGS bacteria➞specific_host</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-migs-bacteria_43">Mixed in from MIGS bacteria:</h3>
+<ul>
+<li><a href="../MIGS_bacteria_submitted_to_insdc/">MIGS bacteria➞submitted_to_insdc</a>  <sub>REQ</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-migs-bacteria_44">Mixed in from MIGS bacteria:</h3>
+<ul>
+<li><a href="../MIGS_bacteria_subspecf_gen_lin/">MIGS bacteria➞subspecf_gen_lin</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-migs-bacteria_45">Mixed in from MIGS bacteria:</h3>
+<ul>
+<li><a href="../MIGS_bacteria_tax_class/">MIGS bacteria➞tax_class</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-migs-bacteria_46">Mixed in from MIGS bacteria:</h3>
+<ul>
+<li><a href="../MIGS_bacteria_tax_ident/">MIGS bacteria➞tax_ident</a>  <sub>OPT</sub><ul>
+<li>range: </li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-migs-bacteria_47">Mixed in from MIGS bacteria:</h3>
+<ul>
+<li><a href="../MIGS_bacteria_trophic_level/">MIGS bacteria➞trophic_level</a>  <sub>OPT</sub><ul>
+<li>range: </li>
+</ul>
+</li>
+</ul>
+              
+            </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+    
+  </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme_extra.js" defer></script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
