@@ -18,6 +18,7 @@ classes:
     - depth
     - alt
     - elev
+    - temp
     - geo_loc_name
     - collection_date
     - env_broad_scale
@@ -37,28 +38,27 @@ classes:
     - host_height
     - host_diet
     - host_last_meal
-    - host_family_relationship
+    - host_family_relation
     - host_genotype
     - host_phenotype
     - host_body_temp
     - host_body_mass_index
-    - ihmc_ethnicity
+    - ethnicity
     - host_occupation
     - medic_hist_perform
     - host_pulse
     - perturbation
     - samp_salinity
+    - salinity
     - oxy_stat_samp
-    - temp
     - organism_count
-    - samp_vol_we_dna_ext
     - samp_store_temp
     - samp_store_dur
     - samp_store_loc
     - host_symbiont
     - misc_param
     slot_usage:
-      sample_name:
+      samp_name:
         required: true
       project_name:
         required: true
@@ -92,7 +92,7 @@ classes:
         required: false
       host_last_meal:
         required: false
-      host_family_relationship:
+      host_family_relation:
         required: false
       host_genotype:
         required: false
@@ -102,7 +102,7 @@ classes:
         required: false
       host_body_mass_index:
         required: false
-      ihmc_ethnicity:
+      ethnicity:
         required: false
       host_occupation:
         required: false
@@ -113,6 +113,8 @@ classes:
       perturbation:
         required: false
       samp_salinity:
+        required: false
+      salinity:
         required: false
       oxy_stat_samp:
         required: false

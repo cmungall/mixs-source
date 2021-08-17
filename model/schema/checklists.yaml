@@ -18,7 +18,8 @@ classes:
     slots:
     - submitted_to_insdc
     - investigation_type
-    - sample_name
+    - samp_name
+    - samp_taxon_id
     - project_name
     - experimental_factor
     - lat_lon
@@ -44,10 +45,11 @@ classes:
     - trophic_level
     - propagation
     - isol_growth_condt
-    - sample_collect_device
-    - sample_collect_method
+    - samp_collec_device
+    - samp_collec_method
     - samp_mat_process
     - samp_size
+    - samp_vol_we_dna_ext
     - nucl_acid_ext
     - nucl_acid_amp
     - lib_size
@@ -69,14 +71,16 @@ classes:
     - tax_class
     - compl_score
     - compl_software
-    - url
+    - associated resource
     - sop
     slot_usage:
       submitted_to_insdc:
         required: true
       investigation_type:
         required: true
-      sample_name:
+      samp_name:
+        required: true
+      samp_taxon_id:
         required: true
       project_name:
         required: true
@@ -124,7 +128,8 @@ classes:
         required: false
       health_disease_stat:
         required: false
-      host_disease_stat: {}
+      host_disease_stat:
+        required: false
       trophic_level:
         comments:
         - conditional mandatory
@@ -133,13 +138,15 @@ classes:
         - conditional mandatory
       isol_growth_condt:
         required: true
-      sample_collect_device:
+      samp_collec_device:
         required: false
-      sample_collect_method:
+      samp_collec_method:
         required: false
       samp_mat_process:
         required: false
       samp_size:
+        required: false
+      samp_vol_we_dna_ext:
         required: false
       nucl_acid_ext:
         comments:
@@ -189,7 +196,7 @@ classes:
         required: false
       compl_software:
         required: false
-      url:
+      associated resource:
         comments:
         - conditional mandatory
       sop:
@@ -203,7 +210,8 @@ classes:
     slots:
     - submitted_to_insdc
     - investigation_type
-    - sample_name
+    - samp_name
+    - samp_taxon_id
     - project_name
     - experimental_factor
     - lat_lon
@@ -229,10 +237,11 @@ classes:
     - encoded_traits
     - rel_to_oxygen
     - isol_growth_condt
-    - sample_collect_device
-    - sample_collect_method
+    - samp_collec_device
+    - samp_collec_method
     - samp_mat_process
     - samp_size
+    - samp_vol_we_dna_ext
     - nucl_acid_ext
     - nucl_acid_amp
     - lib_size
@@ -254,14 +263,16 @@ classes:
     - tax_class
     - compl_score
     - compl_software
-    - url
+    - associated resource
     - sop
     slot_usage:
       submitted_to_insdc:
         required: true
       investigation_type:
         required: true
-      sample_name:
+      samp_name:
+        required: true
+      samp_taxon_id:
         required: true
       project_name:
         required: true
@@ -311,7 +322,9 @@ classes:
       health_disease_stat:
         comments:
         - conditional mandatory
-      host_disease_stat: {}
+      host_disease_stat:
+        comments:
+        - conditional mandatory
       trophic_level:
         comments:
         - conditional mandatory
@@ -322,13 +335,15 @@ classes:
         - conditional mandatory
       isol_growth_condt:
         required: true
-      sample_collect_device:
+      samp_collec_device:
         required: false
-      sample_collect_method:
+      samp_collec_method:
         required: false
       samp_mat_process:
         required: false
       samp_size:
+        required: false
+      samp_vol_we_dna_ext:
         required: false
       nucl_acid_ext:
         comments:
@@ -378,7 +393,7 @@ classes:
         required: false
       compl_software:
         required: false
-      url:
+      associated resource:
         comments:
         - conditional mandatory
       sop:
@@ -392,7 +407,8 @@ classes:
     slots:
     - submitted_to_insdc
     - investigation_type
-    - sample_name
+    - samp_name
+    - samp_taxon_id
     - project_name
     - experimental_factor
     - lat_lon
@@ -408,14 +424,14 @@ classes:
     - source_mat_id
     - specific_host
     - host_spec_range
-    - host_disease_stat
     - propagation
     - encoded_traits
     - isol_growth_condt
-    - sample_collect_device
-    - sample_collect_method
+    - samp_collec_device
+    - samp_collec_method
     - samp_mat_process
     - samp_size
+    - samp_vol_we_dna_ext
     - nucl_acid_ext
     - nucl_acid_amp
     - lib_size
@@ -437,14 +453,16 @@ classes:
     - tax_class
     - compl_score
     - compl_software
-    - url
+    - associated resource
     - sop
     slot_usage:
       submitted_to_insdc:
         required: true
       investigation_type:
         required: true
-      sample_name:
+      samp_name:
+        required: true
+      samp_taxon_id:
         required: true
       project_name:
         required: true
@@ -480,7 +498,6 @@ classes:
         - conditional mandatory
       host_spec_range:
         required: false
-      host_disease_stat: {}
       propagation:
         required: true
       encoded_traits:
@@ -488,13 +505,15 @@ classes:
         - conditional mandatory
       isol_growth_condt:
         required: true
-      sample_collect_device:
+      samp_collec_device:
         required: false
-      sample_collect_method:
+      samp_collec_method:
         required: false
       samp_mat_process:
         required: false
       samp_size:
+        required: false
+      samp_vol_we_dna_ext:
         required: false
       nucl_acid_ext:
         comments:
@@ -544,7 +563,7 @@ classes:
         required: false
       compl_software:
         required: false
-      url:
+      associated resource:
         comments:
         - conditional mandatory
       sop:
@@ -558,7 +577,8 @@ classes:
     slots:
     - submitted_to_insdc
     - investigation_type
-    - sample_name
+    - samp_name
+    - samp_taxon_id
     - project_name
     - experimental_factor
     - lat_lon
@@ -582,10 +602,11 @@ classes:
     - propagation
     - encoded_traits
     - isol_growth_condt
-    - sample_collect_device
-    - sample_collect_method
+    - samp_collec_device
+    - samp_collec_method
     - samp_mat_process
     - samp_size
+    - samp_vol_we_dna_ext
     - virus_enrich_appr
     - nucl_acid_ext
     - nucl_acid_amp
@@ -608,14 +629,16 @@ classes:
     - tax_class
     - compl_score
     - compl_software
-    - url
+    - associated resource
     - sop
     slot_usage:
       submitted_to_insdc:
         required: true
       investigation_type:
         required: true
-      sample_name:
+      samp_name:
+        required: true
+      samp_taxon_id:
         required: true
       project_name:
         required: true
@@ -663,7 +686,9 @@ classes:
       health_disease_stat:
         comments:
         - conditional mandatory
-      host_disease_stat: {}
+      host_disease_stat:
+        comments:
+        - conditional mandatory
       propagation:
         required: true
       encoded_traits:
@@ -671,13 +696,15 @@ classes:
         - conditional mandatory
       isol_growth_condt:
         required: true
-      sample_collect_device:
+      samp_collec_device:
         required: false
-      sample_collect_method:
+      samp_collec_method:
         required: false
       samp_mat_process:
         required: false
       samp_size:
+        required: false
+      samp_vol_we_dna_ext:
         required: false
       virus_enrich_appr:
         comments:
@@ -730,7 +757,7 @@ classes:
         required: false
       compl_software:
         required: false
-      url:
+      associated resource:
         comments:
         - conditional mandatory
       sop:
@@ -744,7 +771,8 @@ classes:
     slots:
     - submitted_to_insdc
     - investigation_type
-    - sample_name
+    - samp_name
+    - samp_taxon_id
     - project_name
     - experimental_factor
     - lat_lon
@@ -759,12 +787,12 @@ classes:
     - estimated_size
     - ref_biomaterial
     - source_mat_id
-    - host_disease_stat
     - isol_growth_condt
-    - sample_collect_device
-    - sample_collect_method
+    - samp_collec_device
+    - samp_collec_method
     - samp_mat_process
     - samp_size
+    - samp_vol_we_dna_ext
     - nucl_acid_ext
     - nucl_acid_amp
     - lib_size
@@ -786,14 +814,16 @@ classes:
     - tax_class
     - compl_score
     - compl_software
-    - url
+    - associated resource
     - sop
     slot_usage:
       submitted_to_insdc:
         required: true
       investigation_type:
         required: true
-      sample_name:
+      samp_name:
+        required: true
+      samp_taxon_id:
         required: true
       project_name:
         required: true
@@ -827,16 +857,17 @@ classes:
       source_mat_id:
         comments:
         - conditional mandatory
-      host_disease_stat: {}
       isol_growth_condt:
         required: true
-      sample_collect_device:
+      samp_collec_device:
         required: false
-      sample_collect_method:
+      samp_collec_method:
         required: false
       samp_mat_process:
         required: false
       samp_size:
+        required: false
+      samp_vol_we_dna_ext:
         required: false
       nucl_acid_ext:
         comments:
@@ -886,7 +917,7 @@ classes:
         required: false
       compl_software:
         required: false
-      url:
+      associated resource:
         comments:
         - conditional mandatory
       sop:
@@ -900,7 +931,8 @@ classes:
     slots:
     - submitted_to_insdc
     - investigation_type
-    - sample_name
+    - samp_name
+    - samp_taxon_id
     - project_name
     - experimental_factor
     - lat_lon
@@ -912,13 +944,13 @@ classes:
     - env_package
     - ref_biomaterial
     - source_mat_id
-    - host_disease_stat
     - rel_to_oxygen
-    - sample_collect_device
-    - sample_collect_method
+    - samp_collec_device
+    - samp_collec_method
     - samp_mat_process
     - size_frac
     - samp_size
+    - samp_vol_we_dna_ext
     - nucl_acid_ext
     - nucl_acid_amp
     - lib_size
@@ -938,14 +970,16 @@ classes:
     - ref_db
     - sim_search_meth
     - tax_class
-    - url
+    - associated resource
     - sop
     slot_usage:
       submitted_to_insdc:
         required: true
       investigation_type:
         required: true
-      sample_name:
+      samp_name:
+        required: true
+      samp_taxon_id:
         required: true
       project_name:
         required: true
@@ -972,13 +1006,12 @@ classes:
       source_mat_id:
         comments:
         - conditional mandatory
-      host_disease_stat: {}
       rel_to_oxygen:
         required: false
-      sample_collect_device:
+      samp_collec_device:
         comments:
         - conditional mandatory
-      sample_collect_method:
+      samp_collec_method:
         comments:
         - conditional mandatory
       samp_mat_process:
@@ -989,6 +1022,8 @@ classes:
       samp_size:
         comments:
         - conditional mandatory
+      samp_vol_we_dna_ext:
+        required: false
       nucl_acid_ext:
         comments:
         - conditional mandatory
@@ -1041,7 +1076,7 @@ classes:
         required: false
       tax_class:
         required: false
-      url:
+      associated resource:
         comments:
         - conditional mandatory
       sop:
@@ -1055,7 +1090,8 @@ classes:
     slots:
     - submitted_to_insdc
     - investigation_type
-    - sample_name
+    - samp_name
+    - samp_taxon_id
     - project_name
     - experimental_factor
     - lat_lon
@@ -1066,13 +1102,13 @@ classes:
     - env_medium
     - env_package
     - source_mat_id
-    - host_disease_stat
     - rel_to_oxygen
-    - sample_collect_device
-    - sample_collect_method
+    - samp_collec_device
+    - samp_collec_method
     - samp_mat_process
     - size_frac
     - samp_size
+    - samp_vol_we_dna_ext
     - nucl_acid_ext
     - nucl_acid_amp
     - lib_size
@@ -1090,14 +1126,16 @@ classes:
     - seq_quality_check
     - chimera_check
     - assembly_software
-    - url
+    - associated resource
     - sop
     slot_usage:
       submitted_to_insdc:
         required: true
       investigation_type:
         required: true
-      sample_name:
+      samp_name:
+        required: true
+      samp_taxon_id:
         required: true
       project_name:
         required: true
@@ -1122,13 +1160,12 @@ classes:
       source_mat_id:
         comments:
         - conditional mandatory
-      host_disease_stat: {}
       rel_to_oxygen:
         required: false
-      sample_collect_device:
+      samp_collec_device:
         comments:
         - conditional mandatory
-      sample_collect_method:
+      samp_collec_method:
         comments:
         - conditional mandatory
       samp_mat_process:
@@ -1139,6 +1176,8 @@ classes:
       samp_size:
         comments:
         - conditional mandatory
+      samp_vol_we_dna_ext:
+        required: false
       nucl_acid_ext:
         comments:
         - conditional mandatory
@@ -1188,7 +1227,7 @@ classes:
       assembly_software:
         comments:
         - conditional mandatory
-      url:
+      associated resource:
         comments:
         - conditional mandatory
       sop:
@@ -1202,7 +1241,8 @@ classes:
     slots:
     - submitted_to_insdc
     - investigation_type
-    - sample_name
+    - samp_name
+    - samp_taxon_id
     - project_name
     - experimental_factor
     - lat_lon
@@ -1216,14 +1256,14 @@ classes:
     - extrachrom_elements
     - source_mat_id
     - biotic_relationship
-    - host_disease_stat
     - trophic_level
     - rel_to_oxygen
     - isol_growth_condt
-    - sample_collect_device
-    - sample_collect_method
+    - samp_collec_device
+    - samp_collec_method
     - samp_mat_process
     - samp_size
+    - samp_vol_we_dna_ext
     - nucl_acid_ext
     - nucl_acid_amp
     - target_gene
@@ -1233,14 +1273,16 @@ classes:
     - seq_meth
     - seq_quality_check
     - chimera_check
-    - url
+    - associated resource
     - sop
     slot_usage:
       submitted_to_insdc:
         required: true
       investigation_type:
         required: true
-      sample_name:
+      samp_name:
+        required: true
+      samp_taxon_id:
         required: true
       project_name:
         required: true
@@ -1272,7 +1314,6 @@ classes:
       biotic_relationship:
         comments:
         - conditional mandatory
-      host_disease_stat: {}
       trophic_level:
         comments:
         - conditional mandatory
@@ -1281,14 +1322,16 @@ classes:
         - conditional mandatory
       isol_growth_condt:
         required: true
-      sample_collect_device:
+      samp_collec_device:
         required: false
-      sample_collect_method:
+      samp_collec_method:
         required: false
       samp_mat_process:
         comments:
         - conditional mandatory
       samp_size:
+        required: false
+      samp_vol_we_dna_ext:
         required: false
       nucl_acid_ext:
         comments:
@@ -1315,7 +1358,7 @@ classes:
       chimera_check:
         comments:
         - conditional mandatory
-      url:
+      associated resource:
         comments:
         - conditional mandatory
       sop:
@@ -1329,7 +1372,8 @@ classes:
     slots:
     - submitted_to_insdc
     - investigation_type
-    - sample_name
+    - samp_name
+    - samp_taxon_id
     - project_name
     - experimental_factor
     - lat_lon
@@ -1341,13 +1385,13 @@ classes:
     - env_package
     - ref_biomaterial
     - source_mat_id
-    - host_disease_stat
     - rel_to_oxygen
-    - sample_collect_device
-    - sample_collect_method
+    - samp_collec_device
+    - samp_collec_method
     - samp_mat_process
     - size_frac
     - samp_size
+    - samp_vol_we_dna_ext
     - nucl_acid_ext
     - nucl_acid_amp
     - lib_size
@@ -1383,14 +1427,16 @@ classes:
     - single_cell_lysis_prot
     - wga_amp_appr
     - wga_amp_kit
-    - url
+    - associated resource
     - sop
     slot_usage:
       submitted_to_insdc:
         required: true
       investigation_type:
         required: true
-      sample_name:
+      samp_name:
+        required: true
+      samp_taxon_id:
         required: true
       project_name:
         required: true
@@ -1417,13 +1463,12 @@ classes:
       source_mat_id:
         comments:
         - conditional mandatory
-      host_disease_stat: {}
       rel_to_oxygen:
         required: false
-      sample_collect_device:
+      samp_collec_device:
         comments:
         - conditional mandatory
-      sample_collect_method:
+      samp_collec_method:
         comments:
         - conditional mandatory
       samp_mat_process:
@@ -1434,6 +1479,8 @@ classes:
       samp_size:
         comments:
         - conditional mandatory
+      samp_vol_we_dna_ext:
+        required: false
       nucl_acid_ext:
         comments:
         - conditional mandatory
@@ -1514,7 +1561,7 @@ classes:
         required: true
       wga_amp_kit:
         required: false
-      url:
+      associated resource:
         comments:
         - conditional mandatory
       sop:
@@ -1528,7 +1575,8 @@ classes:
     slots:
     - submitted_to_insdc
     - investigation_type
-    - sample_name
+    - samp_name
+    - samp_taxon_id
     - project_name
     - experimental_factor
     - lat_lon
@@ -1540,13 +1588,13 @@ classes:
     - env_package
     - ref_biomaterial
     - source_mat_id
-    - host_disease_stat
     - rel_to_oxygen
-    - sample_collect_device
-    - sample_collect_method
+    - samp_collec_device
+    - samp_collec_method
     - samp_mat_process
     - size_frac
     - samp_size
+    - samp_vol_we_dna_ext
     - nucl_acid_ext
     - nucl_acid_amp
     - lib_size
@@ -1581,14 +1629,16 @@ classes:
     - bin_software
     - reassembly_bin
     - mag_cov_software
-    - url
+    - associated resource
     - sop
     slot_usage:
       submitted_to_insdc:
         required: true
       investigation_type:
         required: true
-      sample_name:
+      samp_name:
+        required: true
+      samp_taxon_id:
         required: true
       project_name:
         required: true
@@ -1615,13 +1665,12 @@ classes:
       source_mat_id:
         comments:
         - conditional mandatory
-      host_disease_stat: {}
       rel_to_oxygen:
         required: false
-      sample_collect_device:
+      samp_collec_device:
         comments:
         - conditional mandatory
-      sample_collect_method:
+      samp_collec_method:
         comments:
         - conditional mandatory
       samp_mat_process:
@@ -1632,6 +1681,8 @@ classes:
       samp_size:
         comments:
         - conditional mandatory
+      samp_vol_we_dna_ext:
+        required: false
       nucl_acid_ext:
         comments:
         - conditional mandatory
@@ -1710,7 +1761,7 @@ classes:
         required: false
       mag_cov_software:
         required: false
-      url:
+      associated resource:
         comments:
         - conditional mandatory
       sop:
@@ -1724,7 +1775,8 @@ classes:
     slots:
     - submitted_to_insdc
     - investigation_type
-    - sample_name
+    - samp_name
+    - samp_taxon_id
     - project_name
     - experimental_factor
     - lat_lon
@@ -1742,11 +1794,12 @@ classes:
     - specific_host
     - host_spec_range
     - host_disease_stat
-    - sample_collect_device
-    - sample_collect_method
+    - samp_collec_device
+    - samp_collec_method
     - samp_mat_process
     - size_frac
     - samp_size
+    - samp_vol_we_dna_ext
     - source_uvig
     - virus_enrich_appr
     - nucl_acid_ext
@@ -1787,19 +1840,21 @@ classes:
     - pred_genome_type
     - pred_genome_struc
     - detec_type
-    - votu_class_appr
-    - votu_seq_comp_appr
-    - votu_db
+    - otu_class_appr
+    - otu_seq_comp_appr
+    - otu_db
     - host_pred_appr
     - host_pred_est_acc
-    - url
+    - associated resource
     - sop
     slot_usage:
       submitted_to_insdc:
         required: true
       investigation_type:
         required: true
-      sample_name:
+      samp_name:
+        required: true
+      samp_taxon_id:
         required: true
       project_name:
         required: true
@@ -1836,11 +1891,13 @@ classes:
         required: false
       host_spec_range:
         required: false
-      host_disease_stat: {}
-      sample_collect_device:
+      host_disease_stat:
         comments:
         - conditional mandatory
-      sample_collect_method:
+      samp_collec_device:
+        comments:
+        - conditional mandatory
+      samp_collec_method:
         comments:
         - conditional mandatory
       samp_mat_process:
@@ -1852,6 +1909,8 @@ classes:
       samp_size:
         comments:
         - conditional mandatory
+      samp_vol_we_dna_ext:
+        required: false
       source_uvig:
         required: true
       virus_enrich_appr:
@@ -1956,13 +2015,13 @@ classes:
         required: true
       detec_type:
         required: true
-      votu_class_appr:
+      otu_class_appr:
         comments:
         - conditional mandatory
-      votu_seq_comp_appr:
+      otu_seq_comp_appr:
         comments:
         - conditional mandatory
-      votu_db:
+      otu_db:
         comments:
         - conditional mandatory
       host_pred_appr:
@@ -1971,7 +2030,7 @@ classes:
       host_pred_est_acc:
         comments:
         - conditional mandatory
-      url:
+      associated resource:
         comments:
         - conditional mandatory
       sop:

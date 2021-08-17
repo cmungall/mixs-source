@@ -18,6 +18,7 @@ classes:
     - depth
     - alt
     - elev
+    - temp
     - geo_loc_name
     - collection_date
     - env_broad_scale
@@ -106,7 +107,7 @@ classes:
     - hall_count
     - handidness
     - heat_deliv_loc
-    - heat_system_deliv_meth
+    - heat_sys_deliv_meth
     - heat_system_id
     - height_carper_fiber
     - inside_lux
@@ -121,17 +122,17 @@ classes:
     - ext_wall_orient
     - ext_window_orient
     - rel_humidity_out
-    - pres_animal
+    - pres_animal_insect
     - quad_pos
     - rel_samp_loc
     - room_air_exch_rate
-    - room_architec_element
+    - room_architec_elem
     - room_condt
     - room_count
     - room_dim
     - room_door_dist
     - room_loc
-    - room_moist_damage_hist
+    - room_moist_dam_hist
     - room_net_area
     - room_occup
     - room_samp_pos
@@ -151,7 +152,7 @@ classes:
     - shading_device_cond
     - shading_device_loc
     - shading_device_mat
-    - shading_device_water_mold
+    - shad_dev_water_mold
     - shading_device_type
     - specific_humidity
     - specific
@@ -184,7 +185,7 @@ classes:
     - window_type
     - window_vert_pos
     slot_usage:
-      sample_name:
+      samp_name:
         required: true
       project_name:
         required: true
@@ -354,7 +355,7 @@ classes:
         required: false
       heat_deliv_loc:
         required: false
-      heat_system_deliv_meth:
+      heat_sys_deliv_meth:
         required: false
       heat_system_id:
         required: false
@@ -384,7 +385,7 @@ classes:
         required: false
       rel_humidity_out:
         required: false
-      pres_animal:
+      pres_animal_insect:
         required: false
       quad_pos:
         required: false
@@ -392,7 +393,7 @@ classes:
         required: false
       room_air_exch_rate:
         required: false
-      room_architec_element:
+      room_architec_elem:
         required: false
       room_condt:
         required: false
@@ -404,7 +405,7 @@ classes:
         required: false
       room_loc:
         required: false
-      room_moist_damage_hist:
+      room_moist_dam_hist:
         required: false
       room_net_area:
         required: false
@@ -444,7 +445,7 @@ classes:
         required: false
       shading_device_mat:
         required: false
-      shading_device_water_mold:
+      shad_dev_water_mold:
         required: false
       shading_device_type:
         required: false

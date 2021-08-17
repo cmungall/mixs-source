@@ -44,6 +44,7 @@ slots:
     exact_mappings:
     - MIGS:MIGS-1
     pattern: '{boolean}'
+    see_also: https://github.com/GenomicsStandardsConsortium/mixs/issues/60
     slot_uri: MIXS:0000004
   investigation_type:
     is_a: investigation field
@@ -67,14 +68,17 @@ slots:
     pattern: '[eukaryote|bacteria_archaea|plasmid|virus|organelle|metagenome|metatranscriptome|mimarks-survey|mimarks-specimen|misag|mimag|miuvig]'
     see_also: https://github.com/GenomicsStandardsConsortium/mixs/issues/60
     slot_uri: MIXS:0000007
-  sample_name:
+  samp_name:
     is_a: investigation field
     aliases:
     - sample name
-    description: Sample Name is a name that you choose for the sample. It can have
-      any format, but we suggest that you make it concise, unique and consistent within
-      your lab, and as informative as possible. Every Sample Name from a single Submitter
-      must be unique.
+    description: A local identifier or name that for the material sample used for
+      extracting nucleic acids, and subsequent sequencing. It can refer either to
+      the original material collected or to any derived sub-samples. It can have any
+      format, but we suggest that you make it concise, unique and consistent within
+      your lab, and as informative as possible. INSDC requires every sample name from
+      a single Submitter to be unique. Use of a globally unique identifier for the
+      field source_mat_id is recommended in addition to sample_name.
     range: string
     examples:
     - value: ISDsoil1
@@ -86,6 +90,22 @@ slots:
     pattern: '{text}'
     see_also: https://github.com/GenomicsStandardsConsortium/mixs/issues/78
     slot_uri: MIXS:0001107
+  samp_taxon_id:
+    is_a: investigation field
+    aliases:
+    - Taxonomy ID of DNA sample
+    description: "NCBI taxon id of the sample.  Maybe be a single taxon or mixed taxa\
+      \ sample. Use 'synthetic metagenome\u2019 for mock community/positive controls,\
+      \ or 'blank sample' for negative controls."
+    range: string
+    examples:
+    - value: Gut Metagenome [NCBI:txid749906]
+    comments:
+    - 'Expected value: Taxonomy ID'
+    exact_mappings:
+    - 'MIGS:'
+    pattern: '{text} [NCBI:txid]'
+    slot_uri: MIXS:0001320
   project_name:
     is_a: investigation field
     aliases:
@@ -131,7 +151,7 @@ slots:
     examples:
     - value: 50.586825 6.408977
     comments:
-    - 'Expected value: decimal degrees'
+    - 'Expected value: decimal degrees,  limit to 8 decimal points'
     - 'Position: 5.0'
     exact_mappings:
     - MIGS:MIGS-4.1 Latitude. MIGS-4.2 Longitude
@@ -141,22 +161,21 @@ slots:
   depth:
     is_a: environment field
     aliases:
-    - geographic location (depth)
-    description: The vertical distance below local surface, e.g. For sediment or soil
+    - depth
+    description: The vertical distance below local surface, e.g. for sediment or soil
       samples depth is measured from sediment or soil surface, respectively. Depth
       can be reported as an interval for subsurface samples.
-    range: string
+    range: quantity value
     examples:
-    - value: ''
+    - value: 10 meter
     comments:
-    - 'Expected value: -'
+    - 'Expected value: measurement value'
     - 'Position: 6.0'
     - 'This field is used in: 8 packages: host-associated, microbial mat_biofilm,
       miscellaneous natural or artificial environment, plant-associated, sediment,
       soil, wastewater_sludge, water'
     exact_mappings:
     - MIGS:MIGS-4.3
-    pattern: '-'
     see_also: https://github.com/GenomicsStandardsConsortium/mixs/issues/63
     slot_uri: MIXS:0000018
   alt:
@@ -186,7 +205,7 @@ slots:
     description: Elevation of the sampling site is its height above a fixed reference
       point, most commonly the mean sea level. Elevation is mainly used when referring
       to points on the earth's surface, while altitude is used for points above the
-      surface, such as an aircraft in flight or a spacecraft in orbit
+      surface, such as an aircraft in flight or a spacecraft in orbit.
     range: quantity value
     examples:
     - value: 100 meter
@@ -199,6 +218,25 @@ slots:
     exact_mappings:
     - 'MIGS:'
     slot_uri: MIXS:0000093
+  temp:
+    is_a: environment field
+    aliases:
+    - temperature
+    description: Temperature of the sample at the time of sampling.
+    range: quantity value
+    examples:
+    - value: 25 degree Celsius
+    comments:
+    - 'Expected value: measurement value'
+    - 'Preferred unit: degree Celsius'
+    - 'Position: 40.0'
+    - 'This field is used in: 15 packages: air, host-associated, human-associated,
+      human-gut, human-oral, human-skin, human-vaginal, hydrocarbon resources-cores,
+      hydrocarbon resources-fluids_swabs, microbial mat_biofilm, miscellaneous natural
+      or artificial environment, plant-associated, sediment, wastewater_sludge, water'
+    exact_mappings:
+    - 'MIGS:'
+    slot_uri: MIXS:0000113
   geo_loc_name:
     is_a: environment field
     aliases:
@@ -206,7 +244,7 @@ slots:
     description: The geographical origin of the sample as defined by the country or
       sea name followed by specific region name. Country or sea names should be chosen
       from the INSDC country list (http://insdc.org/country.html), or the GAZ ontology
-      (v 1.512) (http://purl.bioontology.org/ontology/GAZ)
+      (http://purl.bioontology.org/ontology/GAZ)
     range: string
     examples:
     - value: 'USA: Maryland, Bethesda'
@@ -217,7 +255,7 @@ slots:
     exact_mappings:
     - MIGS:MIGS-4
     pattern: '{term}: {term}, {text}'
-    see_also: https://github.com/GenomicsStandardsConsortium/mixs/issues/17
+    see_also: https://github.com/GenomicsStandardsConsortium/mixs/issues/79
     slot_uri: MIXS:0000010
   collection_date:
     is_a: environment field
@@ -229,7 +267,7 @@ slots:
       2008-01-23; 2008-01; 2008; Except: 2008-01; 2008 all are ISO8601 compliant'
     range: date
     examples:
-    - value: '2018-05-11T10:00:00+01:00'
+    - value: 2018-05-11T10:00:00+01:00; 2018-05-11
     comments:
     - 'Expected value: date and time'
     - 'Position: 9.0'
@@ -240,25 +278,20 @@ slots:
     is_a: environment field
     aliases:
     - broad-scale environmental context
-    description: "In this field, report which major environmental system your sample\
-      \ or specimen came from. The systems identified should have a coarse spatial\
-      \ grain, to provide the general environmental context of where the sampling\
-      \ was done (e.g. were you in the desert or a rainforest?). We recommend using\
-      \ subclasses of ENVO\u2019s biome class: http://purl.obolibrary.org/obo/ENVO_00000428.\
-      \ Format (one term): termLabel [termID], Format (multiple terms): termLabel\
-      \ [termID]|termLabel [termID]|termLabel [termID]. Example: Annotating a water\
-      \ sample from the photic zone in middle of the Atlantic Ocean, consider: oceanic\
-      \ epipelagic zone biome [ENVO:01000033]. Example: Annotating a sample from the\
-      \ Amazon rainforest consider: tropical moist broadleaf forest biome [ENVO:01000228].\
-      \ If needed, request new terms on the ENVO tracker, identified here: http://www.obofoundry.org/ontology/envo.html"
+    description: "Report the major environmental system the sample or specimen came\
+      \ from. The system(s) identified should have a coarse spatial grain, to provide\
+      \ the general environmental context of where the sampling was done (e.g. in\
+      \ the desert or a rainforest). We recommend using subclasses of EnvO\u2019s\
+      \ biome class:  http://purl.obolibrary.org/obo/ENVO_00000428. EnvO documentation\
+      \ about how to use the field: https://github.com/EnvironmentOntology/envo/wiki/Using-ENVO-with-MIxS"
     range: string
     examples:
-    - value: forest biome [ENVO:01000174]
+    - value: oceanic epipelagic zone biome [ENVO:01000033] for annotating a water
+        sample from the photic zone in middle of the Atlantic Ocean
     comments:
-    - 'Expected value: Add terms that identify the major environment type(s) where
-      your sample was collected. Recommend subclasses of biome [ENVO:00000428]. Multiple
-      terms can be separated by one or more pipes e.g.: mangrove biome [ENVO:01000181]|estuarine
-      biome [ENVO:01000020]'
+    - 'Expected value: The major environment type(s) where the sample was collected.
+      Recommend subclasses of biome [ENVO:00000428]. Multiple terms can be separated
+      by one or more pipes.'
     - 'Position: 10.0'
     exact_mappings:
     - 'MIGS:'
@@ -268,23 +301,22 @@ slots:
     is_a: environment field
     aliases:
     - local environmental context
-    description: "In this field, report the entity or entities which are in your sample\
-      \ or specimen\u2019s local vicinity and which you believe have significant causal\
-      \ influences on your sample or specimen. Please use terms that are present in\
-      \ ENVO and which are of smaller spatial grain than your entry for env_broad_scale.\
-      \ Format (one term): termLabel [termID]; Format (multiple terms): termLabel\
-      \ [termID]|termLabel [termID]|termLabel [termID]. Example: Annotating a pooled\
-      \ sample taken from various vegetation layers in a forest consider: canopy [ENVO:00000047]|herb\
-      \ and fern layer [ENVO:01000337]|litter layer [ENVO:01000338]|understory [01000335]|shrub\
-      \ layer [ENVO:01000336]. If needed, request new terms on the ENVO tracker, identified\
-      \ here: http://www.obofoundry.org/ontology/envo.html"
+    description: "Report the entity or entities which are in the sample or specimen\u2019\
+      s local vicinity and which you believe have significant causal influences on\
+      \ your sample or specimen. We recommend using EnvO terms which are of smaller\
+      \ spatial grain than your entry for env_broad_scale. Terms, such as anatomical\
+      \ sites, from other OBO Library ontologies which interoperate with EnvO (e.g.\
+      \ UBERON) are accepted in this field. EnvO documentation about how to use the\
+      \ field: https://github.com/EnvironmentOntology/envo/wiki/Using-ENVO-with-MIxS"
     range: string
     examples:
-    - value: litter layer [ENVO:01000338]
+    - value: 'litter layer [ENVO:01000338]; Annotating a pooled sample taken from
+        various vegetation layers in a forest consider: canopy [ENVO:00000047]|herb
+        and fern layer [ENVO:01000337]|litter layer [ENVO:01000338]|understory [01000335]|shrub
+        layer [ENVO:01000336].'
     comments:
-    - 'Expected value: Add terms that identify environmental entities having causal
-      influences upon the entity at time of sampling, multiple terms can be separated
-      by pipes, e.g.: shoreline [ENVO:00000486]|intertidal zone [ENVO:00000316]'
+    - 'Expected value: Environmental entities having causal influences upon the entity
+      at time of sampling.'
     - 'Position: 11.0'
     exact_mappings:
     - MIGS:MIGS-6 (habitat)
@@ -294,23 +326,21 @@ slots:
     is_a: environment field
     aliases:
     - environmental medium
-    description: "In this field, report which environmental material or materials\
-      \ (pipe separated) immediately surrounded your sample or specimen prior to sampling,\
-      \ using one or more subclasses of ENVO\u2019s environmental material class:\
-      \ http://purl.obolibrary.org/obo/ENVO_00010483. Format (one term): termLabel\
-      \ [termID]; Format (multiple terms): termLabel [termID]|termLabel [termID]|termLabel\
-      \ [termID]. Example: Annotating a fish swimming in the upper 100 m of the Atlantic\
-      \ Ocean, consider: ocean water [ENVO:00002151]. Example: Annotating a duck on\
-      \ a pond consider: pond water [ENVO:00002228]|air ENVO_00002005. If needed,\
-      \ request new terms on the ENVO tracker, identified here: http://www.obofoundry.org/ontology/envo.html"
+    description: 'Report the environmental material(s) immediately surrounding the
+      sample or specimen at the time of sampling. We recommend using subclasses of
+      ''environmental material'' (http://purl.obolibrary.org/obo/ENVO_00010483). EnvO
+      documentation about how to use the field: https://github.com/EnvironmentOntology/envo/wiki/Using-ENVO-with-MIxS
+      . Terms from other OBO ontologies are permissible as long as they reference
+      mass/volume nouns (e.g. air, water, blood) and not discrete, countable entities
+      (e.g. a tree, a leaf, a table top).'
     range: string
     examples:
-    - value: soil [ENVO:00001998]
+    - value: 'soil [ENVO:00001998]; Annotating a fish swimming in the upper 100 m
+        of the Atlantic Ocean, consider: ocean water [ENVO:00002151]. Example: Annotating
+        a duck on a pond consider: pond water [ENVO:00002228]|air [ENVO_00002005]'
     comments:
-    - 'Expected value: Add terms that identify the material displaced by the entity
-      at time of sampling. Recommend subclasses of environmental material [ENVO:00010483].
-      Multiple terms can be separated by pipes e.g.: estuarine water [ENVO:01000301]|estuarine
-      mud [ENVO:00002160]'
+    - 'Expected value: The material displaced by the entity at time of sampling. Recommend
+      subclasses of environmental material [ENVO:00010483].'
     - 'Position: 12.0'
     exact_mappings:
     - 'MIGS:'
@@ -342,17 +372,17 @@ slots:
     is_a: nucleic acid sequence source field
     aliases:
     - subspecific genetic lineage
-    description: This should provide further information about the genetic distinctness
-      of the sequenced organism by recording additional information e.g. serovar,
-      serotype, biotype, ecotype, or any relevant genetic typing schemes like Group
-      I plasmid. It can also contain alternative taxonomic information. It should
-      contain both the lineage name, and the lineage rank, i.e. biovar:abc123
+    description: Information about the genetic distinctness of the sequenced organism
+      below the subspecies level, e.g., serovar, serotype, biotype, ecotype, or any
+      relevant genetic typing schemes like Group I plasmid. Subspecies should not
+      be recorded in this term, but in the NCBI taxonomy. Supply both the lineage
+      name and the lineage rank separated by a colon, e.g., biovar:abc123.
     range: string
     examples:
     - value: serovar:Newport
     comments:
-    - 'Expected value: genetic lineage below lowest rank of NCBI taxonomy, which is
-      subspecies, e.g. serovar, biotype, ecotype'
+    - 'Expected value: Genetic lineage below lowest rank of NCBI taxonomy, which is
+      subspecies, e.g. serovar, biotype, ecotype.'
     - 'Position: 14.0'
     exact_mappings:
     - 'MIGS:'
@@ -435,7 +465,7 @@ slots:
     aliases:
     - reference for biomaterial
     description: Primary publication if isolated before genome publication; otherwise,
-      primary genome report
+      primary genome report.
     range: string
     examples:
     - value: doi:10.1016/j.syapm.2018.01.009
@@ -472,6 +502,7 @@ slots:
     exact_mappings:
     - MIGS:MIGS-13
     pattern: '{text}'
+    see_also: https://github.com/GenomicsStandardsConsortium/mixs/issues/149
     slot_uri: MIXS:0000026
   pathogenicity:
     is_a: nucleic acid sequence source field
@@ -506,30 +537,30 @@ slots:
     exact_mappings:
     - MIGS:MIGS-15
     pattern: '[free living|parasitism|commensalism|symbiotic|mutualism]'
+    see_also: https://github.com/GenomicsStandardsConsortium/mixs/issues/168
     slot_uri: MIXS:0000028
   specific_host:
     is_a: nucleic acid sequence source field
     aliases:
-    - specific host
-    description: If there is a host involved, please provide its taxid (or environmental
-      if not actually isolated from the dead or alive host - i.e. a pathogen could
-      be isolated from a swipe of a bench etc) and report whether it is a laboratory
-      or natural host)
+    - host scientific name
+    description: Report the host's taxonomic name and/or NCBI taxonomy ID.
     range: string
     examples:
-    - value: '9606'
+    - value: Homo sapiens and/or 9606
     comments:
-    - 'Expected value: host taxid, unknown, environmental'
+    - 'Expected value: host scientific name, taxonomy ID'
     - 'Position: 23.0'
     exact_mappings:
     - MIGS:MIGS-16
-    pattern: '{NCBI taxid}|{text}'
+    pattern: '{text}|{NCBI taxid}'
+    see_also: https://github.com/GenomicsStandardsConsortium/mixs/issues/131
     slot_uri: MIXS:0000029
   host_spec_range:
     is_a: nucleic acid sequence source field
     aliases:
     - host specificity or range
-    description: The NCBI taxonomy identifier of the specific host if it is known
+    description: The range and diversity of host species that an organism is capable
+      of infecting, defined by NCBI taxonomy identifier.
     range: string
     examples:
     - value: '9606'
@@ -558,7 +589,7 @@ slots:
       condition|pathological|life threatening|congenital]'
     slot_uri: MIXS:0000031
   host_disease_stat:
-    is_a: core field
+    is_a: nucleic acid sequence source field
     aliases:
     - host disease status
     description: List of diseases with which the host has been diagnosed; can include
@@ -596,16 +627,16 @@ slots:
     is_a: nucleic acid sequence source field
     aliases:
     - propagation
-    description: 'This field is specific to different taxa. For phages: lytic/lysogenic,
-      for plasmids: incompatibility group, for eukaryotes: sexual/asexual (Note: there
-      is the strong opinion to name phage propagation obligately lytic or temperate,
-      therefore we also give this choice'
+    description: 'The type of reproduction from the parent stock. Values for this
+      field is specific to different taxa. For phage or virus: lytic/lysogenic/temperate/obligately
+      lytic. For plasmids: incompatibility group. For eukaryotes: sexual/asexual.'
     range: string
     examples:
     - value: lytic
     comments:
     - 'Expected value: for virus: lytic, lysogenic, temperate, obligately lytic; for
-      plasmid: incompatibility group; for eukaryote: asexual, sexual'
+      plasmid: incompatibility group; for eukaryote: asexual, sexual; other more specific
+      values (e.g., incompatibility group) are allowed'
     - 'Position: 27.0'
     exact_mappings:
     - 'MIGS:'
@@ -627,6 +658,7 @@ slots:
     exact_mappings:
     - 'MIGS:'
     pattern: '{text}'
+    see_also: https://github.com/GenomicsStandardsConsortium/mixs/issues/143
     slot_uri: MIXS:0000034
   rel_to_oxygen:
     is_a: nucleic acid sequence source field
@@ -644,6 +676,7 @@ slots:
     - MIGS:MIGS-22
     pattern: '[aerobe|anaerobe|facultative|microaerophilic|microanaerobe|obligate
       aerobe|obligate anaerobe]'
+    see_also: https://github.com/GenomicsStandardsConsortium/mixs/issues/144
     slot_uri: MIXS:0000015
   isol_growth_condt:
     is_a: nucleic acid sequence source field
@@ -661,8 +694,9 @@ slots:
     exact_mappings:
     - MIGS:MIGS-23
     pattern: '{PMID}|{DOI}|{URL}'
+    see_also: https://github.com/GenomicsStandardsConsortium/mixs/issues/145
     slot_uri: MIXS:0000003
-  sample_collect_device:
+  samp_collec_device:
     is_a: nucleic acid sequence source field
     aliases:
     - sample collection device
@@ -679,7 +713,7 @@ slots:
     - 'MIGS:'
     pattern: '{termLabel} {[termID]}|{text}'
     slot_uri: MIXS:0000002
-  sample_collect_method:
+  samp_collec_method:
     is_a: nucleic acid sequence source field
     aliases:
     - sample collection method
@@ -709,6 +743,7 @@ slots:
     exact_mappings:
     - 'MIGS:'
     pattern: '{text}'
+    see_also: https://github.com/GenomicsStandardsConsortium/mixs/issues/146
     slot_uri: MIXS:0000016
   size_frac:
     is_a: nucleic acid sequence source field
@@ -729,7 +764,8 @@ slots:
     is_a: nucleic acid sequence source field
     aliases:
     - amount or size of sample collected
-    description: Amount or size of sample (volume, mass or area) that was collected
+    description: The total amount or size (volume (ml), mass (g) or area (m2) ) of
+      sample collected.
     range: quantity value
     examples:
     - value: 5 liter
@@ -740,6 +776,28 @@ slots:
     exact_mappings:
     - 'MIGS:'
     slot_uri: MIXS:0000001
+  samp_vol_we_dna_ext:
+    is_a: nucleic acid sequence source field
+    aliases:
+    - sample volume or weight for DNA extraction
+    description: 'Volume (ml) or mass (g) of total collected sample processed for
+      DNA extraction. Note: total sample collected should be entered under the term
+      Sample Size (MIXS:0000001).'
+    range: quantity value
+    examples:
+    - value: 1500 milliliter
+    comments:
+    - 'Expected value: measurement value'
+    - 'Preferred unit: millliter, gram, milligram, square centimeter'
+    - 'Position: 17.0'
+    - 'This field is used in: 16 packages: air, host-associated, human-associated,
+      human-gut, human-oral, human-skin, human-vaginal, hydrocarbon resources-cores,
+      hydrocarbon resources-fluids_swabs, microbial mat_biofilm, miscellaneous natural
+      or artificial environment, plant-associated, sediment, soil, wastewater_sludge,
+      water'
+    exact_mappings:
+    - 'MIGS:'
+    slot_uri: MIXS:0000111
   source_uvig:
     is_a: nucleic acid sequence source field
     aliases:
@@ -990,27 +1048,17 @@ slots:
     is_a: sequencing field
     aliases:
     - sequencing method
-    description: Sequencing method used; e.g. Sanger, ABI-solid
-    range: seq_meth_enum
+    description: Sequencing machine used. Where possible the term should be taken
+      from the OBI list of DNA sequencers (http://purl.obolibrary.org/obo/OBI_0400103).
+    range: string
     examples:
-    - value: Illumina HiSeq 1500
+    - value: 454 Genome Sequencer FLX [OBI:0000702]
     comments:
-    - 'Expected value: enumeration'
+    - 'Expected value: Text or OBI'
     - 'Position: 50.0'
     exact_mappings:
     - MIGS:MIGS-29
-    pattern: '[454 GS|454 GS 20|454 GS FLX|454 GS FLX+|454 GS FLX Titanium|454 GS
-      Junior|AB 310 Genetic Analyzer|AB 3130 Genetic Analyzer|AB 3130xL Genetic Analyzer|AB
-      3500 Genetic Analyzer|AB 3500xL Genetic Analyzer|AB 3730 Genetic Analyzer|AB
-      3730xL Genetic Analyzer|AB 5500 Genetic Analyzer|AB 5500xl Genetic Analyzer|AB
-      5500xl-W Genetic Analysis System|AB SOLiD System|AB SOLiD System 2.0|AB SOLiD
-      System 3.0|AB SOLiD 3 Plus System|AB SOLiD 4 System|AB SOLiD 4hq System|AB SOLiD
-      PI System|BGISEQ-500|GridION|Illumina Genome Analyzer|Illumina Genome Analyzer
-      II|Illumina Genome Analyzer IIx|Illumina HiSeq 1000|Illumina HiSeq 1500|Illumina
-      HiSeq 2000|Illumina HiSeq 2500|Illumina HiSeq 3000|Illumina HiSeq 4000|Illumina
-      HiScanSQ|Illumina MiSeq|Illumina HiSeq X Five|Illumina HiSeq X Ten|Illumina
-      NextSeq 500|Illumina NextSeq 550|Ion Torrent PGM|Ion Torrent Proton|Ion Torrent
-      S5|Ion Torrent S5 XL|MinION|PacBio RS|PacBio RS II|PromethION|Sequel]'
+    pattern: '{termLabel} {[termID]}|{text}'
     slot_uri: MIXS:0000050
   seq_quality_check:
     is_a: sequencing field
@@ -1033,13 +1081,10 @@ slots:
   chimera_check:
     is_a: sequencing field
     aliases:
-    - chimera check
-    description: A chimeric sequence, or chimera for short, is a sequence comprised
-      of two or more phylogenetically distinct parent sequences. Chimeras are usually
-      PCR artifacts thought to occur when a prematurely terminated amplicon reanneals
-      to a foreign DNA strand and is copied to completion in the following PCR cycles.
-      The point at which the chimeric sequence changes from one parent to the next
-      is called the breakpoint or conversion point
+    - chimera check software
+    description: Tool(s) used for chimera checking, including version number and parameters,
+      to discover and remove chimeric sequences. A chimeric sequence is comprised
+      of two or more phylogenetically distinct parent sequences.
     range: string
     examples:
     - value: uchime;v4.1;default parameters
@@ -1097,6 +1142,7 @@ slots:
     - 'MIGS:'
     pattern: '[Finished genome|High-quality draft genome|Medium-quality draft genome|Low-quality
       draft genome|Genome fragment(s)]'
+    see_also: https://github.com/GenomicsStandardsConsortium/mixs/issues/147
     slot_uri: MIXS:0000056
   assembly_name:
     is_a: sequencing field
@@ -1145,6 +1191,7 @@ slots:
     exact_mappings:
     - 'MIGS:'
     pattern: '{text}'
+    see_also: https://github.com/GenomicsStandardsConsortium/mixs/issues/148
     slot_uri: MIXS:0000059
   number_contig:
     is_a: sequencing field
@@ -1177,6 +1224,7 @@ slots:
     exact_mappings:
     - 'MIGS:'
     pattern: '{software};{version};{parameters}'
+    see_also: https://github.com/GenomicsStandardsConsortium/mixs/issues/150
     slot_uri: MIXS:0000061
   ref_db:
     is_a: sequencing field
@@ -1194,6 +1242,7 @@ slots:
     exact_mappings:
     - 'MIGS:'
     pattern: '{database};{version};{reference}'
+    see_also: https://github.com/GenomicsStandardsConsortium/mixs/issues/151
     slot_uri: MIXS:0000062
   sim_search_meth:
     is_a: sequencing field
@@ -1227,6 +1276,7 @@ slots:
     exact_mappings:
     - 'MIGS:'
     pattern: '{text}'
+    see_also: https://github.com/GenomicsStandardsConsortium/mixs/issues/152
     slot_uri: MIXS:0000064
   x_16s_recover:
     is_a: sequencing field
@@ -1242,6 +1292,7 @@ slots:
     exact_mappings:
     - 'MIGS:'
     pattern: '{boolean}'
+    see_also: https://github.com/GenomicsStandardsConsortium/mixs/issues/92
     slot_uri: MIXS:0000065
   trnas:
     is_a: sequencing field
@@ -1257,6 +1308,7 @@ slots:
     exact_mappings:
     - 'MIGS:'
     pattern: '{integer}'
+    see_also: https://github.com/GenomicsStandardsConsortium/mixs/issues/153
     slot_uri: MIXS:0000067
   trna_ext_software:
     is_a: sequencing field
@@ -1311,16 +1363,16 @@ slots:
     is_a: sequencing field
     aliases:
     - completeness approach
-    description: The approach used to determine the completeness of a given SAG or
-      MAG, which would typically make use of a set of conserved marker genes or a
-      closely related reference genome. For UViG completeness, include reference genome
-      or group used, and contig feature suggesting a complete genome
+    description: The approach used to determine the completeness of a given genomic
+      assembly, which would typically make use of a set of conserved marker genes
+      or a closely related reference genome. For UViG completeness, include reference
+      genome or group used, and contig feature suggesting a complete genome
     range: compl_appr_enum
     examples:
     - value: 'other: UViG length compared to the average length of reference genomes
         from the P22virus genus (NCBI RefSeq v83)'
     comments:
-    - 'Expected value: enumeration'
+    - 'Expected value: text'
     - 'Position: 69.0'
     exact_mappings:
     - 'MIGS:'
@@ -1488,16 +1540,17 @@ slots:
     is_a: sequencing field
     aliases:
     - binning software
-    description: Tool(s) used for the extraction of genomes from metagenomic datasets
-    range: bin_software_enum
+    description: Tool(s) used for the extraction of genomes from metagenomic datasets,
+      where possible include a product ID (PID) of the tool(s) used.
+    range: string
     examples:
-    - value: concoct and maxbin
+    - value: MetaCluster-TA (RRID:SCR_004599), MaxBin (biotools:maxbin)
     comments:
-    - 'Expected value: enumeration'
+    - 'Expected value: names and versions of software(s) used'
     - 'Position: 80.0'
     exact_mappings:
     - 'MIGS:'
-    pattern: '[metabat|maxbin|concoct|groupm|esom|metawatt|combination|other]'
+    pattern: '{software};{version}{PID}'
     slot_uri: MIXS:0000078
   reassembly_bin:
     is_a: sequencing field
@@ -1592,14 +1645,14 @@ slots:
     - 'MIGS:'
     pattern: '[independent sequence (UViG)|provirus (UpViG)]'
     slot_uri: MIXS:0000084
-  votu_class_appr:
+  otu_class_appr:
     is_a: sequencing field
     aliases:
-    - vOTU classification approach
-    description: "Cutoffs and approach used when clustering new UViGs in \u201Cspecies-level\u201D\
-      \ vOTUs. Note that results from standard 95% ANI / 85% AF clustering should\
-      \ be provided alongside vOTUS defined from another set of thresholds, even if\
-      \ the latter are the ones primarily used during the analysis"
+    - OTU classification approach
+    description: "Cutoffs and approach used when clustering \u201Cspecies-level\u201D\
+      \ OTUs. Note that results from standard 95% ANI / 85% AF clustering should be\
+      \ provided alongside OTUS defined from another set of thresholds, even if the\
+      \ latter are the ones primarily used during the analysis"
     range: string
     examples:
     - value: 95% ANI;85% AF; greedy incremental clustering
@@ -1610,12 +1663,12 @@ slots:
     - 'MIGS:'
     pattern: '{ANI cutoff};{AF cutoff};{clustering method}'
     slot_uri: MIXS:0000085
-  votu_seq_comp_appr:
+  otu_seq_comp_appr:
     is_a: sequencing field
     aliases:
-    - vOTU sequence comparison approach
+    - OTU sequence comparison approach
     description: Tool and thresholds used to compare sequences when computing "species-level"
-      vOTUs
+      OTUs
     range: string
     examples:
     - value: 'blastn;2.6.0+;e-value cutoff: 0.001'
@@ -1626,12 +1679,12 @@ slots:
     - 'MIGS:'
     pattern: '{software};{version};{parameters}'
     slot_uri: MIXS:0000086
-  votu_db:
+  otu_db:
     is_a: sequencing field
     aliases:
-    - vOTU database
+    - OTU database
     description: Reference database (i.e. sequences not generated as part of the current
-      study) used to cluster new genomes in "species-level" vOTUs, if any
+      study) used to cluster new genomes in "species-level" OTUs, if any
     range: string
     examples:
     - value: NCBI Viral RefSeq;83
@@ -1674,20 +1727,21 @@ slots:
     - 'MIGS:'
     pattern: '{text}'
     slot_uri: MIXS:0000089
-  url:
+  associated resource:
     is_a: sequencing field
     aliases:
     - relevant electronic resources
-    description: ''
+    description: A related resource that is referenced, cited, or otherwise associated
+      to the sequence.
     range: string
     examples:
     - value: http://www.earthmicrobiome.org/
     comments:
-    - 'Expected value: URL'
+    - 'Expected value: reference to resource'
     - 'Position: 92.0'
     exact_mappings:
     - 'MIGS:'
-    pattern: '{URL}'
+    pattern: '{PMID} | {DOI} | {URL}'
     see_also: https://github.com/GenomicsStandardsConsortium/mixs/issues/67
     slot_uri: MIXS:0000091
   sop:
@@ -1707,7 +1761,7 @@ slots:
     pattern: '{PMID}|{DOI}|{URL}'
     slot_uri: MIXS:0000090
   barometric_press:
-    is_a: environment field
+    is_a: core field
     aliases:
     - barometric pressure
     description: Force per unit area exerted against a surface by the weight of air
@@ -1723,7 +1777,7 @@ slots:
     - 'This field is used uniquely in: air'
     slot_uri: MIXS:0000096
   carb_dioxide:
-    is_a: environment field
+    is_a: core field
     aliases:
     - carbon dioxide
     description: Carbon dioxide (gas) amount or concentration at the time of sampling
@@ -1738,7 +1792,7 @@ slots:
     - 'This field is used in: 2 packages: air, built environment'
     slot_uri: MIXS:0000097
   carb_monoxide:
-    is_a: environment field
+    is_a: core field
     aliases:
     - carbon monoxide
     description: Carbon monoxide (gas) amount or concentration at the time of sampling
@@ -1753,7 +1807,7 @@ slots:
     - 'This field is used uniquely in: air'
     slot_uri: MIXS:0000098
   chem_administration:
-    is_a: environment field
+    is_a: core field
     aliases:
     - chemical administration
     description: List of chemical compounds administered to the host or site where
@@ -1774,7 +1828,7 @@ slots:
     pattern: '{termLabel} {[termID]};{timestamp}'
     slot_uri: MIXS:0000751
   humidity:
-    is_a: environment field
+    is_a: core field
     aliases:
     - humidity
     description: Amount of water vapour in the air, at the time of sampling
@@ -1789,7 +1843,7 @@ slots:
     - 'This field is used uniquely in: air'
     slot_uri: MIXS:0000100
   methane:
-    is_a: environment field
+    is_a: core field
     aliases:
     - methane
     description: Methane (gas) amount or concentration at the time of sampling
@@ -1804,7 +1858,7 @@ slots:
     - 'This field is used in: 3 packages: air, microbial mat_biofilm, sediment'
     slot_uri: MIXS:0000101
   organism_count:
-    is_a: environment field
+    is_a: core field
     aliases:
     - organism count
     description: 'Total cell count of any organism (or group of organisms) per gram,
@@ -1828,7 +1882,7 @@ slots:
     pattern: '{text};{float} {unit};[qPCR|ATP|MPN|other]'
     slot_uri: MIXS:0000103
   oxygen:
-    is_a: environment field
+    is_a: core field
     aliases:
     - oxygen
     description: Oxygen (gas) amount or concentration at the time of sampling
@@ -1843,7 +1897,7 @@ slots:
     - 'This field is used uniquely in: air'
     slot_uri: MIXS:0000104
   oxy_stat_samp:
-    is_a: environment field
+    is_a: core field
     aliases:
     - oxygenation status of sample
     description: Oxygenation status of sample
@@ -1861,7 +1915,7 @@ slots:
     pattern: '[aerobic|anaerobic|other]'
     slot_uri: MIXS:0000753
   perturbation:
-    is_a: environment field
+    is_a: core field
     aliases:
     - perturbation
     description: Type of perturbation, e.g. chemical administration, physical disturbance,
@@ -1882,7 +1936,7 @@ slots:
     pattern: '{text};{Rn/start_time/end_time/duration}'
     slot_uri: MIXS:0000754
   pollutants:
-    is_a: environment field
+    is_a: core field
     aliases:
     - pollutants
     description: Pollutant types and, amount or concentrations measured at the time
@@ -1901,7 +1955,7 @@ slots:
     pattern: '{text};{float} {unit}'
     slot_uri: MIXS:0000107
   resp_part_matter:
-    is_a: environment field
+    is_a: core field
     aliases:
     - respirable particulate matter
     description: Concentration of substances that remain suspended in the air, and
@@ -1919,7 +1973,7 @@ slots:
     pattern: '{text};{float} {unit}'
     slot_uri: MIXS:0000108
   samp_salinity:
-    is_a: environment field
+    is_a: core field
     aliases:
     - sample salinity
     description: Salinity is the total concentration of all dissolved salts in a liquid
@@ -1940,8 +1994,31 @@ slots:
       human-gut, human-oral, human-skin, human-vaginal, hydrocarbon resources-cores,
       hydrocarbon resources-fluids_swabs, plant-associated, wastewater_sludge'
     slot_uri: MIXS:0000109
+  salinity:
+    is_a: core field
+    aliases:
+    - salinity
+    description: The total concentration of all dissolved salts in a liquid or solid
+      sample. While salinity can be measured by a complete chemical analysis, this
+      method is difficult and time consuming. More often, it is instead derived from
+      the conductivity measurement. This is known as practical salinity. These derivations
+      compare the specific conductance of the sample to a salinity standard such as
+      seawater.
+    range: quantity value
+    examples:
+    - value: 25 practical salinity unit
+    comments:
+    - 'Expected value: measurement value'
+    - 'Preferred unit: practical salinity unit, percentage'
+    - 'Occurrence: 1'
+    - 'Position: 1.0'
+    - 'This field is used in: 15 packages: air, host-associated, human-associated,
+      human-gut, human-oral, human-skin, human-vaginal, hydrocarbon resources-cores,
+      hydrocarbon resources-fluids_swabs, microbial mat_biofilm, miscellaneous natural
+      or artificial environment, plant-associated, sediment, wastewater_sludge, water'
+    slot_uri: MIXS:0000183
   samp_store_dur:
-    is_a: environment field
+    is_a: core field
     aliases:
     - sample storage duration
     description: Duration for which the sample was stored
@@ -1959,7 +2036,7 @@ slots:
     pattern: '{duration}'
     slot_uri: MIXS:0000116
   samp_store_loc:
-    is_a: environment field
+    is_a: core field
     aliases:
     - sample storage location
     description: Location at which sample was stored, usually name of a specific freezer/room
@@ -1977,7 +2054,7 @@ slots:
     pattern: '{text}'
     slot_uri: MIXS:0000755
   samp_store_temp:
-    is_a: environment field
+    is_a: core field
     aliases:
     - sample storage temperature
     description: Temperature at which sample was stored, e.g. -80 degree Celsius
@@ -1994,28 +2071,8 @@ slots:
       hydrocarbon resources-fluids_swabs, microbial mat_biofilm, miscellaneous natural
       or artificial environment, plant-associated, sediment, wastewater_sludge, water'
     slot_uri: MIXS:0000110
-  samp_vol_we_dna_ext:
-    is_a: environment field
-    aliases:
-    - sample volume or weight for DNA extraction
-    description: Volume (ml), weight (g) of processed sample, or surface area swabbed
-      from sample for DNA extraction
-    range: quantity value
-    examples:
-    - value: 1500 milliliter
-    comments:
-    - 'Expected value: measurement value'
-    - 'Preferred unit: millliter, gram, milligram, square centimeter'
-    - 'Occurrence: 1'
-    - 'Position: 1.0'
-    - 'This field is used in: 16 packages: air, host-associated, human-associated,
-      human-gut, human-oral, human-skin, human-vaginal, hydrocarbon resources-cores,
-      hydrocarbon resources-fluids_swabs, microbial mat_biofilm, miscellaneous natural
-      or artificial environment, plant-associated, sediment, soil, wastewater_sludge,
-      water'
-    slot_uri: MIXS:0000111
   solar_irradiance:
-    is_a: environment field
+    is_a: core field
     aliases:
     - solar irradiance
     description: The amount of solar energy that arrives at a specific area of a surface
@@ -2031,26 +2088,8 @@ slots:
     - 'Position: 1.0'
     - 'This field is used uniquely in: air'
     slot_uri: MIXS:0000112
-  temp:
-    is_a: environment field
-    aliases:
-    - temperature
-    description: Temperature of the sample at the time of sampling
-    range: quantity value
-    examples:
-    - value: 25 degree Celsius
-    comments:
-    - 'Expected value: measurement value'
-    - 'Preferred unit: degree Celsius'
-    - 'Occurrence: 1'
-    - 'Position: 1.0'
-    - 'This field is used in: 15 packages: air, host-associated, human-associated,
-      human-gut, human-oral, human-skin, human-vaginal, hydrocarbon resources-cores,
-      hydrocarbon resources-fluids_swabs, microbial mat_biofilm, miscellaneous natural
-      or artificial environment, plant-associated, sediment, wastewater_sludge, water'
-    slot_uri: MIXS:0000113
   ventilation_rate:
-    is_a: environment field
+    is_a: core field
     aliases:
     - ventilation rate
     description: Ventilation rate of the system in the sampled premises
@@ -2065,7 +2104,7 @@ slots:
     - 'This field is used uniquely in: air'
     slot_uri: MIXS:0000114
   ventilation_type:
-    is_a: environment field
+    is_a: core field
     aliases:
     - ventilation type
     description: Ventilation system used in the sampled premises
@@ -2080,7 +2119,7 @@ slots:
     pattern: '{text}'
     slot_uri: MIXS:0000756
   volatile_org_comp:
-    is_a: environment field
+    is_a: core field
     aliases:
     - volatile organic compounds
     description: Concentration of carbon-based chemicals that easily evaporate at
@@ -2099,7 +2138,7 @@ slots:
     pattern: '{text};{float} {unit}'
     slot_uri: MIXS:0000115
   wind_direction:
-    is_a: environment field
+    is_a: core field
     aliases:
     - wind direction
     description: Wind direction is the direction from which a wind originates
@@ -2114,7 +2153,7 @@ slots:
     pattern: '{text}'
     slot_uri: MIXS:0000757
   wind_speed:
-    is_a: environment field
+    is_a: core field
     aliases:
     - wind speed
     description: Speed of wind measured at the time of sampling
@@ -2129,7 +2168,7 @@ slots:
     - 'This field is used uniquely in: air'
     slot_uri: MIXS:0000118
   misc_param:
-    is_a: environment field
+    is_a: core field
     aliases:
     - miscellaneous parameter
     description: Any other measurement performed or parameter collected, that is not
@@ -2149,7 +2188,7 @@ slots:
     pattern: '{text};{float} {unit}'
     slot_uri: MIXS:0000752
   surf_material:
-    is_a: environment field
+    is_a: core field
     aliases:
     - surface material
     description: Surface materials at the point of sampling
@@ -2165,7 +2204,7 @@ slots:
       steel|stone|stucco|tile|vinyl|wood]'
     slot_uri: MIXS:0000758
   surf_air_cont:
-    is_a: environment field
+    is_a: core field
     aliases:
     - surface-air contaminant
     description: Contaminant identified on surface
@@ -2181,7 +2220,7 @@ slots:
       contaminants|radon|nutrients|biocides]'
     slot_uri: MIXS:0000759
   rel_air_humidity:
-    is_a: environment field
+    is_a: core field
     aliases:
     - relative air humidity
     description: Partial vapor and air pressure, density of the vapor and air, or
@@ -2197,7 +2236,7 @@ slots:
     - 'This field is used uniquely in: built environment'
     slot_uri: MIXS:0000121
   abs_air_humidity:
-    is_a: environment field
+    is_a: core field
     aliases:
     - absolute air humidity
     description: Actual mass of water vapor - mh20 - present in the air water vapor
@@ -2213,7 +2252,7 @@ slots:
     - 'This field is used uniquely in: built environment'
     slot_uri: MIXS:0000122
   surf_humidity:
-    is_a: environment field
+    is_a: core field
     aliases:
     - surface humidity
     description: 'Surfaces: water activity as a function of air and material moisture'
@@ -2228,7 +2267,7 @@ slots:
     - 'This field is used uniquely in: built environment'
     slot_uri: MIXS:0000123
   air_temp:
-    is_a: environment field
+    is_a: core field
     aliases:
     - air temperature
     description: Temperature of the air at the time of sampling
@@ -2243,7 +2282,7 @@ slots:
     - 'This field is used uniquely in: built environment'
     slot_uri: MIXS:0000124
   surf_temp:
-    is_a: environment field
+    is_a: core field
     aliases:
     - surface temperature
     description: Temperature of the surface at the time of sampling
@@ -2258,7 +2297,7 @@ slots:
     - 'This field is used uniquely in: built environment'
     slot_uri: MIXS:0000125
   surf_moisture_ph:
-    is_a: environment field
+    is_a: core field
     aliases:
     - surface moisture pH
     description: ph measurement of surface
@@ -2272,7 +2311,7 @@ slots:
     - 'This field is used uniquely in: built environment'
     slot_uri: MIXS:0000760
   build_occup_type:
-    is_a: environment field
+    is_a: core field
     aliases:
     - building occupancy type
     description: The primary function for which a building or discrete part of a building
@@ -2289,7 +2328,7 @@ slots:
       rise|high rise|wood framed|office|health care|school|airport|sports complex]'
     slot_uri: MIXS:0000761
   surf_moisture:
-    is_a: environment field
+    is_a: core field
     aliases:
     - surface moisture
     description: Water held on a surface
@@ -2304,7 +2343,7 @@ slots:
     - 'This field is used uniquely in: built environment'
     slot_uri: MIXS:0000128
   dew_point:
-    is_a: environment field
+    is_a: core field
     aliases:
     - dew point
     description: The temperature to which a given parcel of humid air must be cooled,
@@ -2320,7 +2359,7 @@ slots:
     - 'This field is used uniquely in: built environment'
     slot_uri: MIXS:0000129
   indoor_space:
-    is_a: environment field
+    is_a: core field
     aliases:
     - indoor space
     description: A distinguishable space within a structure, the purpose for which
@@ -2336,7 +2375,7 @@ slots:
     pattern: '[bedroom|office|bathroom|foyer|kitchen|locker room|hallway|elevator]'
     slot_uri: MIXS:0000763
   indoor_surf:
-    is_a: environment field
+    is_a: core field
     aliases:
     - indoor surface
     description: Type of indoor surface
@@ -2351,7 +2390,7 @@ slots:
     pattern: '[cabinet|ceiling|counter top|door|shelving|vent cover|window|wall]'
     slot_uri: MIXS:0000764
   filter_type:
-    is_a: environment field
+    is_a: core field
     aliases:
     - filter type
     description: A device which removes solid particulates or airborne molecular contaminants
@@ -2367,7 +2406,7 @@ slots:
       or ultraviolet air treatments]'
     slot_uri: MIXS:0000765
   heat_cool_type:
-    is_a: environment field
+    is_a: core field
     aliases:
     - heating and cooling system type
     description: Methods of conditioning or heating a room or building
@@ -2382,7 +2421,7 @@ slots:
     pattern: '[radiant system|heat pump|forced air system|steam forced heat|wood stove]'
     slot_uri: MIXS:0000766
   substructure_type:
-    is_a: environment field
+    is_a: core field
     aliases:
     - substructure type
     description: The substructure or under building is that largely hidden section
@@ -2398,7 +2437,7 @@ slots:
     pattern: '[crawlspace|slab on grade|basement]'
     slot_uri: MIXS:0000767
   building_setting:
-    is_a: environment field
+    is_a: core field
     aliases:
     - building setting
     description: A location (geography) where a building is set
@@ -2413,7 +2452,7 @@ slots:
     pattern: '[urban|suburban|exurban|rural]'
     slot_uri: MIXS:0000768
   light_type:
-    is_a: environment field
+    is_a: core field
     aliases:
     - light type
     description: Application of light to achieve some practical or aesthetic effect.
@@ -2431,7 +2470,7 @@ slots:
     pattern: '[natural light|electric light|desk lamp|flourescent lights|natural light|none]'
     slot_uri: MIXS:0000769
   samp_sort_meth:
-    is_a: environment field
+    is_a: core field
     aliases:
     - sample size sorting method
     description: Method by which samples are sorted; open face filter collecting total
@@ -2449,7 +2488,7 @@ slots:
     pattern: '{text}'
     slot_uri: MIXS:0000216
   space_typ_state:
-    is_a: environment field
+    is_a: core field
     aliases:
     - space typical state
     description: Customary or normal state of the space
@@ -2464,7 +2503,7 @@ slots:
     pattern: '[typically occupied|typically unoccupied]'
     slot_uri: MIXS:0000770
   typ_occup_density:
-    is_a: environment field
+    is_a: core field
     aliases:
     - typical occupant density
     description: Customary or normal density of occupants
@@ -2478,7 +2517,7 @@ slots:
     - 'This field is used uniquely in: built environment'
     slot_uri: MIXS:0000771
   occup_samp:
-    is_a: environment field
+    is_a: core field
     aliases:
     - occupancy at sampling
     description: Number of occupants present at time of sample within the given space
@@ -2493,7 +2532,7 @@ slots:
     pattern: '{integer}'
     slot_uri: MIXS:0000772
   occup_density_samp:
-    is_a: environment field
+    is_a: core field
     aliases:
     - occupant density at sampling
     description: Average number of occupants at time of sampling per square footage
@@ -2507,7 +2546,7 @@ slots:
     - 'This field is used uniquely in: built environment'
     slot_uri: MIXS:0000217
   address:
-    is_a: environment field
+    is_a: core field
     aliases:
     - address
     description: The street name and building number where the sampling occurred.
@@ -2522,7 +2561,7 @@ slots:
     pattern: '{integer}{text}'
     slot_uri: MIXS:0000218
   adj_room:
-    is_a: environment field
+    is_a: core field
     aliases:
     - adjacent rooms
     description: List of rooms (room number, room name) immediately adjacent to the
@@ -2538,7 +2577,7 @@ slots:
     pattern: '{text};{integer}'
     slot_uri: MIXS:0000219
   aero_struc:
-    is_a: environment field
+    is_a: core field
     aliases:
     - aerospace structure
     description: Aerospace structures typically consist of thin plates with stiffeners
@@ -2555,7 +2594,7 @@ slots:
     pattern: '[plane|glider]'
     slot_uri: MIXS:0000773
   amount_light:
-    is_a: environment field
+    is_a: core field
     aliases:
     - amount of light
     description: The unit of illuminance and luminous emittance, measuring luminous
@@ -2571,7 +2610,7 @@ slots:
     - 'This field is used uniquely in: built environment'
     slot_uri: MIXS:0000140
   arch_struc:
-    is_a: environment field
+    is_a: core field
     aliases:
     - architectural structure
     description: An architectural structure is a human-made, free-standing, immobile
@@ -2587,10 +2626,11 @@ slots:
     pattern: '[building|shed|home]'
     slot_uri: MIXS:0000774
   avg_occup:
-    is_a: environment field
+    is_a: core field
     aliases:
     - average daily occupancy
-    description: Daily average occupancy of room
+    description: Daily average occupancy of room. Indicate the number of person(s)
+      daily occupying the sampling room.
     range: double
     examples:
     - value: '2'
@@ -2601,7 +2641,7 @@ slots:
     - 'This field is used uniquely in: built environment'
     slot_uri: MIXS:0000775
   avg_dew_point:
-    is_a: environment field
+    is_a: core field
     aliases:
     - average dew point
     description: The average of dew point measures taken at the beginning of every
@@ -2617,7 +2657,7 @@ slots:
     - 'This field is used uniquely in: built environment'
     slot_uri: MIXS:0000141
   avg_temp:
-    is_a: environment field
+    is_a: core field
     aliases:
     - average temperature
     description: The average of temperatures taken at the beginning of every hour
@@ -2633,7 +2673,7 @@ slots:
     - 'This field is used uniquely in: built environment'
     slot_uri: MIXS:0000142
   bathroom_count:
-    is_a: environment field
+    is_a: core field
     aliases:
     - bathroom count
     description: The number of bathrooms in the building
@@ -2648,7 +2688,7 @@ slots:
     pattern: '{integer}'
     slot_uri: MIXS:0000776
   bedroom_count:
-    is_a: environment field
+    is_a: core field
     aliases:
     - bedroom count
     description: The number of bedrooms in the building
@@ -2663,7 +2703,7 @@ slots:
     pattern: '{integer}'
     slot_uri: MIXS:0000777
   built_struc_age:
-    is_a: environment field
+    is_a: core field
     aliases:
     - built structure age
     description: The age of the built structure since construction
@@ -2678,7 +2718,7 @@ slots:
     - 'This field is used uniquely in: built environment'
     slot_uri: MIXS:0000145
   built_struc_set:
-    is_a: environment field
+    is_a: core field
     aliases:
     - built structure setting
     description: The characterization of the location of the built structure as high
@@ -2694,7 +2734,7 @@ slots:
     pattern: '[urban|rural]'
     slot_uri: MIXS:0000778
   built_struc_type:
-    is_a: environment field
+    is_a: core field
     aliases:
     - built structure type
     description: A physical structure that is a body or assemblage of bodies in space
@@ -2710,7 +2750,7 @@ slots:
     pattern: '{text}'
     slot_uri: MIXS:0000721
   ceil_area:
-    is_a: environment field
+    is_a: core field
     aliases:
     - ceiling area
     description: The area of the ceiling space within the room
@@ -2725,7 +2765,7 @@ slots:
     - 'This field is used uniquely in: built environment'
     slot_uri: MIXS:0000148
   ceil_cond:
-    is_a: environment field
+    is_a: core field
     aliases:
     - ceiling condition
     description: The physical condition of the ceiling at the time of sampling; photos
@@ -2741,7 +2781,7 @@ slots:
     pattern: '[new|visible wear|needs repair|damaged|rupture]'
     slot_uri: MIXS:0000779
   ceil_finish_mat:
-    is_a: environment field
+    is_a: core field
     aliases:
     - ceiling finish material
     description: The type of material used to finish a ceiling
@@ -2757,7 +2797,7 @@ slots:
       wool/calcium silicate|wood]'
     slot_uri: MIXS:0000780
   ceil_water_mold:
-    is_a: environment field
+    is_a: core field
     aliases:
     - ceiling signs of water/mold
     description: Signs of the presence of mold or mildew on the ceiling
@@ -2772,7 +2812,7 @@ slots:
     pattern: '[presence of mold visible|no presence of mold visible]'
     slot_uri: MIXS:0000781
   ceil_struc:
-    is_a: environment field
+    is_a: core field
     aliases:
     - ceiling structure
     description: The construction format of the ceiling
@@ -2787,7 +2827,7 @@ slots:
     pattern: '[wood frame|concrete]'
     slot_uri: MIXS:0000782
   ceil_texture:
-    is_a: environment field
+    is_a: core field
     aliases:
     - ceiling texture
     description: The feel, appearance, or consistency of a ceiling surface
@@ -2803,7 +2843,7 @@ slots:
       peel|rosebud stomp|Santa-Fe texture|skip trowel|smooth|stomp knockdown|swirl]'
     slot_uri: MIXS:0000783
   ceil_thermal_mass:
-    is_a: environment field
+    is_a: core field
     aliases:
     - ceiling thermal mass
     description: The ability of the ceiling to provide inertia against temperature
@@ -2821,7 +2861,7 @@ slots:
     - 'This field is used uniquely in: built environment'
     slot_uri: MIXS:0000143
   ceil_type:
-    is_a: environment field
+    is_a: core field
     aliases:
     - ceiling type
     description: The type of ceiling according to the ceiling's appearance or construction
@@ -2836,7 +2876,7 @@ slots:
     pattern: '[cathedral|dropped|concave|barrel-shaped|coffered|cove|stretched]'
     slot_uri: MIXS:0000784
   cool_syst_id:
-    is_a: environment field
+    is_a: core field
     aliases:
     - cooling system identifier
     description: The cooling system identifier
@@ -2851,7 +2891,7 @@ slots:
     pattern: '{integer}'
     slot_uri: MIXS:0000785
   date_last_rain:
-    is_a: environment field
+    is_a: core field
     aliases:
     - date last rain
     description: The date of the last time it rained
@@ -2865,7 +2905,7 @@ slots:
     - 'This field is used uniquely in: built environment'
     slot_uri: MIXS:0000786
   build_docs:
-    is_a: environment field
+    is_a: core field
     aliases:
     - design, construction, and operation documents
     description: The building design, construction and operation documents
@@ -2882,7 +2922,7 @@ slots:
       drawings|submittals|ventilation system|windows]'
     slot_uri: MIXS:0000787
   door_size:
-    is_a: environment field
+    is_a: core field
     aliases:
     - door area or size
     description: The size of the door
@@ -2897,7 +2937,7 @@ slots:
     - 'This field is used uniquely in: built environment'
     slot_uri: MIXS:0000158
   door_cond:
-    is_a: environment field
+    is_a: core field
     aliases:
     - door condition
     description: The phsical condition of the door
@@ -2912,7 +2952,7 @@ slots:
     pattern: '[damaged|needs repair|new|rupture|visible wear]'
     slot_uri: MIXS:0000788
   door_direct:
-    is_a: environment field
+    is_a: core field
     aliases:
     - door direction of opening
     description: The direction the door opens
@@ -2927,7 +2967,7 @@ slots:
     pattern: '[inward|outward|sideways]'
     slot_uri: MIXS:0000789
   door_loc:
-    is_a: environment field
+    is_a: core field
     aliases:
     - door location
     description: The relative location of the door in the room
@@ -2942,7 +2982,7 @@ slots:
     pattern: '[north|south|east|west]'
     slot_uri: MIXS:0000790
   door_mat:
-    is_a: environment field
+    is_a: core field
     aliases:
     - door material
     description: The material the door is composed of
@@ -2958,7 +2998,7 @@ slots:
       alloy|vinyl|wood|wood/plastic composite]'
     slot_uri: MIXS:0000791
   door_move:
-    is_a: environment field
+    is_a: core field
     aliases:
     - door movement
     description: The type of movement of the door
@@ -2973,7 +3013,7 @@ slots:
     pattern: '[collapsible|folding|revolving|rolling shutter|sliding|swinging]'
     slot_uri: MIXS:0000792
   door_water_mold:
-    is_a: environment field
+    is_a: core field
     aliases:
     - door signs of water/mold
     description: Signs of the presence of mold or mildew on a door
@@ -2988,7 +3028,7 @@ slots:
     pattern: '[presence of mold visible|no presence of mold visible]'
     slot_uri: MIXS:0000793
   door_type:
-    is_a: environment field
+    is_a: core field
     aliases:
     - door type
     description: The type of door material
@@ -3003,7 +3043,7 @@ slots:
     pattern: '[composite|metal|wooden]'
     slot_uri: MIXS:0000794
   door_comp_type:
-    is_a: environment field
+    is_a: core field
     aliases:
     - door type, composite
     description: The composite type of the door
@@ -3018,7 +3058,7 @@ slots:
     pattern: '[metal covered|revolving|sliding|telescopic]'
     slot_uri: MIXS:0000795
   door_type_metal:
-    is_a: environment field
+    is_a: core field
     aliases:
     - door type, metal
     description: The type of metal door
@@ -3033,7 +3073,7 @@ slots:
     pattern: '[collapsible|corrugated steel|hollow|rolling shutters|steel plate]'
     slot_uri: MIXS:0000796
   door_type_wood:
-    is_a: environment field
+    is_a: core field
     aliases:
     - door type, wood
     description: The type of wood door
@@ -3050,7 +3090,7 @@ slots:
       gauged]'
     slot_uri: MIXS:0000797
   drawings:
-    is_a: environment field
+    is_a: core field
     aliases:
     - drawings
     description: The buildings architectural drawings; if design is chosen, indicate
@@ -3066,7 +3106,7 @@ slots:
     pattern: '[operation|as built|construction|bid|design|building navigation map|diagram|sketch]'
     slot_uri: MIXS:0000798
   elevator:
-    is_a: environment field
+    is_a: core field
     aliases:
     - elevator count
     description: The number of elevators within the built structure
@@ -3081,7 +3121,7 @@ slots:
     pattern: '{integer}'
     slot_uri: MIXS:0000799
   escalator:
-    is_a: environment field
+    is_a: core field
     aliases:
     - escalator count
     description: The number of escalators within the built structure
@@ -3096,7 +3136,7 @@ slots:
     pattern: '{integer}'
     slot_uri: MIXS:0000800
   exp_duct:
-    is_a: environment field
+    is_a: core field
     aliases:
     - exposed ductwork
     description: The amount of exposed ductwork in the room
@@ -3111,7 +3151,7 @@ slots:
     - 'This field is used uniquely in: built environment'
     slot_uri: MIXS:0000144
   exp_pipe:
-    is_a: environment field
+    is_a: core field
     aliases:
     - exposed pipes
     description: The number of exposed pipes in the room
@@ -3126,7 +3166,7 @@ slots:
     pattern: '{integer}'
     slot_uri: MIXS:0000220
   ext_door:
-    is_a: environment field
+    is_a: core field
     aliases:
     - exterior door count
     description: The number of exterior doors in the built structure
@@ -3141,7 +3181,7 @@ slots:
     pattern: '{integer}'
     slot_uri: MIXS:0000170
   fireplace_type:
-    is_a: environment field
+    is_a: core field
     aliases:
     - fireplace type
     description: A firebox with chimney
@@ -3156,7 +3196,7 @@ slots:
     pattern: '[gas burning|wood burning]'
     slot_uri: MIXS:0000802
   floor_age:
-    is_a: environment field
+    is_a: core field
     aliases:
     - floor age
     description: The time period since installment of the carpet or flooring
@@ -3171,7 +3211,7 @@ slots:
     - 'This field is used uniquely in: built environment'
     slot_uri: MIXS:0000164
   floor_area:
-    is_a: environment field
+    is_a: core field
     aliases:
     - floor area
     description: The area of the floor space within the room
@@ -3186,7 +3226,7 @@ slots:
     - 'This field is used uniquely in: built environment'
     slot_uri: MIXS:0000165
   floor_cond:
-    is_a: environment field
+    is_a: core field
     aliases:
     - floor condition
     description: The physical condition of the floor at the time of sampling; photos
@@ -3202,7 +3242,7 @@ slots:
     pattern: '[new|visible wear|needs repair|damaged|rupture]'
     slot_uri: MIXS:0000803
   floor_count:
-    is_a: environment field
+    is_a: core field
     aliases:
     - floor count
     description: The number of floors in the building, including basements and mechanical
@@ -3218,7 +3258,7 @@ slots:
     pattern: '{integer}'
     slot_uri: MIXS:0000225
   floor_finish_mat:
-    is_a: environment field
+    is_a: core field
     aliases:
     - floor finish material
     description: The floor covering type; the finished surface that is walked on
@@ -3235,7 +3275,7 @@ slots:
       unfinished|sealed|clear finish|paint]'
     slot_uri: MIXS:0000804
   floor_water_mold:
-    is_a: environment field
+    is_a: core field
     aliases:
     - floor signs of water/mold
     description: Signs of the presence of mold or mildew in a room
@@ -3251,7 +3291,7 @@ slots:
       discoloration|peeling paint or wallpaper|bulging walls|condensation]'
     slot_uri: MIXS:0000805
   floor_struc:
-    is_a: environment field
+    is_a: core field
     aliases:
     - floor structure
     description: Refers to the structural elements and subfloor upon which the finish
@@ -3267,7 +3307,7 @@ slots:
     pattern: '[balcony|floating floor|glass floor|raised floor|sprung floor|wood-framed|concrete]'
     slot_uri: MIXS:0000806
   floor_thermal_mass:
-    is_a: environment field
+    is_a: core field
     aliases:
     - floor thermal mass
     description: The ability of the floor to provide inertia against temperature fluctuations
@@ -3282,22 +3322,23 @@ slots:
     - 'This field is used uniquely in: built environment'
     slot_uri: MIXS:0000166
   freq_clean:
-    is_a: environment field
+    is_a: core field
     aliases:
     - frequency of cleaning
-    description: The number of times the building is cleaned per week
-    range: string
+    description: The number of times the sample location is cleaned. Frequency of
+      cleaning might be on a Daily basis, Weekly, Monthly, Quarterly or Annually.
+    range: freq_clean_enum
     examples:
     - value: ''
     comments:
-    - 'Expected value: measurement value'
+    - 'Expected value: enumeration or {text}'
     - 'Occurrence: 1'
     - 'Position: 77.0'
     - 'This field is used uniquely in: built environment'
-    pattern: '{integer}'
+    pattern: '[ Daily| Weekly| Monthly| Quarterly | Annually| other]'
     slot_uri: MIXS:0000226
   freq_cook:
-    is_a: environment field
+    is_a: core field
     aliases:
     - frequency of cooking
     description: The number of times a meal is cooked per week
@@ -3312,7 +3353,7 @@ slots:
     pattern: '{integer}'
     slot_uri: MIXS:0000227
   furniture:
-    is_a: environment field
+    is_a: core field
     aliases:
     - furniture
     description: The types of furniture present in the sampled room
@@ -3327,11 +3368,11 @@ slots:
     pattern: '[cabinet|chair|desks]'
     slot_uri: MIXS:0000807
   gender_restroom:
-    is_a: environment field
+    is_a: core field
     aliases:
     - gender of restroom
     description: The gender type of the restroom
-    range: string
+    range: gender_restroom_enum
     examples:
     - value: male
     comments:
@@ -3339,10 +3380,10 @@ slots:
     - 'Occurrence: 1'
     - 'Position: 80.0'
     - 'This field is used uniquely in: built environment'
-    pattern: '[male|female]'
+    pattern: '[all gender|female|gender neurtral|male|male and female|unisex]'
     slot_uri: MIXS:0000808
   hall_count:
-    is_a: environment field
+    is_a: core field
     aliases:
     - hallway/corridor count
     description: The total count of hallways and cooridors in the built structure
@@ -3357,7 +3398,7 @@ slots:
     pattern: '{integer}'
     slot_uri: MIXS:0000228
   handidness:
-    is_a: environment field
+    is_a: core field
     aliases:
     - handidness
     description: The handidness of the individual sampled
@@ -3372,7 +3413,7 @@ slots:
     pattern: '[ambidexterity|left handedness|mixed-handedness|right handedness]'
     slot_uri: MIXS:0000809
   heat_deliv_loc:
-    is_a: environment field
+    is_a: core field
     aliases:
     - heating delivery locations
     description: The location of heat delivery within the room
@@ -3386,8 +3427,8 @@ slots:
     - 'This field is used uniquely in: built environment'
     pattern: '[north|south|east|west]'
     slot_uri: MIXS:0000810
-  heat_system_deliv_meth:
-    is_a: environment field
+  heat_sys_deliv_meth:
+    is_a: core field
     aliases:
     - heating system delivery method
     description: The method by which the heat is delivered through the system
@@ -3402,7 +3443,7 @@ slots:
     pattern: '[conductive|radiant]'
     slot_uri: MIXS:0000812
   heat_system_id:
-    is_a: environment field
+    is_a: core field
     aliases:
     - heating system identifier
     description: The heating system identifier
@@ -3417,7 +3458,7 @@ slots:
     pattern: '{integer}'
     slot_uri: MIXS:0000833
   height_carper_fiber:
-    is_a: environment field
+    is_a: core field
     aliases:
     - height carpet fiber mat
     description: The average carpet fiber height in the indoor environment
@@ -3432,7 +3473,7 @@ slots:
     - 'This field is used uniquely in: built environment'
     slot_uri: MIXS:0000167
   inside_lux:
-    is_a: environment field
+    is_a: core field
     aliases:
     - inside lux light
     description: The recorded value at sampling time (power density)
@@ -3447,7 +3488,7 @@ slots:
     - 'This field is used uniquely in: built environment'
     slot_uri: MIXS:0000168
   int_wall_cond:
-    is_a: environment field
+    is_a: core field
     aliases:
     - interior wall condition
     description: The physical condition of the wall at the time of sampling; photos
@@ -3463,7 +3504,7 @@ slots:
     pattern: '[new|visible wear|needs repair|damaged|rupture]'
     slot_uri: MIXS:0000813
   last_clean:
-    is_a: environment field
+    is_a: core field
     aliases:
     - last time swept/mopped/vacuumed
     description: The last time the floor was cleaned (swept, mopped, vacuumed)
@@ -3477,7 +3518,7 @@ slots:
     - 'This field is used uniquely in: built environment'
     slot_uri: MIXS:0000814
   max_occup:
-    is_a: environment field
+    is_a: core field
     aliases:
     - maximum occupancy
     description: The maximum amount of people allowed in the indoor environment
@@ -3492,7 +3533,7 @@ slots:
     pattern: '{integer}'
     slot_uri: MIXS:0000229
   mech_struc:
-    is_a: environment field
+    is_a: core field
     aliases:
     - mechanical structure
     description: 'mechanical structure: a moving structure'
@@ -3507,7 +3548,7 @@ slots:
     pattern: '[subway|coach|carriage|elevator|escalator|boat|train|car|bus]'
     slot_uri: MIXS:0000815
   number_plants:
-    is_a: environment field
+    is_a: core field
     aliases:
     - number of houseplants
     description: The number of plant(s) in the sampling space
@@ -3522,7 +3563,7 @@ slots:
     pattern: '{integer}'
     slot_uri: MIXS:0000230
   number_pets:
-    is_a: environment field
+    is_a: core field
     aliases:
     - number of pets
     description: The number of pets residing in the sampled space
@@ -3537,7 +3578,7 @@ slots:
     pattern: '{integer}'
     slot_uri: MIXS:0000231
   number_resident:
-    is_a: environment field
+    is_a: core field
     aliases:
     - number of residents
     description: The number of individuals currently occupying in the sampling location
@@ -3552,7 +3593,7 @@ slots:
     pattern: '{integer}'
     slot_uri: MIXS:0000232
   occup_document:
-    is_a: environment field
+    is_a: core field
     aliases:
     - occupancy documentation
     description: The type of documentation of occupancy
@@ -3567,7 +3608,7 @@ slots:
     pattern: '[automated count|estimate|manual count|videos]'
     slot_uri: MIXS:0000816
   ext_wall_orient:
-    is_a: environment field
+    is_a: core field
     aliases:
     - orientations of exterior wall
     description: The orientation of the exterior wall
@@ -3582,7 +3623,7 @@ slots:
     pattern: '[north|south|east|west|northeast|southeast|southwest|northwest]'
     slot_uri: MIXS:0000817
   ext_window_orient:
-    is_a: environment field
+    is_a: core field
     aliases:
     - orientations of exterior window
     description: The compass direction the exterior window of the room is facing
@@ -3597,7 +3638,7 @@ slots:
     pattern: '[north|south|east|west|northeast|southeast|southwest|northwest]'
     slot_uri: MIXS:0000818
   rel_humidity_out:
-    is_a: environment field
+    is_a: core field
     aliases:
     - outside relative humidity
     description: The recorded outside relative humidity value at the time of sampling
@@ -3611,12 +3652,13 @@ slots:
     - 'Position: 98.0'
     - 'This field is used uniquely in: built environment'
     slot_uri: MIXS:0000188
-  pres_animal:
-    is_a: environment field
+  pres_animal_insect:
+    is_a: core field
     aliases:
     - presence of pets, animals, or insects
-    description: The number and type of animals present in the sampling space
-    range: pres_animal_enum
+    description: The type and number of animals or insects present in the sampling
+      space.
+    range: pres_animal_insect_enum
     examples:
     - value: cat;5
     comments:
@@ -3627,7 +3669,7 @@ slots:
     pattern: '[cat|dog|rodent|snake|other];{integer}'
     slot_uri: MIXS:0000819
   quad_pos:
-    is_a: environment field
+    is_a: core field
     aliases:
     - quadrant position
     description: The quadrant position of the sampling room within the building
@@ -3642,7 +3684,7 @@ slots:
     pattern: '[North side|West side|South side|East side]'
     slot_uri: MIXS:0000820
   rel_samp_loc:
-    is_a: environment field
+    is_a: core field
     aliases:
     - relative sampling location
     description: The sampling location within the train car
@@ -3657,7 +3699,7 @@ slots:
     pattern: '[edge of car|center of car|under a seat]'
     slot_uri: MIXS:0000821
   room_air_exch_rate:
-    is_a: environment field
+    is_a: core field
     aliases:
     - room air exchange rate
     description: The rate at which outside air replaces indoor air in a given space
@@ -3671,8 +3713,8 @@ slots:
     - 'Position: 102.0'
     - 'This field is used uniquely in: built environment'
     slot_uri: MIXS:0000169
-  room_architec_element:
-    is_a: environment field
+  room_architec_elem:
+    is_a: core field
     aliases:
     - room architectural elements
     description: The unique details and component parts that, together, form the architecture
@@ -3688,7 +3730,7 @@ slots:
     pattern: '{text}'
     slot_uri: MIXS:0000233
   room_condt:
-    is_a: environment field
+    is_a: core field
     aliases:
     - room condition
     description: The condition of the room at the time of sampling
@@ -3703,7 +3745,7 @@ slots:
     pattern: '[new|visible wear|needs repair|damaged|rupture|visible signs of mold/mildew]'
     slot_uri: MIXS:0000822
   room_count:
-    is_a: environment field
+    is_a: core field
     aliases:
     - room count
     description: The total count of rooms in the built structure including all room
@@ -3719,7 +3761,7 @@ slots:
     pattern: '{integer}'
     slot_uri: MIXS:0000234
   room_dim:
-    is_a: environment field
+    is_a: core field
     aliases:
     - room dimensions
     description: The length, width and height of sampling room
@@ -3735,7 +3777,7 @@ slots:
     pattern: '{integer} {unit} x {integer} {unit} x {integer} {unit}'
     slot_uri: MIXS:0000192
   room_door_dist:
-    is_a: environment field
+    is_a: core field
     aliases:
     - room door distance
     description: Distance between doors (meters) in the hallway between the sampling
@@ -3752,7 +3794,7 @@ slots:
     pattern: '{integer} {unit}'
     slot_uri: MIXS:0000193
   room_loc:
-    is_a: environment field
+    is_a: core field
     aliases:
     - room location in building
     description: The position of the room within the building
@@ -3766,8 +3808,8 @@ slots:
     - 'This field is used uniquely in: built environment'
     pattern: '[corner room|interior room|exterior wall]'
     slot_uri: MIXS:0000823
-  room_moist_damage_hist:
-    is_a: environment field
+  room_moist_dam_hist:
+    is_a: core field
     aliases:
     - room moisture damage or mold history
     description: The history of moisture damage or mold in the past 12 months. Number
@@ -3783,7 +3825,7 @@ slots:
     pattern: '{integer}'
     slot_uri: MIXS:0000235
   room_net_area:
-    is_a: environment field
+    is_a: core field
     aliases:
     - room net area
     description: The net floor area of sampling room. Net area excludes wall thicknesses
@@ -3799,7 +3841,7 @@ slots:
     pattern: '{integer} {unit}'
     slot_uri: MIXS:0000194
   room_occup:
-    is_a: environment field
+    is_a: core field
     aliases:
     - room occupancy
     description: Count of room occupancy at time of sampling
@@ -3814,7 +3856,7 @@ slots:
     pattern: '{integer}'
     slot_uri: MIXS:0000236
   room_samp_pos:
-    is_a: environment field
+    is_a: core field
     aliases:
     - room sampling position
     description: The horizontal sampling position in the room relative to architectural
@@ -3831,7 +3873,7 @@ slots:
       corner|southeast corner|southwest corner|center]'
     slot_uri: MIXS:0000824
   room_type:
-    is_a: environment field
+    is_a: core field
     aliases:
     - room type
     description: The main purpose or activity of the sampling room. A room is any
@@ -3849,7 +3891,7 @@ slots:
       or electrical room|data center|laboratory_wet|laboratory_dry|gymnasium|natatorium|auditorium|lockers|cafe|warehouse]'
     slot_uri: MIXS:0000825
   room_vol:
-    is_a: environment field
+    is_a: core field
     aliases:
     - room volume
     description: Volume of sampling room
@@ -3865,7 +3907,7 @@ slots:
     pattern: '{integer} {unit}'
     slot_uri: MIXS:0000195
   room_window_count:
-    is_a: environment field
+    is_a: core field
     aliases:
     - room window count
     description: Number of windows in the room
@@ -3880,7 +3922,7 @@ slots:
     pattern: '{integer}'
     slot_uri: MIXS:0000237
   room_connected:
-    is_a: environment field
+    is_a: core field
     aliases:
     - rooms connected by a doorway
     description: List of rooms connected to the sampling room by a doorway
@@ -3896,7 +3938,7 @@ slots:
       room|office|stairwell]'
     slot_uri: MIXS:0000826
   room_hallway:
-    is_a: environment field
+    is_a: core field
     aliases:
     - rooms that are on the same hallway
     description: List of room(s) (room number, room name) located in the same hallway
@@ -3912,7 +3954,7 @@ slots:
     pattern: '{text};{integer}'
     slot_uri: MIXS:0000238
   room_door_share:
-    is_a: environment field
+    is_a: core field
     aliases:
     - rooms that share a door with sampling room
     description: List of room(s) (room number, room name) sharing a door with the
@@ -3928,7 +3970,7 @@ slots:
     pattern: '{text};{integer}'
     slot_uri: MIXS:0000242
   room_wall_share:
-    is_a: environment field
+    is_a: core field
     aliases:
     - rooms that share a wall with sampling room
     description: List of room(s) (room number, room name) sharing a wall with the
@@ -3944,7 +3986,7 @@ slots:
     pattern: '{text};{integer}'
     slot_uri: MIXS:0000243
   samp_weather:
-    is_a: environment field
+    is_a: core field
     aliases:
     - sampling day weather
     description: The weather on the sampling day
@@ -3959,7 +4001,7 @@ slots:
     pattern: '[clear sky|cloudy|foggy|hail|rain|snow|sleet|sunny|windy]'
     slot_uri: MIXS:0000827
   samp_floor:
-    is_a: environment field
+    is_a: core field
     aliases:
     - sampling floor
     description: The floor of the building, where the sampling room is located
@@ -3974,7 +4016,7 @@ slots:
     pattern: '[1st floor|2nd floor|{integer} floor|basement|lobby]'
     slot_uri: MIXS:0000828
   samp_room_id:
-    is_a: environment field
+    is_a: core field
     aliases:
     - sampling room ID or name
     description: Sampling room number. This ID should be consistent with the designations
@@ -3990,7 +4032,7 @@ slots:
     pattern: '{integer}'
     slot_uri: MIXS:0000244
   samp_time_out:
-    is_a: environment field
+    is_a: core field
     aliases:
     - sampling time outside
     description: The recent and long term history of outside sampling
@@ -4005,7 +4047,7 @@ slots:
     - 'This field is used uniquely in: built environment'
     slot_uri: MIXS:0000196
   season:
-    is_a: environment field
+    is_a: core field
     aliases:
     - season
     description: The season when sampling occurred. Any of the four periods into which
@@ -4022,7 +4064,7 @@ slots:
     pattern: '{termLabel} {[termID]}'
     slot_uri: MIXS:0000829
   season_use:
-    is_a: environment field
+    is_a: core field
     aliases:
     - seasonal use
     description: The seasons the space is occupied
@@ -4037,7 +4079,7 @@ slots:
     pattern: '[Spring|Summer|Fall|Winter]'
     slot_uri: MIXS:0000830
   shading_device_cond:
-    is_a: environment field
+    is_a: core field
     aliases:
     - shading device condition
     description: The physical condition of the shading device at the time of sampling
@@ -4052,7 +4094,7 @@ slots:
     pattern: '[damaged|needs repair|new|rupture|visible wear]'
     slot_uri: MIXS:0000831
   shading_device_loc:
-    is_a: environment field
+    is_a: core field
     aliases:
     - shading device location
     description: The location of the shading device in relation to the built structure
@@ -4067,7 +4109,7 @@ slots:
     pattern: '[exterior|interior]'
     slot_uri: MIXS:0000832
   shading_device_mat:
-    is_a: environment field
+    is_a: core field
     aliases:
     - shading device material
     description: The material the shading device is composed of
@@ -4081,8 +4123,8 @@ slots:
     - 'This field is used uniquely in: built environment'
     pattern: '{text}'
     slot_uri: MIXS:0000245
-  shading_device_water_mold:
-    is_a: environment field
+  shad_dev_water_mold:
+    is_a: core field
     aliases:
     - shading device signs of water/mold
     description: Signs of the presence of mold or mildew on the shading device
@@ -4097,7 +4139,7 @@ slots:
     pattern: '[presence of mold visible|no presence of mold visible]'
     slot_uri: MIXS:0000834
   shading_device_type:
-    is_a: environment field
+    is_a: core field
     aliases:
     - shading device type
     description: The type of shading device
@@ -4114,7 +4156,7 @@ slots:
       awning]'
     slot_uri: MIXS:0000835
   specific_humidity:
-    is_a: environment field
+    is_a: core field
     aliases:
     - specific humidity
     description: The mass of water vapour in a unit mass of moist air, usually expressed
@@ -4131,7 +4173,7 @@ slots:
     - 'This field is used uniquely in: built environment'
     slot_uri: MIXS:0000214
   specific:
-    is_a: environment field
+    is_a: core field
     aliases:
     - specifications
     description: 'The building specifications. If design is chosen, indicate phase:
@@ -4147,7 +4189,7 @@ slots:
     pattern: '[operation|as built|construction|bid|design|photos]'
     slot_uri: MIXS:0000836
   temp_out:
-    is_a: environment field
+    is_a: core field
     aliases:
     - temperature outside house
     description: The recorded temperature value at sampling time outside
@@ -4162,7 +4204,7 @@ slots:
     - 'This field is used uniquely in: built environment'
     slot_uri: MIXS:0000197
   train_line:
-    is_a: environment field
+    is_a: core field
     aliases:
     - train line
     description: The subway line name
@@ -4177,7 +4219,7 @@ slots:
     pattern: '[red|green|orange]'
     slot_uri: MIXS:0000837
   train_stat_loc:
-    is_a: environment field
+    is_a: core field
     aliases:
     - train station collection location
     description: The train station collection location
@@ -4193,7 +4235,7 @@ slots:
       amtrak|forest hills|riverside]'
     slot_uri: MIXS:0000838
   train_stop_loc:
-    is_a: environment field
+    is_a: core field
     aliases:
     - train stop collection location
     description: The train stop collection location
@@ -4208,7 +4250,7 @@ slots:
     pattern: '[end|mid|downtown]'
     slot_uri: MIXS:0000839
   vis_media:
-    is_a: environment field
+    is_a: core field
     aliases:
     - visual media
     description: The building visual media
@@ -4224,7 +4266,7 @@ slots:
       vegetation, terrain, streets)|interiors|equipment|3D scans]'
     slot_uri: MIXS:0000840
   wall_area:
-    is_a: environment field
+    is_a: core field
     aliases:
     - wall area
     description: The total area of the sampled room's walls
@@ -4239,7 +4281,7 @@ slots:
     - 'This field is used uniquely in: built environment'
     slot_uri: MIXS:0000198
   wall_const_type:
-    is_a: environment field
+    is_a: core field
     aliases:
     - wall construction type
     description: The building class of the wall defined by the composition of the
@@ -4256,7 +4298,7 @@ slots:
       fire resistive|fire resistive]'
     slot_uri: MIXS:0000841
   wall_finish_mat:
-    is_a: environment field
+    is_a: core field
     aliases:
     - wall finish material
     description: The material utilized to finish the outer most layer of the wall
@@ -4272,7 +4314,7 @@ slots:
       facing|acoustical treatment|wood|metal|masonry]'
     slot_uri: MIXS:0000842
   wall_height:
-    is_a: environment field
+    is_a: core field
     aliases:
     - wall height
     description: The average height of the walls in the sampled room
@@ -4287,7 +4329,7 @@ slots:
     - 'This field is used uniquely in: built environment'
     slot_uri: MIXS:0000221
   wall_loc:
-    is_a: environment field
+    is_a: core field
     aliases:
     - wall location
     description: The relative location of the wall within the room
@@ -4302,7 +4344,7 @@ slots:
     pattern: '[north|south|east|west]'
     slot_uri: MIXS:0000843
   wall_water_mold:
-    is_a: environment field
+    is_a: core field
     aliases:
     - wall signs of water/mold
     description: Signs of the presence of mold or mildew on a wall
@@ -4317,7 +4359,7 @@ slots:
     pattern: '[presence of mold visible|no presence of mold visible]'
     slot_uri: MIXS:0000844
   wall_surf_treatment:
-    is_a: environment field
+    is_a: core field
     aliases:
     - wall surface treatment
     description: The surface treatment of interior wall
@@ -4332,7 +4374,7 @@ slots:
     pattern: '[painted|wall paper|no treatment|paneling|stucco|fabric]'
     slot_uri: MIXS:0000845
   wall_texture:
-    is_a: environment field
+    is_a: core field
     aliases:
     - wall texture
     description: The feel, appearance, or consistency of a wall surface
@@ -4348,7 +4390,7 @@ slots:
       peel|rosebud stomp|Santa-Fe texture|skip trowel|smooth|stomp knockdown|swirl]'
     slot_uri: MIXS:0000846
   wall_thermal_mass:
-    is_a: environment field
+    is_a: core field
     aliases:
     - wall thermal mass
     description: The ability of the wall to provide inertia against temperature fluctuations.
@@ -4365,7 +4407,7 @@ slots:
     - 'This field is used uniquely in: built environment'
     slot_uri: MIXS:0000222
   water_feat_size:
-    is_a: environment field
+    is_a: core field
     aliases:
     - water feature size
     description: The size of the water feature
@@ -4380,7 +4422,7 @@ slots:
     - 'This field is used uniquely in: built environment'
     slot_uri: MIXS:0000223
   water_feat_type:
-    is_a: environment field
+    is_a: core field
     aliases:
     - water feature type
     description: The type of water feature present within the building being sampled
@@ -4395,7 +4437,7 @@ slots:
     pattern: '[fountain|pool|standing feature|stream|waterfall]'
     slot_uri: MIXS:0000847
   weekday:
-    is_a: environment field
+    is_a: core field
     aliases:
     - weekday
     description: The day of the week when sampling occurred
@@ -4410,7 +4452,7 @@ slots:
     pattern: '[Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday]'
     slot_uri: MIXS:0000848
   window_size:
-    is_a: environment field
+    is_a: core field
     aliases:
     - window area/size
     description: The window's length and width
@@ -4426,7 +4468,7 @@ slots:
     pattern: '{float} {unit} x {float} {unit}'
     slot_uri: MIXS:0000224
   window_cond:
-    is_a: environment field
+    is_a: core field
     aliases:
     - window condition
     description: The physical condition of the window at the time of sampling
@@ -4441,7 +4483,7 @@ slots:
     pattern: '[damaged|needs repair|new|rupture|visible wear]'
     slot_uri: MIXS:0000849
   window_cover:
-    is_a: environment field
+    is_a: core field
     aliases:
     - window covering
     description: The type of window covering
@@ -4456,7 +4498,7 @@ slots:
     pattern: '[blinds|curtains|none]'
     slot_uri: MIXS:0000850
   window_horiz_pos:
-    is_a: environment field
+    is_a: core field
     aliases:
     - window horizontal position
     description: The horizontal position of the window on the wall
@@ -4471,7 +4513,7 @@ slots:
     pattern: '[left|middle|right]'
     slot_uri: MIXS:0000851
   window_loc:
-    is_a: environment field
+    is_a: core field
     aliases:
     - window location
     description: The relative location of the window within the room
@@ -4486,7 +4528,7 @@ slots:
     pattern: '[north|south|east|west]'
     slot_uri: MIXS:0000852
   window_mat:
-    is_a: environment field
+    is_a: core field
     aliases:
     - window material
     description: The type of material used to finish a window
@@ -4501,7 +4543,7 @@ slots:
     pattern: '[clad|fiberglass|metal|vinyl|wood]'
     slot_uri: MIXS:0000853
   window_open_freq:
-    is_a: environment field
+    is_a: core field
     aliases:
     - window open frequency
     description: The number of times windows are opened per week
@@ -4516,7 +4558,7 @@ slots:
     pattern: '{integer}'
     slot_uri: MIXS:0000246
   window_water_mold:
-    is_a: environment field
+    is_a: core field
     aliases:
     - window signs of water/mold
     description: Signs of the presence of mold or mildew on the window.
@@ -4531,7 +4573,7 @@ slots:
     pattern: '[presence of mold visible|no presence of mold visible]'
     slot_uri: MIXS:0000854
   window_status:
-    is_a: environment field
+    is_a: core field
     aliases:
     - window status
     description: Defines whether the windows were open or closed during environmental
@@ -4547,7 +4589,7 @@ slots:
     pattern: '[closed|open]'
     slot_uri: MIXS:0000855
   window_type:
-    is_a: environment field
+    is_a: core field
     aliases:
     - window type
     description: The type of windows
@@ -4562,7 +4604,7 @@ slots:
     pattern: '[single-hung sash window|horizontal sash window|fixed window]'
     slot_uri: MIXS:0000856
   window_vert_pos:
-    is_a: environment field
+    is_a: core field
     aliases:
     - window vertical position
     description: The vertical position of the window on the wall
@@ -4577,7 +4619,7 @@ slots:
     pattern: '[bottom|middle|top|low|middle|high]'
     slot_uri: MIXS:0000857
   ances_data:
-    is_a: environment field
+    is_a: core field
     aliases:
     - ancestral data
     description: Information about either pedigree or other ancestral information
@@ -4594,7 +4636,7 @@ slots:
     pattern: '{text}'
     slot_uri: MIXS:0000247
   biol_stat:
-    is_a: environment field
+    is_a: core field
     aliases:
     - biological status
     description: The level of genome modification.
@@ -4610,7 +4652,7 @@ slots:
       selection|mutant]'
     slot_uri: MIXS:0000858
   genetic_mod:
-    is_a: environment field
+    is_a: core field
     aliases:
     - genetic modification
     description: Genetic modifications of the genome of an organism, which may occur
@@ -4628,13 +4670,13 @@ slots:
     pattern: '{PMID}|{DOI}|{URL}|{text}'
     slot_uri: MIXS:0000859
   host_common_name:
-    is_a: environment field
+    is_a: core field
     aliases:
     - host common name
-    description: Common name of the host, e.g. Human
+    description: Common name of the host.
     range: string
     examples:
-    - value: mussel
+    - value: human
     comments:
     - 'Expected value: common name'
     - 'Occurrence: 1'
@@ -4643,7 +4685,7 @@ slots:
     pattern: '{text}'
     slot_uri: MIXS:0000248
   samp_capt_status:
-    is_a: environment field
+    is_a: core field
     aliases:
     - sample capture status
     description: Reason for the sample
@@ -4659,7 +4701,7 @@ slots:
       not initiated by an outbreak|farm sample|market sample|other]'
     slot_uri: MIXS:0000860
   samp_dis_stage:
-    is_a: environment field
+    is_a: core field
     aliases:
     - sample disease stage
     description: Stage of the disease at the time of sample collection, e.g. inoculation,
@@ -4675,7 +4717,7 @@ slots:
     pattern: '[dissemination|growth and reproduction|infection|inoculation|penetration|other]'
     slot_uri: MIXS:0000249
   host_taxid:
-    is_a: environment field
+    is_a: core field
     aliases:
     - host taxid
     description: NCBI taxon id of the host, e.g. 9606
@@ -4690,11 +4732,10 @@ slots:
     pattern: '{NCBI taxid}'
     slot_uri: MIXS:0000250
   host_subject_id:
-    is_a: environment field
+    is_a: core field
     aliases:
     - host subject id
-    description: 'A unique identifier by which each subject can be referred to, de-identified,
-      e.g. #131'
+    description: A unique identifier by which each subject can be referred to, de-identified.
     range: string
     examples:
     - value: MPI123
@@ -4707,7 +4748,7 @@ slots:
     pattern: '{text}'
     slot_uri: MIXS:0000861
   host_age:
-    is_a: environment field
+    is_a: core field
     aliases:
     - host age
     description: Age of host at the time of sampling; relevant scale depends on species
@@ -4724,7 +4765,7 @@ slots:
       human-oral, human-skin, human-vaginal, plant-associated'
     slot_uri: MIXS:0000255
   host_life_stage:
-    is_a: environment field
+    is_a: core field
     aliases:
     - host life stage
     description: Description of life stage of host
@@ -4739,7 +4780,7 @@ slots:
     pattern: '{text}'
     slot_uri: MIXS:0000251
   host_sex:
-    is_a: environment field
+    is_a: core field
     aliases:
     - host sex
     description: Gender or physical sex of the host.
@@ -4756,7 +4797,7 @@ slots:
       to male)|transgender (male to female) |undeclared]'
     slot_uri: MIXS:0000811
   host_body_habitat:
-    is_a: environment field
+    is_a: core field
     aliases:
     - host body habitat
     description: Original body habitat where the sample was obtained from
@@ -4771,7 +4812,7 @@ slots:
     pattern: '{text}'
     slot_uri: MIXS:0000866
   host_body_site:
-    is_a: environment field
+    is_a: core field
     aliases:
     - host body site
     description: Name of body site where the sample was obtained from, such as a specific
@@ -4790,7 +4831,7 @@ slots:
     pattern: '{termLabel} {[termID]}'
     slot_uri: MIXS:0000867
   host_body_product:
-    is_a: environment field
+    is_a: core field
     aliases:
     - host body product
     description: Substance produced by the body, e.g. Stool, mucus, where the sample
@@ -4809,7 +4850,7 @@ slots:
     pattern: '{termLabel} {[termID]}'
     slot_uri: MIXS:0000888
   host_tot_mass:
-    is_a: environment field
+    is_a: core field
     aliases:
     - host total mass
     description: Total mass of the host at collection, the unit depends on host
@@ -4825,7 +4866,7 @@ slots:
       human-oral, human-skin, human-vaginal, plant-associated'
     slot_uri: MIXS:0000263
   host_height:
-    is_a: environment field
+    is_a: core field
     aliases:
     - host height
     description: The height of subject
@@ -4841,7 +4882,7 @@ slots:
       human-oral, human-skin, human-vaginal, plant-associated'
     slot_uri: MIXS:0000264
   host_length:
-    is_a: environment field
+    is_a: core field
     aliases:
     - host length
     description: The length of subject
@@ -4856,7 +4897,7 @@ slots:
     - 'This field is used in: 2 packages: host-associated, plant-associated'
     slot_uri: MIXS:0000256
   host_diet:
-    is_a: environment field
+    is_a: core field
     aliases:
     - host diet
     description: Type of diet depending on the host, for animals omnivore, herbivore
@@ -4873,7 +4914,7 @@ slots:
     pattern: '{text}'
     slot_uri: MIXS:0000869
   host_last_meal:
-    is_a: environment field
+    is_a: core field
     aliases:
     - host last meal
     description: Content of last meal and time since feeding; can include multiple
@@ -4890,7 +4931,7 @@ slots:
     pattern: '{text};{duration}'
     slot_uri: MIXS:0000870
   host_growth_cond:
-    is_a: environment field
+    is_a: core field
     aliases:
     - host growth conditions
     description: Literature reference giving growth conditions of the host
@@ -4905,10 +4946,10 @@ slots:
     pattern: '{PMID}|{DOI}|{URL}|{text}'
     slot_uri: MIXS:0000871
   host_substrate:
-    is_a: environment field
+    is_a: core field
     aliases:
     - host substrate
-    description: The growth substrate of the host
+    description: The growth substrate of the host.
     range: string
     examples:
     - value: rock
@@ -4919,12 +4960,12 @@ slots:
     - 'This field is used uniquely in: host-associated'
     pattern: '{text}'
     slot_uri: MIXS:0000252
-  host_family_relationship:
-    is_a: environment field
+  host_family_relation:
+    is_a: core field
     aliases:
     - host family relationship
-    description: Relationships to other hosts in the same study; can include multiple
-      relationships
+    description: Familial relationships to other hosts in the same study; can include
+      multiple relationships
     range: string
     examples:
     - value: offspring;Mussel25
@@ -4936,8 +4977,8 @@ slots:
       human-oral, human-skin, human-vaginal'
     pattern: '{text};{text}'
     slot_uri: MIXS:0000872
-  host_infra_specific_name:
-    is_a: environment field
+  host_infra_spec_name:
+    is_a: core field
     aliases:
     - host infra-specific name
     description: Taxonomic information about the host below subspecies level
@@ -4951,8 +4992,8 @@ slots:
     - 'This field is used in: 2 packages: host-associated, plant-associated'
     pattern: '{text}'
     slot_uri: MIXS:0000253
-  host_infra_specific_rank:
-    is_a: environment field
+  host_infra_spec_rank:
+    is_a: core field
     aliases:
     - host infra-specific rank
     description: Taxonomic rank information about the host below subspecies level,
@@ -4967,8 +5008,27 @@ slots:
     - 'This field is used in: 2 packages: host-associated, plant-associated'
     pattern: '{text}'
     slot_uri: MIXS:0000254
+  host_subspecf_genlin:
+    is_a: core field
+    aliases:
+    - host subspecific genetic lineage
+    description: Information about the genetic distinctness of the host organism below
+      the subspecies level, e.g., serovar, serotype, biotype, ecotype, or any relevant
+      genetic typing schemes like Group I plasmid. Subspecies should not be recorded
+      in this term, but in the NCBI taxonomy. Supply both the lineage name and the
+      lineage rank separated by a colon, e.g., biovar:abc123.
+    range: string
+    examples:
+    - value: subvariety:glabrum
+    comments:
+    - 'Expected value: Genetic lineage below lowest rank of NCBI taxonomy, which is
+      subspecies, e.g. serovar, biotype, ecotype, plus genetic lineage name.'
+    - 'Occurrence: m'
+    - 'This field is used in: 2 packages: host-associated, plant-associated'
+    pattern: '{rank name}:{text}'
+    slot_uri: MIXS:0001318
   host_genotype:
-    is_a: environment field
+    is_a: core field
     aliases:
     - host genotype
     description: Observed genotype
@@ -4984,7 +5044,7 @@ slots:
     pattern: '{text}'
     slot_uri: MIXS:0000365
   host_phenotype:
-    is_a: environment field
+    is_a: core field
     aliases:
     - host phenotype
     description: Phenotype of human or other host. For phenotypic quality ontology
@@ -5002,7 +5062,7 @@ slots:
     pattern: '{termLabel} {[termID]}'
     slot_uri: MIXS:0000874
   host_body_temp:
-    is_a: environment field
+    is_a: core field
     aliases:
     - host body temperature
     description: Core body temperature of the host when sample was collected
@@ -5018,7 +5078,7 @@ slots:
       human-oral, human-skin, human-vaginal'
     slot_uri: MIXS:0000274
   host_dry_mass:
-    is_a: environment field
+    is_a: core field
     aliases:
     - host dry mass
     description: Measurement of dry mass
@@ -5032,8 +5092,8 @@ slots:
     - 'Position: 30.0'
     - 'This field is used in: 2 packages: host-associated, plant-associated'
     slot_uri: MIXS:0000257
-  host_blood_press_diast:
-    is_a: environment field
+  blood_press_diast:
+    is_a: core field
     aliases:
     - host blood pressure diastolic
     description: Resting diastolic blood pressure, measured as mm mercury
@@ -5047,8 +5107,8 @@ slots:
     - 'Position: 31.0'
     - 'This field is used uniquely in: host-associated'
     slot_uri: MIXS:0000258
-  host_blood_press_syst:
-    is_a: environment field
+  blood_press_syst:
+    is_a: core field
     aliases:
     - host blood pressure systolic
     description: Resting systolic blood pressure, measured as mm mercury
@@ -5063,7 +5123,7 @@ slots:
     - 'This field is used uniquely in: host-associated'
     slot_uri: MIXS:0000259
   host_color:
-    is_a: environment field
+    is_a: core field
     aliases:
     - host color
     description: The color of host
@@ -5078,7 +5138,7 @@ slots:
     pattern: '{text}'
     slot_uri: MIXS:0000260
   host_shape:
-    is_a: environment field
+    is_a: core field
     aliases:
     - host shape
     description: Morphological shape of host
@@ -5093,7 +5153,7 @@ slots:
     pattern: '{text}'
     slot_uri: MIXS:0000261
   gravidity:
-    is_a: environment field
+    is_a: core field
     aliases:
     - gravidity
     description: Whether or not subject is gravid, and if yes date due or date post-conception,
@@ -5109,7 +5169,7 @@ slots:
     pattern: '{boolean};{timestamp}'
     slot_uri: MIXS:0000875
   host_symbiont:
-    is_a: environment field
+    is_a: core field
     aliases:
     - observed host symbionts
     description: The taxonomic name of the organism(s) found living in mutualistic,
@@ -5123,8 +5183,9 @@ slots:
     - 'This field is used in: 7 packages: host-associated, human-associated, human-gut,
       human-oral, human-skin, human-vaginal, plant-associated'
     pattern: '{text}'
+    slot_uri: MIXS:0001298
   ihmc_medication_code:
-    is_a: environment field
+    is_a: core field
     aliases:
     - IHMC medication code
     description: Can include multiple medication codes
@@ -5140,7 +5201,7 @@ slots:
     pattern: '{integer}'
     slot_uri: MIXS:0000884
   smoker:
-    is_a: environment field
+    is_a: core field
     aliases:
     - smoker
     description: Specification of smoking status
@@ -5155,7 +5216,7 @@ slots:
     pattern: '{boolean}'
     slot_uri: MIXS:0000262
   host_hiv_stat:
-    is_a: environment field
+    is_a: core field
     aliases:
     - host HIV status
     description: HIV status of subject, if yes HAART initiation status should also
@@ -5171,7 +5232,7 @@ slots:
     pattern: '{boolean};{boolean}'
     slot_uri: MIXS:0000265
   drug_usage:
-    is_a: environment field
+    is_a: core field
     aliases:
     - drug usage
     description: Any drug used by subject and the frequency of usage; can include
@@ -5187,7 +5248,7 @@ slots:
     pattern: '{text};{integer}/[year|month|week|day|hour]'
     slot_uri: MIXS:0000894
   host_body_mass_index:
-    is_a: environment field
+    is_a: core field
     aliases:
     - host body-mass index
     description: Body mass index, calculated as weight/(height)squared
@@ -5203,7 +5264,7 @@ slots:
       human-skin, human-vaginal'
     slot_uri: MIXS:0000317
   diet_last_six_month:
-    is_a: environment field
+    is_a: core field
     aliases:
     - major diet change in last six months
     description: Specification of major diet changes in the last six months, if yes
@@ -5219,7 +5280,7 @@ slots:
     pattern: '{boolean};{text}'
     slot_uri: MIXS:0000266
   weight_loss_3_month:
-    is_a: environment field
+    is_a: core field
     aliases:
     - weight loss in last three months
     description: Specification of weight loss in the last three months, if yes should
@@ -5235,24 +5296,26 @@ slots:
     - 'This field is used uniquely in: human-associated'
     pattern: '{boolean};{float} {unit}'
     slot_uri: MIXS:0000295
-  ihmc_ethnicity:
-    is_a: environment field
+  ethnicity:
+    is_a: core field
     aliases:
-    - IHMC ethnicity
-    description: Ethnicity of the subject
+    - ethnicity
+    description: A category of people who identify with each other, usually on the
+      basis of presumed similarities such as a common language, ancestry, history,
+      society, culture, nation or social treatment within their residing area. https://en.wikipedia.org/wiki/List_of_contemporary_ethnic_groups
     range: string
     examples:
-    - value: caucasian
+    - value: native american
     comments:
-    - 'Expected value: IHMC code or free text'
-    - 'Occurrence: 1'
+    - 'Expected value: text recommend from Wikipedia list'
+    - 'Occurrence: m'
     - 'Position: 23.0'
     - 'This field is used in: 5 packages: human-associated, human-gut, human-oral,
       human-skin, human-vaginal'
-    pattern: '{integer}|{text}'
+    pattern: '{text}'
     slot_uri: MIXS:0000895
   host_occupation:
-    is_a: environment field
+    is_a: core field
     aliases:
     - host occupation
     description: Most frequent job performed by subject
@@ -5268,7 +5331,7 @@ slots:
     pattern: '{integer}'
     slot_uri: MIXS:0000896
   pet_farm_animal:
-    is_a: environment field
+    is_a: core field
     aliases:
     - presence of pets or farm animals
     description: Specification of presence of pets or farm animals in the environment
@@ -5285,7 +5348,7 @@ slots:
     pattern: '{boolean};{text}'
     slot_uri: MIXS:0000267
   travel_out_six_month:
-    is_a: environment field
+    is_a: core field
     aliases:
     - travel outside the country in last six months
     description: Specification of the countries travelled in the last six months;
@@ -5301,7 +5364,7 @@ slots:
     pattern: '{text}'
     slot_uri: MIXS:0000268
   twin_sibling:
-    is_a: environment field
+    is_a: core field
     aliases:
     - twin sibling presence
     description: Specification of twin sibling presence
@@ -5316,7 +5379,7 @@ slots:
     pattern: '{boolean}'
     slot_uri: MIXS:0000326
   medic_hist_perform:
-    is_a: environment field
+    is_a: core field
     aliases:
     - medical history performed
     description: Whether full medical history was collected
@@ -5332,7 +5395,7 @@ slots:
     pattern: '{boolean}'
     slot_uri: MIXS:0000897
   study_complt_stat:
-    is_a: environment field
+    is_a: core field
     aliases:
     - study completion status
     description: Specification of study completion status, if no the reason should
@@ -5349,7 +5412,7 @@ slots:
     pattern: '{boolean};[adverse event|non-compliance|lost to follow up|other-specify]'
     slot_uri: MIXS:0000898
   pulmonary_disord:
-    is_a: environment field
+    is_a: core field
     aliases:
     - lung/pulmonary disorder
     description: History of pulmonary disorders; can include multiple disorders. The
@@ -5366,7 +5429,7 @@ slots:
     pattern: '{text}'
     slot_uri: MIXS:0000269
   nose_throat_disord:
-    is_a: environment field
+    is_a: core field
     aliases:
     - lung/nose-throat disorder
     description: History of nose-throat disorders; can include multiple disorders,  The
@@ -5380,11 +5443,11 @@ slots:
     - 'Expected value: disorder name'
     - 'Occurrence: m'
     - 'Position: 31.0'
-    - 'This field is used uniquely in: human-associated'
+    - 'This field is used in: 2 packages: human-associated, human-oral'
     pattern: '{text}'
     slot_uri: MIXS:0000270
   blood_blood_disord:
-    is_a: environment field
+    is_a: core field
     aliases:
     - blood/blood disorder
     description: History of blood disorders; can include multiple disorders.  The
@@ -5401,7 +5464,7 @@ slots:
     pattern: '{text}'
     slot_uri: MIXS:0000271
   host_pulse:
-    is_a: environment field
+    is_a: core field
     aliases:
     - host pulse
     description: Resting pulse, measured as beats per minute
@@ -5417,7 +5480,7 @@ slots:
       human-skin, human-vaginal'
     slot_uri: MIXS:0000333
   gestation_state:
-    is_a: environment field
+    is_a: core field
     aliases:
     - amniotic fluid/gestation state
     description: Specification of the gestation state
@@ -5432,7 +5495,7 @@ slots:
     pattern: '{text}'
     slot_uri: MIXS:0000272
   maternal_health_stat:
-    is_a: environment field
+    is_a: core field
     aliases:
     - amniotic fluid/maternal health status
     description: Specification of the maternal health status
@@ -5447,7 +5510,7 @@ slots:
     pattern: '{text}'
     slot_uri: MIXS:0000273
   foetal_health_stat:
-    is_a: environment field
+    is_a: core field
     aliases:
     - amniotic fluid/foetal health status
     description: Specification of foetal health status, should also include abortion
@@ -5462,7 +5525,7 @@ slots:
     pattern: '{text}'
     slot_uri: MIXS:0000275
   amniotic_fluid_color:
-    is_a: environment field
+    is_a: core field
     aliases:
     - amniotic fluid/color
     description: Specification of the color of the amniotic fluid sample
@@ -5477,7 +5540,7 @@ slots:
     pattern: '{text}'
     slot_uri: MIXS:0000276
   kidney_disord:
-    is_a: environment field
+    is_a: core field
     aliases:
     - urine/kidney disorder
     description: History of kidney disorders; can include multiple disorders. The
@@ -5494,7 +5557,7 @@ slots:
     pattern: '{text}'
     slot_uri: MIXS:0000277
   urogenit_tract_disor:
-    is_a: environment field
+    is_a: core field
     aliases:
     - urine/urogenital tract disorder
     description: History of urogenital tract disorders; can include multiple disorders.
@@ -5511,7 +5574,7 @@ slots:
     pattern: '{text}'
     slot_uri: MIXS:0000278
   urine_collect_meth:
-    is_a: environment field
+    is_a: core field
     aliases:
     - urine/collection method
     description: Specification of urine collection method
@@ -5526,7 +5589,7 @@ slots:
     pattern: '[clean catch|catheter]'
     slot_uri: MIXS:0000899
   gastrointest_disord:
-    is_a: environment field
+    is_a: core field
     aliases:
     - gastrointestinal tract disorder
     description: History of gastrointestinal tract disorders; can include multiple
@@ -5544,7 +5607,7 @@ slots:
     pattern: '{text}'
     slot_uri: MIXS:0000280
   liver_disord:
-    is_a: environment field
+    is_a: core field
     aliases:
     - liver disorder
     description: History of liver disorders; can include multiple disorders. The terms
@@ -5561,7 +5624,7 @@ slots:
     pattern: '{text}'
     slot_uri: MIXS:0000282
   special_diet:
-    is_a: environment field
+    is_a: core field
     aliases:
     - special diet
     description: Specification of special diet; can include multiple special diets
@@ -5575,27 +5638,8 @@ slots:
     - 'This field is used uniquely in: human-gut'
     pattern: '[low carb|reduced calorie|vegetarian|other(to be specified)]'
     slot_uri: MIXS:0000905
-  nose_mouth_teeth_throat_disord:
-    is_a: environment field
-    aliases:
-    - nose/mouth/teeth/throat disorder
-    description: History of nose/mouth/teeth/throat disorders; can include multiple
-      disorders. The terms should be chosen from the DO (Human Disease Ontology) at
-      http://www.disease-ontology.org, nose disease (https://disease-ontology.org/?id=DOID:2825),
-      mouth disease (https://disease-ontology.org/?id=DOID:403), tooth disease (https://disease-ontology.org/?id=DOID:1091),
-      or upper respiratory tract disease (https://disease-ontology.org/?id=DOID:974).
-    range: string
-    examples:
-    - value: ''
-    comments:
-    - 'Expected value: disorder name'
-    - 'Occurrence: m'
-    - 'Position: 1.0'
-    - 'This field is used uniquely in: human-oral'
-    pattern: '{text}'
-    slot_uri: MIXS:0000283
   time_last_toothbrush:
-    is_a: environment field
+    is_a: core field
     aliases:
     - time since last toothbrushing
     description: Specification of the time since last toothbrushing
@@ -5610,7 +5654,7 @@ slots:
     pattern: '{duration}'
     slot_uri: MIXS:0000924
   dermatology_disord:
-    is_a: environment field
+    is_a: core field
     aliases:
     - dermatology disorder
     description: History of dermatology disorders; can include multiple disorders.
@@ -5627,7 +5671,7 @@ slots:
     pattern: '{text}'
     slot_uri: MIXS:0000284
   time_since_last_wash:
-    is_a: environment field
+    is_a: core field
     aliases:
     - time since last wash
     description: Specification of the time since last wash
@@ -5642,7 +5686,7 @@ slots:
     pattern: '{duration}'
     slot_uri: MIXS:0000943
   dominant_hand:
-    is_a: environment field
+    is_a: core field
     aliases:
     - dominant hand
     description: Dominant hand of the subject
@@ -5657,7 +5701,7 @@ slots:
     pattern: '[left|right|ambidextrous]'
     slot_uri: MIXS:0000944
   menarche:
-    is_a: environment field
+    is_a: core field
     aliases:
     - menarche
     description: Date of most recent menstruation
@@ -5671,7 +5715,7 @@ slots:
     - 'This field is used uniquely in: human-vaginal'
     slot_uri: MIXS:0000965
   sexual_act:
-    is_a: environment field
+    is_a: core field
     aliases:
     - sexual activity
     description: Current sexual partner and frequency of sex
@@ -5686,7 +5730,7 @@ slots:
     pattern: '{text}'
     slot_uri: MIXS:0000285
   pregnancy:
-    is_a: environment field
+    is_a: core field
     aliases:
     - pregnancy
     description: Date due of pregnancy
@@ -5700,7 +5744,7 @@ slots:
     - 'This field is used uniquely in: human-vaginal'
     slot_uri: MIXS:0000966
   douche:
-    is_a: environment field
+    is_a: core field
     aliases:
     - douche
     description: Date of most recent douche
@@ -5714,7 +5758,7 @@ slots:
     - 'This field is used uniquely in: human-vaginal'
     slot_uri: MIXS:0000967
   birth_control:
-    is_a: environment field
+    is_a: core field
     aliases:
     - birth control
     description: Specification of birth control medication used
@@ -5729,7 +5773,7 @@ slots:
     pattern: '{text}'
     slot_uri: MIXS:0000286
   menopause:
-    is_a: environment field
+    is_a: core field
     aliases:
     - menopause
     description: Date of onset of menopause
@@ -5743,7 +5787,7 @@ slots:
     - 'This field is used uniquely in: human-vaginal'
     slot_uri: MIXS:0000968
   hrt:
-    is_a: environment field
+    is_a: core field
     aliases:
     - HRT
     description: Whether subject had hormone replacement theraphy, and if yes start
@@ -5758,7 +5802,7 @@ slots:
     - 'This field is used uniquely in: human-vaginal'
     slot_uri: MIXS:0000969
   hysterectomy:
-    is_a: environment field
+    is_a: core field
     aliases:
     - hysterectomy
     description: Specification of whether hysterectomy was performed
@@ -5773,7 +5817,7 @@ slots:
     pattern: '{boolean}'
     slot_uri: MIXS:0000287
   gynecologic_disord:
-    is_a: environment field
+    is_a: core field
     aliases:
     - gynecological disorder
     description: History of gynecological disorders; can include multiple disorders.
@@ -5790,7 +5834,7 @@ slots:
     pattern: '{text}'
     slot_uri: MIXS:0000288
   urogenit_disord:
-    is_a: environment field
+    is_a: core field
     aliases:
     - urogenital disorder
     description: History of urogenital disorders, can include multiple disorders.
@@ -5808,7 +5852,7 @@ slots:
     pattern: '{text}'
     slot_uri: MIXS:0000289
   hcr:
-    is_a: environment field
+    is_a: core field
     aliases:
     - hydrocarbon resource type
     description: Main Hydrocarbon Resource type. The term "Hydrocarbon Resource" HCR
@@ -5831,7 +5875,7 @@ slots:
       Gas Reservoir|other]'
     slot_uri: MIXS:0000988
   hc_produced:
-    is_a: environment field
+    is_a: core field
     aliases:
     - hydrocarbon type produced
     description: Main hydrocarbon type produced from resource (i.e. Oil, gas, condensate,
@@ -5848,7 +5892,7 @@ slots:
     pattern: '[Oil|Gas-Condensate|Gas|Bitumen|Coalbed Methane|other]'
     slot_uri: MIXS:0000989
   basin:
-    is_a: environment field
+    is_a: core field
     aliases:
     - basin name
     description: Name of the basin (e.g. Campos)
@@ -5864,7 +5908,7 @@ slots:
     pattern: '{text}'
     slot_uri: MIXS:0000290
   field:
-    is_a: environment field
+    is_a: core field
     aliases:
     - field name
     description: Name of the hydrocarbon field (e.g. Albacora)
@@ -5880,7 +5924,7 @@ slots:
     pattern: '{text}'
     slot_uri: MIXS:0000291
   reservoir:
-    is_a: environment field
+    is_a: core field
     aliases:
     - reservoir name
     description: Name of the reservoir (e.g. Carapebus)
@@ -5896,7 +5940,7 @@ slots:
     pattern: '{text}'
     slot_uri: MIXS:0000303
   hcr_temp:
-    is_a: environment field
+    is_a: core field
     aliases:
     - hydrocarbon resource original temperature
     description: Original temperature of the hydrocarbon resource
@@ -5913,7 +5957,7 @@ slots:
     pattern: '{float} - {float} {unit}'
     slot_uri: MIXS:0000393
   tvdss_of_hcr_temp:
-    is_a: environment field
+    is_a: core field
     aliases:
     - depth (TVDSS) of hydrocarbon resource temperature
     description: True vertical depth subsea (TVDSS) of the hydrocarbon resource where
@@ -5930,7 +5974,7 @@ slots:
       resources-fluids_swabs'
     slot_uri: MIXS:0000394
   hcr_pressure:
-    is_a: environment field
+    is_a: core field
     aliases:
     - hydrocarbon resource original pressure
     description: Original pressure of the hydrocarbon resource
@@ -5946,8 +5990,8 @@ slots:
       resources-fluids_swabs'
     pattern: '{float} - {float} {unit}'
     slot_uri: MIXS:0000395
-  tvdss_of_hcr_pressure:
-    is_a: environment field
+  tvdss_of_hcr_press:
+    is_a: core field
     aliases:
     - depth (TVDSS) of hydrocarbon resource pressure
     description: True vertical depth subsea (TVDSS) of the hydrocarbon resource where
@@ -5964,7 +6008,7 @@ slots:
       resources-fluids_swabs'
     slot_uri: MIXS:0000397
   permeability:
-    is_a: environment field
+    is_a: core field
     aliases:
     - permeability
     description: 'Measure of the ability of a hydrocarbon resource to allow fluids
@@ -5979,9 +6023,9 @@ slots:
     - 'Position: 10.0'
     - 'This field is used uniquely in: hydrocarbon resources-cores'
     pattern: '{integer} - {integer} {unit}'
-    slot_uri: MIXS:0000404
+    slot_uri: MIXS:TODO1234
   porosity:
-    is_a: environment field
+    is_a: core field
     aliases:
     - porosity
     description: Porosity of deposited sediment is volume of voids divided by the
@@ -5998,7 +6042,7 @@ slots:
     pattern: '{float} - {float} {unit}'
     slot_uri: MIXS:0000211
   lithology:
-    is_a: environment field
+    is_a: core field
     aliases:
     - lithology
     description: 'Hydrocarbon resource main lithology (Additional information: http://petrowiki.org/Lithology_and_rock_type_determination).
@@ -6015,7 +6059,7 @@ slots:
     pattern: '[Basement|Chalk|Chert|Coal|Conglomerate|Diatomite|Dolomite|Limestone|Sandstone|Shale|Siltstone|Volcanic|other]'
     slot_uri: MIXS:0000990
   depos_env:
-    is_a: environment field
+    is_a: core field
     aliases:
     - depositional environment
     description: Main depositional environment (https://en.wikipedia.org/wiki/Depositional_environment).
@@ -6035,7 +6079,7 @@ slots:
       - Evaporite|Other - Glacial|Other - Volcanic|other]'
     slot_uri: MIXS:0000992
   hcr_geol_age:
-    is_a: environment field
+    is_a: core field
     aliases:
     - hydrocarbon resource geological age
     description: 'Geological age of hydrocarbon resource (Additional info: https://en.wikipedia.org/wiki/Period_(geology)).
@@ -6052,7 +6096,7 @@ slots:
     pattern: '[Archean|Cambrian|Carboniferous|Cenozoic|Cretaceous|Devonian|Jurassic|Mesozoic|Neogene|Ordovician|Paleogene|Paleozoic|Permian|Precambrian|Proterozoic|Silurian|Triassic|other]'
     slot_uri: MIXS:0000993
   owc_tvdss:
-    is_a: environment field
+    is_a: core field
     aliases:
     - oil water contact depth
     description: Depth of the original oil water contact (OWC) zone (average) (m TVDSS)
@@ -6067,7 +6111,7 @@ slots:
     - 'This field is used uniquely in: hydrocarbon resources-cores'
     slot_uri: MIXS:0000405
   hcr_fw_salinity:
-    is_a: environment field
+    is_a: core field
     aliases:
     - formation water salinity
     description: Original formation water salinity (prior to secondary recovery e.g.
@@ -6084,7 +6128,7 @@ slots:
       resources-fluids_swabs'
     slot_uri: MIXS:0000406
   sulfate_fw:
-    is_a: environment field
+    is_a: core field
     aliases:
     - sulfate in formation water
     description: Original sulfate concentration in the hydrocarbon resource
@@ -6100,7 +6144,7 @@ slots:
       resources-fluids_swabs'
     slot_uri: MIXS:0000407
   vfa_fw:
-    is_a: environment field
+    is_a: core field
     aliases:
     - vfa in formation water
     description: Original volatile fatty acid concentration in the hydrocarbon resource
@@ -6116,7 +6160,7 @@ slots:
       resources-fluids_swabs'
     slot_uri: MIXS:0000408
   sr_kerog_type:
-    is_a: environment field
+    is_a: core field
     aliases:
     - source rock kerogen type
     description: 'Origin of kerogen. Type I: Algal (aquatic), Type II: planktonic
@@ -6135,7 +6179,7 @@ slots:
     pattern: '[Type I|Type II|Type III|Type IV|other]'
     slot_uri: MIXS:0000994
   sr_lithology:
-    is_a: environment field
+    is_a: core field
     aliases:
     - source rock lithology
     description: Lithology of source rock (https://en.wikipedia.org/wiki/Source_rock).
@@ -6151,7 +6195,7 @@ slots:
     pattern: '[Clastic|Carbonate|Coal|Biosilicieous|other]'
     slot_uri: MIXS:0000995
   sr_dep_env:
-    is_a: environment field
+    is_a: core field
     aliases:
     - source rock depositional environment
     description: Source rock depositional environment (https://en.wikipedia.org/wiki/Source_rock).
@@ -6167,7 +6211,7 @@ slots:
     pattern: '[Lacustine|Fluvioldeltaic|Fluviomarine|Marine|other]'
     slot_uri: MIXS:0000996
   sr_geol_age:
-    is_a: environment field
+    is_a: core field
     aliases:
     - source rock geological age
     description: 'Geological age of source rock (Additional info: https://en.wikipedia.org/wiki/Period_(geology)).
@@ -6183,7 +6227,7 @@ slots:
     pattern: '[Archean|Cambrian|Carboniferous|Cenozoic|Cretaceous|Devonian|Jurassic|Mesozoic|Neogene|Ordovician|Paleogene|Paleozoic|Permian|Precambrian|Proterozoic|Silurian|Triassic|other]'
     slot_uri: MIXS:0000997
   samp_well_name:
-    is_a: environment field
+    is_a: core field
     aliases:
     - sample well name
     description: Name of the well (e.g. BXA1123) where sample was taken
@@ -6199,7 +6243,7 @@ slots:
     pattern: '{text}'
     slot_uri: MIXS:0000296
   win:
-    is_a: environment field
+    is_a: core field
     aliases:
     - well identification number
     description: 'A unique identifier of a well or wellbore. This is part of the Global
@@ -6218,13 +6262,15 @@ slots:
     pattern: '{text}'
     slot_uri: MIXS:0000297
   samp_type:
-    is_a: environment field
+    is_a: core field
     aliases:
     - sample type
-    description: Type of material (i.e. sample) collected. Includes types like core,
-      rock trimmings, drill cuttings, piping section, coupon, pigging debris, solid
-      deposit, produced fluid, produced water, injected water, swabs, etc. If "other"
-      is specified, please propose entry in "additional info" field
+    description: The type of material from which the sample was obtained. For the
+      Hydrocarbon package, samples include types like core, rock trimmings, drill
+      cuttings, piping section, coupon, pigging debris, solid deposit, produced fluid,
+      produced water, injected water, swabs, etc. For the Food Package, samples are
+      usually categorized as food, body products or tissues, or environmental material.
+      This field accepts terms listed under environmental specimen (http://purl.obolibrary.org/obo/GENEPIO_0001246).
     range: samp_type_enum
     examples:
     - value: solid deposit
@@ -6239,7 +6285,7 @@ slots:
       water|sea water|drilling fluid|procedural blank|positive control|negative control|other]'
     slot_uri: MIXS:0000998
   samp_subtype:
-    is_a: environment field
+    is_a: core field
     aliases:
     - sample subtype
     description: Name of sample sub-type. For example if "sample type" is "Produced
@@ -6257,7 +6303,7 @@ slots:
     pattern: '[oil phase|water phase|biofilm|not applicable|other]'
     slot_uri: MIXS:0000999
   pressure:
-    is_a: environment field
+    is_a: core field
     aliases:
     - pressure
     description: Pressure to which the sample is subject to, in atmospheres
@@ -6274,7 +6320,7 @@ slots:
       environment, sediment, water'
     slot_uri: MIXS:0000412
   samp_tvdss:
-    is_a: environment field
+    is_a: core field
     aliases:
     - sample true vertical depth subsea
     description: Depth of the sample i.e. The vertical distance between the sea level
@@ -6292,7 +6338,7 @@ slots:
     pattern: '{float}-{float} {unit}'
     slot_uri: MIXS:0000409
   samp_md:
-    is_a: environment field
+    is_a: core field
     aliases:
     - sample measured depth
     description: In non deviated well, measured depth is equal to the true vertical
@@ -6313,7 +6359,7 @@ slots:
     pattern: '{float} {unit};[GL|DF|RT|KB|MSL|other]'
     slot_uri: MIXS:0000413
   samp_transport_cond:
-    is_a: environment field
+    is_a: core field
     aliases:
     - sample transport conditions
     description: "Sample transport duration (in days or hrs) and temperature the sample\
@@ -6330,8 +6376,8 @@ slots:
       resources-fluids_swabs'
     pattern: '{float} {unit};{float} {unit}'
     slot_uri: MIXS:0000410
-  organism_count_qpcr_info:
-    is_a: environment field
+  org_count_qpcr_info:
+    is_a: core field
     aliases:
     - organism count qPCR information
     description: 'If qpcr was used for the cell count, the target gene name, the primer
@@ -6355,7 +6401,7 @@ slots:
       elongation:degrees_minutes; total cycles'
     slot_uri: MIXS:0000099
   ph:
-    is_a: environment field
+    is_a: core field
     aliases:
     - pH
     description: Ph measurement of the sample, or liquid portion of sample, or aqueous
@@ -6372,7 +6418,7 @@ slots:
       environment, sediment, soil, wastewater_sludge, water'
     slot_uri: MIXS:0001001
   alkalinity:
-    is_a: environment field
+    is_a: core field
     aliases:
     - alkalinity
     description: Alkalinity, the ability of a solution to neutralize acids to the
@@ -6390,7 +6436,7 @@ slots:
       environment, sediment, wastewater_sludge, water'
     slot_uri: MIXS:0000421
   alkalinity_method:
-    is_a: environment field
+    is_a: core field
     aliases:
     - alkalinity method
     description: Method used for alkalinity measurement
@@ -6406,7 +6452,7 @@ slots:
     pattern: '{text}'
     slot_uri: MIXS:0000298
   sulfate:
-    is_a: environment field
+    is_a: core field
     aliases:
     - sulfate
     description: Concentration of sulfate in the sample
@@ -6423,7 +6469,7 @@ slots:
       environment, sediment, water'
     slot_uri: MIXS:0000423
   sulfide:
-    is_a: environment field
+    is_a: core field
     aliases:
     - sulfide
     description: Concentration of sulfide in the sample
@@ -6440,7 +6486,7 @@ slots:
       environment, sediment, water'
     slot_uri: MIXS:0000424
   tot_sulfur:
-    is_a: environment field
+    is_a: core field
     aliases:
     - total sulfur
     description: Concentration of total sulfur in the sample
@@ -6456,7 +6502,7 @@ slots:
       resources-fluids_swabs'
     slot_uri: MIXS:0000419
   nitrate:
-    is_a: environment field
+    is_a: core field
     aliases:
     - nitrate
     description: Concentration of nitrate in the sample
@@ -6473,7 +6519,7 @@ slots:
       environment, sediment, wastewater_sludge, water'
     slot_uri: MIXS:0000425
   nitrite:
-    is_a: environment field
+    is_a: core field
     aliases:
     - nitrite
     description: Concentration of nitrite in the sample
@@ -6490,7 +6536,7 @@ slots:
       environment, sediment, water'
     slot_uri: MIXS:0000426
   ammonium:
-    is_a: environment field
+    is_a: core field
     aliases:
     - ammonium
     description: Concentration of ammonium in the sample
@@ -6507,7 +6553,7 @@ slots:
       environment, sediment, water'
     slot_uri: MIXS:0000427
   tot_nitro:
-    is_a: environment field
+    is_a: core field
     aliases:
     - total nitrogen concentration
     description: 'Total nitrogen concentration of water samples, calculated by: total
@@ -6525,7 +6571,7 @@ slots:
       resources-fluids_swabs, wastewater_sludge, water'
     slot_uri: MIXS:0000102
   diss_iron:
-    is_a: environment field
+    is_a: core field
     aliases:
     - dissolved iron
     description: Concentration of dissolved iron in the sample
@@ -6541,7 +6587,7 @@ slots:
       resources-fluids_swabs'
     slot_uri: MIXS:0000139
   sodium:
-    is_a: environment field
+    is_a: core field
     aliases:
     - sodium
     description: Sodium concentration in the sample
@@ -6558,7 +6604,7 @@ slots:
       environment, sediment, wastewater_sludge, water'
     slot_uri: MIXS:0000428
   chloride:
-    is_a: environment field
+    is_a: core field
     aliases:
     - chloride
     description: Concentration of chloride in the sample
@@ -6575,7 +6621,7 @@ slots:
       environment, sediment, water'
     slot_uri: MIXS:0000429
   potassium:
-    is_a: environment field
+    is_a: core field
     aliases:
     - potassium
     description: Concentration of potassium in the sample
@@ -6592,7 +6638,7 @@ slots:
       environment, sediment, water'
     slot_uri: MIXS:0000430
   magnesium:
-    is_a: environment field
+    is_a: core field
     aliases:
     - magnesium
     description: Concentration of magnesium in the sample
@@ -6609,7 +6655,7 @@ slots:
       resources-fluids_swabs, microbial mat_biofilm, sediment, water'
     slot_uri: MIXS:0000431
   calcium:
-    is_a: environment field
+    is_a: core field
     aliases:
     - calcium
     description: Concentration of calcium in the sample
@@ -6626,7 +6672,7 @@ slots:
       environment, sediment, water'
     slot_uri: MIXS:0000432
   tot_iron:
-    is_a: environment field
+    is_a: core field
     aliases:
     - total iron
     description: Concentration of total iron in the sample
@@ -6642,7 +6688,7 @@ slots:
       resources-fluids_swabs'
     slot_uri: MIXS:0000105
   diss_org_carb:
-    is_a: environment field
+    is_a: core field
     aliases:
     - dissolved organic carbon
     description: Concentration of dissolved organic carbon in the sample, liquid portion
@@ -6659,7 +6705,7 @@ slots:
       resources-fluids_swabs, microbial mat_biofilm, sediment, water'
     slot_uri: MIXS:0000433
   diss_inorg_carb:
-    is_a: environment field
+    is_a: core field
     aliases:
     - dissolved inorganic carbon
     description: Dissolved inorganic carbon concentration in the sample, typically
@@ -6677,7 +6723,7 @@ slots:
       environment, sediment, water'
     slot_uri: MIXS:0000434
   diss_inorg_phosp:
-    is_a: environment field
+    is_a: core field
     aliases:
     - dissolved inorganic phosphorus
     description: Concentration of dissolved inorganic phosphorus in the sample
@@ -6693,7 +6739,7 @@ slots:
       resources-fluids_swabs, water'
     slot_uri: MIXS:0000106
   tot_phosp:
-    is_a: environment field
+    is_a: core field
     aliases:
     - total phosphorus
     description: 'Total phosphorus concentration in the sample, calculated by: total
@@ -6710,7 +6756,7 @@ slots:
       resources-fluids_swabs, water'
     slot_uri: MIXS:0000117
   suspend_solids:
-    is_a: environment field
+    is_a: core field
     aliases:
     - suspended solids
     description: Concentration of substances including a wide variety of material,
@@ -6729,7 +6775,7 @@ slots:
     pattern: '{text};{float} {unit}'
     slot_uri: MIXS:0000150
   density:
-    is_a: environment field
+    is_a: core field
     aliases:
     - density
     description: Density of the sample, which is its mass per unit volume (aka volumetric
@@ -6747,7 +6793,7 @@ slots:
       water'
     slot_uri: MIXS:0000435
   diss_carb_dioxide:
-    is_a: environment field
+    is_a: core field
     aliases:
     - dissolved carbon dioxide
     description: Concentration of dissolved carbon dioxide in the sample or liquid
@@ -6765,7 +6811,7 @@ slots:
       environment, sediment, water'
     slot_uri: MIXS:0000436
   diss_oxygen_fluid:
-    is_a: environment field
+    is_a: core field
     aliases:
     - dissolved oxygen in fluids
     description: Concentration of dissolved oxygen in the oil field produced fluids
@@ -6782,7 +6828,7 @@ slots:
       resources-fluids_swabs'
     slot_uri: MIXS:0000438
   vfa:
-    is_a: environment field
+    is_a: core field
     aliases:
     - volatile fatty acids
     description: Concentration of Volatile Fatty Acids in the sample
@@ -6798,7 +6844,7 @@ slots:
       resources-fluids_swabs'
     slot_uri: MIXS:0000152
   benzene:
-    is_a: environment field
+    is_a: core field
     aliases:
     - benzene
     description: Concentration of benzene in the sample
@@ -6814,7 +6860,7 @@ slots:
       resources-fluids_swabs'
     slot_uri: MIXS:0000153
   toluene:
-    is_a: environment field
+    is_a: core field
     aliases:
     - toluene
     description: Concentration of toluene in the sample
@@ -6830,7 +6876,7 @@ slots:
       resources-fluids_swabs'
     slot_uri: MIXS:0000154
   ethylbenzene:
-    is_a: environment field
+    is_a: core field
     aliases:
     - ethylbenzene
     description: Concentration of ethylbenzene in the sample
@@ -6846,7 +6892,7 @@ slots:
       resources-fluids_swabs'
     slot_uri: MIXS:0000155
   xylene:
-    is_a: environment field
+    is_a: core field
     aliases:
     - xylene
     description: Concentration of xylene in the sample
@@ -6862,7 +6908,7 @@ slots:
       resources-fluids_swabs'
     slot_uri: MIXS:0000156
   api:
-    is_a: environment field
+    is_a: core field
     aliases:
     - API gravity
     description: "API gravity is a measure of how heavy or light a petroleum liquid\
@@ -6880,7 +6926,7 @@ slots:
       resources-fluids_swabs'
     slot_uri: MIXS:0000157
   tan:
-    is_a: environment field
+    is_a: core field
     aliases:
     - total acid number
     description: "Total Acid Number\xAC\u2020(TAN) is a measurement of acidity that\
@@ -6899,7 +6945,7 @@ slots:
       resources-fluids_swabs'
     slot_uri: MIXS:0000120
   viscosity:
-    is_a: environment field
+    is_a: core field
     aliases:
     - viscosity
     description: "A measure of oil's resistance\xAC\u2020to gradual deformation by\xAC\
@@ -6918,7 +6964,7 @@ slots:
     pattern: '{float} {unit};{float} {unit}'
     slot_uri: MIXS:0000126
   pour_point:
-    is_a: environment field
+    is_a: core field
     aliases:
     - pour point
     description: "Temperature at which a liquid becomes semi solid and loses its flow\
@@ -6937,7 +6983,7 @@ slots:
       resources-fluids_swabs'
     slot_uri: MIXS:0000127
   saturates_pc:
-    is_a: environment field
+    is_a: core field
     aliases:
     - saturates wt%
     description: "Saturate, Aromatic, Resin and Asphaltene\xAC\u2020(SARA) is an analysis\
@@ -6958,7 +7004,7 @@ slots:
     pattern: '{text};{float} {unit}'
     slot_uri: MIXS:0000131
   aromatics_pc:
-    is_a: environment field
+    is_a: core field
     aliases:
     - aromatics wt%
     description: "Saturate, Aromatic, Resin and Asphaltene\xAC\u2020(SARA) is an analysis\
@@ -6979,7 +7025,7 @@ slots:
     pattern: '{text};{float} {unit}'
     slot_uri: MIXS:0000133
   resins_pc:
-    is_a: environment field
+    is_a: core field
     aliases:
     - resins wt%
     description: "Saturate, Aromatic, Resin and Asphaltene\xAC\u2020(SARA) is an analysis\
@@ -7000,7 +7046,7 @@ slots:
     pattern: '{text};{float} {unit}'
     slot_uri: MIXS:0000134
   asphaltenes_pc:
-    is_a: environment field
+    is_a: core field
     aliases:
     - asphaltenes wt%
     description: "Saturate, Aromatic, Resin and Asphaltene\xAC\u2020(SARA) is an analysis\
@@ -7021,7 +7067,7 @@ slots:
     pattern: '{text};{float} {unit}'
     slot_uri: MIXS:0000135
   additional_info:
-    is_a: environment field
+    is_a: core field
     aliases:
     - additional info
     description: Information that doesn't fit anywhere else. Can also be used to propose
@@ -7038,7 +7084,7 @@ slots:
     pattern: '{text}'
     slot_uri: MIXS:0000300
   prod_start_date:
-    is_a: environment field
+    is_a: core field
     aliases:
     - production start date
     description: Date of field's first production
@@ -7052,7 +7098,7 @@ slots:
     - 'This field is used uniquely in: hydrocarbon resources-fluids_swabs'
     slot_uri: MIXS:0001008
   prod_rate:
-    is_a: environment field
+    is_a: core field
     aliases:
     - production rate
     description: Oil and/or gas production rates per well (e.g. 524 m3 / day)
@@ -7066,8 +7112,8 @@ slots:
     - 'Position: 24.0'
     - 'This field is used uniquely in: hydrocarbon resources-fluids_swabs'
     slot_uri: MIXS:0000452
-  water_production_rate:
-    is_a: environment field
+  water_prod_rate:
+    is_a: core field
     aliases:
     - water production rate
     description: Water production rates per well (e.g. 987 m3 / day)
@@ -7082,7 +7128,7 @@ slots:
     - 'This field is used uniquely in: hydrocarbon resources-fluids_swabs'
     slot_uri: MIXS:0000453
   water_cut:
-    is_a: environment field
+    is_a: core field
     aliases:
     - water cut
     description: Current amount of water (%) in a produced fluid stream; or the average
@@ -7098,7 +7144,7 @@ slots:
     - 'This field is used uniquely in: hydrocarbon resources-fluids_swabs'
     slot_uri: MIXS:0000454
   iwf:
-    is_a: environment field
+    is_a: core field
     aliases:
     - injection water fraction
     description: Proportion of the produced fluids derived from injected water at
@@ -7114,7 +7160,7 @@ slots:
     - 'This field is used uniquely in: hydrocarbon resources-fluids_swabs'
     slot_uri: MIXS:0000455
   add_recov_method:
-    is_a: environment field
+    is_a: core field
     aliases:
     - secondary and tertiary recovery methods and start date
     description: Additional (i.e. Secondary, tertiary, etc.) recovery methods deployed
@@ -7133,7 +7179,7 @@ slots:
       Addition|Surfactant Addition|Not Applicable|other];{timestamp}'
     slot_uri: MIXS:0001009
   iw_bt_date_well:
-    is_a: environment field
+    is_a: core field
     aliases:
     - injection water breakthrough date of specific well
     description: Injection water breakthrough date per well following a secondary
@@ -7148,7 +7194,7 @@ slots:
     - 'This field is used uniquely in: hydrocarbon resources-fluids_swabs'
     slot_uri: MIXS:0001010
   biocide:
-    is_a: environment field
+    is_a: core field
     aliases:
     - biocide administration
     description: List of biocides (commercial name of product and supplier) and date
@@ -7164,7 +7210,7 @@ slots:
     pattern: '{text};{text};{timestamp}'
     slot_uri: MIXS:0001011
   biocide_admin_method:
-    is_a: environment field
+    is_a: core field
     aliases:
     - biocide administration method
     description: Method of biocide administration (dose, frequency, duration, time
@@ -7182,7 +7228,7 @@ slots:
     pattern: '{float} {unit};{Rn/start_time/end_time/duration};{duration}'
     slot_uri: MIXS:0000456
   chem_treatment:
-    is_a: environment field
+    is_a: core field
     aliases:
     - chemical treatment
     description: List of chemical compounds administered upstream the sampling location
@@ -7200,8 +7246,8 @@ slots:
     - 'This field is used uniquely in: hydrocarbon resources-fluids_swabs'
     pattern: '{text};{text};{timestamp}'
     slot_uri: MIXS:0001012
-  chem_treatment_method:
-    is_a: environment field
+  chem_treat_method:
+    is_a: core field
     aliases:
     - chemical treatment method
     description: Method of chemical administration(dose, frequency, duration, time
@@ -7219,7 +7265,7 @@ slots:
     pattern: '{float} {unit};{Rn/start_time/end_time/duration};{duration};{duration}'
     slot_uri: MIXS:0000457
   samp_loc_corr_rate:
-    is_a: environment field
+    is_a: core field
     aliases:
     - corrosion rate at sample location
     description: Metal corrosion rate is the speed of metal deterioration due to environmental
@@ -7240,14 +7286,14 @@ slots:
     - 'This field is used uniquely in: hydrocarbon resources-fluids_swabs'
     pattern: '{float} - {float} {unit}'
     slot_uri: MIXS:0000136
-  samp_collection_point:
-    is_a: environment field
+  samp_collect_point:
+    is_a: core field
     aliases:
     - sample collection point
     description: Sampling point on the asset were sample was collected (e.g. Wellhead,
       storage tank, separator, etc). If "other" is specified, please propose entry
       in "additional info" field
-    range: samp_collection_point_enum
+    range: samp_collect_point_enum
     examples:
     - value: well
     comments:
@@ -7258,7 +7304,7 @@ slots:
     pattern: '[well|test well|drilling rig|wellhead|separator|storage tank|other]'
     slot_uri: MIXS:0001015
   samp_preserv:
-    is_a: environment field
+    is_a: core field
     aliases:
     - preservative added to sample
     description: Preservative added to the sample (e.g. Rnalater, alcohol, formaldehyde,
@@ -7275,7 +7321,7 @@ slots:
     pattern: '{text};{float} {unit}'
     slot_uri: MIXS:0000463
   alkyl_diethers:
-    is_a: environment field
+    is_a: core field
     aliases:
     - alkyl diethers
     description: Concentration of alkyl diethers
@@ -7290,7 +7336,7 @@ slots:
     - 'This field is used in: 3 packages: microbial mat_biofilm, sediment, water'
     slot_uri: MIXS:0000490
   aminopept_act:
-    is_a: environment field
+    is_a: core field
     aliases:
     - aminopeptidase activity
     description: Measurement of aminopeptidase activity
@@ -7305,7 +7351,7 @@ slots:
     - 'This field is used in: 3 packages: microbial mat_biofilm, sediment, water'
     slot_uri: MIXS:0000172
   bacteria_carb_prod:
-    is_a: environment field
+    is_a: core field
     aliases:
     - bacterial carbon production
     description: Measurement of bacterial carbon production
@@ -7320,7 +7366,7 @@ slots:
     - 'This field is used in: 3 packages: microbial mat_biofilm, sediment, water'
     slot_uri: MIXS:0000173
   biomass:
-    is_a: environment field
+    is_a: core field
     aliases:
     - biomass
     description: Amount of biomass; should include the name for the part of biomass
@@ -7338,7 +7384,7 @@ slots:
     pattern: '{text};{float} {unit}'
     slot_uri: MIXS:0000174
   bishomohopanol:
-    is_a: environment field
+    is_a: core field
     aliases:
     - bishomohopanol
     description: Concentration of bishomohopanol
@@ -7353,7 +7399,7 @@ slots:
     - 'This field is used in: 3 packages: microbial mat_biofilm, sediment, water'
     slot_uri: MIXS:0000175
   bromide:
-    is_a: environment field
+    is_a: core field
     aliases:
     - bromide
     description: Concentration of bromide
@@ -7369,7 +7415,7 @@ slots:
       or artificial environment, sediment, water'
     slot_uri: MIXS:0000176
   carb_nitro_ratio:
-    is_a: environment field
+    is_a: core field
     aliases:
     - carbon/nitrogen ratio
     description: Ratio of amount or concentrations of carbon to nitrogen
@@ -7383,7 +7429,7 @@ slots:
     - 'This field is used in: 3 packages: microbial mat_biofilm, sediment, water'
     slot_uri: MIXS:0000310
   chlorophyll:
-    is_a: environment field
+    is_a: core field
     aliases:
     - chlorophyll
     description: Concentration of chlorophyll
@@ -7399,7 +7445,7 @@ slots:
       or artificial environment, sediment, water'
     slot_uri: MIXS:0000177
   diether_lipids:
-    is_a: environment field
+    is_a: core field
     aliases:
     - diether lipids
     description: Concentration of diether lipids; can include multiple types of diether
@@ -7417,7 +7463,7 @@ slots:
     pattern: '{text};{float} {unit}'
     slot_uri: MIXS:0000178
   diss_hydrogen:
-    is_a: environment field
+    is_a: core field
     aliases:
     - dissolved hydrogen
     description: Concentration of dissolved hydrogen
@@ -7433,7 +7479,7 @@ slots:
       or artificial environment, sediment, water'
     slot_uri: MIXS:0000179
   diss_org_nitro:
-    is_a: environment field
+    is_a: core field
     aliases:
     - dissolved organic nitrogen
     description: Dissolved organic nitrogen concentration measured as; total dissolved
@@ -7450,7 +7496,7 @@ slots:
       or artificial environment, sediment, water'
     slot_uri: MIXS:0000162
   diss_oxygen:
-    is_a: environment field
+    is_a: core field
     aliases:
     - dissolved oxygen
     description: Concentration of dissolved oxygen
@@ -7466,7 +7512,7 @@ slots:
       or artificial environment, sediment, water'
     slot_uri: MIXS:0000119
   glucosidase_act:
-    is_a: environment field
+    is_a: core field
     aliases:
     - glucosidase activity
     description: Measurement of glucosidase activity
@@ -7481,7 +7527,7 @@ slots:
     - 'This field is used in: 3 packages: microbial mat_biofilm, sediment, water'
     slot_uri: MIXS:0000137
   mean_frict_vel:
-    is_a: environment field
+    is_a: core field
     aliases:
     - mean friction velocity
     description: Measurement of mean friction velocity
@@ -7496,7 +7542,7 @@ slots:
     - 'This field is used in: 3 packages: microbial mat_biofilm, sediment, water'
     slot_uri: MIXS:0000498
   mean_peak_frict_vel:
-    is_a: environment field
+    is_a: core field
     aliases:
     - mean peak friction velocity
     description: Measurement of mean peak friction velocity
@@ -7511,7 +7557,7 @@ slots:
     - 'This field is used in: 3 packages: microbial mat_biofilm, sediment, water'
     slot_uri: MIXS:0000502
   n_alkanes:
-    is_a: environment field
+    is_a: core field
     aliases:
     - n-alkanes
     description: Concentration of n-alkanes; can include multiple n-alkanes
@@ -7527,7 +7573,7 @@ slots:
     pattern: '{text};{float} {unit}'
     slot_uri: MIXS:0000503
   nitro:
-    is_a: environment field
+    is_a: core field
     aliases:
     - nitrogen
     description: Concentration of nitrogen (total)
@@ -7543,7 +7589,7 @@ slots:
       or artificial environment, sediment, water'
     slot_uri: MIXS:0000504
   org_carb:
-    is_a: environment field
+    is_a: core field
     aliases:
     - organic carbon
     description: Concentration of organic carbon
@@ -7559,7 +7605,7 @@ slots:
       or artificial environment, sediment, water'
     slot_uri: MIXS:0000508
   org_matter:
-    is_a: environment field
+    is_a: core field
     aliases:
     - organic matter
     description: Concentration of organic matter
@@ -7575,7 +7621,7 @@ slots:
       or artificial environment, sediment, water'
     slot_uri: MIXS:0000204
   org_nitro:
-    is_a: environment field
+    is_a: core field
     aliases:
     - organic nitrogen
     description: Concentration of organic nitrogen
@@ -7591,7 +7637,7 @@ slots:
       or artificial environment, sediment, water'
     slot_uri: MIXS:0000205
   part_org_carb:
-    is_a: environment field
+    is_a: core field
     aliases:
     - particulate organic carbon
     description: Concentration of particulate organic carbon
@@ -7606,7 +7652,7 @@ slots:
     - 'This field is used in: 3 packages: microbial mat_biofilm, sediment, water'
     slot_uri: MIXS:0000515
   petroleum_hydrocarb:
-    is_a: environment field
+    is_a: core field
     aliases:
     - petroleum hydrocarbon
     description: Concentration of petroleum hydrocarbon
@@ -7621,7 +7667,7 @@ slots:
     - 'This field is used in: 3 packages: microbial mat_biofilm, sediment, water'
     slot_uri: MIXS:0000516
   phaeopigments:
-    is_a: environment field
+    is_a: core field
     aliases:
     - phaeopigments
     description: Concentration of phaeopigments; can include multiple phaeopigments
@@ -7637,7 +7683,7 @@ slots:
     pattern: '{text};{float} {unit}'
     slot_uri: MIXS:0000180
   phosphate:
-    is_a: environment field
+    is_a: core field
     aliases:
     - phosphate
     description: Concentration of phosphate
@@ -7653,7 +7699,7 @@ slots:
       or artificial environment, sediment, wastewater_sludge, water'
     slot_uri: MIXS:0000505
   phosplipid_fatt_acid:
-    is_a: environment field
+    is_a: core field
     aliases:
     - phospholipid fatty acid
     description: Concentration of phospholipid fatty acids; can include multiple values
@@ -7670,7 +7716,7 @@ slots:
     pattern: '{text};{float} {unit}'
     slot_uri: MIXS:0000181
   redox_potential:
-    is_a: environment field
+    is_a: core field
     aliases:
     - redox potential
     description: Redox potential, measured relative to a hydrogen cell, indicating
@@ -7685,29 +7731,8 @@ slots:
     - 'Position: 1.0'
     - 'This field is used in: 3 packages: microbial mat_biofilm, sediment, water'
     slot_uri: MIXS:0000182
-  salinity:
-    is_a: environment field
-    aliases:
-    - salinity
-    description: Salinity is the total concentration of all dissolved salts in a water
-      sample. While salinity can be measured by a complete chemical analysis, this
-      method is difficult and time consuming. More often, it is instead derived from
-      the conductivity measurement. This is known as practical salinity. These derivations
-      compare the specific conductance of the sample to a salinity standard such as
-      seawater
-    range: quantity value
-    examples:
-    - value: 25 practical salinity unit
-    comments:
-    - 'Expected value: measurement value'
-    - 'Preferred unit: practical salinity unit, percentage'
-    - 'Occurrence: 1'
-    - 'Position: 1.0'
-    - 'This field is used in: 4 packages: microbial mat_biofilm, miscellaneous natural
-      or artificial environment, sediment, water'
-    slot_uri: MIXS:0000183
   silicate:
-    is_a: environment field
+    is_a: core field
     aliases:
     - silicate
     description: Concentration of silicate
@@ -7723,7 +7748,7 @@ slots:
       or artificial environment, sediment, water'
     slot_uri: MIXS:0000184
   tot_carb:
-    is_a: environment field
+    is_a: core field
     aliases:
     - total carbon
     description: Total carbon content
@@ -7738,7 +7763,7 @@ slots:
     - 'This field is used in: 2 packages: microbial mat_biofilm, sediment'
     slot_uri: MIXS:0000525
   tot_nitro_content:
-    is_a: environment field
+    is_a: core field
     aliases:
     - total nitrogen content
     description: Total nitrogen content of the sample
@@ -7753,7 +7778,7 @@ slots:
     - 'This field is used in: 3 packages: microbial mat_biofilm, sediment, soil'
     slot_uri: MIXS:0000530
   tot_org_carb:
-    is_a: environment field
+    is_a: core field
     aliases:
     - total organic carbon
     description: 'Definition for soil: total organic carbon content of the soil, definition
@@ -7769,7 +7794,7 @@ slots:
     - 'This field is used in: 3 packages: microbial mat_biofilm, sediment, soil'
     slot_uri: MIXS:0000533
   turbidity:
-    is_a: environment field
+    is_a: core field
     aliases:
     - turbidity
     description: Measure of the amount of cloudiness or haziness in water caused by
@@ -7785,7 +7810,7 @@ slots:
     - 'This field is used in: 3 packages: microbial mat_biofilm, sediment, water'
     slot_uri: MIXS:0000191
   water_content:
-    is_a: environment field
+    is_a: core field
     aliases:
     - water content
     description: Water content measurement
@@ -7800,7 +7825,7 @@ slots:
     - 'This field is used in: 3 packages: microbial mat_biofilm, sediment, soil'
     slot_uri: MIXS:0000185
   water_current:
-    is_a: environment field
+    is_a: core field
     aliases:
     - water current
     description: Measurement of magnitude and direction of flow within a fluid
@@ -7816,7 +7841,7 @@ slots:
       water'
     slot_uri: MIXS:0000203
   air_temp_regm:
-    is_a: environment field
+    is_a: core field
     aliases:
     - air temperature regimen
     description: Information about treatment involving an exposure to varying temperatures;
@@ -7828,14 +7853,14 @@ slots:
     - value: 25 degree Celsius;R2/2018-05-11T14:30/2018-05-11T19:30/P1H30M
     comments:
     - 'Expected value: temperature value;treatment interval and duration'
-    - 'Preferred unit: degree Celsius'
+    - 'Preferred unit: meter'
     - 'Occurrence: m'
     - 'Position: 1.0'
     - 'This field is used uniquely in: plant-associated'
     pattern: '{float} {unit};{Rn/start_time/end_time/duration}'
     slot_uri: MIXS:0000551
   antibiotic_regm:
-    is_a: environment field
+    is_a: core field
     aliases:
     - antibiotic regimen
     description: Information about treatment involving antibiotic administration;
@@ -7855,7 +7880,7 @@ slots:
     pattern: '{text};{float} {unit};{Rn/start_time/end_time/duration}'
     slot_uri: MIXS:0000553
   biotic_regm:
-    is_a: environment field
+    is_a: core field
     aliases:
     - biotic regimen
     description: Information about treatment(s) involving use of biotic factors, such
@@ -7871,7 +7896,7 @@ slots:
     pattern: '{text}'
     slot_uri: MIXS:0001038
   chem_mutagen:
-    is_a: environment field
+    is_a: core field
     aliases:
     - chemical mutagen
     description: Treatment involving use of mutagens; should include the name of mutagen,
@@ -7890,7 +7915,7 @@ slots:
     pattern: '{text};{float} {unit};{Rn/start_time/end_time/duration}'
     slot_uri: MIXS:0000555
   climate_environment:
-    is_a: environment field
+    is_a: core field
     aliases:
     - climate environment
     description: Treatment involving an exposure to a particular climate; treatment
@@ -7908,7 +7933,7 @@ slots:
     pattern: '{text};{Rn/start_time/end_time/duration}'
     slot_uri: MIXS:0001040
   cult_root_med:
-    is_a: environment field
+    is_a: core field
     aliases:
     - culture rooting medium
     description: Name or reference for the hydroponic or in vitro culture rooting
@@ -7926,7 +7951,7 @@ slots:
     pattern: '{text}|{PMID}|{DOI}|{URL}'
     slot_uri: MIXS:0001041
   fertilizer_regm:
-    is_a: environment field
+    is_a: core field
     aliases:
     - fertilizer regimen
     description: Information about treatment involving the use of fertilizers; should
@@ -7946,7 +7971,7 @@ slots:
     pattern: '{text};{float} {unit};{Rn/start_time/end_time/duration}'
     slot_uri: MIXS:0000556
   fungicide_regm:
-    is_a: environment field
+    is_a: core field
     aliases:
     - fungicide regimen
     description: Information about treatment involving use of fungicides; should include
@@ -7965,7 +7990,7 @@ slots:
     pattern: '{text};{float} {unit};{Rn/start_time/end_time/duration}'
     slot_uri: MIXS:0000557
   gaseous_environment:
-    is_a: environment field
+    is_a: core field
     aliases:
     - gaseous environment
     description: Use of conditions with differing gaseous environments; should include
@@ -7984,7 +8009,7 @@ slots:
     pattern: '{text};{float} {unit};{Rn/start_time/end_time/duration}'
     slot_uri: MIXS:0000558
   gravity:
-    is_a: environment field
+    is_a: core field
     aliases:
     - gravity
     description: Information about treatment involving use of gravity factor to study
@@ -8004,7 +8029,7 @@ slots:
     pattern: '{float} {unit};{Rn/start_time/end_time/duration}'
     slot_uri: MIXS:0000559
   growth_facil:
-    is_a: environment field
+    is_a: core field
     aliases:
     - growth facility
     description: 'Type of facility where the sampled plant was grown; controlled vocabulary:
@@ -8021,7 +8046,7 @@ slots:
     pattern: '{text}|{termLabel} {[termID]}'
     slot_uri: MIXS:0001043
   growth_habit:
-    is_a: environment field
+    is_a: core field
     aliases:
     - growth habit
     description: Characteristic shape, appearance or growth form of a plant species
@@ -8036,7 +8061,7 @@ slots:
     pattern: '[erect|semi-erect|spreading|prostrate]'
     slot_uri: MIXS:0001044
   growth_hormone_regm:
-    is_a: environment field
+    is_a: core field
     aliases:
     - growth hormone regimen
     description: Information about treatment involving use of growth hormones; should
@@ -8057,7 +8082,7 @@ slots:
     pattern: '{text};{float} {unit};{Rn/start_time/end_time/duration}'
     slot_uri: MIXS:0000560
   herbicide_regm:
-    is_a: environment field
+    is_a: core field
     aliases:
     - herbicide regimen
     description: Information about treatment involving use of herbicides; information
@@ -8077,7 +8102,7 @@ slots:
     pattern: '{text};{float} {unit};{Rn/start_time/end_time/duration}'
     slot_uri: MIXS:0000561
   host_wet_mass:
-    is_a: environment field
+    is_a: core field
     aliases:
     - host wet mass
     description: Measurement of wet mass
@@ -8092,7 +8117,7 @@ slots:
     - 'This field is used uniquely in: plant-associated'
     slot_uri: MIXS:0000567
   humidity_regm:
-    is_a: environment field
+    is_a: core field
     aliases:
     - humidity regimen
     description: Information about treatment involving an exposure to varying degree
@@ -8112,7 +8137,7 @@ slots:
     pattern: '{float} {unit};{Rn/start_time/end_time/duration}'
     slot_uri: MIXS:0000568
   light_regm:
-    is_a: environment field
+    is_a: core field
     aliases:
     - light regimen
     description: Information about treatment(s) involving exposure to light, including
@@ -8129,7 +8154,7 @@ slots:
     pattern: '{text};{float} {unit};{float} {unit}'
     slot_uri: MIXS:0000569
   mechanical_damage:
-    is_a: environment field
+    is_a: core field
     aliases:
     - mechanical damage
     description: Information about any mechanical damage exerted on the plant; can
@@ -8145,7 +8170,7 @@ slots:
     pattern: '{text};{text}'
     slot_uri: MIXS:0001052
   mineral_nutr_regm:
-    is_a: environment field
+    is_a: core field
     aliases:
     - mineral nutrient regimen
     description: Information about treatment involving the use of mineral supplements;
@@ -8165,8 +8190,8 @@ slots:
     - 'This field is used uniquely in: plant-associated'
     pattern: '{text};{float} {unit};{Rn/start_time/end_time/duration}'
     slot_uri: MIXS:0000570
-  non_mineral_nutr_regm:
-    is_a: environment field
+  non_min_nutr_regm:
+    is_a: core field
     aliases:
     - non-mineral nutrient regimen
     description: Information about treatment involving the exposure of plant to non-mineral
@@ -8187,7 +8212,7 @@ slots:
     pattern: '{text};{float} {unit};{Rn/start_time/end_time/duration}'
     slot_uri: MIXS:0000571
   ph_regm:
-    is_a: environment field
+    is_a: core field
     aliases:
     - pH regimen
     description: Information about treatment involving exposure of plants to varying
@@ -8205,7 +8230,7 @@ slots:
     pattern: '{float};{Rn/start_time/end_time/duration}'
     slot_uri: MIXS:0001056
   pesticide_regm:
-    is_a: environment field
+    is_a: core field
     aliases:
     - pesticide regimen
     description: Information about treatment involving use of insecticides; should
@@ -8225,7 +8250,7 @@ slots:
     pattern: '{text};{float} {unit};{Rn/start_time/end_time/duration}'
     slot_uri: MIXS:0000573
   plant_growth_med:
-    is_a: environment field
+    is_a: core field
     aliases:
     - plant growth medium
     description: Specification of the media for growing the plants or tissue cultured
@@ -8245,7 +8270,7 @@ slots:
       artificial solid medium|peat moss|perlite|pumice|sand|soil|vermiculite|water]'
     slot_uri: MIXS:0001057
   plant_product:
-    is_a: environment field
+    is_a: core field
     aliases:
     - plant product
     description: Substance produced by the plant, where the sample was obtained from
@@ -8260,7 +8285,7 @@ slots:
     pattern: '{text}'
     slot_uri: MIXS:0001058
   plant_sex:
-    is_a: environment field
+    is_a: core field
     aliases:
     - plant sex
     description: Sex of the reproductive parts on the whole plant, e.g. pistillate,
@@ -8276,7 +8301,7 @@ slots:
     pattern: '[Androdioecious|Androecious|Androgynous|Androgynomonoecious|Andromonoecious|Bisexual|Dichogamous|Diclinous|Dioecious|Gynodioecious|Gynoecious|Gynomonoecious|Hermaphroditic|Imperfect|Monoclinous|Monoecious|Perfect|Polygamodioecious|Polygamomonoecious|Polygamous|Protandrous|Protogynous|Subandroecious|Subdioecious|Subgynoecious|Synoecious|Trimonoecious|Trioecious|Unisexual]'
     slot_uri: MIXS:0001059
   plant_struc:
-    is_a: environment field
+    is_a: core field
     aliases:
     - plant structure
     description: Name of plant structure the sample was obtained from; for Plant Ontology
@@ -8294,7 +8319,7 @@ slots:
     pattern: '{termLabel} {[termID]}'
     slot_uri: MIXS:0001060
   radiation_regm:
-    is_a: environment field
+    is_a: core field
     aliases:
     - radiation regimen
     description: Information about treatment involving exposure of plant or a plant
@@ -8315,7 +8340,7 @@ slots:
     pattern: '{text};{float} {unit};{Rn/start_time/end_time/duration}'
     slot_uri: MIXS:0000575
   rainfall_regm:
-    is_a: environment field
+    is_a: core field
     aliases:
     - rainfall regimen
     description: Information about treatment involving an exposure to a given amount
@@ -8334,7 +8359,7 @@ slots:
     pattern: '{float} {unit};{Rn/start_time/end_time/duration}'
     slot_uri: MIXS:0000576
   root_cond:
-    is_a: environment field
+    is_a: core field
     aliases:
     - rooting conditions
     description: Relevant rooting conditions such as field plot size, sowing density,
@@ -8350,7 +8375,7 @@ slots:
     pattern: '{PMID}|{DOI}|{URL}|{text}'
     slot_uri: MIXS:0001061
   root_med_carbon:
-    is_a: environment field
+    is_a: core field
     aliases:
     - rooting medium carbon
     description: Source of organic carbon in the culture rooting medium; e.g. sucrose.
@@ -8366,7 +8391,7 @@ slots:
     pattern: '{text};{float} {unit}'
     slot_uri: MIXS:0000577
   root_med_macronutr:
-    is_a: environment field
+    is_a: core field
     aliases:
     - rooting medium macronutrients
     description: "Measurement of the culture rooting medium macronutrients (N,P, K,\
@@ -8383,7 +8408,7 @@ slots:
     pattern: '{text};{float} {unit}'
     slot_uri: MIXS:0000578
   root_med_micronutr:
-    is_a: environment field
+    is_a: core field
     aliases:
     - rooting medium micronutrients
     description: "Measurement of the culture rooting medium micronutrients (Fe, Mn,\
@@ -8400,7 +8425,7 @@ slots:
     pattern: '{text};{float} {unit}'
     slot_uri: MIXS:0000579
   root_med_suppl:
-    is_a: environment field
+    is_a: core field
     aliases:
     - rooting medium organic supplements
     description: "Organic supplements of the culture rooting medium, such as vitamins,\
@@ -8418,7 +8443,7 @@ slots:
     pattern: '{text};{float} {unit}'
     slot_uri: MIXS:0000580
   root_med_ph:
-    is_a: environment field
+    is_a: core field
     aliases:
     - rooting medium pH
     description: pH measurement of the culture rooting medium; e.g. 5.5.
@@ -8432,7 +8457,7 @@ slots:
     - 'This field is used uniquely in: plant-associated'
     slot_uri: MIXS:0001062
   root_med_regl:
-    is_a: environment field
+    is_a: core field
     aliases:
     - rooting medium regulators
     description: "Growth regulators in the culture rooting medium such as cytokinins,\
@@ -8449,7 +8474,7 @@ slots:
     pattern: '{text};{float} {unit}'
     slot_uri: MIXS:0000581
   root_med_solid:
-    is_a: environment field
+    is_a: core field
     aliases:
     - rooting medium solidifier
     description: Specification of the solidifying agent in the culture rooting medium;
@@ -8465,7 +8490,7 @@ slots:
     pattern: '{text}'
     slot_uri: MIXS:0001063
   salt_regm:
-    is_a: environment field
+    is_a: core field
     aliases:
     - salt regimen
     description: Information about treatment involving use of salts as supplement
@@ -8485,7 +8510,7 @@ slots:
     pattern: '{text};{float} {unit};{Rn/start_time/end_time/duration}'
     slot_uri: MIXS:0000582
   season_environment:
-    is_a: environment field
+    is_a: core field
     aliases:
     - seasonal environment
     description: Treatment involving an exposure to a particular season (e.g. Winter,
@@ -8503,7 +8528,7 @@ slots:
     pattern: '{text};{Rn/start_time/end_time/duration}'
     slot_uri: MIXS:0001068
   standing_water_regm:
-    is_a: environment field
+    is_a: core field
     aliases:
     - standing water regimen
     description: Treatment involving an exposure to standing water during a plant's
@@ -8521,7 +8546,7 @@ slots:
     pattern: '{text};{Rn/start_time/end_time/duration}'
     slot_uri: MIXS:0001069
   tiss_cult_growth_med:
-    is_a: environment field
+    is_a: core field
     aliases:
     - tissue culture growth media
     description: Description of plant tissue culture growth media used
@@ -8536,7 +8561,7 @@ slots:
     pattern: '{PMID}|{DOI}|{URL}|{text}'
     slot_uri: MIXS:0001070
   water_temp_regm:
-    is_a: environment field
+    is_a: core field
     aliases:
     - water temperature regimen
     description: Information about treatment involving an exposure to water with varying
@@ -8555,7 +8580,7 @@ slots:
     pattern: '{float} {unit};{Rn/start_time/end_time/duration}'
     slot_uri: MIXS:0000590
   watering_regm:
-    is_a: environment field
+    is_a: core field
     aliases:
     - watering regimen
     description: Information about treatment involving an exposure to watering frequencies,
@@ -8574,7 +8599,7 @@ slots:
     pattern: '{float} {unit};{Rn/start_time/end_time/duration}'
     slot_uri: MIXS:0000591
   particle_class:
-    is_a: environment field
+    is_a: core field
     aliases:
     - particle classification
     description: Particles are classified, based on their size, into six general categories:clay,
@@ -8592,7 +8617,7 @@ slots:
     pattern: '{text};{float} {unit}'
     slot_uri: MIXS:0000206
   sediment_type:
-    is_a: environment field
+    is_a: core field
     aliases:
     - sediment type
     description: Information about the sediment type based on major constituents
@@ -8607,7 +8632,7 @@ slots:
     pattern: '[biogenous|cosmogenous|hydrogenous|lithogenous]'
     slot_uri: MIXS:0001078
   tidal_stage:
-    is_a: environment field
+    is_a: core field
     aliases:
     - tidal stage
     description: Stage of tide
@@ -8622,7 +8647,7 @@ slots:
     pattern: '[low tide|ebb tide|flood tide|high tide]'
     slot_uri: MIXS:0000750
   tot_depth_water_col:
-    is_a: environment field
+    is_a: core field
     aliases:
     - total depth of water column
     description: Measurement of total depth of water column
@@ -8637,7 +8662,7 @@ slots:
     - 'This field is used in: 2 packages: sediment, water'
     slot_uri: MIXS:0000634
   cur_land_use:
-    is_a: environment field
+    is_a: core field
     aliases:
     - current land use
     description: Present state of sample site
@@ -8664,7 +8689,7 @@ slots:
       trees)]'
     slot_uri: MIXS:0001080
   cur_vegetation:
-    is_a: environment field
+    is_a: core field
     aliases:
     - current vegetation
     description: Vegetation classification from one or more standard classification
@@ -8680,7 +8705,7 @@ slots:
     pattern: '{text}'
     slot_uri: MIXS:0000312
   cur_vegetation_meth:
-    is_a: environment field
+    is_a: core field
     aliases:
     - current vegetation method
     description: Reference or method used in vegetation classification
@@ -8695,7 +8720,7 @@ slots:
     pattern: '{PMID}|{DOI}|{URL}'
     slot_uri: MIXS:0000314
   previous_land_use:
-    is_a: environment field
+    is_a: core field
     aliases:
     - history/previous land use
     description: Previous land use and dates
@@ -8709,8 +8734,8 @@ slots:
     - 'This field is used uniquely in: soil'
     pattern: '{text};{timestamp}'
     slot_uri: MIXS:0000315
-  previous_land_use_meth:
-    is_a: environment field
+  prev_land_use_meth:
+    is_a: core field
     aliases:
     - history/previous land use method
     description: Reference or method used in determining previous land use and dates
@@ -8725,7 +8750,7 @@ slots:
     pattern: '{PMID}|{DOI}|{URL}'
     slot_uri: MIXS:0000316
   crop_rotation:
-    is_a: environment field
+    is_a: core field
     aliases:
     - history/crop rotation
     description: Whether or not crop is rotated, and if yes, rotation schedule
@@ -8740,7 +8765,7 @@ slots:
     pattern: '{boolean};{Rn/start_time/end_time/duration}'
     slot_uri: MIXS:0000318
   agrochem_addition:
-    is_a: environment field
+    is_a: core field
     aliases:
     - history/agrochemical additions
     description: Addition of fertilizers, pesticides, etc. - amount and time of applications
@@ -8756,7 +8781,7 @@ slots:
     pattern: '{text};{float} {unit};{timestamp}'
     slot_uri: MIXS:0000639
   tillage:
-    is_a: environment field
+    is_a: core field
     aliases:
     - history/tillage
     description: Note method(s) used for tilling
@@ -8772,7 +8797,7 @@ slots:
       plough]'
     slot_uri: MIXS:0001081
   fire:
-    is_a: environment field
+    is_a: core field
     aliases:
     - history/fire
     description: Historical and/or physical evidence of fire
@@ -8786,7 +8811,7 @@ slots:
     - 'This field is used uniquely in: soil'
     slot_uri: MIXS:0001086
   flooding:
-    is_a: environment field
+    is_a: core field
     aliases:
     - history/flooding
     description: Historical and/or physical evidence of flooding
@@ -8800,7 +8825,7 @@ slots:
     - 'This field is used uniquely in: soil'
     slot_uri: MIXS:0000319
   extreme_event:
-    is_a: environment field
+    is_a: core field
     aliases:
     - history/extreme events
     description: Unusual physical events that may have affected microbial populations
@@ -8814,7 +8839,7 @@ slots:
     - 'This field is used uniquely in: soil'
     slot_uri: MIXS:0000320
   horizon:
-    is_a: environment field
+    is_a: core field
     aliases:
     - horizon
     description: Specific layer in the land area which measures parallel to the soil
@@ -8831,7 +8856,7 @@ slots:
     pattern: '[O horizon|A horizon|E horizon|B horizon|C horizon|R layer|Permafrost]'
     slot_uri: MIXS:0001082
   horizon_meth:
-    is_a: environment field
+    is_a: core field
     aliases:
     - horizon method
     description: Reference or method used in determining the horizon
@@ -8846,7 +8871,7 @@ slots:
     pattern: '{PMID}|{DOI}|{URL}'
     slot_uri: MIXS:0000321
   sieving:
-    is_a: environment field
+    is_a: core field
     aliases:
     - composite design/sieving
     description: Collection design of pooled samples and/or sieve size and amount
@@ -8861,8 +8886,8 @@ slots:
     - 'This field is used uniquely in: soil'
     pattern: '{{text}|{float} {unit}};{float} {unit}'
     slot_uri: MIXS:0000322
-  water_content_soil_meth:
-    is_a: environment field
+  water_cont_soil_meth:
+    is_a: core field
     aliases:
     - water content method
     description: Reference or method used in determining the water content of soil
@@ -8877,7 +8902,7 @@ slots:
     pattern: '{PMID}|{DOI}|{URL}'
     slot_uri: MIXS:0000323
   pool_dna_extracts:
-    is_a: environment field
+    is_a: core field
     aliases:
     - pooling of DNA extracts (if done)
     description: Indicate whether multiple DNA extractions were mixed. If the answer
@@ -8893,7 +8918,7 @@ slots:
     pattern: '{boolean};{integer}'
     slot_uri: MIXS:0000325
   store_cond:
-    is_a: environment field
+    is_a: core field
     aliases:
     - storage conditions
     description: Explain how and for how long the soil sample was stored before DNA
@@ -8909,7 +8934,7 @@ slots:
     pattern: '{text};{duration}'
     slot_uri: MIXS:0000327
   link_climate_info:
-    is_a: environment field
+    is_a: core field
     aliases:
     - link to climate information
     description: Link to climate resource
@@ -8924,7 +8949,7 @@ slots:
     pattern: '{PMID}|{DOI}|{URL}'
     slot_uri: MIXS:0000328
   annual_temp:
-    is_a: environment field
+    is_a: core field
     aliases:
     - mean annual temperature
     description: Mean annual temperature
@@ -8939,7 +8964,7 @@ slots:
     - 'This field is used uniquely in: soil'
     slot_uri: MIXS:0000642
   season_temp:
-    is_a: environment field
+    is_a: core field
     aliases:
     - mean seasonal temperature
     description: Mean seasonal temperature
@@ -8954,7 +8979,7 @@ slots:
     - 'This field is used uniquely in: soil'
     slot_uri: MIXS:0000643
   annual_precpt:
-    is_a: environment field
+    is_a: core field
     aliases:
     - mean annual precipitation
     description: The average of all annual precipitation values known, or an estimated
@@ -8970,7 +8995,7 @@ slots:
     - 'This field is used uniquely in: soil'
     slot_uri: MIXS:0000644
   season_precpt:
-    is_a: environment field
+    is_a: core field
     aliases:
     - mean seasonal precipitation
     description: The average of all seasonal precipitation values known, or an estimated
@@ -8986,7 +9011,7 @@ slots:
     - 'This field is used uniquely in: soil'
     slot_uri: MIXS:0000645
   link_class_info:
-    is_a: environment field
+    is_a: core field
     aliases:
     - link to classification information
     description: Link to digitized soil maps or other soil classification information
@@ -9001,7 +9026,7 @@ slots:
     pattern: '{PMID}|{DOI}|{URL}'
     slot_uri: MIXS:0000329
   fao_class:
-    is_a: environment field
+    is_a: core field
     aliases:
     - soil_taxonomic/FAO classification
     description: Soil classification from the FAO World Reference Database for Soil
@@ -9017,7 +9042,7 @@ slots:
     pattern: '[Acrisols|Andosols|Arenosols|Cambisols|Chernozems|Ferralsols|Fluvisols|Gleysols|Greyzems|Gypsisols|Histosols|Kastanozems|Lithosols|Luvisols|Nitosols|Phaeozems|Planosols|Podzols|Podzoluvisols|Rankers|Regosols|Rendzinas|Solonchaks|Solonetz|Vertisols|Yermosols]'
     slot_uri: MIXS:0001083
   local_class:
-    is_a: environment field
+    is_a: core field
     aliases:
     - soil_taxonomic/local classification
     description: Soil classification based on local soil classification system
@@ -9032,7 +9057,7 @@ slots:
     pattern: '{text}'
     slot_uri: MIXS:0000330
   local_class_meth:
-    is_a: environment field
+    is_a: core field
     aliases:
     - soil_taxonomic/local classification method
     description: Reference or method used in determining the local soil classification
@@ -9047,7 +9072,7 @@ slots:
     pattern: '{PMID}|{DOI}|{URL}'
     slot_uri: MIXS:0000331
   soil_type:
-    is_a: environment field
+    is_a: core field
     aliases:
     - soil type
     description: Soil series name or other lower-level classification
@@ -9062,7 +9087,7 @@ slots:
     pattern: '{text}'
     slot_uri: MIXS:0000332
   soil_type_meth:
-    is_a: environment field
+    is_a: core field
     aliases:
     - soil type method
     description: Reference or method used in determining soil series name or other
@@ -9078,7 +9103,7 @@ slots:
     pattern: '{PMID}|{DOI}|{URL}'
     slot_uri: MIXS:0000334
   slope_gradient:
-    is_a: environment field
+    is_a: core field
     aliases:
     - slope gradient
     description: Commonly called 'slope'. The angle between ground surface and a horizontal
@@ -9095,7 +9120,7 @@ slots:
     - 'This field is used uniquely in: soil'
     slot_uri: MIXS:0000646
   slope_aspect:
-    is_a: environment field
+    is_a: core field
     aliases:
     - slope aspect
     description: The direction a slope faces. While looking down a slope use a compass
@@ -9113,7 +9138,7 @@ slots:
     - 'This field is used uniquely in: soil'
     slot_uri: MIXS:0000647
   profile_position:
-    is_a: environment field
+    is_a: core field
     aliases:
     - profile position
     description: Cross-sectional position in the hillslope where sample was collected.sample
@@ -9129,7 +9154,7 @@ slots:
     pattern: '[summit|shoulder|backslope|footslope|toeslope]'
     slot_uri: MIXS:0001084
   drainage_class:
-    is_a: environment field
+    is_a: core field
     aliases:
     - drainage classification
     description: Drainage classification from a standard system such as the USDA system
@@ -9145,7 +9170,7 @@ slots:
       drained]'
     slot_uri: MIXS:0001085
   texture:
-    is_a: environment field
+    is_a: core field
     aliases:
     - texture
     description: The relative proportion of different grain sizes of mineral particles
@@ -9162,7 +9187,7 @@ slots:
     - 'This field is used uniquely in: soil'
     slot_uri: MIXS:0000335
   texture_meth:
-    is_a: environment field
+    is_a: core field
     aliases:
     - texture method
     description: Reference or method used in determining soil texture
@@ -9177,7 +9202,7 @@ slots:
     pattern: '{PMID}|{DOI}|{URL}'
     slot_uri: MIXS:0000336
   ph_meth:
-    is_a: environment field
+    is_a: core field
     aliases:
     - pH method
     description: Reference or method used in determining ph
@@ -9192,7 +9217,7 @@ slots:
     pattern: '{PMID}|{DOI}|{URL}'
     slot_uri: MIXS:0001106
   tot_org_c_meth:
-    is_a: environment field
+    is_a: core field
     aliases:
     - total organic carbon method
     description: Reference or method used in determining total organic carbon
@@ -9206,8 +9231,8 @@ slots:
     - 'This field is used uniquely in: soil'
     pattern: '{PMID}|{DOI}|{URL}'
     slot_uri: MIXS:0000337
-  tot_nitro_content_meth:
-    is_a: environment field
+  tot_nitro_cont_meth:
+    is_a: core field
     aliases:
     - total nitrogen content method
     description: Reference or method used in determining the total nitrogen
@@ -9222,7 +9247,7 @@ slots:
     pattern: '{PMID}|{DOI}|{URL}'
     slot_uri: MIXS:0000338
   microbial_biomass:
-    is_a: environment field
+    is_a: core field
     aliases:
     - microbial biomass
     description: The part of the organic matter in the soil that constitutes living
@@ -9238,8 +9263,8 @@ slots:
     - 'Position: 43.0'
     - 'This field is used uniquely in: soil'
     slot_uri: MIXS:0000650
-  microbial_biomass_meth:
-    is_a: environment field
+  micro_biomass_meth:
+    is_a: core field
     aliases:
     - microbial biomass method
     description: Reference or method used in determining microbial biomass
@@ -9254,7 +9279,7 @@ slots:
     pattern: '{PMID}|{DOI}|{URL}'
     slot_uri: MIXS:0000339
   link_addit_analys:
-    is_a: environment field
+    is_a: core field
     aliases:
     - links to additional analysis
     description: Link to additional analysis results performed on the sample
@@ -9269,7 +9294,7 @@ slots:
     pattern: '{PMID}|{DOI}|{URL}'
     slot_uri: MIXS:0000340
   extreme_salinity:
-    is_a: environment field
+    is_a: core field
     aliases:
     - extreme_unusual_properties/salinity
     description: Measured salinity
@@ -9284,9 +9309,9 @@ slots:
     - 'This field is used uniquely in: soil'
     slot_uri: MIXS:0000651
   salinity_meth:
-    is_a: environment field
+    is_a: core field
     aliases:
-    - extreme_unusual_properties/salinity method
+    - salinity method
     description: Reference or method used in determining salinity
     range: string
     examples:
@@ -9299,16 +9324,16 @@ slots:
     pattern: '{PMID}|{DOI}|{URL}'
     slot_uri: MIXS:0000341
   heavy_metals:
-    is_a: environment field
+    is_a: core field
     aliases:
     - extreme_unusual_properties/heavy metals
-    description: Heavy metals present and concentrationsany drug used by subject and
-      the frequency of usage; can include multiple heavy metals and concentrations
+    description: Heavy metals present in the sequenced sample and their concentrations.
+      For multiple heavy metals and concentrations, add multiple copies of this field.
     range: string
     examples:
-    - value: ''
+    - value: mercury;0.09 micrograms per gram
     comments:
-    - 'Expected value: heavy metal name;measurement value'
+    - 'Expected value: heavy metal name;measurement value unit'
     - 'Preferred unit: microgram per gram'
     - 'Occurrence: m'
     - 'Position: 48.0'
@@ -9316,7 +9341,7 @@ slots:
     pattern: '{text};{float} {unit}'
     slot_uri: MIXS:0000652
   heavy_metals_meth:
-    is_a: environment field
+    is_a: core field
     aliases:
     - extreme_unusual_properties/heavy metals method
     description: Reference or method used in determining heavy metals
@@ -9331,7 +9356,7 @@ slots:
     pattern: '{PMID}|{DOI}|{URL}'
     slot_uri: MIXS:0000343
   al_sat:
-    is_a: environment field
+    is_a: core field
     aliases:
     - extreme_unusual_properties/Al saturation
     description: Aluminum saturation (esp. For tropical soils)
@@ -9346,7 +9371,7 @@ slots:
     - 'This field is used uniquely in: soil'
     slot_uri: MIXS:0000607
   al_sat_meth:
-    is_a: environment field
+    is_a: core field
     aliases:
     - extreme_unusual_properties/Al saturation method
     description: Reference or method used in determining Al saturation
@@ -9361,7 +9386,7 @@ slots:
     pattern: '{PMID}|{DOI}|{URL}'
     slot_uri: MIXS:0000324
   biochem_oxygen_dem:
-    is_a: environment field
+    is_a: core field
     aliases:
     - biochemical oxygen demand
     description: Amount of dissolved oxygen needed by aerobic biological organisms
@@ -9378,7 +9403,7 @@ slots:
     - 'This field is used uniquely in: wastewater_sludge'
     slot_uri: MIXS:0000653
   chem_oxygen_dem:
-    is_a: environment field
+    is_a: core field
     aliases:
     - chemical oxygen demand
     description: A measure of the capacity of water to consume oxygen during the decomposition
@@ -9395,7 +9420,7 @@ slots:
     - 'This field is used uniquely in: wastewater_sludge'
     slot_uri: MIXS:0000656
   efficiency_percent:
-    is_a: environment field
+    is_a: core field
     aliases:
     - efficiency percent
     description: Percentage of volatile solids removed from the anaerobic digestor
@@ -9410,7 +9435,7 @@ slots:
     - 'This field is used uniquely in: wastewater_sludge'
     slot_uri: MIXS:0000657
   emulsions:
-    is_a: environment field
+    is_a: core field
     aliases:
     - emulsions
     description: Amount or concentration of substances such as paints, adhesives,
@@ -9428,7 +9453,7 @@ slots:
     pattern: '{text};{float} {unit}'
     slot_uri: MIXS:0000660
   gaseous_substances:
-    is_a: environment field
+    is_a: core field
     aliases:
     - gaseous substances
     description: Amount or concentration of substances such as hydrogen sulfide, carbon
@@ -9445,7 +9470,7 @@ slots:
     pattern: '{text};{float} {unit}'
     slot_uri: MIXS:0000661
   indust_eff_percent:
-    is_a: environment field
+    is_a: core field
     aliases:
     - industrial effluent percent
     description: Percentage of industrial effluents received by wastewater treatment
@@ -9461,7 +9486,7 @@ slots:
     - 'This field is used uniquely in: wastewater_sludge'
     slot_uri: MIXS:0000662
   inorg_particles:
-    is_a: environment field
+    is_a: core field
     aliases:
     - inorganic particles
     description: Concentration of particles such as sand, grit, metal particles, ceramics,
@@ -9478,7 +9503,7 @@ slots:
     pattern: '{text};{float} {unit}'
     slot_uri: MIXS:0000664
   org_particles:
-    is_a: environment field
+    is_a: core field
     aliases:
     - organic particles
     description: Concentration of particles such as faeces, hairs, food, vomit, paper
@@ -9495,7 +9520,7 @@ slots:
     pattern: '{text};{float} {unit}'
     slot_uri: MIXS:0000665
   pre_treatment:
-    is_a: environment field
+    is_a: core field
     aliases:
     - pre-treatment
     description: The process of pre-treatment removes materials that can be easily
@@ -9511,7 +9536,7 @@ slots:
     pattern: '{text}'
     slot_uri: MIXS:0000348
   primary_treatment:
-    is_a: environment field
+    is_a: core field
     aliases:
     - primary treatment
     description: The process to produce both a generally homogeneous liquid capable
@@ -9528,7 +9553,7 @@ slots:
     pattern: '{text}'
     slot_uri: MIXS:0000349
   reactor_type:
-    is_a: environment field
+    is_a: core field
     aliases:
     - reactor type
     description: Anaerobic digesters can be designed and engineered to operate using
@@ -9545,7 +9570,7 @@ slots:
     pattern: '{text}'
     slot_uri: MIXS:0000350
   secondary_treatment:
-    is_a: environment field
+    is_a: core field
     aliases:
     - secondary treatment
     description: The process for substantially degrading the biological content of
@@ -9561,7 +9586,7 @@ slots:
     pattern: '{text}'
     slot_uri: MIXS:0000351
   sewage_type:
-    is_a: environment field
+    is_a: core field
     aliases:
     - sewage type
     description: Type of wastewater treatment plant as municipial or industrial
@@ -9576,7 +9601,7 @@ slots:
     pattern: '{text}'
     slot_uri: MIXS:0000215
   sludge_retent_time:
-    is_a: environment field
+    is_a: core field
     aliases:
     - sludge retention time
     description: The time activated sludge remains in reactor
@@ -9591,7 +9616,7 @@ slots:
     - 'This field is used uniquely in: wastewater_sludge'
     slot_uri: MIXS:0000669
   soluble_inorg_mat:
-    is_a: environment field
+    is_a: core field
     aliases:
     - soluble inorganic material
     description: Concentration of substances such as ammonia, road-salt, sea-salt,
@@ -9609,7 +9634,7 @@ slots:
     pattern: '{text};{float} {unit}'
     slot_uri: MIXS:0000672
   soluble_org_mat:
-    is_a: environment field
+    is_a: core field
     aliases:
     - soluble organic material
     description: Concentration of substances such as urea, fruit sugars, soluble proteins,
@@ -9627,7 +9652,7 @@ slots:
     pattern: '{text};{float} {unit}'
     slot_uri: MIXS:0000673
   tertiary_treatment:
-    is_a: environment field
+    is_a: core field
     aliases:
     - tertiary treatment
     description: The process providing a final treatment stage to raise the effluent
@@ -9643,7 +9668,7 @@ slots:
     pattern: '{text}'
     slot_uri: MIXS:0000352
   tot_phosphate:
-    is_a: environment field
+    is_a: core field
     aliases:
     - total phosphate
     description: Total amount or concentration of phosphate
@@ -9658,7 +9683,7 @@ slots:
     - 'This field is used uniquely in: wastewater_sludge'
     slot_uri: MIXS:0000689
   wastewater_type:
-    is_a: environment field
+    is_a: core field
     aliases:
     - wastewater type
     description: The origin of wastewater such as human waste, rainfall, storm drains,
@@ -9674,7 +9699,7 @@ slots:
     pattern: '{text}'
     slot_uri: MIXS:0000353
   atmospheric_data:
-    is_a: environment field
+    is_a: core field
     aliases:
     - atmospheric data
     description: Measurement of atmospheric data; can include multiple data
@@ -9689,7 +9714,7 @@ slots:
     pattern: '{text};{float} {unit}'
     slot_uri: MIXS:0001097
   bac_prod:
-    is_a: environment field
+    is_a: core field
     aliases:
     - bacterial production
     description: Bacterial production in the water column measured by isotope uptake
@@ -9704,7 +9729,7 @@ slots:
     - 'This field is used uniquely in: water'
     slot_uri: MIXS:0000683
   bac_resp:
-    is_a: environment field
+    is_a: core field
     aliases:
     - bacterial respiration
     description: Measurement of bacterial respiration in the water column
@@ -9720,7 +9745,7 @@ slots:
     - 'This field is used uniquely in: water'
     slot_uri: MIXS:0000684
   conduc:
-    is_a: environment field
+    is_a: core field
     aliases:
     - conductivity
     description: Electrical conductivity of water
@@ -9735,7 +9760,7 @@ slots:
     - 'This field is used uniquely in: water'
     slot_uri: MIXS:0000692
   diss_inorg_nitro:
-    is_a: environment field
+    is_a: core field
     aliases:
     - dissolved inorganic nitrogen
     description: Concentration of dissolved inorganic nitrogen
@@ -9750,7 +9775,7 @@ slots:
     - 'This field is used uniquely in: water'
     slot_uri: MIXS:0000698
   down_par:
-    is_a: environment field
+    is_a: core field
     aliases:
     - downward PAR
     description: Visible waveband radiance and irradiance measurements in the water
@@ -9767,7 +9792,7 @@ slots:
     - 'This field is used uniquely in: water'
     slot_uri: MIXS:0000703
   fluor:
-    is_a: environment field
+    is_a: core field
     aliases:
     - fluorescence
     description: Raw or converted fluorescence of water
@@ -9782,7 +9807,7 @@ slots:
     - 'This field is used uniquely in: water'
     slot_uri: MIXS:0000704
   light_intensity:
-    is_a: environment field
+    is_a: core field
     aliases:
     - light intensity
     description: Measurement of light intensity
@@ -9797,7 +9822,7 @@ slots:
     - 'This field is used uniquely in: water'
     slot_uri: MIXS:0000706
   part_org_nitro:
-    is_a: environment field
+    is_a: core field
     aliases:
     - particulate organic nitrogen
     description: Concentration of particulate organic nitrogen
@@ -9812,7 +9837,7 @@ slots:
     - 'This field is used uniquely in: water'
     slot_uri: MIXS:0000719
   photon_flux:
-    is_a: environment field
+    is_a: core field
     aliases:
     - photon flux
     description: Measurement of photon flux
@@ -9827,7 +9852,7 @@ slots:
     - 'This field is used uniquely in: water'
     slot_uri: MIXS:0000725
   primary_prod:
-    is_a: environment field
+    is_a: core field
     aliases:
     - primary production
     description: Measurement of primary production, generally measured as isotope
@@ -9844,7 +9869,7 @@ slots:
     - 'This field is used uniquely in: water'
     slot_uri: MIXS:0000728
   size_frac_low:
-    is_a: environment field
+    is_a: core field
     aliases:
     - size-fraction lower threshold
     description: Refers to the mesh/pore size used to pre-filter/pre-sort the sample.
@@ -9860,7 +9885,7 @@ slots:
     - 'This field is used uniquely in: water'
     slot_uri: MIXS:0000735
   size_frac_up:
-    is_a: environment field
+    is_a: core field
     aliases:
     - size-fraction upper threshold
     description: Refers to the mesh/pore size used to retain the sample. Materials
@@ -9876,7 +9901,7 @@ slots:
     - 'This field is used uniquely in: water'
     slot_uri: MIXS:0000736
   soluble_react_phosp:
-    is_a: environment field
+    is_a: core field
     aliases:
     - soluble reactive phosphorus
     description: Concentration of soluble reactive phosphorus
@@ -9891,7 +9916,7 @@ slots:
     - 'This field is used uniquely in: water'
     slot_uri: MIXS:0000738
   suspend_part_matter:
-    is_a: environment field
+    is_a: core field
     aliases:
     - suspended particulate matter
     description: Concentration of suspended particulate matter
@@ -9906,7 +9931,7 @@ slots:
     - 'This field is used uniquely in: water'
     slot_uri: MIXS:0000741
   tot_diss_nitro:
-    is_a: environment field
+    is_a: core field
     aliases:
     - total dissolved nitrogen
     description: 'Total dissolved nitrogen concentration, reported as nitrogen, measured
@@ -9922,7 +9947,7 @@ slots:
     - 'This field is used uniquely in: water'
     slot_uri: MIXS:0000744
   tot_inorg_nitro:
-    is_a: environment field
+    is_a: core field
     aliases:
     - total inorganic nitrogen
     description: Total inorganic nitrogen content
@@ -9937,7 +9962,7 @@ slots:
     - 'This field is used uniquely in: water'
     slot_uri: MIXS:0000745
   tot_part_carb:
-    is_a: environment field
+    is_a: core field
     aliases:
     - total particulate carbon
     description: Total particulate carbon content
@@ -10081,57 +10106,6 @@ enums:
       single: {}
       vector: {}
       other: {}
-  seq_meth_enum:
-    permissible_values:
-      454 GS: {}
-      454 GS 20: {}
-      454 GS FLX: {}
-      454 GS FLX+: {}
-      454 GS FLX Titanium: {}
-      454 GS Junior: {}
-      AB 310 Genetic Analyzer: {}
-      AB 3130 Genetic Analyzer: {}
-      AB 3130xL Genetic Analyzer: {}
-      AB 3500 Genetic Analyzer: {}
-      AB 3500xL Genetic Analyzer: {}
-      AB 3730 Genetic Analyzer: {}
-      AB 3730xL Genetic Analyzer: {}
-      AB 5500 Genetic Analyzer: {}
-      AB 5500xl Genetic Analyzer: {}
-      AB 5500xl-W Genetic Analysis System: {}
-      AB SOLiD System: {}
-      AB SOLiD System 2.0: {}
-      AB SOLiD System 3.0: {}
-      AB SOLiD 3 Plus System: {}
-      AB SOLiD 4 System: {}
-      AB SOLiD 4hq System: {}
-      AB SOLiD PI System: {}
-      BGISEQ-500: {}
-      GridION: {}
-      Illumina Genome Analyzer: {}
-      Illumina Genome Analyzer II: {}
-      Illumina Genome Analyzer IIx: {}
-      Illumina HiSeq 1000: {}
-      Illumina HiSeq 1500: {}
-      Illumina HiSeq 2000: {}
-      Illumina HiSeq 2500: {}
-      Illumina HiSeq 3000: {}
-      Illumina HiSeq 4000: {}
-      Illumina HiScanSQ: {}
-      Illumina MiSeq: {}
-      Illumina HiSeq X Five: {}
-      Illumina HiSeq X Ten: {}
-      Illumina NextSeq 500: {}
-      Illumina NextSeq 550: {}
-      Ion Torrent PGM: {}
-      Ion Torrent Proton: {}
-      Ion Torrent S5: {}
-      Ion Torrent S5 XL: {}
-      MinION: {}
-      PacBio RS: {}
-      PacBio RS II: {}
-      PromethION: {}
-      Sequel: {}
   tax_ident_enum:
     permissible_values:
       16S rRNA gene: {}
@@ -10190,16 +10164,6 @@ enums:
       coverage: {}
       codon usage: {}
       combination: {}
-  bin_software_enum:
-    permissible_values:
-      metabat: {}
-      maxbin: {}
-      concoct: {}
-      groupm: {}
-      esom: {}
-      metawatt: {}
-      combination: {}
-      other: {}
   mag_cov_software_enum:
     permissible_values:
       bwa: {}
@@ -10524,11 +10488,27 @@ enums:
       sprung floor: {}
       wood-framed: {}
       concrete: {}
+  freq_clean_enum:
+    permissible_values:
+      Daily: {}
+      Weekly: {}
+      Monthly: {}
+      Quarterly: {}
+      Annually: {}
+      other: {}
   furniture_enum:
     permissible_values:
       cabinet: {}
       chair: {}
       desks: {}
+  gender_restroom_enum:
+    permissible_values:
+      all gender: {}
+      female: {}
+      gender neurtral: {}
+      male: {}
+      male and female: {}
+      unisex: {}
   handidness_enum:
     permissible_values:
       ambidexterity: {}
@@ -10585,7 +10565,7 @@ enums:
       southeast: {}
       southwest: {}
       northwest: {}
-  pres_animal_enum:
+  pres_animal_insect_enum:
     permissible_values:
       cat: {}
       dog: {}
@@ -11068,7 +11048,7 @@ enums:
       Surfactant Addition: {}
       Not Applicable: {}
       other;{timestamp}: {}
-  samp_collection_point_enum:
+  samp_collect_point_enum:
     permissible_values:
       well: {}
       test well: {}

@@ -18,6 +18,7 @@ classes:
     - depth
     - alt
     - elev
+    - temp
     - geo_loc_name
     - collection_date
     - env_broad_scale
@@ -27,7 +28,7 @@ classes:
     - cur_vegetation
     - cur_vegetation_meth
     - previous_land_use
-    - previous_land_use_meth
+    - prev_land_use_meth
     - crop_rotation
     - agrochem_addition
     - tillage
@@ -38,8 +39,7 @@ classes:
     - horizon_meth
     - sieving
     - water_content
-    - water_content_soil_meth
-    - samp_vol_we_dna_ext
+    - water_cont_soil_meth
     - pool_dna_extracts
     - store_cond
     - link_climate_info
@@ -64,9 +64,9 @@ classes:
     - tot_org_carb
     - tot_org_c_meth
     - tot_nitro_content
-    - tot_nitro_content_meth
+    - tot_nitro_cont_meth
     - microbial_biomass
-    - microbial_biomass_meth
+    - micro_biomass_meth
     - link_addit_analys
     - extreme_salinity
     - salinity_meth
@@ -76,7 +76,7 @@ classes:
     - al_sat_meth
     - misc_param
     slot_usage:
-      sample_name:
+      samp_name:
         required: true
       project_name:
         required: true
@@ -92,7 +92,7 @@ classes:
         required: false
       previous_land_use:
         required: false
-      previous_land_use_meth:
+      prev_land_use_meth:
         required: false
       crop_rotation:
         required: false
@@ -114,7 +114,7 @@ classes:
         required: false
       water_content:
         required: false
-      water_content_soil_meth:
+      water_cont_soil_meth:
         required: false
       samp_vol_we_dna_ext:
         required: false
@@ -166,11 +166,11 @@ classes:
         required: false
       tot_nitro_content:
         required: false
-      tot_nitro_content_meth:
+      tot_nitro_cont_meth:
         required: false
       microbial_biomass:
         required: false
-      microbial_biomass_meth:
+      micro_biomass_meth:
         required: false
       link_addit_analys:
         required: false

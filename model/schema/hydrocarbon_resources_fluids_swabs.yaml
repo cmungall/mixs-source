@@ -18,6 +18,7 @@ classes:
     - depth
     - alt
     - elev
+    - temp
     - geo_loc_name
     - collection_date
     - env_broad_scale
@@ -31,7 +32,7 @@ classes:
     - hcr_temp
     - tvdss_of_hcr_temp
     - hcr_pressure
-    - tvdss_of_hcr_pressure
+    - tvdss_of_hcr_press
     - lithology
     - depos_env
     - hcr_geol_age
@@ -40,7 +41,7 @@ classes:
     - vfa_fw
     - prod_start_date
     - prod_rate
-    - water_production_rate
+    - water_prod_rate
     - water_cut
     - iwf
     - add_recov_method
@@ -48,14 +49,13 @@ classes:
     - biocide
     - biocide_admin_method
     - chem_treatment
-    - chem_treatment_method
+    - chem_treat_method
     - samp_loc_corr_rate
     - samp_well_name
     - win
     - samp_type
     - samp_subtype
-    - samp_collection_point
-    - temp
+    - samp_collect_point
     - pressure
     - oxy_stat_samp
     - samp_preserv
@@ -63,11 +63,11 @@ classes:
     - samp_store_temp
     - samp_store_dur
     - samp_store_loc
-    - samp_vol_we_dna_ext
     - organism_count
-    - organism_count_qpcr_info
+    - org_count_qpcr_info
     - ph
     - samp_salinity
+    - salinity
     - alkalinity
     - alkalinity_method
     - sulfate
@@ -108,7 +108,7 @@ classes:
     - misc_param
     - additional_info
     slot_usage:
-      sample_name:
+      samp_name:
         required: true
       project_name:
         required: true
@@ -128,7 +128,7 @@ classes:
         required: false
       hcr_pressure:
         required: false
-      tvdss_of_hcr_pressure:
+      tvdss_of_hcr_press:
         required: false
       lithology:
         required: false
@@ -146,7 +146,7 @@ classes:
         required: false
       prod_rate:
         required: false
-      water_production_rate:
+      water_prod_rate:
         required: false
       water_cut:
         required: true
@@ -162,7 +162,7 @@ classes:
         required: false
       chem_treatment:
         required: false
-      chem_treatment_method:
+      chem_treat_method:
         required: false
       samp_loc_corr_rate:
         required: false
@@ -174,7 +174,7 @@ classes:
         required: true
       samp_subtype:
         required: false
-      samp_collection_point:
+      samp_collect_point:
         required: true
       temp:
         required: true
@@ -196,12 +196,14 @@ classes:
         required: false
       organism_count:
         required: false
-      organism_count_qpcr_info:
+      org_count_qpcr_info:
         required: false
       ph:
         required: false
       samp_salinity:
         required: true
+      salinity:
+        required: false
       alkalinity:
         required: false
       alkalinity_method:

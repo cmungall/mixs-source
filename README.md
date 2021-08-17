@@ -9,19 +9,19 @@ This repo may be merged with https://github.com/GenomicsStandardsConsortium/mixs
 
 The source files are here:
 
- * src/
-    * [schema/](src/schema/) -- schema files
-       * [mixs.yaml](src/schema/mixs.yaml) - container module
-       * [terms.yaml](src/schema/terms.yaml) - all terms (fields/slots)
-       * [checklists.yaml](src/schema/checklists.yaml) - checklists, e.g. MIMAG
-       * [soil.yaml](src/schema/soil.yaml) - soil package
+ * model/
+    * [schema/](model/schema/) -- schema files
+       * [mixs.yaml](model/schema/mixs.yaml) - container module
+       * [terms.yaml](model/schema/terms.yaml) - all terms (fields/slots)
+       * [checklists.yaml](model/schema/checklists.yaml) - checklists, e.g. MIMAG
+       * [soil.yaml](model/schema/soil.yaml) - soil package
        * ...OTHER PACKAGES HERE
 
 These are the files that should be edited
 
 ## Workflow for adding new CHECKLISTS
 
-Edit [checklists.yaml](src/schema/checklists.yaml)
+Edit [checklists.yaml](model/schema/checklists.yaml)
 
 The easiest thing to do is to copy and paste an existing checklist, modifying the values
 
@@ -29,7 +29,7 @@ You will need to specify both `slots` and `slot_usage`
 
 ## Workflow for adding new TERMS
 
-Edit [terms.yaml](src/schema/terms.yaml)
+Edit [terms.yaml](model/schema/terms.yaml)
 
 The easiest thing to do is to copy and paste an existing term, e.g.
 
@@ -62,7 +62,7 @@ TODO
 
 ## Workflow for adding new ENVIRONMENTAL PACKAGES
 
-Create a NEW file in [src/schema](src/schema/)
+Create a NEW file in [model/schema](model/schema/)
 
 The easiest thing to do is to copy a 
 

@@ -1,5 +1,5 @@
-id: http://w3id.org/mixs/human_gut
-name: human_gut
+id: http://w3id.org/mixs/human_vaginal
+name: human_vaginal
 imports:
 - linkml:types
 - terms
@@ -10,22 +10,30 @@ prefixes:
 default_prefix: mixs.vocab
 slots: {}
 classes:
-  human-gut:
-    description: human-gut
+  human-vaginal:
+    description: human-vaginal
     mappings: []
     slots:
     - lat_lon
     - depth
     - alt
     - elev
+    - temp
     - geo_loc_name
     - collection_date
     - env_broad_scale
     - env_local_scale
     - env_medium
-    - gastrointest_disord
-    - liver_disord
-    - special_diet
+    - menarche
+    - sexual_act
+    - pregnancy
+    - douche
+    - birth_control
+    - menopause
+    - hrt
+    - hysterectomy
+    - gynecologic_disord
+    - urogenit_disord
     - host_subject_id
     - host_age
     - host_sex
@@ -37,36 +45,49 @@ classes:
     - host_height
     - host_diet
     - host_last_meal
-    - host_family_relationship
+    - host_family_relation
     - host_genotype
     - host_phenotype
     - host_body_temp
     - host_body_mass_index
-    - ihmc_ethnicity
+    - ethnicity
     - host_occupation
     - medic_hist_perform
     - host_pulse
     - perturbation
     - samp_salinity
+    - salinity
     - oxy_stat_samp
-    - temp
     - organism_count
     - samp_store_temp
-    - samp_vol_we_dna_ext
+    - samp_store_loc
     - samp_store_dur
     - host_symbiont
-    - samp_store_loc
     - misc_param
     slot_usage:
-      sample_name:
+      samp_name:
         required: true
       project_name:
         required: true
-      gastrointest_disord:
+      menarche:
         required: false
-      liver_disord:
+      sexual_act:
         required: false
-      special_diet:
+      pregnancy:
+        required: false
+      douche:
+        required: false
+      birth_control:
+        required: false
+      menopause:
+        required: false
+      hrt:
+        required: false
+      hysterectomy:
+        required: false
+      gynecologic_disord:
+        required: false
+      urogenit_disord:
         required: false
       host_subject_id:
         required: false
@@ -92,7 +113,7 @@ classes:
         required: false
       host_last_meal:
         required: false
-      host_family_relationship:
+      host_family_relation:
         required: false
       host_genotype:
         required: false
@@ -102,7 +123,7 @@ classes:
         required: false
       host_body_mass_index:
         required: false
-      ihmc_ethnicity:
+      ethnicity:
         required: false
       host_occupation:
         required: false
@@ -114,21 +135,23 @@ classes:
         required: false
       samp_salinity:
         required: false
+      salinity:
+        required: false
       oxy_stat_samp:
         required: false
       temp:
         required: false
       organism_count:
         required: false
+      samp_vol_we_dna_ext:
+        required: false
       samp_store_temp:
         required: false
-      samp_vol_we_dna_ext:
+      samp_store_loc:
         required: false
       samp_store_dur:
         required: false
       host_symbiont:
-        required: false
-      samp_store_loc:
         required: false
       misc_param:
         required: false

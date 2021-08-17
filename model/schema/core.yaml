@@ -16,13 +16,15 @@ classes:
     slots:
     - submitted_to_insdc
     - investigation_type
-    - sample_name
+    - samp_name
+    - samp_taxon_id
     - project_name
     - experimental_factor
     - lat_lon
     - depth
     - alt
     - elev
+    - temp
     - geo_loc_name
     - collection_date
     - env_broad_scale
@@ -47,11 +49,12 @@ classes:
     - encoded_traits
     - rel_to_oxygen
     - isol_growth_condt
-    - sample_collect_device
-    - sample_collect_method
+    - samp_collec_device
+    - samp_collec_method
     - samp_mat_process
     - size_frac
     - samp_size
+    - samp_vol_we_dna_ext
     - source_uvig
     - virus_enrich_appr
     - nucl_acid_ext
@@ -103,12 +106,12 @@ classes:
     - pred_genome_type
     - pred_genome_struc
     - detec_type
-    - votu_class_appr
-    - votu_seq_comp_appr
-    - votu_db
+    - otu_class_appr
+    - otu_seq_comp_appr
+    - otu_db
     - host_pred_appr
     - host_pred_est_acc
-    - url
+    - associated resource
     - sop
 subsets: {}
 enums: {}

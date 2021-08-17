@@ -182,6 +182,10 @@ class MIxS6Converter:
         else:
             None
             #logging.error(f'No ID: {slot_uri}')
+        # workaround for https://github.com/GenomicsStandardsConsortium/mixs/issues/216
+        if slot_uri.startswith('Measure'):
+            logging.error(f'Bad format for MIXS ID in {row} -- value given is {slot_uri}')
+            slot_uri = 'MIXS:TODO1234'
         exact_mappings = []
         if 'MIGS ID (mapping to GOLD)' in row:
             exact_mappings.append(f'MIGS:{row["MIGS ID (mapping to GOLD)"]}')
