@@ -11,7 +11,7 @@ import click
 import yaml
 from dataclasses import dataclass, field
 from typing import Optional, Set, List, Union, Dict, Any, Tuple
-from linkml.utils.formatutils import underscore
+from linkml_runtime.utils.formatutils import underscore
 import pandas as pd
 import logging
 from gsctools.packageutils import new_schema
@@ -50,11 +50,17 @@ CHECKLISTS = {'migs_eu':
               'mimarks_s':
                   {'name': 'MIMARKS specimen',
                    'fullname': 'Minimal Information about a Marker Specimen: specimen',
-                   'abbrev': 'MIMARKS.specimen'},
+                   'abbrev': 'MIMARKS.specimen',
+                   'see_also': [
+                       'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3367316'
+                   ]},
               'mimarks_c':  ## TODO check this
                   {'name': 'MIMARKS survey',
                    'fullname': 'Minimal Information about a Marker Specimen: survey',
-                   'abbrev': 'MIMARKS.survey'},
+                   'abbrev': 'MIMARKS.survey',
+                   'see_also': [
+                        'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3367316'
+                   ]},
               'misag': {
                   'name': 'MISAG',
                   'fullname': 'Minimum Information About a Single Amplified Genome',
@@ -125,7 +131,7 @@ class MIxS6Converter:
 
     core_filename: Optional[str] = None
     packages_filename: Optional[str] = None
-    output_directory: str = './src/schema'
+    output_directory: str = './model/schema'
 
     def convert_and_save(self, fn: str = None) -> str:
         obj = self.convert()
@@ -340,6 +346,7 @@ class MIxS6Converter:
                 'aliases': [
                     info['abbrev']
                 ],
+                'see_also': info.get('see_also', []),
                 #'todos': ['add details here'],
                 'slots': list(checklist_slot_usage.keys()),
                 'slot_usage': checklist_slot_usage
@@ -423,6 +430,17 @@ class MIxS6Converter:
         slot_schema['imports'].append('ranges')
         slot_schema['slots'] = slots
         slot_schema['enums'] = enums
+        slot_schema['subsets'] = {
+            'checklist': {
+                'description': 'A MIxS checklist. These can be combined with packages'
+            },
+            'package': {
+                'description': 'A MIxS package. These can be combined with checklists'
+            },
+            'checklist_package_combination': {
+                'description': 'A combination of a checklist and a package'
+            }
+        }
         self.save_schema(slot_schema, 'terms.yaml')
 
         core_schema = new_schema('core')
@@ -445,9 +463,8 @@ def cli(**kwargs):
     cv = MIxS6Converter()
     cv.core_filename = f'downloads/mixs6_core.tsv'
     cv.packages_filename = f'downloads/mixs6.tsv'
-    cv.convert_and_save('src/schema/mixs.yaml')
+    cv.convert_and_save('model/schema/mixs.yaml')
 
 
 if __name__ == '__main__':
     cli()
-    
