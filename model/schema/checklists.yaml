@@ -15,6 +15,7 @@ classes:
     description: 'Minimal Information about a Genome Sequence: eukaryote'
     aliases:
     - MIGS.eu
+    see_also: []
     slots:
     - submitted_to_insdc
     - investigation_type
@@ -207,6 +208,7 @@ classes:
     description: 'Minimal Information about a Genome Sequence: cultured bacteria/archaea'
     aliases:
     - MIGS.ba
+    see_also: []
     slots:
     - submitted_to_insdc
     - investigation_type
@@ -404,6 +406,7 @@ classes:
     description: 'Minimal Information about a Genome Sequence: plant'
     aliases:
     - MIGS.pl
+    see_also: []
     slots:
     - submitted_to_insdc
     - investigation_type
@@ -574,6 +577,7 @@ classes:
     description: 'Minimal Information about a Genome Sequence: cultured bacteria/archaea'
     aliases:
     - MIGS.ba
+    see_also: []
     slots:
     - submitted_to_insdc
     - investigation_type
@@ -768,6 +772,7 @@ classes:
     description: 'Minimal Information about a Genome Sequence: org'
     aliases:
     - MIGS.org
+    see_also: []
     slots:
     - submitted_to_insdc
     - investigation_type
@@ -928,6 +933,7 @@ classes:
     description: Metagenome or Environmental
     aliases:
     - ME
+    see_also: []
     slots:
     - submitted_to_insdc
     - investigation_type
@@ -1087,6 +1093,8 @@ classes:
     description: 'Minimal Information about a Marker Specimen: specimen'
     aliases:
     - MIMARKS.specimen
+    see_also:
+    - https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3367316
     slots:
     - submitted_to_insdc
     - investigation_type
@@ -1238,6 +1246,8 @@ classes:
     description: 'Minimal Information about a Marker Specimen: survey'
     aliases:
     - MIMARKS.survey
+    see_also:
+    - https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3367316
     slots:
     - submitted_to_insdc
     - investigation_type
@@ -1369,6 +1379,7 @@ classes:
     description: Minimum Information About a Single Amplified Genome
     aliases:
     - MISAG
+    see_also: []
     slots:
     - submitted_to_insdc
     - investigation_type
@@ -1572,6 +1583,7 @@ classes:
     description: Minimum Information About a Metagenome-Assembled Genome
     aliases:
     - MIMAG
+    see_also: []
     slots:
     - submitted_to_insdc
     - investigation_type
@@ -1772,6 +1784,7 @@ classes:
     description: Minimum Information About an Uncultivated Virus Genome
     aliases:
     - MIUVIG
+    see_also: []
     slots:
     - submitted_to_insdc
     - investigation_type

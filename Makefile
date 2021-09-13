@@ -2,7 +2,7 @@
 # ----------------------------------------
 # Model documentation and schema directory
 # ----------------------------------------
-SRC_DIR = src
+SRC_DIR = model
 PKG_DIR = .
 SCHEMA_DIR = $(SRC_DIR)/schema
 MODEL_DOCS_DIR = $(SRC_DIR)/docs
@@ -21,7 +21,7 @@ GEN_OPTS =
 # ----------------------------------------
 # TOP LEVEL TARGETS
 # ----------------------------------------
-all: env.lock gen move-model unlock
+all: env.lock gen unlock
 
 # ---------------------------------------
 # env.lock:  set up pipenv
@@ -82,9 +82,9 @@ docs:
 # ---------------------------------------
 # Move the model across
 # ---------------------------------------
-move-model:
-	mkdir -p $(PKG_DIR)/model/schema
-	cp -r model/schema/* $(PKG_DIR)/model/schema
+#move-model:
+#	mkdir -p $(PKG_DIR)/model/schema
+#	cp -r model/schema/* $(PKG_DIR)/model/schema
 
 
 # ---------------------------------------
@@ -242,5 +242,5 @@ downloads/mixs6_core.tsv:
 	curl -L -s 'https://docs.google.com/spreadsheets/d/1QDeeUcDqXes69Y2RjU2aWgOpCVWo5OVsBX9MKmMqi_o/export?format=tsv&gid=567040283' > $@
 
 
-src/schema/mixs.yaml: downloads/mixs6.tsv
-	$(RUN) python gsctools/mixs_converter.py
+model/schema/mixs.yaml: downloads/mixs6.tsv
+	$(RUN) python -m gsctools.mixs_converter
