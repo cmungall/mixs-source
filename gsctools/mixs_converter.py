@@ -43,10 +43,10 @@ CHECKLISTS = {'migs_eu':
                   {'name': 'MIGS org',
                    'fullname': 'Minimal Information about a Genome Sequence: org',
                    'abbrev': 'MIGS.org'},
-              'me':
-                  {'name': 'ME',
+              'mims':
+                  {'name': 'MIMS',
                    'fullname': 'Metagenome or Environmental',
-                   'abbrev': 'ME'},
+                   'abbrev': 'MIMS'},
               'mimarks_s':
                   {'name': 'MIMARKS specimen',
                    'fullname': 'Minimal Information about a Marker Specimen: specimen',
@@ -167,7 +167,8 @@ class MIxS6Converter:
             logging.error(f'Bad name: {s_name} in {row}')
             return None, None
         comments = []
-        for k in ('Expected value', 'Preferred unit', 'Occurrence', 'Position'):
+       # for k in ('Expected value', 'Preferred unit', 'Occurrence', 'Position'): position was in editors's sheet but is not being used in MIxS 6
+        for k in ('Expected value', 'Preferred unit', 'Occurrence'):
             if k in row and row[k] != '':
                 comments.append(f'{k}: {row[k]}')
 
