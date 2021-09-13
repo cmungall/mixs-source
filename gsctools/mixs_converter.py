@@ -3,7 +3,7 @@
 converts mixs6 spreadsheet
 
 spreadsheet:
-https://docs.google.com/spreadsheets/d/1QDeeUcDqXes69Y2RjU2aWgOpCVWo5OVsBX9MKmMqi_o/edit#gid=567040283
+https://docs.google.com/spreadsheets/d/165AHU4Px4S1fFFIqsvffWFlD1RUFmH609QbuDl4pASk/edit#gid=0
 
 Note: should also work for mixs5 xlsx files too, once exported to tsv
 """
