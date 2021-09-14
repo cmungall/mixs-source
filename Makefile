@@ -237,9 +237,9 @@ target/rdf/%.model.ttl: $(SCHEMA_DIR)/%.yaml $(PKG_DIR)/jsonld/%.model.context.j
 # for seeding
 
 downloads/mixs6.tsv:
-	curl -L -s 'https://docs.google.com/spreadsheets/d/1QDeeUcDqXes69Y2RjU2aWgOpCVWo5OVsBX9MKmMqi_o/export?format=tsv&gid=345753674' > $@
+	curl -L -s 'https://docs.google.com/spreadsheets/d/165AHU4Px4S1fFFIqsvffWFlD1RUFmH609QbuDl4pASk/export?format=tsv&gid=345753674' > $@
 downloads/mixs6_core.tsv:
-	curl -L -s 'https://docs.google.com/spreadsheets/d/1QDeeUcDqXes69Y2RjU2aWgOpCVWo5OVsBX9MKmMqi_o/export?format=tsv&gid=567040283' > $@
+	curl -L -s 'https://docs.google.com/spreadsheets/d/165AHU4Px4S1fFFIqsvffWFlD1RUFmH609QbuDl4pASk/export?format=tsv&gid=567040283' > $@
 
 
 model/schema/mixs.yaml: downloads/mixs6.tsv
