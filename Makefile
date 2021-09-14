@@ -13,7 +13,7 @@ RUN = pipenv run
 SCHEMA_NAME = mixs
 SCHEMA_SRC = $(SCHEMA_DIR)/$(SCHEMA_NAME).yaml
 #PKG_TGTS = graphql json  jsonschema owl rdf jsonld shex
-PKG_TGTS = graphql json  jsonschema owl
+PKG_TGTS = graphql json  jsonschema owl excel
 TGTS = docs $(PKG_TGTS)
 
 # Global generation options
@@ -195,6 +195,16 @@ $(PKG_DIR)/json/%.json: target/json/%.json
 	cp $< $@
 target/json/%.json: $(SCHEMA_DIR)/%.yaml tdir-json env.lock
 	$(RUN) gen-jsonld $(GEN_OPTS)  $< > $@
+
+# ---------------------------------------
+# Excel
+# ---------------------------------------
+gen-excel: $(PKG_DIR)/excel/$(SCHEMA_NAME).xlsx
+.PHONY: gen-excel
+$(PKG_DIR)/excel/%.xlsx: target/excel/%.xlsx
+	cp $< $@
+target/excel/%.xlsx: $(SCHEMA_DIR)/%.yaml tdir-excel env.lock
+	$(RUN) gen-excel $(GEN_OPTS) $< -o $@
 
 # ---------------------------------------
 # RDF

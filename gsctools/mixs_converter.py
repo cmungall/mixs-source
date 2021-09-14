@@ -111,12 +111,19 @@ def safe(s: str) -> str:
     return s
 
 def parse_value_syntax(s: str, slot_name: str = "") -> Tuple[str,str]:
+    """
+    Parses the 'value syntax' field from MIxS spreadsheets
+
+    Returns: tuple of (pattern, range)
+    """
     pattern = s
     range = 'string'
     if s == '{float} {unit}':
         return None, 'quantity value'
     elif s == '{float}':
         return None, 'double'
+    elif s == '{integer}':
+        return None, 'integer'
     elif s == '{timestamp}':
         return None, 'date'
     elif slot_name == 'depth':
@@ -176,6 +183,7 @@ class MIxS6Converter:
         for k in ('Expected value', 'Preferred unit', 'Occurrence', 'Position'):
             if k in row and row[k] != '':
                 comments.append(f'{k}: {row[k]}')
+        multivalued = row.get('Occurrence', '') == 'm'
 
         # the column header is not consistent between sheets here
         slot_uri = None
@@ -207,6 +215,7 @@ class MIxS6Converter:
             'aliases': [s_name],
             'description': row['Definition'],
             'range': range,
+            'multivalued': multivalued,
             'examples': [
                 {'value': row['Example']}
             ],
@@ -294,6 +303,7 @@ class MIxS6Converter:
                 'linkml': 'https://w3id.org/linkml/',
                 'mixs.vocab': 'https://w3id.org/mixs/vocab/',
                 'MIXS': 'https://w3id.org/mixs/terms/',
+                'MIGS': 'https://w3id.org/mixs/migs/',
             },
             'default_prefix': 'mixs.vocab',
             'slots': {},
@@ -331,15 +341,24 @@ class MIxS6Converter:
             checklist_name = info['name']
             for s_id, s_row in core_slot_dict.items():
                 cardinality = s_row[checklist]
-                if cardinality != '-' and cardinality != 'E':
+                # information about whether an item is:
+                # - mandatory (M)
+                # - conditional mandatory (C)
+                # - optional (X)
+                # - environment-dependent (E)
+                # - or not applicable (-)
+                if cardinality != 'E':
                     usage = {}
-                    checklist_slot_usage[s_id] = usage
                     if cardinality == 'M':
                         usage['required'] = True
                     elif cardinality == 'X':
                         usage['required'] = False
                     elif cardinality == 'C':
-                        usage['comments'] = ['conditional mandatory']
+                        usage['recommended'] = True
+                    elif cardinality == '-':
+                        usage['comments'] = ['not applicable']
+                    if usage != {}:
+                        checklist_slot_usage[s_id] = usage
             classes[checklist_name] = {
                 'mixin': True,
                 'description': info['fullname'],
