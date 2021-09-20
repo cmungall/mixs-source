@@ -45,17 +45,12 @@ classes:
     - host_disease_stat
     - trophic_level
     - propagation
-    - encoded_traits
-    - rel_to_oxygen
     - isol_growth_condt
     - samp_collec_device
     - samp_collec_method
     - samp_mat_process
-    - size_frac
     - samp_size
     - samp_vol_we_dna_ext
-    - source_uvig
-    - virus_enrich_appr
     - nucl_acid_ext
     - nucl_acid_amp
     - lib_size
@@ -63,15 +58,8 @@ classes:
     - lib_layout
     - lib_vector
     - lib_screen
-    - target_gene
-    - target_subfragment
-    - pcr_primers
-    - mid
     - adapters
-    - pcr_cond
     - seq_meth
-    - seq_quality_check
-    - chimera_check
     - tax_ident
     - assembly_qual
     - assembly_name
@@ -82,34 +70,8 @@ classes:
     - ref_db
     - sim_search_meth
     - tax_class
-    - x_16s_recover
-    - trnas
-    - trna_ext_software
     - compl_score
     - compl_software
-    - compl_appr
-    - contam_score
-    - contam_screen_input
-    - contam_screen_param
-    - decontam_software
-    - sort_tech
-    - single_cell_lysis_appr
-    - single_cell_lysis_prot
-    - wga_amp_appr
-    - wga_amp_kit
-    - bin_param
-    - bin_software
-    - reassembly_bin
-    - mag_cov_software
-    - vir_ident_software
-    - pred_genome_type
-    - pred_genome_struc
-    - detec_type
-    - otu_class_appr
-    - otu_seq_comp_appr
-    - otu_db
-    - host_pred_appr
-    - host_pred_est_acc
     - associated resource
     - sop
     slot_usage:
@@ -169,12 +131,6 @@ classes:
         recommended: true
       propagation:
         recommended: true
-      encoded_traits:
-        comments:
-        - not applicable
-      rel_to_oxygen:
-        comments:
-        - not applicable
       isol_growth_condt:
         required: true
       samp_collec_device:
@@ -183,19 +139,10 @@ classes:
         required: false
       samp_mat_process:
         required: false
-      size_frac:
-        comments:
-        - not applicable
       samp_size:
         required: false
       samp_vol_we_dna_ext:
         required: false
-      source_uvig:
-        comments:
-        - not applicable
-      virus_enrich_appr:
-        comments:
-        - not applicable
       nucl_acid_ext:
         recommended: true
       nucl_acid_amp:
@@ -210,31 +157,10 @@ classes:
         required: false
       lib_screen:
         required: false
-      target_gene:
-        comments:
-        - not applicable
-      target_subfragment:
-        comments:
-        - not applicable
-      pcr_primers:
-        comments:
-        - not applicable
-      mid:
-        comments:
-        - not applicable
       adapters:
         recommended: true
-      pcr_cond:
-        comments:
-        - not applicable
       seq_meth:
         required: true
-      seq_quality_check:
-        comments:
-        - not applicable
-      chimera_check:
-        comments:
-        - not applicable
       tax_ident:
         recommended: true
       assembly_qual:
@@ -255,88 +181,10 @@ classes:
         required: false
       tax_class:
         required: false
-      x_16s_recover:
-        comments:
-        - not applicable
-      trnas:
-        comments:
-        - not applicable
-      trna_ext_software:
-        comments:
-        - not applicable
       compl_score:
         required: false
       compl_software:
         required: false
-      compl_appr:
-        comments:
-        - not applicable
-      contam_score:
-        comments:
-        - not applicable
-      contam_screen_input:
-        comments:
-        - not applicable
-      contam_screen_param:
-        comments:
-        - not applicable
-      decontam_software:
-        comments:
-        - not applicable
-      sort_tech:
-        comments:
-        - not applicable
-      single_cell_lysis_appr:
-        comments:
-        - not applicable
-      single_cell_lysis_prot:
-        comments:
-        - not applicable
-      wga_amp_appr:
-        comments:
-        - not applicable
-      wga_amp_kit:
-        comments:
-        - not applicable
-      bin_param:
-        comments:
-        - not applicable
-      bin_software:
-        comments:
-        - not applicable
-      reassembly_bin:
-        comments:
-        - not applicable
-      mag_cov_software:
-        comments:
-        - not applicable
-      vir_ident_software:
-        comments:
-        - not applicable
-      pred_genome_type:
-        comments:
-        - not applicable
-      pred_genome_struc:
-        comments:
-        - not applicable
-      detec_type:
-        comments:
-        - not applicable
-      otu_class_appr:
-        comments:
-        - not applicable
-      otu_seq_comp_appr:
-        comments:
-        - not applicable
-      otu_db:
-        comments:
-        - not applicable
-      host_pred_appr:
-        comments:
-        - not applicable
-      host_pred_est_acc:
-        comments:
-        - not applicable
       associated resource:
         recommended: true
       sop:
@@ -362,7 +210,6 @@ classes:
     - env_medium
     - env_package
     - subspecf_gen_lin
-    - ploidy
     - num_replicons
     - extrachrom_elements
     - estimated_size
@@ -375,18 +222,14 @@ classes:
     - health_disease_stat
     - host_disease_stat
     - trophic_level
-    - propagation
     - encoded_traits
     - rel_to_oxygen
     - isol_growth_condt
     - samp_collec_device
     - samp_collec_method
     - samp_mat_process
-    - size_frac
     - samp_size
     - samp_vol_we_dna_ext
-    - source_uvig
-    - virus_enrich_appr
     - nucl_acid_ext
     - nucl_acid_amp
     - lib_size
@@ -394,15 +237,8 @@ classes:
     - lib_layout
     - lib_vector
     - lib_screen
-    - target_gene
-    - target_subfragment
-    - pcr_primers
-    - mid
     - adapters
-    - pcr_cond
     - seq_meth
-    - seq_quality_check
-    - chimera_check
     - tax_ident
     - assembly_qual
     - assembly_name
@@ -413,34 +249,8 @@ classes:
     - ref_db
     - sim_search_meth
     - tax_class
-    - x_16s_recover
-    - trnas
-    - trna_ext_software
     - compl_score
     - compl_software
-    - compl_appr
-    - contam_score
-    - contam_screen_input
-    - contam_screen_param
-    - decontam_software
-    - sort_tech
-    - single_cell_lysis_appr
-    - single_cell_lysis_prot
-    - wga_amp_appr
-    - wga_amp_kit
-    - bin_param
-    - bin_software
-    - reassembly_bin
-    - mag_cov_software
-    - vir_ident_software
-    - pred_genome_type
-    - pred_genome_struc
-    - detec_type
-    - otu_class_appr
-    - otu_seq_comp_appr
-    - otu_db
-    - host_pred_appr
-    - host_pred_est_acc
     - associated resource
     - sop
     slot_usage:
@@ -472,9 +282,6 @@ classes:
         recommended: true
       subspecf_gen_lin:
         recommended: true
-      ploidy:
-        comments:
-        - not applicable
       num_replicons:
         required: true
       extrachrom_elements:
@@ -499,9 +306,6 @@ classes:
         recommended: true
       trophic_level:
         recommended: true
-      propagation:
-        comments:
-        - not applicable
       encoded_traits:
         required: false
       rel_to_oxygen:
@@ -514,19 +318,10 @@ classes:
         required: false
       samp_mat_process:
         required: false
-      size_frac:
-        comments:
-        - not applicable
       samp_size:
         required: false
       samp_vol_we_dna_ext:
         required: false
-      source_uvig:
-        comments:
-        - not applicable
-      virus_enrich_appr:
-        comments:
-        - not applicable
       nucl_acid_ext:
         recommended: true
       nucl_acid_amp:
@@ -541,31 +336,10 @@ classes:
         required: false
       lib_screen:
         required: false
-      target_gene:
-        comments:
-        - not applicable
-      target_subfragment:
-        comments:
-        - not applicable
-      pcr_primers:
-        comments:
-        - not applicable
-      mid:
-        comments:
-        - not applicable
       adapters:
         recommended: true
-      pcr_cond:
-        comments:
-        - not applicable
       seq_meth:
         required: true
-      seq_quality_check:
-        comments:
-        - not applicable
-      chimera_check:
-        comments:
-        - not applicable
       tax_ident:
         recommended: true
       assembly_qual:
@@ -586,88 +360,10 @@ classes:
         required: false
       tax_class:
         required: false
-      x_16s_recover:
-        comments:
-        - not applicable
-      trnas:
-        comments:
-        - not applicable
-      trna_ext_software:
-        comments:
-        - not applicable
       compl_score:
         required: false
       compl_software:
         required: false
-      compl_appr:
-        comments:
-        - not applicable
-      contam_score:
-        comments:
-        - not applicable
-      contam_screen_input:
-        comments:
-        - not applicable
-      contam_screen_param:
-        comments:
-        - not applicable
-      decontam_software:
-        comments:
-        - not applicable
-      sort_tech:
-        comments:
-        - not applicable
-      single_cell_lysis_appr:
-        comments:
-        - not applicable
-      single_cell_lysis_prot:
-        comments:
-        - not applicable
-      wga_amp_appr:
-        comments:
-        - not applicable
-      wga_amp_kit:
-        comments:
-        - not applicable
-      bin_param:
-        comments:
-        - not applicable
-      bin_software:
-        comments:
-        - not applicable
-      reassembly_bin:
-        comments:
-        - not applicable
-      mag_cov_software:
-        comments:
-        - not applicable
-      vir_ident_software:
-        comments:
-        - not applicable
-      pred_genome_type:
-        comments:
-        - not applicable
-      pred_genome_struc:
-        comments:
-        - not applicable
-      detec_type:
-        comments:
-        - not applicable
-      otu_class_appr:
-        comments:
-        - not applicable
-      otu_seq_comp_appr:
-        comments:
-        - not applicable
-      otu_db:
-        comments:
-        - not applicable
-      host_pred_appr:
-        comments:
-        - not applicable
-      host_pred_est_acc:
-        comments:
-        - not applicable
       associated resource:
         recommended: true
       sop:
@@ -693,31 +389,19 @@ classes:
     - env_medium
     - env_package
     - subspecf_gen_lin
-    - ploidy
-    - num_replicons
-    - extrachrom_elements
     - estimated_size
     - ref_biomaterial
     - source_mat_id
-    - pathogenicity
-    - biotic_relationship
     - specific_host
     - host_spec_range
-    - health_disease_stat
-    - host_disease_stat
-    - trophic_level
     - propagation
     - encoded_traits
-    - rel_to_oxygen
     - isol_growth_condt
     - samp_collec_device
     - samp_collec_method
     - samp_mat_process
-    - size_frac
     - samp_size
     - samp_vol_we_dna_ext
-    - source_uvig
-    - virus_enrich_appr
     - nucl_acid_ext
     - nucl_acid_amp
     - lib_size
@@ -725,15 +409,8 @@ classes:
     - lib_layout
     - lib_vector
     - lib_screen
-    - target_gene
-    - target_subfragment
-    - pcr_primers
-    - mid
     - adapters
-    - pcr_cond
     - seq_meth
-    - seq_quality_check
-    - chimera_check
     - tax_ident
     - assembly_qual
     - assembly_name
@@ -744,34 +421,8 @@ classes:
     - ref_db
     - sim_search_meth
     - tax_class
-    - x_16s_recover
-    - trnas
-    - trna_ext_software
     - compl_score
     - compl_software
-    - compl_appr
-    - contam_score
-    - contam_screen_input
-    - contam_screen_param
-    - decontam_software
-    - sort_tech
-    - single_cell_lysis_appr
-    - single_cell_lysis_prot
-    - wga_amp_appr
-    - wga_amp_kit
-    - bin_param
-    - bin_software
-    - reassembly_bin
-    - mag_cov_software
-    - vir_ident_software
-    - pred_genome_type
-    - pred_genome_struc
-    - detec_type
-    - otu_class_appr
-    - otu_seq_comp_appr
-    - otu_db
-    - host_pred_appr
-    - host_pred_est_acc
     - associated resource
     - sop
     slot_usage:
@@ -803,47 +454,20 @@ classes:
         recommended: true
       subspecf_gen_lin:
         recommended: true
-      ploidy:
-        comments:
-        - not applicable
-      num_replicons:
-        comments:
-        - not applicable
-      extrachrom_elements:
-        comments:
-        - not applicable
       estimated_size:
         required: false
       ref_biomaterial:
         required: false
       source_mat_id:
         recommended: true
-      pathogenicity:
-        comments:
-        - not applicable
-      biotic_relationship:
-        comments:
-        - not applicable
       specific_host:
         recommended: true
       host_spec_range:
         required: false
-      health_disease_stat:
-        comments:
-        - not applicable
-      host_disease_stat:
-        comments:
-        - not applicable
-      trophic_level:
-        comments:
-        - not applicable
       propagation:
         required: true
       encoded_traits:
         recommended: true
-      rel_to_oxygen:
-        comments:
-        - not applicable
       isol_growth_condt:
         required: true
       samp_collec_device:
@@ -852,19 +476,10 @@ classes:
         required: false
       samp_mat_process:
         required: false
-      size_frac:
-        comments:
-        - not applicable
       samp_size:
         required: false
       samp_vol_we_dna_ext:
         required: false
-      source_uvig:
-        comments:
-        - not applicable
-      virus_enrich_appr:
-        comments:
-        - not applicable
       nucl_acid_ext:
         recommended: true
       nucl_acid_amp:
@@ -879,31 +494,10 @@ classes:
         required: false
       lib_screen:
         required: false
-      target_gene:
-        comments:
-        - not applicable
-      target_subfragment:
-        comments:
-        - not applicable
-      pcr_primers:
-        comments:
-        - not applicable
-      mid:
-        comments:
-        - not applicable
       adapters:
         recommended: true
-      pcr_cond:
-        comments:
-        - not applicable
       seq_meth:
         required: true
-      seq_quality_check:
-        comments:
-        - not applicable
-      chimera_check:
-        comments:
-        - not applicable
       tax_ident:
         recommended: true
       assembly_qual:
@@ -924,88 +518,10 @@ classes:
         required: false
       tax_class:
         required: false
-      x_16s_recover:
-        comments:
-        - not applicable
-      trnas:
-        comments:
-        - not applicable
-      trna_ext_software:
-        comments:
-        - not applicable
       compl_score:
         required: false
       compl_software:
         required: false
-      compl_appr:
-        comments:
-        - not applicable
-      contam_score:
-        comments:
-        - not applicable
-      contam_screen_input:
-        comments:
-        - not applicable
-      contam_screen_param:
-        comments:
-        - not applicable
-      decontam_software:
-        comments:
-        - not applicable
-      sort_tech:
-        comments:
-        - not applicable
-      single_cell_lysis_appr:
-        comments:
-        - not applicable
-      single_cell_lysis_prot:
-        comments:
-        - not applicable
-      wga_amp_appr:
-        comments:
-        - not applicable
-      wga_amp_kit:
-        comments:
-        - not applicable
-      bin_param:
-        comments:
-        - not applicable
-      bin_software:
-        comments:
-        - not applicable
-      reassembly_bin:
-        comments:
-        - not applicable
-      mag_cov_software:
-        comments:
-        - not applicable
-      vir_ident_software:
-        comments:
-        - not applicable
-      pred_genome_type:
-        comments:
-        - not applicable
-      pred_genome_struc:
-        comments:
-        - not applicable
-      detec_type:
-        comments:
-        - not applicable
-      otu_class_appr:
-        comments:
-        - not applicable
-      otu_seq_comp_appr:
-        comments:
-        - not applicable
-      otu_db:
-        comments:
-        - not applicable
-      host_pred_appr:
-        comments:
-        - not applicable
-      host_pred_est_acc:
-        comments:
-        - not applicable
       associated resource:
         recommended: true
       sop:
@@ -1031,9 +547,7 @@ classes:
     - env_medium
     - env_package
     - subspecf_gen_lin
-    - ploidy
     - num_replicons
-    - extrachrom_elements
     - estimated_size
     - ref_biomaterial
     - source_mat_id
@@ -1043,18 +557,14 @@ classes:
     - host_spec_range
     - health_disease_stat
     - host_disease_stat
-    - trophic_level
     - propagation
     - encoded_traits
-    - rel_to_oxygen
     - isol_growth_condt
     - samp_collec_device
     - samp_collec_method
     - samp_mat_process
-    - size_frac
     - samp_size
     - samp_vol_we_dna_ext
-    - source_uvig
     - virus_enrich_appr
     - nucl_acid_ext
     - nucl_acid_amp
@@ -1063,15 +573,8 @@ classes:
     - lib_layout
     - lib_vector
     - lib_screen
-    - target_gene
-    - target_subfragment
-    - pcr_primers
-    - mid
     - adapters
-    - pcr_cond
     - seq_meth
-    - seq_quality_check
-    - chimera_check
     - tax_ident
     - assembly_qual
     - assembly_name
@@ -1082,34 +585,8 @@ classes:
     - ref_db
     - sim_search_meth
     - tax_class
-    - x_16s_recover
-    - trnas
-    - trna_ext_software
     - compl_score
     - compl_software
-    - compl_appr
-    - contam_score
-    - contam_screen_input
-    - contam_screen_param
-    - decontam_software
-    - sort_tech
-    - single_cell_lysis_appr
-    - single_cell_lysis_prot
-    - wga_amp_appr
-    - wga_amp_kit
-    - bin_param
-    - bin_software
-    - reassembly_bin
-    - mag_cov_software
-    - vir_ident_software
-    - pred_genome_type
-    - pred_genome_struc
-    - detec_type
-    - otu_class_appr
-    - otu_seq_comp_appr
-    - otu_db
-    - host_pred_appr
-    - host_pred_est_acc
     - associated resource
     - sop
     slot_usage:
@@ -1141,14 +618,8 @@ classes:
         recommended: true
       subspecf_gen_lin:
         recommended: true
-      ploidy:
-        comments:
-        - not applicable
       num_replicons:
         recommended: true
-      extrachrom_elements:
-        comments:
-        - not applicable
       estimated_size:
         required: false
       ref_biomaterial:
@@ -1167,16 +638,10 @@ classes:
         recommended: true
       host_disease_stat:
         recommended: true
-      trophic_level:
-        comments:
-        - not applicable
       propagation:
         required: true
       encoded_traits:
         recommended: true
-      rel_to_oxygen:
-        comments:
-        - not applicable
       isol_growth_condt:
         required: true
       samp_collec_device:
@@ -1185,16 +650,10 @@ classes:
         required: false
       samp_mat_process:
         required: false
-      size_frac:
-        comments:
-        - not applicable
       samp_size:
         required: false
       samp_vol_we_dna_ext:
         required: false
-      source_uvig:
-        comments:
-        - not applicable
       virus_enrich_appr:
         recommended: true
       nucl_acid_ext:
@@ -1211,31 +670,10 @@ classes:
         required: false
       lib_screen:
         required: false
-      target_gene:
-        comments:
-        - not applicable
-      target_subfragment:
-        comments:
-        - not applicable
-      pcr_primers:
-        comments:
-        - not applicable
-      mid:
-        comments:
-        - not applicable
       adapters:
         recommended: true
-      pcr_cond:
-        comments:
-        - not applicable
       seq_meth:
         required: true
-      seq_quality_check:
-        comments:
-        - not applicable
-      chimera_check:
-        comments:
-        - not applicable
       tax_ident:
         recommended: true
       assembly_qual:
@@ -1256,88 +694,10 @@ classes:
         required: false
       tax_class:
         required: false
-      x_16s_recover:
-        comments:
-        - not applicable
-      trnas:
-        comments:
-        - not applicable
-      trna_ext_software:
-        comments:
-        - not applicable
       compl_score:
         required: false
       compl_software:
         required: false
-      compl_appr:
-        comments:
-        - not applicable
-      contam_score:
-        comments:
-        - not applicable
-      contam_screen_input:
-        comments:
-        - not applicable
-      contam_screen_param:
-        comments:
-        - not applicable
-      decontam_software:
-        comments:
-        - not applicable
-      sort_tech:
-        comments:
-        - not applicable
-      single_cell_lysis_appr:
-        comments:
-        - not applicable
-      single_cell_lysis_prot:
-        comments:
-        - not applicable
-      wga_amp_appr:
-        comments:
-        - not applicable
-      wga_amp_kit:
-        comments:
-        - not applicable
-      bin_param:
-        comments:
-        - not applicable
-      bin_software:
-        comments:
-        - not applicable
-      reassembly_bin:
-        comments:
-        - not applicable
-      mag_cov_software:
-        comments:
-        - not applicable
-      vir_ident_software:
-        comments:
-        - not applicable
-      pred_genome_type:
-        comments:
-        - not applicable
-      pred_genome_struc:
-        comments:
-        - not applicable
-      detec_type:
-        comments:
-        - not applicable
-      otu_class_appr:
-        comments:
-        - not applicable
-      otu_seq_comp_appr:
-        comments:
-        - not applicable
-      otu_db:
-        comments:
-        - not applicable
-      host_pred_appr:
-        comments:
-        - not applicable
-      host_pred_est_acc:
-        comments:
-        - not applicable
       associated resource:
         recommended: true
       sop:
@@ -1363,31 +723,16 @@ classes:
     - env_medium
     - env_package
     - subspecf_gen_lin
-    - ploidy
-    - num_replicons
     - extrachrom_elements
     - estimated_size
     - ref_biomaterial
     - source_mat_id
-    - pathogenicity
-    - biotic_relationship
-    - specific_host
-    - host_spec_range
-    - health_disease_stat
-    - host_disease_stat
-    - trophic_level
-    - propagation
-    - encoded_traits
-    - rel_to_oxygen
     - isol_growth_condt
     - samp_collec_device
     - samp_collec_method
     - samp_mat_process
-    - size_frac
     - samp_size
     - samp_vol_we_dna_ext
-    - source_uvig
-    - virus_enrich_appr
     - nucl_acid_ext
     - nucl_acid_amp
     - lib_size
@@ -1395,15 +740,8 @@ classes:
     - lib_layout
     - lib_vector
     - lib_screen
-    - target_gene
-    - target_subfragment
-    - pcr_primers
-    - mid
     - adapters
-    - pcr_cond
     - seq_meth
-    - seq_quality_check
-    - chimera_check
     - tax_ident
     - assembly_qual
     - assembly_name
@@ -1414,34 +752,8 @@ classes:
     - ref_db
     - sim_search_meth
     - tax_class
-    - x_16s_recover
-    - trnas
-    - trna_ext_software
     - compl_score
     - compl_software
-    - compl_appr
-    - contam_score
-    - contam_screen_input
-    - contam_screen_param
-    - decontam_software
-    - sort_tech
-    - single_cell_lysis_appr
-    - single_cell_lysis_prot
-    - wga_amp_appr
-    - wga_amp_kit
-    - bin_param
-    - bin_software
-    - reassembly_bin
-    - mag_cov_software
-    - vir_ident_software
-    - pred_genome_type
-    - pred_genome_struc
-    - detec_type
-    - otu_class_appr
-    - otu_seq_comp_appr
-    - otu_db
-    - host_pred_appr
-    - host_pred_est_acc
     - associated resource
     - sop
     slot_usage:
@@ -1473,12 +785,6 @@ classes:
         recommended: true
       subspecf_gen_lin:
         recommended: true
-      ploidy:
-        comments:
-        - not applicable
-      num_replicons:
-        comments:
-        - not applicable
       extrachrom_elements:
         recommended: true
       estimated_size:
@@ -1487,36 +793,6 @@ classes:
         required: false
       source_mat_id:
         recommended: true
-      pathogenicity:
-        comments:
-        - not applicable
-      biotic_relationship:
-        comments:
-        - not applicable
-      specific_host:
-        comments:
-        - not applicable
-      host_spec_range:
-        comments:
-        - not applicable
-      health_disease_stat:
-        comments:
-        - not applicable
-      host_disease_stat:
-        comments:
-        - not applicable
-      trophic_level:
-        comments:
-        - not applicable
-      propagation:
-        comments:
-        - not applicable
-      encoded_traits:
-        comments:
-        - not applicable
-      rel_to_oxygen:
-        comments:
-        - not applicable
       isol_growth_condt:
         required: true
       samp_collec_device:
@@ -1525,19 +801,10 @@ classes:
         required: false
       samp_mat_process:
         required: false
-      size_frac:
-        comments:
-        - not applicable
       samp_size:
         required: false
       samp_vol_we_dna_ext:
         required: false
-      source_uvig:
-        comments:
-        - not applicable
-      virus_enrich_appr:
-        comments:
-        - not applicable
       nucl_acid_ext:
         recommended: true
       nucl_acid_amp:
@@ -1552,31 +819,10 @@ classes:
         required: false
       lib_screen:
         required: false
-      target_gene:
-        comments:
-        - not applicable
-      target_subfragment:
-        comments:
-        - not applicable
-      pcr_primers:
-        comments:
-        - not applicable
-      mid:
-        comments:
-        - not applicable
       adapters:
         recommended: true
-      pcr_cond:
-        comments:
-        - not applicable
       seq_meth:
         required: true
-      seq_quality_check:
-        comments:
-        - not applicable
-      chimera_check:
-        comments:
-        - not applicable
       tax_ident:
         recommended: true
       assembly_qual:
@@ -1597,88 +843,10 @@ classes:
         required: false
       tax_class:
         required: false
-      x_16s_recover:
-        comments:
-        - not applicable
-      trnas:
-        comments:
-        - not applicable
-      trna_ext_software:
-        comments:
-        - not applicable
       compl_score:
         required: false
       compl_software:
         required: false
-      compl_appr:
-        comments:
-        - not applicable
-      contam_score:
-        comments:
-        - not applicable
-      contam_screen_input:
-        comments:
-        - not applicable
-      contam_screen_param:
-        comments:
-        - not applicable
-      decontam_software:
-        comments:
-        - not applicable
-      sort_tech:
-        comments:
-        - not applicable
-      single_cell_lysis_appr:
-        comments:
-        - not applicable
-      single_cell_lysis_prot:
-        comments:
-        - not applicable
-      wga_amp_appr:
-        comments:
-        - not applicable
-      wga_amp_kit:
-        comments:
-        - not applicable
-      bin_param:
-        comments:
-        - not applicable
-      bin_software:
-        comments:
-        - not applicable
-      reassembly_bin:
-        comments:
-        - not applicable
-      mag_cov_software:
-        comments:
-        - not applicable
-      vir_ident_software:
-        comments:
-        - not applicable
-      pred_genome_type:
-        comments:
-        - not applicable
-      pred_genome_struc:
-        comments:
-        - not applicable
-      detec_type:
-        comments:
-        - not applicable
-      otu_class_appr:
-        comments:
-        - not applicable
-      otu_seq_comp_appr:
-        comments:
-        - not applicable
-      otu_db:
-        comments:
-        - not applicable
-      host_pred_appr:
-        comments:
-        - not applicable
-      host_pred_est_acc:
-        comments:
-        - not applicable
       associated resource:
         recommended: true
       sop:
@@ -1703,32 +871,15 @@ classes:
     - env_local_scale
     - env_medium
     - env_package
-    - subspecf_gen_lin
-    - ploidy
-    - num_replicons
-    - extrachrom_elements
-    - estimated_size
     - ref_biomaterial
     - source_mat_id
-    - pathogenicity
-    - biotic_relationship
-    - specific_host
-    - host_spec_range
-    - health_disease_stat
-    - host_disease_stat
-    - trophic_level
-    - propagation
-    - encoded_traits
     - rel_to_oxygen
-    - isol_growth_condt
     - samp_collec_device
     - samp_collec_method
     - samp_mat_process
     - size_frac
     - samp_size
     - samp_vol_we_dna_ext
-    - source_uvig
-    - virus_enrich_appr
     - nucl_acid_ext
     - nucl_acid_amp
     - lib_size
@@ -1736,16 +887,9 @@ classes:
     - lib_layout
     - lib_vector
     - lib_screen
-    - target_gene
-    - target_subfragment
-    - pcr_primers
     - mid
     - adapters
-    - pcr_cond
     - seq_meth
-    - seq_quality_check
-    - chimera_check
-    - tax_ident
     - assembly_qual
     - assembly_name
     - assembly_software
@@ -1755,34 +899,6 @@ classes:
     - ref_db
     - sim_search_meth
     - tax_class
-    - x_16s_recover
-    - trnas
-    - trna_ext_software
-    - compl_score
-    - compl_software
-    - compl_appr
-    - contam_score
-    - contam_screen_input
-    - contam_screen_param
-    - decontam_software
-    - sort_tech
-    - single_cell_lysis_appr
-    - single_cell_lysis_prot
-    - wga_amp_appr
-    - wga_amp_kit
-    - bin_param
-    - bin_software
-    - reassembly_bin
-    - mag_cov_software
-    - vir_ident_software
-    - pred_genome_type
-    - pred_genome_struc
-    - detec_type
-    - otu_class_appr
-    - otu_seq_comp_appr
-    - otu_db
-    - host_pred_appr
-    - host_pred_est_acc
     - associated resource
     - sop
     slot_usage:
@@ -1812,57 +928,12 @@ classes:
         required: true
       env_package:
         recommended: true
-      subspecf_gen_lin:
-        comments:
-        - not applicable
-      ploidy:
-        comments:
-        - not applicable
-      num_replicons:
-        comments:
-        - not applicable
-      extrachrom_elements:
-        comments:
-        - not applicable
-      estimated_size:
-        comments:
-        - not applicable
       ref_biomaterial:
         required: false
       source_mat_id:
         recommended: true
-      pathogenicity:
-        comments:
-        - not applicable
-      biotic_relationship:
-        comments:
-        - not applicable
-      specific_host:
-        comments:
-        - not applicable
-      host_spec_range:
-        comments:
-        - not applicable
-      health_disease_stat:
-        comments:
-        - not applicable
-      host_disease_stat:
-        comments:
-        - not applicable
-      trophic_level:
-        comments:
-        - not applicable
-      propagation:
-        comments:
-        - not applicable
-      encoded_traits:
-        comments:
-        - not applicable
       rel_to_oxygen:
         required: false
-      isol_growth_condt:
-        comments:
-        - not applicable
       samp_collec_device:
         recommended: true
       samp_collec_method:
@@ -1875,12 +946,6 @@ classes:
         recommended: true
       samp_vol_we_dna_ext:
         required: false
-      source_uvig:
-        comments:
-        - not applicable
-      virus_enrich_appr:
-        comments:
-        - not applicable
       nucl_acid_ext:
         recommended: true
       nucl_acid_amp:
@@ -1895,33 +960,12 @@ classes:
         recommended: true
       lib_screen:
         recommended: true
-      target_gene:
-        comments:
-        - not applicable
-      target_subfragment:
-        comments:
-        - not applicable
-      pcr_primers:
-        comments:
-        - not applicable
       mid:
         recommended: true
       adapters:
         recommended: true
-      pcr_cond:
-        comments:
-        - not applicable
       seq_meth:
         required: true
-      seq_quality_check:
-        comments:
-        - not applicable
-      chimera_check:
-        comments:
-        - not applicable
-      tax_ident:
-        comments:
-        - not applicable
       assembly_qual:
         recommended: true
       assembly_name:
@@ -1940,90 +984,6 @@ classes:
         required: false
       tax_class:
         required: false
-      x_16s_recover:
-        comments:
-        - not applicable
-      trnas:
-        comments:
-        - not applicable
-      trna_ext_software:
-        comments:
-        - not applicable
-      compl_score:
-        comments:
-        - not applicable
-      compl_software:
-        comments:
-        - not applicable
-      compl_appr:
-        comments:
-        - not applicable
-      contam_score:
-        comments:
-        - not applicable
-      contam_screen_input:
-        comments:
-        - not applicable
-      contam_screen_param:
-        comments:
-        - not applicable
-      decontam_software:
-        comments:
-        - not applicable
-      sort_tech:
-        comments:
-        - not applicable
-      single_cell_lysis_appr:
-        comments:
-        - not applicable
-      single_cell_lysis_prot:
-        comments:
-        - not applicable
-      wga_amp_appr:
-        comments:
-        - not applicable
-      wga_amp_kit:
-        comments:
-        - not applicable
-      bin_param:
-        comments:
-        - not applicable
-      bin_software:
-        comments:
-        - not applicable
-      reassembly_bin:
-        comments:
-        - not applicable
-      mag_cov_software:
-        comments:
-        - not applicable
-      vir_ident_software:
-        comments:
-        - not applicable
-      pred_genome_type:
-        comments:
-        - not applicable
-      pred_genome_struc:
-        comments:
-        - not applicable
-      detec_type:
-        comments:
-        - not applicable
-      otu_class_appr:
-        comments:
-        - not applicable
-      otu_seq_comp_appr:
-        comments:
-        - not applicable
-      otu_db:
-        comments:
-        - not applicable
-      host_pred_appr:
-        comments:
-        - not applicable
-      host_pred_est_acc:
-        comments:
-        - not applicable
       associated resource:
         recommended: true
       sop:
@@ -2049,32 +1009,14 @@ classes:
     - env_local_scale
     - env_medium
     - env_package
-    - subspecf_gen_lin
-    - ploidy
-    - num_replicons
-    - extrachrom_elements
-    - estimated_size
-    - ref_biomaterial
     - source_mat_id
-    - pathogenicity
-    - biotic_relationship
-    - specific_host
-    - host_spec_range
-    - health_disease_stat
-    - host_disease_stat
-    - trophic_level
-    - propagation
-    - encoded_traits
     - rel_to_oxygen
-    - isol_growth_condt
     - samp_collec_device
     - samp_collec_method
     - samp_mat_process
     - size_frac
     - samp_size
     - samp_vol_we_dna_ext
-    - source_uvig
-    - virus_enrich_appr
     - nucl_acid_ext
     - nucl_acid_amp
     - lib_size
@@ -2091,44 +1033,7 @@ classes:
     - seq_meth
     - seq_quality_check
     - chimera_check
-    - tax_ident
-    - assembly_qual
-    - assembly_name
     - assembly_software
-    - annot
-    - number_contig
-    - feat_pred
-    - ref_db
-    - sim_search_meth
-    - tax_class
-    - x_16s_recover
-    - trnas
-    - trna_ext_software
-    - compl_score
-    - compl_software
-    - compl_appr
-    - contam_score
-    - contam_screen_input
-    - contam_screen_param
-    - decontam_software
-    - sort_tech
-    - single_cell_lysis_appr
-    - single_cell_lysis_prot
-    - wga_amp_appr
-    - wga_amp_kit
-    - bin_param
-    - bin_software
-    - reassembly_bin
-    - mag_cov_software
-    - vir_ident_software
-    - pred_genome_type
-    - pred_genome_struc
-    - detec_type
-    - otu_class_appr
-    - otu_seq_comp_appr
-    - otu_db
-    - host_pred_appr
-    - host_pred_est_acc
     - associated resource
     - sop
     slot_usage:
@@ -2158,58 +1063,10 @@ classes:
         required: true
       env_package:
         recommended: true
-      subspecf_gen_lin:
-        comments:
-        - not applicable
-      ploidy:
-        comments:
-        - not applicable
-      num_replicons:
-        comments:
-        - not applicable
-      extrachrom_elements:
-        comments:
-        - not applicable
-      estimated_size:
-        comments:
-        - not applicable
-      ref_biomaterial:
-        comments:
-        - not applicable
       source_mat_id:
         recommended: true
-      pathogenicity:
-        comments:
-        - not applicable
-      biotic_relationship:
-        comments:
-        - not applicable
-      specific_host:
-        comments:
-        - not applicable
-      host_spec_range:
-        comments:
-        - not applicable
-      health_disease_stat:
-        comments:
-        - not applicable
-      host_disease_stat:
-        comments:
-        - not applicable
-      trophic_level:
-        comments:
-        - not applicable
-      propagation:
-        comments:
-        - not applicable
-      encoded_traits:
-        comments:
-        - not applicable
       rel_to_oxygen:
         required: false
-      isol_growth_condt:
-        comments:
-        - not applicable
       samp_collec_device:
         recommended: true
       samp_collec_method:
@@ -2222,12 +1079,6 @@ classes:
         recommended: true
       samp_vol_we_dna_ext:
         required: false
-      source_uvig:
-        comments:
-        - not applicable
-      virus_enrich_appr:
-        comments:
-        - not applicable
       nucl_acid_ext:
         recommended: true
       nucl_acid_amp:
@@ -2260,119 +1111,8 @@ classes:
         recommended: true
       chimera_check:
         recommended: true
-      tax_ident:
-        comments:
-        - not applicable
-      assembly_qual:
-        comments:
-        - not applicable
-      assembly_name:
-        comments:
-        - not applicable
       assembly_software:
         recommended: true
-      annot:
-        comments:
-        - not applicable
-      number_contig:
-        comments:
-        - not applicable
-      feat_pred:
-        comments:
-        - not applicable
-      ref_db:
-        comments:
-        - not applicable
-      sim_search_meth:
-        comments:
-        - not applicable
-      tax_class:
-        comments:
-        - not applicable
-      x_16s_recover:
-        comments:
-        - not applicable
-      trnas:
-        comments:
-        - not applicable
-      trna_ext_software:
-        comments:
-        - not applicable
-      compl_score:
-        comments:
-        - not applicable
-      compl_software:
-        comments:
-        - not applicable
-      compl_appr:
-        comments:
-        - not applicable
-      contam_score:
-        comments:
-        - not applicable
-      contam_screen_input:
-        comments:
-        - not applicable
-      contam_screen_param:
-        comments:
-        - not applicable
-      decontam_software:
-        comments:
-        - not applicable
-      sort_tech:
-        comments:
-        - not applicable
-      single_cell_lysis_appr:
-        comments:
-        - not applicable
-      single_cell_lysis_prot:
-        comments:
-        - not applicable
-      wga_amp_appr:
-        comments:
-        - not applicable
-      wga_amp_kit:
-        comments:
-        - not applicable
-      bin_param:
-        comments:
-        - not applicable
-      bin_software:
-        comments:
-        - not applicable
-      reassembly_bin:
-        comments:
-        - not applicable
-      mag_cov_software:
-        comments:
-        - not applicable
-      vir_ident_software:
-        comments:
-        - not applicable
-      pred_genome_type:
-        comments:
-        - not applicable
-      pred_genome_struc:
-        comments:
-        - not applicable
-      detec_type:
-        comments:
-        - not applicable
-      otu_class_appr:
-        comments:
-        - not applicable
-      otu_seq_comp_appr:
-        comments:
-        - not applicable
-      otu_db:
-        comments:
-        - not applicable
-      host_pred_appr:
-        comments:
-        - not applicable
-      host_pred_est_acc:
-        comments:
-        - not applicable
       associated resource:
         recommended: true
       sop:
@@ -2399,85 +1139,26 @@ classes:
     - env_medium
     - env_package
     - subspecf_gen_lin
-    - ploidy
-    - num_replicons
     - extrachrom_elements
-    - estimated_size
-    - ref_biomaterial
     - source_mat_id
-    - pathogenicity
     - biotic_relationship
-    - specific_host
-    - host_spec_range
-    - health_disease_stat
-    - host_disease_stat
     - trophic_level
-    - propagation
-    - encoded_traits
     - rel_to_oxygen
     - isol_growth_condt
     - samp_collec_device
     - samp_collec_method
     - samp_mat_process
-    - size_frac
     - samp_size
     - samp_vol_we_dna_ext
-    - source_uvig
-    - virus_enrich_appr
     - nucl_acid_ext
     - nucl_acid_amp
-    - lib_size
-    - lib_reads_seqd
-    - lib_layout
-    - lib_vector
-    - lib_screen
     - target_gene
     - target_subfragment
     - pcr_primers
-    - mid
-    - adapters
     - pcr_cond
     - seq_meth
     - seq_quality_check
     - chimera_check
-    - tax_ident
-    - assembly_qual
-    - assembly_name
-    - assembly_software
-    - annot
-    - number_contig
-    - feat_pred
-    - ref_db
-    - sim_search_meth
-    - tax_class
-    - x_16s_recover
-    - trnas
-    - trna_ext_software
-    - compl_score
-    - compl_software
-    - compl_appr
-    - contam_score
-    - contam_screen_input
-    - contam_screen_param
-    - decontam_software
-    - sort_tech
-    - single_cell_lysis_appr
-    - single_cell_lysis_prot
-    - wga_amp_appr
-    - wga_amp_kit
-    - bin_param
-    - bin_software
-    - reassembly_bin
-    - mag_cov_software
-    - vir_ident_software
-    - pred_genome_type
-    - pred_genome_struc
-    - detec_type
-    - otu_class_appr
-    - otu_seq_comp_appr
-    - otu_db
-    - host_pred_appr
-    - host_pred_est_acc
     - associated resource
     - sop
     slot_usage:
@@ -2509,47 +1190,14 @@ classes:
         recommended: true
       subspecf_gen_lin:
         recommended: true
-      ploidy:
-        comments:
-        - not applicable
-      num_replicons:
-        comments:
-        - not applicable
       extrachrom_elements:
         required: false
-      estimated_size:
-        comments:
-        - not applicable
-      ref_biomaterial:
-        comments:
-        - not applicable
       source_mat_id:
         recommended: true
-      pathogenicity:
-        comments:
-        - not applicable
       biotic_relationship:
         recommended: true
-      specific_host:
-        comments:
-        - not applicable
-      host_spec_range:
-        comments:
-        - not applicable
-      health_disease_stat:
-        comments:
-        - not applicable
-      host_disease_stat:
-        comments:
-        - not applicable
       trophic_level:
         recommended: true
-      propagation:
-        comments:
-        - not applicable
-      encoded_traits:
-        comments:
-        - not applicable
       rel_to_oxygen:
         recommended: true
       isol_growth_condt:
@@ -2560,50 +1208,20 @@ classes:
         required: false
       samp_mat_process:
         recommended: true
-      size_frac:
-        comments:
-        - not applicable
       samp_size:
         required: false
       samp_vol_we_dna_ext:
         required: false
-      source_uvig:
-        comments:
-        - not applicable
-      virus_enrich_appr:
-        comments:
-        - not applicable
       nucl_acid_ext:
         recommended: true
       nucl_acid_amp:
         recommended: true
-      lib_size:
-        comments:
-        - not applicable
-      lib_reads_seqd:
-        comments:
-        - not applicable
-      lib_layout:
-        comments:
-        - not applicable
-      lib_vector:
-        comments:
-        - not applicable
-      lib_screen:
-        comments:
-        - not applicable
       target_gene:
         required: true
       target_subfragment:
         recommended: true
       pcr_primers:
         recommended: true
-      mid:
-        comments:
-        - not applicable
-      adapters:
-        comments:
-        - not applicable
       pcr_cond:
         recommended: true
       seq_meth:
@@ -2612,120 +1230,6 @@ classes:
         recommended: true
       chimera_check:
         recommended: true
-      tax_ident:
-        comments:
-        - not applicable
-      assembly_qual:
-        comments:
-        - not applicable
-      assembly_name:
-        comments:
-        - not applicable
-      assembly_software:
-        comments:
-        - not applicable
-      annot:
-        comments:
-        - not applicable
-      number_contig:
-        comments:
-        - not applicable
-      feat_pred:
-        comments:
-        - not applicable
-      ref_db:
-        comments:
-        - not applicable
-      sim_search_meth:
-        comments:
-        - not applicable
-      tax_class:
-        comments:
-        - not applicable
-      x_16s_recover:
-        comments:
-        - not applicable
-      trnas:
-        comments:
-        - not applicable
-      trna_ext_software:
-        comments:
-        - not applicable
-      compl_score:
-        comments:
-        - not applicable
-      compl_software:
-        comments:
-        - not applicable
-      compl_appr:
-        comments:
-        - not applicable
-      contam_score:
-        comments:
-        - not applicable
-      contam_screen_input:
-        comments:
-        - not applicable
-      contam_screen_param:
-        comments:
-        - not applicable
-      decontam_software:
-        comments:
-        - not applicable
-      sort_tech:
-        comments:
-        - not applicable
-      single_cell_lysis_appr:
-        comments:
-        - not applicable
-      single_cell_lysis_prot:
-        comments:
-        - not applicable
-      wga_amp_appr:
-        comments:
-        - not applicable
-      wga_amp_kit:
-        comments:
-        - not applicable
-      bin_param:
-        comments:
-        - not applicable
-      bin_software:
-        comments:
-        - not applicable
-      reassembly_bin:
-        comments:
-        - not applicable
-      mag_cov_software:
-        comments:
-        - not applicable
-      vir_ident_software:
-        comments:
-        - not applicable
-      pred_genome_type:
-        comments:
-        - not applicable
-      pred_genome_struc:
-        comments:
-        - not applicable
-      detec_type:
-        comments:
-        - not applicable
-      otu_class_appr:
-        comments:
-        - not applicable
-      otu_seq_comp_appr:
-        comments:
-        - not applicable
-      otu_db:
-        comments:
-        - not applicable
-      host_pred_appr:
-        comments:
-        - not applicable
-      host_pred_est_acc:
-        comments:
-        - not applicable
       associated resource:
         recommended: true
       sop:
@@ -2750,32 +1254,15 @@ classes:
     - env_local_scale
     - env_medium
     - env_package
-    - subspecf_gen_lin
-    - ploidy
-    - num_replicons
-    - extrachrom_elements
-    - estimated_size
     - ref_biomaterial
     - source_mat_id
-    - pathogenicity
-    - biotic_relationship
-    - specific_host
-    - host_spec_range
-    - health_disease_stat
-    - host_disease_stat
-    - trophic_level
-    - propagation
-    - encoded_traits
     - rel_to_oxygen
-    - isol_growth_condt
     - samp_collec_device
     - samp_collec_method
     - samp_mat_process
     - size_frac
     - samp_size
     - samp_vol_we_dna_ext
-    - source_uvig
-    - virus_enrich_appr
     - nucl_acid_ext
     - nucl_acid_amp
     - lib_size
@@ -2783,15 +1270,9 @@ classes:
     - lib_layout
     - lib_vector
     - lib_screen
-    - target_gene
-    - target_subfragment
-    - pcr_primers
     - mid
     - adapters
-    - pcr_cond
     - seq_meth
-    - seq_quality_check
-    - chimera_check
     - tax_ident
     - assembly_qual
     - assembly_name
@@ -2817,19 +1298,6 @@ classes:
     - single_cell_lysis_prot
     - wga_amp_appr
     - wga_amp_kit
-    - bin_param
-    - bin_software
-    - reassembly_bin
-    - mag_cov_software
-    - vir_ident_software
-    - pred_genome_type
-    - pred_genome_struc
-    - detec_type
-    - otu_class_appr
-    - otu_seq_comp_appr
-    - otu_db
-    - host_pred_appr
-    - host_pred_est_acc
     - associated resource
     - sop
     slot_usage:
@@ -2859,57 +1327,12 @@ classes:
         required: true
       env_package:
         recommended: true
-      subspecf_gen_lin:
-        comments:
-        - not applicable
-      ploidy:
-        comments:
-        - not applicable
-      num_replicons:
-        comments:
-        - not applicable
-      extrachrom_elements:
-        comments:
-        - not applicable
-      estimated_size:
-        comments:
-        - not applicable
       ref_biomaterial:
         required: false
       source_mat_id:
         recommended: true
-      pathogenicity:
-        comments:
-        - not applicable
-      biotic_relationship:
-        comments:
-        - not applicable
-      specific_host:
-        comments:
-        - not applicable
-      host_spec_range:
-        comments:
-        - not applicable
-      health_disease_stat:
-        comments:
-        - not applicable
-      host_disease_stat:
-        comments:
-        - not applicable
-      trophic_level:
-        comments:
-        - not applicable
-      propagation:
-        comments:
-        - not applicable
-      encoded_traits:
-        comments:
-        - not applicable
       rel_to_oxygen:
         required: false
-      isol_growth_condt:
-        comments:
-        - not applicable
       samp_collec_device:
         recommended: true
       samp_collec_method:
@@ -2922,12 +1345,6 @@ classes:
         recommended: true
       samp_vol_we_dna_ext:
         required: false
-      source_uvig:
-        comments:
-        - not applicable
-      virus_enrich_appr:
-        comments:
-        - not applicable
       nucl_acid_ext:
         recommended: true
       nucl_acid_amp:
@@ -2942,30 +1359,12 @@ classes:
         recommended: true
       lib_screen:
         recommended: true
-      target_gene:
-        comments:
-        - not applicable
-      target_subfragment:
-        comments:
-        - not applicable
-      pcr_primers:
-        comments:
-        - not applicable
       mid:
         recommended: true
       adapters:
         recommended: true
-      pcr_cond:
-        comments:
-        - not applicable
       seq_meth:
         required: true
-      seq_quality_check:
-        comments:
-        - not applicable
-      chimera_check:
-        comments:
-        - not applicable
       tax_ident:
         required: true
       assembly_qual:
@@ -3016,45 +1415,6 @@ classes:
         required: true
       wga_amp_kit:
         required: false
-      bin_param:
-        comments:
-        - not applicable
-      bin_software:
-        comments:
-        - not applicable
-      reassembly_bin:
-        comments:
-        - not applicable
-      mag_cov_software:
-        comments:
-        - not applicable
-      vir_ident_software:
-        comments:
-        - not applicable
-      pred_genome_type:
-        comments:
-        - not applicable
-      pred_genome_struc:
-        comments:
-        - not applicable
-      detec_type:
-        comments:
-        - not applicable
-      otu_class_appr:
-        comments:
-        - not applicable
-      otu_seq_comp_appr:
-        comments:
-        - not applicable
-      otu_db:
-        comments:
-        - not applicable
-      host_pred_appr:
-        comments:
-        - not applicable
-      host_pred_est_acc:
-        comments:
-        - not applicable
       associated resource:
         recommended: true
       sop:
@@ -3079,32 +1439,15 @@ classes:
     - env_local_scale
     - env_medium
     - env_package
-    - subspecf_gen_lin
-    - ploidy
-    - num_replicons
-    - extrachrom_elements
-    - estimated_size
     - ref_biomaterial
     - source_mat_id
-    - pathogenicity
-    - biotic_relationship
-    - specific_host
-    - host_spec_range
-    - health_disease_stat
-    - host_disease_stat
-    - trophic_level
-    - propagation
-    - encoded_traits
     - rel_to_oxygen
-    - isol_growth_condt
     - samp_collec_device
     - samp_collec_method
     - samp_mat_process
     - size_frac
     - samp_size
     - samp_vol_we_dna_ext
-    - source_uvig
-    - virus_enrich_appr
     - nucl_acid_ext
     - nucl_acid_amp
     - lib_size
@@ -3112,15 +1455,9 @@ classes:
     - lib_layout
     - lib_vector
     - lib_screen
-    - target_gene
-    - target_subfragment
-    - pcr_primers
     - mid
     - adapters
-    - pcr_cond
     - seq_meth
-    - seq_quality_check
-    - chimera_check
     - tax_ident
     - assembly_qual
     - assembly_name
@@ -3141,24 +1478,10 @@ classes:
     - contam_screen_input
     - contam_screen_param
     - decontam_software
-    - sort_tech
-    - single_cell_lysis_appr
-    - single_cell_lysis_prot
-    - wga_amp_appr
-    - wga_amp_kit
     - bin_param
     - bin_software
     - reassembly_bin
     - mag_cov_software
-    - vir_ident_software
-    - pred_genome_type
-    - pred_genome_struc
-    - detec_type
-    - otu_class_appr
-    - otu_seq_comp_appr
-    - otu_db
-    - host_pred_appr
-    - host_pred_est_acc
     - associated resource
     - sop
     slot_usage:
@@ -3188,57 +1511,12 @@ classes:
         required: true
       env_package:
         recommended: true
-      subspecf_gen_lin:
-        comments:
-        - not applicable
-      ploidy:
-        comments:
-        - not applicable
-      num_replicons:
-        comments:
-        - not applicable
-      extrachrom_elements:
-        comments:
-        - not applicable
-      estimated_size:
-        comments:
-        - not applicable
       ref_biomaterial:
         required: false
       source_mat_id:
         recommended: true
-      pathogenicity:
-        comments:
-        - not applicable
-      biotic_relationship:
-        comments:
-        - not applicable
-      specific_host:
-        comments:
-        - not applicable
-      host_spec_range:
-        comments:
-        - not applicable
-      health_disease_stat:
-        comments:
-        - not applicable
-      host_disease_stat:
-        comments:
-        - not applicable
-      trophic_level:
-        comments:
-        - not applicable
-      propagation:
-        comments:
-        - not applicable
-      encoded_traits:
-        comments:
-        - not applicable
       rel_to_oxygen:
         required: false
-      isol_growth_condt:
-        comments:
-        - not applicable
       samp_collec_device:
         recommended: true
       samp_collec_method:
@@ -3251,12 +1529,6 @@ classes:
         recommended: true
       samp_vol_we_dna_ext:
         required: false
-      source_uvig:
-        comments:
-        - not applicable
-      virus_enrich_appr:
-        comments:
-        - not applicable
       nucl_acid_ext:
         recommended: true
       nucl_acid_amp:
@@ -3271,30 +1543,12 @@ classes:
         recommended: true
       lib_screen:
         recommended: true
-      target_gene:
-        comments:
-        - not applicable
-      target_subfragment:
-        comments:
-        - not applicable
-      pcr_primers:
-        comments:
-        - not applicable
       mid:
         recommended: true
       adapters:
         recommended: true
-      pcr_cond:
-        comments:
-        - not applicable
       seq_meth:
         required: true
-      seq_quality_check:
-        comments:
-        - not applicable
-      chimera_check:
-        comments:
-        - not applicable
       tax_ident:
         required: true
       assembly_qual:
@@ -3335,21 +1589,6 @@ classes:
         required: false
       decontam_software:
         required: false
-      sort_tech:
-        comments:
-        - not applicable
-      single_cell_lysis_appr:
-        comments:
-        - not applicable
-      single_cell_lysis_prot:
-        comments:
-        - not applicable
-      wga_amp_appr:
-        comments:
-        - not applicable
-      wga_amp_kit:
-        comments:
-        - not applicable
       bin_param:
         required: true
       bin_software:
@@ -3358,33 +1597,6 @@ classes:
         required: false
       mag_cov_software:
         required: false
-      vir_ident_software:
-        comments:
-        - not applicable
-      pred_genome_type:
-        comments:
-        - not applicable
-      pred_genome_struc:
-        comments:
-        - not applicable
-      detec_type:
-        comments:
-        - not applicable
-      otu_class_appr:
-        comments:
-        - not applicable
-      otu_seq_comp_appr:
-        comments:
-        - not applicable
-      otu_db:
-        comments:
-        - not applicable
-      host_pred_appr:
-        comments:
-        - not applicable
-      host_pred_est_acc:
-        comments:
-        - not applicable
       associated resource:
         recommended: true
       sop:
@@ -3409,10 +1621,6 @@ classes:
     - env_local_scale
     - env_medium
     - env_package
-    - subspecf_gen_lin
-    - ploidy
-    - num_replicons
-    - extrachrom_elements
     - estimated_size
     - ref_biomaterial
     - source_mat_id
@@ -3420,13 +1628,7 @@ classes:
     - biotic_relationship
     - specific_host
     - host_spec_range
-    - health_disease_stat
     - host_disease_stat
-    - trophic_level
-    - propagation
-    - encoded_traits
-    - rel_to_oxygen
-    - isol_growth_condt
     - samp_collec_device
     - samp_collec_method
     - samp_mat_process
@@ -3442,15 +1644,9 @@ classes:
     - lib_layout
     - lib_vector
     - lib_screen
-    - target_gene
-    - target_subfragment
-    - pcr_primers
     - mid
     - adapters
-    - pcr_cond
     - seq_meth
-    - seq_quality_check
-    - chimera_check
     - tax_ident
     - assembly_qual
     - assembly_name
@@ -3461,16 +1657,11 @@ classes:
     - ref_db
     - sim_search_meth
     - tax_class
-    - x_16s_recover
     - trnas
     - trna_ext_software
     - compl_score
     - compl_software
     - compl_appr
-    - contam_score
-    - contam_screen_input
-    - contam_screen_param
-    - decontam_software
     - sort_tech
     - single_cell_lysis_appr
     - single_cell_lysis_prot
@@ -3518,18 +1709,6 @@ classes:
         required: true
       env_package:
         recommended: true
-      subspecf_gen_lin:
-        comments:
-        - not applicable
-      ploidy:
-        comments:
-        - not applicable
-      num_replicons:
-        comments:
-        - not applicable
-      extrachrom_elements:
-        comments:
-        - not applicable
       estimated_size:
         required: false
       ref_biomaterial:
@@ -3544,26 +1723,8 @@ classes:
         required: false
       host_spec_range:
         required: false
-      health_disease_stat:
-        comments:
-        - not applicable
       host_disease_stat:
         recommended: true
-      trophic_level:
-        comments:
-        - not applicable
-      propagation:
-        comments:
-        - not applicable
-      encoded_traits:
-        comments:
-        - not applicable
-      rel_to_oxygen:
-        comments:
-        - not applicable
-      isol_growth_condt:
-        comments:
-        - not applicable
       samp_collec_device:
         recommended: true
       samp_collec_method:
@@ -3594,30 +1755,12 @@ classes:
         recommended: true
       lib_screen:
         recommended: true
-      target_gene:
-        comments:
-        - not applicable
-      target_subfragment:
-        comments:
-        - not applicable
-      pcr_primers:
-        comments:
-        - not applicable
       mid:
         recommended: true
       adapters:
         recommended: true
-      pcr_cond:
-        comments:
-        - not applicable
       seq_meth:
         required: true
-      seq_quality_check:
-        comments:
-        - not applicable
-      chimera_check:
-        comments:
-        - not applicable
       tax_ident:
         required: false
       assembly_qual:
@@ -3638,9 +1781,6 @@ classes:
         recommended: true
       tax_class:
         recommended: true
-      x_16s_recover:
-        comments:
-        - not applicable
       trnas:
         required: false
       trna_ext_software:
@@ -3651,18 +1791,6 @@ classes:
         required: false
       compl_appr:
         recommended: true
-      contam_score:
-        comments:
-        - not applicable
-      contam_screen_input:
-        comments:
-        - not applicable
-      contam_screen_param:
-        comments:
-        - not applicable
-      decontam_software:
-        comments:
-        - not applicable
       sort_tech:
         recommended: true
       single_cell_lysis_appr:

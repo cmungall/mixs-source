@@ -355,8 +355,8 @@ class MIxS6Converter:
                         usage['required'] = False
                     elif cardinality == 'C':
                         usage['recommended'] = True
-                    elif cardinality == '-':
-                        usage['comments'] = ['not applicable']
+                    #elif cardinality == '-':
+                    #    usage['comments'] = ['not applicable']
                     if usage != {}:
                         checklist_slot_usage[s_id] = usage
             classes[checklist_name] = {
