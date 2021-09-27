@@ -3,9 +3,9 @@
 converts mixs6 spreadsheet
 
 spreadsheet:
-https://docs.google.com/spreadsheets/d/1QDeeUcDqXes69Y2RjU2aWgOpCVWo5OVsBX9MKmMqi_o/edit#gid=567040283
+https://docs.google.com/spreadsheets/d/165AHU4Px4S1fFFIqsvffWFlD1RUFmH609QbuDl4pASk/edit
 
-Note: should also work for mixs5 xlsx files too, once exported to tsv
+Note: This file first has to be saved locally as a TSV. This code should also work for mixs5 xlsx files too, once exported to tsv
 """
 import click
 import yaml
@@ -20,7 +20,7 @@ import re
 
 CORE_PACKAGE_NAME = 'core'
 
-# technology-specific checklists from the previous MIGS and MIMS standards
+# technology-specific checklists from the MIGS and MIMS standards
 CHECKLISTS = {'migs_eu':
                   {'name': 'MIGS eukaryote',
                    'fullname': 'Minimal Information about a Genome Sequence: eukaryote',
@@ -43,10 +43,10 @@ CHECKLISTS = {'migs_eu':
                   {'name': 'MIGS org',
                    'fullname': 'Minimal Information about a Genome Sequence: org',
                    'abbrev': 'MIGS.org'},
-              'me':
-                  {'name': 'ME',
+              'mims':
+                  {'name': 'MIMS',
                    'fullname': 'Metagenome or Environmental',
-                   'abbrev': 'ME'},
+                   'abbrev': 'MIMS'},
               'mimarks_s':
                   {'name': 'MIMARKS specimen',
                    'fullname': 'Minimal Information about a Marker Specimen: specimen',
@@ -180,12 +180,14 @@ class MIxS6Converter:
             logging.error(f'Bad name: {s_name} in {row}')
             return None, None
         comments = []
-        for k in ('Expected value', 'Preferred unit', 'Occurrence', 'Position'):
+       # for k in ('Expected value', 'Preferred unit', 'Occurrence', 'Position'): position was in editors's sheet but is not being used in MIxS 6. We may want to add it back at some point.
+        for k in ('Expected value', 'Preferred unit', 'Occurrence'):
             if k in row and row[k] != '':
                 comments.append(f'{k}: {row[k]}')
         multivalued = row.get('Occurrence', '') == 'm'
 
         # the column header is not consistent between sheets here
+        # column headers are now unique as MIXS ID, but this still works
         slot_uri = None
         if 'Unique MIXS ID' in row and row['Unique MIXS ID'] is not None:
             slot_uri = row['Unique MIXS ID']
@@ -197,12 +199,15 @@ class MIxS6Converter:
             None
             #logging.error(f'No ID: {slot_uri}')
         # workaround for https://github.com/GenomicsStandardsConsortium/mixs/issues/216
-        if slot_uri.startswith('Measure'):
-            logging.error(f'Bad format for MIXS ID in {row} -- value given is {slot_uri}')
-            slot_uri = 'MIXS:TODO1234'
-        exact_mappings = []
-        if 'MIGS ID (mapping to GOLD)' in row:
-            exact_mappings.append(f'MIGS:{row["MIGS ID (mapping to GOLD)"]}')
+        # this issue has been fixed
+        #if slot_uri.startswith('Measure'):
+        #    logging.error(f'Bad format for MIXS ID in {row} -- value given is {slot_uri}')
+        #    slot_uri = 'MIXS:TODO1234'
+        
+        # The GOLD mappings have been removed. If we want to add them back in, uncomment this section and readd the column.
+        # exact_mappings = []
+        # if 'MIGS ID (mapping to GOLD)' in row:
+        #    exact_mappings.append(f'MIGS:{row["MIGS ID (mapping to GOLD)"]}')
 
         section = row['Section'] if 'Section' in row else 'environment'
         if section == '':
@@ -225,11 +230,12 @@ class MIxS6Converter:
             slot['exact_mappings'] = exact_mappings
         if pattern is not None:
             slot['pattern'] = pattern
-        LINK = 'Link to GH issue'
-        if LINK in row:
-            url = row[LINK]
-            if url is not None and url.startswith("http"):
-                slot['see_also'] = url
+       # the link to GH issues were removed. We may want to add them back in.
+       # LINK = 'Link to GH issue'
+       # if LINK in row:
+       #     url = row[LINK]
+       #     if url is not None and url.startswith("http"):
+       #         slot['see_also'] = url
 
         s_id = safe(s_id)
         if pattern is not None and '|' in pattern:
