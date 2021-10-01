@@ -13,7 +13,7 @@ RUN = pipenv run
 SCHEMA_NAME = mixs
 SCHEMA_SRC = $(SCHEMA_DIR)/$(SCHEMA_NAME).yaml
 #PKG_TGTS = graphql json  jsonschema owl rdf jsonld shex
-PKG_TGTS = graphql json  jsonschema owl
+PKG_TGTS = json jsonschema owl
 TGTS = docs $(PKG_TGTS)
 
 # Global generation options
