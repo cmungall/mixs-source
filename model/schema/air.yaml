@@ -35,7 +35,7 @@ classes:
     - oxy_stat_samp
     - perturbation
     - pollutants
-    - resp_part_matter
+    - air particulate matter concentration
     - samp_salinity
     - salinity
     - samp_store_dur
@@ -79,7 +79,7 @@ classes:
         required: false
       pollutants:
         required: false
-      resp_part_matter:
+      air particulate matter concentration:
         required: false
       samp_salinity:
         required: false

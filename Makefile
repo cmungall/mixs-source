@@ -243,5 +243,5 @@ downloads/mixs6.tsv:
 downloads/mixs6_core.tsv:
 	curl -L -s 'https://docs.google.com/spreadsheets/d/1QDeeUcDqXes69Y2RjU2aWgOpCVWo5OVsBX9MKmMqi_o/export?format=tsv&gid=567040283' > $@
 
-model/schema/mixs.yaml: downloads/mixs6.tsv
+model/schema/mixs.yaml: downloads/mixs6.tsv downloads/mixs6_core.tsv
 	$(RUN) python -m gsctools.mixs_converter

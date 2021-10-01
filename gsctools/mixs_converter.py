@@ -217,7 +217,7 @@ class MIxS6Converter:
         pattern, range = parse_value_syntax(row['Value syntax'], s_name)
         slot = {
             'is_a': is_a,
-            'aliases': [s_name],
+            'title': s_name,
             'description': row['Definition'],
             'range': range,
             'multivalued': multivalued,
@@ -226,8 +226,8 @@ class MIxS6Converter:
             ],
             'comments': comments
         }
-        if len(exact_mappings) > 0:
-            slot['exact_mappings'] = exact_mappings
+        #if len(exact_mappings) > 0:
+        #    slot['exact_mappings'] = exact_mappings
         if pattern is not None:
             slot['pattern'] = pattern
        # the link to GH issues were removed. We may want to add them back in.

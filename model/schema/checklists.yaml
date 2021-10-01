@@ -26,6 +26,8 @@ classes:
     - lat_lon
     - geo_loc_name
     - collection_date
+    - neg_cont_type
+    - pos_cont_type
     - env_broad_scale
     - env_local_scale
     - env_medium
@@ -93,6 +95,10 @@ classes:
         required: true
       collection_date:
         required: true
+      neg_cont_type:
+        recommended: true
+      pos_cont_type:
+        recommended: true
       env_broad_scale:
         required: true
       env_local_scale:
@@ -205,6 +211,8 @@ classes:
     - lat_lon
     - geo_loc_name
     - collection_date
+    - neg_cont_type
+    - pos_cont_type
     - env_broad_scale
     - env_local_scale
     - env_medium
@@ -272,6 +280,10 @@ classes:
         required: true
       collection_date:
         required: true
+      neg_cont_type:
+        recommended: true
+      pos_cont_type:
+        recommended: true
       env_broad_scale:
         required: true
       env_local_scale:
@@ -384,6 +396,8 @@ classes:
     - lat_lon
     - geo_loc_name
     - collection_date
+    - neg_cont_type
+    - pos_cont_type
     - env_broad_scale
     - env_local_scale
     - env_medium
@@ -444,6 +458,10 @@ classes:
         required: true
       collection_date:
         required: true
+      neg_cont_type:
+        recommended: true
+      pos_cont_type:
+        recommended: true
       env_broad_scale:
         required: true
       env_local_scale:
@@ -542,6 +560,8 @@ classes:
     - lat_lon
     - geo_loc_name
     - collection_date
+    - neg_cont_type
+    - pos_cont_type
     - env_broad_scale
     - env_local_scale
     - env_medium
@@ -608,6 +628,10 @@ classes:
         required: true
       collection_date:
         required: true
+      neg_cont_type:
+        recommended: true
+      pos_cont_type:
+        recommended: true
       env_broad_scale:
         required: true
       env_local_scale:
@@ -718,6 +742,8 @@ classes:
     - lat_lon
     - geo_loc_name
     - collection_date
+    - neg_cont_type
+    - pos_cont_type
     - env_broad_scale
     - env_local_scale
     - env_medium
@@ -775,6 +801,10 @@ classes:
         required: true
       collection_date:
         required: true
+      neg_cont_type:
+        recommended: true
+      pos_cont_type:
+        recommended: true
       env_broad_scale:
         required: true
       env_local_scale:
@@ -851,11 +881,11 @@ classes:
         recommended: true
       sop:
         recommended: true
-  ME:
+  MIMS:
     mixin: true
     description: Metagenome or Environmental
     aliases:
-    - ME
+    - MIMS
     see_also: []
     slots:
     - submitted_to_insdc
@@ -867,6 +897,8 @@ classes:
     - lat_lon
     - geo_loc_name
     - collection_date
+    - neg_cont_type
+    - pos_cont_type
     - env_broad_scale
     - env_local_scale
     - env_medium
@@ -920,6 +952,10 @@ classes:
         required: true
       collection_date:
         required: true
+      neg_cont_type:
+        recommended: true
+      pos_cont_type:
+        recommended: true
       env_broad_scale:
         required: true
       env_local_scale:
@@ -1005,6 +1041,8 @@ classes:
     - lat_lon
     - geo_loc_name
     - collection_date
+    - neg_cont_type
+    - pos_cont_type
     - env_broad_scale
     - env_local_scale
     - env_medium
@@ -1055,6 +1093,10 @@ classes:
         required: true
       collection_date:
         required: true
+      neg_cont_type:
+        recommended: true
+      pos_cont_type:
+        recommended: true
       env_broad_scale:
         required: true
       env_local_scale:
@@ -1134,6 +1176,8 @@ classes:
     - lat_lon
     - geo_loc_name
     - collection_date
+    - neg_cont_type
+    - pos_cont_type
     - env_broad_scale
     - env_local_scale
     - env_medium
@@ -1180,6 +1224,10 @@ classes:
         required: true
       collection_date:
         required: true
+      neg_cont_type:
+        recommended: true
+      pos_cont_type:
+        recommended: true
       env_broad_scale:
         required: true
       env_local_scale:
@@ -1250,6 +1298,8 @@ classes:
     - lat_lon
     - geo_loc_name
     - collection_date
+    - neg_cont_type
+    - pos_cont_type
     - env_broad_scale
     - env_local_scale
     - env_medium
@@ -1284,6 +1334,7 @@ classes:
     - sim_search_meth
     - tax_class
     - x_16s_recover
+    - x_16s_recover_software
     - trnas
     - trna_ext_software
     - compl_score
@@ -1319,6 +1370,10 @@ classes:
         required: true
       collection_date:
         required: true
+      neg_cont_type:
+        recommended: true
+      pos_cont_type:
+        recommended: true
       env_broad_scale:
         required: true
       env_local_scale:
@@ -1386,6 +1441,8 @@ classes:
       tax_class:
         required: false
       x_16s_recover:
+        required: false
+      x_16s_recover_software:
         required: false
       trnas:
         required: false
@@ -1435,6 +1492,8 @@ classes:
     - lat_lon
     - geo_loc_name
     - collection_date
+    - neg_cont_type
+    - pos_cont_type
     - env_broad_scale
     - env_local_scale
     - env_medium
@@ -1469,6 +1528,7 @@ classes:
     - sim_search_meth
     - tax_class
     - x_16s_recover
+    - x_16s_recover_software
     - trnas
     - trna_ext_software
     - compl_score
@@ -1503,6 +1563,10 @@ classes:
         required: true
       collection_date:
         required: true
+      neg_cont_type:
+        recommended: true
+      pos_cont_type:
+        recommended: true
       env_broad_scale:
         required: true
       env_local_scale:
@@ -1571,6 +1635,8 @@ classes:
         required: false
       x_16s_recover:
         required: false
+      x_16s_recover_software:
+        required: false
       trnas:
         required: false
       trna_ext_software:
@@ -1617,6 +1683,8 @@ classes:
     - lat_lon
     - geo_loc_name
     - collection_date
+    - neg_cont_type
+    - pos_cont_type
     - env_broad_scale
     - env_local_scale
     - env_medium
@@ -1701,6 +1769,10 @@ classes:
         required: true
       collection_date:
         required: true
+      neg_cont_type:
+        recommended: true
+      pos_cont_type:
+        recommended: true
       env_broad_scale:
         required: true
       env_local_scale:
@@ -1861,10 +1933,10 @@ classes:
     - MIGS org
     description: 'Combinatorial checklist Minimal Information about a Genome Sequence:
       org with environmental package air'
-  air ME:
+  air MIMS:
     is_a: air
     mixins:
-    - ME
+    - MIMS
     description: Combinatorial checklist Metagenome or Environmental with environmental
       package air
   air MIMARKS specimen:
@@ -1927,10 +1999,10 @@ classes:
     - MIGS org
     description: 'Combinatorial checklist Minimal Information about a Genome Sequence:
       org with environmental package built environment'
-  built environment ME:
+  built environment MIMS:
     is_a: built environment
     mixins:
-    - ME
+    - MIMS
     description: Combinatorial checklist Metagenome or Environmental with environmental
       package built environment
   built environment MIMARKS specimen:
@@ -1993,10 +2065,10 @@ classes:
     - MIGS org
     description: 'Combinatorial checklist Minimal Information about a Genome Sequence:
       org with environmental package host-associated'
-  host-associated ME:
+  host-associated MIMS:
     is_a: host-associated
     mixins:
-    - ME
+    - MIMS
     description: Combinatorial checklist Metagenome or Environmental with environmental
       package host-associated
   host-associated MIMARKS specimen:
@@ -2059,10 +2131,10 @@ classes:
     - MIGS org
     description: 'Combinatorial checklist Minimal Information about a Genome Sequence:
       org with environmental package human-associated'
-  human-associated ME:
+  human-associated MIMS:
     is_a: human-associated
     mixins:
-    - ME
+    - MIMS
     description: Combinatorial checklist Metagenome or Environmental with environmental
       package human-associated
   human-associated MIMARKS specimen:
@@ -2125,10 +2197,10 @@ classes:
     - MIGS org
     description: 'Combinatorial checklist Minimal Information about a Genome Sequence:
       org with environmental package human-gut'
-  human-gut ME:
+  human-gut MIMS:
     is_a: human-gut
     mixins:
-    - ME
+    - MIMS
     description: Combinatorial checklist Metagenome or Environmental with environmental
       package human-gut
   human-gut MIMARKS specimen:
@@ -2191,10 +2263,10 @@ classes:
     - MIGS org
     description: 'Combinatorial checklist Minimal Information about a Genome Sequence:
       org with environmental package human-oral'
-  human-oral ME:
+  human-oral MIMS:
     is_a: human-oral
     mixins:
-    - ME
+    - MIMS
     description: Combinatorial checklist Metagenome or Environmental with environmental
       package human-oral
   human-oral MIMARKS specimen:
@@ -2257,10 +2329,10 @@ classes:
     - MIGS org
     description: 'Combinatorial checklist Minimal Information about a Genome Sequence:
       org with environmental package human-skin'
-  human-skin ME:
+  human-skin MIMS:
     is_a: human-skin
     mixins:
-    - ME
+    - MIMS
     description: Combinatorial checklist Metagenome or Environmental with environmental
       package human-skin
   human-skin MIMARKS specimen:
@@ -2323,10 +2395,10 @@ classes:
     - MIGS org
     description: 'Combinatorial checklist Minimal Information about a Genome Sequence:
       org with environmental package human-vaginal'
-  human-vaginal ME:
+  human-vaginal MIMS:
     is_a: human-vaginal
     mixins:
-    - ME
+    - MIMS
     description: Combinatorial checklist Metagenome or Environmental with environmental
       package human-vaginal
   human-vaginal MIMARKS specimen:
@@ -2389,10 +2461,10 @@ classes:
     - MIGS org
     description: 'Combinatorial checklist Minimal Information about a Genome Sequence:
       org with environmental package hydrocarbon resources-cores'
-  hydrocarbon resources-cores ME:
+  hydrocarbon resources-cores MIMS:
     is_a: hydrocarbon resources-cores
     mixins:
-    - ME
+    - MIMS
     description: Combinatorial checklist Metagenome or Environmental with environmental
       package hydrocarbon resources-cores
   hydrocarbon resources-cores MIMARKS specimen:
@@ -2455,10 +2527,10 @@ classes:
     - MIGS org
     description: 'Combinatorial checklist Minimal Information about a Genome Sequence:
       org with environmental package hydrocarbon resources-fluids_swabs'
-  hydrocarbon resources-fluids_swabs ME:
+  hydrocarbon resources-fluids_swabs MIMS:
     is_a: hydrocarbon resources-fluids_swabs
     mixins:
-    - ME
+    - MIMS
     description: Combinatorial checklist Metagenome or Environmental with environmental
       package hydrocarbon resources-fluids_swabs
   hydrocarbon resources-fluids_swabs MIMARKS specimen:
@@ -2521,10 +2593,10 @@ classes:
     - MIGS org
     description: 'Combinatorial checklist Minimal Information about a Genome Sequence:
       org with environmental package microbial mat_biofilm'
-  microbial mat_biofilm ME:
+  microbial mat_biofilm MIMS:
     is_a: microbial mat_biofilm
     mixins:
-    - ME
+    - MIMS
     description: Combinatorial checklist Metagenome or Environmental with environmental
       package microbial mat_biofilm
   microbial mat_biofilm MIMARKS specimen:
@@ -2589,10 +2661,10 @@ classes:
     - MIGS org
     description: 'Combinatorial checklist Minimal Information about a Genome Sequence:
       org with environmental package miscellaneous natural or artificial environment'
-  miscellaneous natural or artificial environment ME:
+  miscellaneous natural or artificial environment MIMS:
     is_a: miscellaneous natural or artificial environment
     mixins:
-    - ME
+    - MIMS
     description: Combinatorial checklist Metagenome or Environmental with environmental
       package miscellaneous natural or artificial environment
   miscellaneous natural or artificial environment MIMARKS specimen:
@@ -2656,10 +2728,10 @@ classes:
     - MIGS org
     description: 'Combinatorial checklist Minimal Information about a Genome Sequence:
       org with environmental package plant-associated'
-  plant-associated ME:
+  plant-associated MIMS:
     is_a: plant-associated
     mixins:
-    - ME
+    - MIMS
     description: Combinatorial checklist Metagenome or Environmental with environmental
       package plant-associated
   plant-associated MIMARKS specimen:
@@ -2722,10 +2794,10 @@ classes:
     - MIGS org
     description: 'Combinatorial checklist Minimal Information about a Genome Sequence:
       org with environmental package sediment'
-  sediment ME:
+  sediment MIMS:
     is_a: sediment
     mixins:
-    - ME
+    - MIMS
     description: Combinatorial checklist Metagenome or Environmental with environmental
       package sediment
   sediment MIMARKS specimen:
@@ -2788,10 +2860,10 @@ classes:
     - MIGS org
     description: 'Combinatorial checklist Minimal Information about a Genome Sequence:
       org with environmental package soil'
-  soil ME:
+  soil MIMS:
     is_a: soil
     mixins:
-    - ME
+    - MIMS
     description: Combinatorial checklist Metagenome or Environmental with environmental
       package soil
   soil MIMARKS specimen:
@@ -2854,10 +2926,10 @@ classes:
     - MIGS org
     description: 'Combinatorial checklist Minimal Information about a Genome Sequence:
       org with environmental package wastewater_sludge'
-  wastewater_sludge ME:
+  wastewater_sludge MIMS:
     is_a: wastewater_sludge
     mixins:
-    - ME
+    - MIMS
     description: Combinatorial checklist Metagenome or Environmental with environmental
       package wastewater_sludge
   wastewater_sludge MIMARKS specimen:
@@ -2920,10 +2992,10 @@ classes:
     - MIGS org
     description: 'Combinatorial checklist Minimal Information about a Genome Sequence:
       org with environmental package water'
-  water ME:
+  water MIMS:
     is_a: water
     mixins:
-    - ME
+    - MIMS
     description: Combinatorial checklist Metagenome or Environmental with environmental
       package water
   water MIMARKS specimen:

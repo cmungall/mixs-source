@@ -35,7 +35,7 @@ classes:
     - fire
     - flooding
     - extreme_event
-    - horizon
+    - soil_horizon
     - horizon_meth
     - sieving
     - water_content
@@ -57,8 +57,8 @@ classes:
     - slope_aspect
     - profile_position
     - drainage_class
-    - texture
-    - texture_meth
+    - soil_text_measure
+    - soil_texture_meth
     - ph
     - ph_meth
     - tot_org_carb
@@ -106,7 +106,7 @@ classes:
         required: false
       extreme_event:
         required: false
-      horizon:
+      soil_horizon:
         required: false
       horizon_meth:
         required: false
@@ -152,9 +152,9 @@ classes:
         required: false
       drainage_class:
         required: false
-      texture:
+      soil_text_measure:
         required: false
-      texture_meth:
+      soil_texture_meth:
         required: false
       ph:
         required: false

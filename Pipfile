@@ -13,6 +13,6 @@ nbformat = "*"
 ipykernel = "*"
 
 [packages]
-linkml = ">=1.1.4"
+linkml = ">=1.1.7"
 pandas = "*"
 mkdocs = "*"
