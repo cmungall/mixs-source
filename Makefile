@@ -12,7 +12,8 @@ RUN = pipenv run
 
 SCHEMA_NAME = mixs
 SCHEMA_SRC = $(SCHEMA_DIR)/$(SCHEMA_NAME).yaml
-PKG_TGTS = graphql json  jsonschema owl rdf jsonld shex csv
+#PKG_TGTS = graphql json  jsonschema owl rdf jsonld shex
+PKG_TGTS = graphql json  jsonschema owl
 TGTS = docs $(PKG_TGTS)
 
 # Global generation options
@@ -100,7 +101,7 @@ docs/index.md: target/docs/index.md
 	cp -R $(MODEL_DOCS_DIR)/*.md target/docs
 	$(RUN) mkdocs build
 target/docs/index.md: $(SCHEMA_DIR)/$(SCHEMA_NAME).yaml tdir-docs env.lock
-	$(RUN) gen-markdown $(GEN_OPTS) --no-mergeimports --dir target/docs $<
+	$(RUN) gen-markdown -M slot=term -M class=package -M mixin=checklist -M enum=dropdown $(GEN_OPTS) --no-mergeimports --dir target/docs $<
 
 # test docs locally.
 docserve:
@@ -205,13 +206,14 @@ target/json/%.json: $(SCHEMA_DIR)/%.yaml tdir-json env.lock
 	$(RUN) gen-jsonld $(GEN_OPTS)  $< > $@
 
 # ---------------------------------------
-# CSV
+# Excel
 # ---------------------------------------
-# one file per module
-gen-csv: $(patsubst %, target/csv/%.csv, $(SCHEMA_NAMES))
-target/csv/%.csv: $(SCHEMA_DIR)/%.yaml tdir-csv
-	gen-csv $(GEN_OPTS) $< > $@
-
+gen-excel: $(PKG_DIR)/excel/$(SCHEMA_NAME).xlsx
+.PHONY: gen-excel
+$(PKG_DIR)/excel/%.xlsx: target/excel/%.xlsx
+	cp $< $@
+target/excel/%.xlsx: $(SCHEMA_DIR)/%.yaml tdir-excel env.lock
+	$(RUN) gen-excel --mergeimports $(GEN_OPTS) $< -o $@
 
 # ---------------------------------------
 # RDF
@@ -237,10 +239,9 @@ target/rdf/%.model.ttl: $(SCHEMA_DIR)/%.yaml $(PKG_DIR)/jsonld/%.model.context.j
 # for seeding
 
 downloads/mixs6.tsv:
-	curl -L -s 'https://docs.google.com/spreadsheets/d/165AHU4Px4S1fFFIqsvffWFlD1RUFmH609QbuDl4pASk/export?format=tsv&gid=345753674' > $@
+	curl -L -s 'https://docs.google.com/spreadsheets/d/1QDeeUcDqXes69Y2RjU2aWgOpCVWo5OVsBX9MKmMqi_o/export?format=tsv&gid=345753674' > $@
 downloads/mixs6_core.tsv:
-	curl -L -s 'https://docs.google.com/spreadsheets/d/165AHU4Px4S1fFFIqsvffWFlD1RUFmH609QbuDl4pASk/export?format=tsv&gid=567040283' > $@
+	curl -L -s 'https://docs.google.com/spreadsheets/d/1QDeeUcDqXes69Y2RjU2aWgOpCVWo5OVsBX9MKmMqi_o/export?format=tsv&gid=567040283' > $@
 
-
-model/schema/mixs.yaml: downloads/mixs6.tsv
+model/schema/mixs.yaml: downloads/mixs6.tsv downloads/mixs6_core.tsv
 	$(RUN) python -m gsctools.mixs_converter

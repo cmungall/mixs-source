@@ -4,3 +4,5 @@ docs_dir: target/docs
 site_dir: docs
 nav:
   - Index: index.md
+site_url: https://cmungall.github.io/mixs-source/
+repo_url: https://github.com/cmungall/mixs-source

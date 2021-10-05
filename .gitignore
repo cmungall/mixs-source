@@ -2,3 +2,6 @@
 tests/outputs/*yaml
 target/
 *.old
+venv
+__pycache__
+/docs/    ## do not check  in - deploy directly

@@ -27,6 +27,8 @@ classes:
     - temp
     - geo_loc_name
     - collection_date
+    - neg_cont_type
+    - pos_cont_type
     - env_broad_scale
     - env_local_scale
     - env_medium
@@ -84,6 +86,7 @@ classes:
     - sim_search_meth
     - tax_class
     - x_16s_recover
+    - x_16s_recover_software
     - trnas
     - trna_ext_software
     - compl_score
