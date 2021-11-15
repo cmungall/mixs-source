@@ -44,7 +44,6 @@ classes:
     - pre_treatment
     - primary_treatment
     - reactor_type
-    - samp_salinity
     - salinity
     - samp_store_dur
     - samp_store_loc
@@ -106,8 +105,6 @@ classes:
       primary_treatment:
         required: false
       reactor_type:
-        required: false
-      samp_salinity:
         required: false
       salinity:
         required: false

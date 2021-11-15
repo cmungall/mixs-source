@@ -64,7 +64,6 @@ classes:
     - urogenit_tract_disor
     - urine_collect_meth
     - perturbation
-    - samp_salinity
     - salinity
     - oxy_stat_samp
     - organism_count
@@ -159,8 +158,6 @@ classes:
       urine_collect_meth:
         required: false
       perturbation:
-        required: false
-      samp_salinity:
         required: false
       salinity:
         required: false
