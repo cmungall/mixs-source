@@ -40,6 +40,7 @@ slots:
     - value: 'yes'
     comments:
     - 'Expected value: boolean'
+    deprecated: Deprecated in mixs6
     pattern: '{boolean}'
     slot_uri: MIXS:0000004
   investigation_type:
@@ -58,6 +59,7 @@ slots:
     - 'Expected value: eukaryote, bacteria_archaea, plasmid, virus, organelle, metagenome,mimarks-survey,
       mimarks-specimen, metatranscriptome, single amplified genome, metagenome-assembled
       genome, or uncultivated viral genomes'
+    deprecated: Deprecated in mixs6
     pattern: '[eukaryote|bacteria_archaea|plasmid|virus|organelle|metagenome|metatranscriptome|mimarks-survey|mimarks-specimen|misag|mimag|miuvig]'
     slot_uri: MIXS:0000007
   samp_name:
@@ -334,6 +336,7 @@ slots:
     - value: soil
     comments:
     - 'Expected value: enumeration'
+    deprecated: Deprecated in mixs6
     pattern: '[air|built environment|host-associated|human-associated|human-skin|human-oral|human-gut|human-vaginal|hydrocarbon
       resources-cores|hydrocarbon resources-fluids/swabs|microbial mat/biofilm|misc
       environment|plant-associated|sediment|soil|wastewater/sludge|water]'
@@ -511,6 +514,7 @@ slots:
     - value: dead
     comments:
     - 'Expected value: enumeration'
+    deprecated: Deprecated in mixs6
     pattern: '[healthy|diseased|dead|disease-free|undetermined|recovering|resolving|pre-existing
       condition|pathological|life threatening|congenital]'
     slot_uri: MIXS:0000031
@@ -4498,17 +4502,17 @@ slots:
     is_a: core field
     title: host subspecific genetic lineage
     description: Information about the genetic distinctness of the host organism below
-      the subspecies level, e.g., serovar, serotype, biotype, ecotype, or any relevant
-      genetic typing schemes like Group I plasmid. Subspecies should not be recorded
-      in this term, but in the NCBI taxonomy. Supply both the lineage name and the
-      lineage rank separated by a colon, e.g., biovar:abc123.
+      the subspecies level e.g., serovar, serotype, biotype, ecotype, variety, cultivar,
+      or any relevant genetic typing schemes like Group I plasmid. Subspecies should
+      not be recorded in this term, but in the NCBI taxonomy. Supply both the lineage
+      name and the lineage rank separated by a colon, e.g., biovar:abc123.
     range: string
     multivalued: true
     examples:
     - value: subvariety:glabrum
     comments:
     - 'Expected value: Genetic lineage below lowest rank of NCBI taxonomy, which is
-      subspecies, e.g. serovar, biotype, ecotype, plus genetic lineage name.'
+      subspecies, e.g. serovar, biotype, ecotype, variety, cultivar.'
     - 'Occurrence: m'
     - 'This field is used in: 2 packages: host-associated, plant-associated'
     pattern: '{rank name}:{text}'
@@ -5679,18 +5683,16 @@ slots:
       produced water, injected water, swabs, etc. For the Food Package, samples are
       usually categorized as food, body products or tissues, or environmental material.
       This field accepts terms listed under environmental specimen (http://purl.obolibrary.org/obo/GENEPIO_0001246).
-    range: samp_type_enum
+    range: string
     multivalued: false
     examples:
-    - value: solid deposit
+    - value: built environment sample [GENEPIO:0001248]
     comments:
-    - 'Expected value: enumeration'
+    - 'Expected value: GENEPIO:0001246'
     - 'Occurrence: 1'
     - 'This field is used in: 2 packages: hydrocarbon resources-cores, hydrocarbon
       resources-fluids_swabs'
-    pattern: '[core|rock trimmings|drill cuttings|piping section|coupon|pigging debris|solid
-      deposit|produced fluid|produced water|injected water|water from treatment plant|fresh
-      water|sea water|drilling fluid|procedural blank|positive control|negative control|other]'
+    pattern: '{termLabel} {[termID]}'
     slot_uri: MIXS:0000998
   samp_subtype:
     is_a: core field
@@ -10207,26 +10209,6 @@ enums:
       Proterozoic: {}
       Silurian: {}
       Triassic: {}
-      other: {}
-  samp_type_enum:
-    permissible_values:
-      core: {}
-      rock trimmings: {}
-      drill cuttings: {}
-      piping section: {}
-      coupon: {}
-      pigging debris: {}
-      solid deposit: {}
-      produced fluid: {}
-      produced water: {}
-      injected water: {}
-      water from treatment plant: {}
-      fresh water: {}
-      sea water: {}
-      drilling fluid: {}
-      procedural blank: {}
-      positive control: {}
-      negative control: {}
       other: {}
   samp_subtype_enum:
     permissible_values:

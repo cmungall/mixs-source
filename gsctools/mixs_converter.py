@@ -160,6 +160,7 @@ class MIxS6Converter:
         :param row:
         :return: tuple of id and definition dictionary
         """
+        action_column = next(k for k in row.keys() if k.startswith('Action'))
         s_id = row['Structured comment name']
         if s_id is None or s_id == '-':
             logging.error(f"Bad row: {row}")
@@ -226,6 +227,10 @@ class MIxS6Converter:
             ],
             'comments': comments
         }
+        if (action_column and row[action_column] == 'deprecated term') or\
+                ('Discussion' in row and row['Discussion'] == 'remove'):
+            slot['deprecated'] = 'Deprecated in mixs6'
+
         #if len(exact_mappings) > 0:
         #    slot['exact_mappings'] = exact_mappings
         if pattern is not None:
