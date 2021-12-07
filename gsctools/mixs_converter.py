@@ -181,11 +181,14 @@ class MIxS6Converter:
             logging.error(f'Bad name: {s_name} in {row}')
             return None, None
         comments = []
+        annotations = {}
        # for k in ('Expected value', 'Preferred unit', 'Occurrence', 'Position'): position was in editors's sheet but is not being used in MIxS 6. We may want to add it back at some point.
-        for k in ('Expected value', 'Preferred unit', 'Occurrence'):
+       #  for k in ('Expected value', 'Preferred unit', 'Occurrence'):
+        for k in ('Expected value', 'Preferred unit'):
             if k in row and row[k] != '':
                 comments.append(f'{k}: {row[k]}')
         multivalued = row.get('Occurrence', '') == 'm'
+        annotations['Occurrence'] = row.get('Occurrence', '')
 
         # the column header is not consistent between sheets here
         # column headers are now unique as MIXS ID, but this still works
@@ -225,8 +228,13 @@ class MIxS6Converter:
             'examples': [
                 {'value': row['Example']}
             ],
-            'comments': comments
+            'comments': comments,
+            "aliases": []
         }
+        slot["aliases"].append(s_name)
+        # 'aliases': [s_name]
+        # 'annotations': annotations
+
         if (action_column and row[action_column] == 'deprecated term') or\
                 ('Discussion' in row and row['Discussion'] == 'remove'):
             slot['deprecated'] = 'Deprecated in mixs6'
@@ -234,7 +242,8 @@ class MIxS6Converter:
         #if len(exact_mappings) > 0:
         #    slot['exact_mappings'] = exact_mappings
         if pattern is not None:
-            slot['pattern'] = pattern
+            # slot['pattern'] = pattern
+            slot['string_serialization'] = pattern
        # the link to GH issues were removed. We may want to add them back in.
        # LINK = 'Link to GH issue'
        # if LINK in row:
@@ -434,7 +443,11 @@ class MIxS6Converter:
                 cmt = f"This field is used uniquely in: {packages_str}"
             else:
                 cmt = f"This field is used in: {len(s.keys())} packages: {packages_str}"
-            slots[s_id]['comments'].append(cmt)
+            # slots[s_id]['comments'].append(cmt)
+            # slots[s_id]['annotations'] = {}
+            # if 'annotations' not in slots[s_id]:
+            #     slots[s_id]['annotations'] = {}
+            # slots[s_id]['annotations']['associated_packages'] = cmt
 
 
         for p in env_packages:
