@@ -6,3 +6,7 @@ downloads/
 target/
 tests/outputs/*yaml
 venv
+generated/docs/
+docs/
+graphql/
+json/
