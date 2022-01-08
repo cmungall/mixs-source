@@ -51,6 +51,8 @@ clean:
 	rm -rf target/
 	rm -rf generated/
 	rm -f env.lock
+	rm -rf downloads/mixs6*
+	rm -f model/schema/mixs.yaml
 #	pipenv --rm
 .PHONY: clean
 
