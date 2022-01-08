@@ -234,7 +234,8 @@ class MIxS6Converter:
         #if len(exact_mappings) > 0:
         #    slot['exact_mappings'] = exact_mappings
         if pattern is not None:
-            slot['pattern'] = pattern
+            # slot['pattern'] = pattern
+            slot['string_serialization'] = pattern
        # the link to GH issues were removed. We may want to add them back in.
        # LINK = 'Link to GH issue'
        # if LINK in row:
@@ -251,6 +252,7 @@ class MIxS6Converter:
             if len(vals) > 2:
                 enum_name = f'{s_id}_enum'
                 slot['range'] = enum_name
+                slot['string_serialization'] = ''
                 enums[enum_name] = {
                     'permissible_values': {v: {} for v in vals}
                 }
