@@ -22,7 +22,8 @@ GEN_OPTS =
 # ----------------------------------------
 # TOP LEVEL TARGETS
 # ----------------------------------------
-all: env.lock gen unlock
+# all: env.lock gen unlock
+all: clean env.lock generated unlock
 
 # ---------------------------------------
 # env.lock:  set up pipenv
@@ -35,6 +36,9 @@ unlock:
 #	pipenv --rm
 	rm env.lock
 
+generated: model/schema/mixs.yaml
+	$(RUN) gen-project --dir $@ $< 2> generated.log
+
 # ---------------------------------------
 # GEN: run generator for each target
 # ---------------------------------------
@@ -45,6 +49,7 @@ gen: $(patsubst %,gen-%,$(TGTS))
 # ---------------------------------------
 clean:
 	rm -rf target/
+	rm -rf generated/
 	rm -f env.lock
 #	pipenv --rm
 .PHONY: clean
