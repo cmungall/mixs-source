@@ -110250,7 +110250,7 @@
   "source_file": "mixs.yaml",
   "source_file_date": "2022-01-19T10:38:58",
   "source_file_size": 686,
-  "generation_date": "2022-01-19T10:39:14",
+  "generation_date": "2022-01-19T11:12:15",
   "@type": "SchemaDefinition",
   "@context": [
     "./jsonld/mixs.context.jsonld",
