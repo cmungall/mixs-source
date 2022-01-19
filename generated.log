@@ -1,30 +1,30 @@
 INFO:root:Generating: graphql
 INFO:root: SCHEMA: model/schema/mixs.yaml
-INFO:root: PARENT=generated/graphql
+INFO:root: PARENT=./graphql
 INFO:root: ARGS: {'mergeimports': True}
-INFO:root:  WRITING TO: generated/graphql/mixs.graphql
+INFO:root:  WRITING TO: ./graphql/mixs.graphql
 INFO:root:Generating: jsonldcontext
 INFO:root: SCHEMA: model/schema/mixs.yaml
-INFO:root: PARENT=generated/jsonld
+INFO:root: PARENT=./jsonld
 INFO:root: ARGS: {'mergeimports': True}
-INFO:root:  WRITING TO: generated/jsonld/mixs.context.jsonld
+INFO:root:  WRITING TO: ./jsonld/mixs.context.jsonld
 INFO:root:Generating: jsonld
 INFO:root: SCHEMA: model/schema/mixs.yaml
-INFO:root: PARENT=generated/jsonld
-INFO:root: ARGS: {'mergeimports': True, 'context': 'generated/jsonld/mixs.context.jsonld'}
-INFO:root:  WRITING TO: generated/jsonld/mixs.jsonld
+INFO:root: PARENT=./jsonld
+INFO:root: ARGS: {'mergeimports': True, 'context': './jsonld/mixs.context.jsonld'}
+INFO:root:  WRITING TO: ./jsonld/mixs.jsonld
 INFO:root:Generating: jsonschema
 INFO:root: SCHEMA: model/schema/mixs.yaml
-INFO:root: PARENT=generated/jsonschema
+INFO:root: PARENT=./jsonschema
 INFO:root: ARGS: {'mergeimports': True}
-INFO:root:  WRITING TO: generated/jsonschema/mixs.schema.json
+INFO:root:  WRITING TO: ./jsonschema/mixs.schema.json
 INFO:root:Generating: markdown
 INFO:root: SCHEMA: model/schema/mixs.yaml
-INFO:root: PARENT=generated/docs
-INFO:root: ARGS: {'mergeimports': True, 'directory': 'generated/docs', 'index_file': 'mixs.md'}
+INFO:root: PARENT=./docs
+INFO:root: ARGS: {'mergeimports': True, 'directory': './docs', 'index_file': 'mixs.md'}
 INFO:root:Generating: owl
 INFO:root: SCHEMA: model/schema/mixs.yaml
-INFO:root: PARENT=generated/owl
+INFO:root: PARENT=./owl
 INFO:root: ARGS: {'mergeimports': True}
 ERROR:root:Multiple slots with URI: https://w3id.org/mixs/terms/0000122: ['abs_air_humidity', 'built environment_abs_air_humidity']; consider giving each a unique slot_uri
 ERROR:root:Multiple slots with URI: https://w3id.org/mixs/terms/0000048: ['adapters', 'MIGS eukaryote_adapters', 'MIGS bacteria_adapters', 'MIGS plant_adapters', 'MIGS virus_adapters', 'MIGS org_adapters', 'MIMS_adapters', 'MIMARKS specimen_adapters', 'MISAG_adapters', 'MIMAG_adapters', 'MIUVIG_adapters']; consider giving each a unique slot_uri
@@ -631,30 +631,30 @@ ERROR:root:Multiple slots with URI: https://w3id.org/mixs/terms/0000854: ['windo
 ERROR:root:Multiple slots with URI: https://w3id.org/mixs/terms/0000065: ['x_16s_recover', 'MISAG_x_16s_recover', 'MIMAG_x_16s_recover']; consider giving each a unique slot_uri
 ERROR:root:Multiple slots with URI: https://w3id.org/mixs/terms/0000066: ['x_16s_recover_software', 'MISAG_x_16s_recover_software', 'MIMAG_x_16s_recover_software']; consider giving each a unique slot_uri
 ERROR:root:Multiple slots with URI: https://w3id.org/mixs/terms/0000156: ['xylene', 'hydrocarbon resources-cores_xylene', 'hydrocarbon resources-fluids_swabs_xylene']; consider giving each a unique slot_uri
-INFO:root:  WRITING TO: generated/owl/mixs.owl.ttl
+INFO:root:  WRITING TO: ./owl/mixs.owl.ttl
 INFO:root:Generating: prefixmap
 INFO:root: SCHEMA: model/schema/mixs.yaml
-INFO:root: PARENT=generated/prefixmap
+INFO:root: PARENT=./prefixmap
 INFO:root: ARGS: {'mergeimports': True}
-INFO:root:  WRITING TO: generated/prefixmap/mixs.yaml
+INFO:root:  WRITING TO: ./prefixmap/mixs.yaml
 INFO:root:Generating: proto
 INFO:root: SCHEMA: model/schema/mixs.yaml
-INFO:root: PARENT=generated/protobuf
+INFO:root: PARENT=./protobuf
 INFO:root: ARGS: {'mergeimports': True}
-INFO:root:  WRITING TO: generated/protobuf/mixs.proto
+INFO:root:  WRITING TO: ./protobuf/mixs.proto
 INFO:root:Generating: python
 INFO:root: SCHEMA: model/schema/mixs.yaml
-INFO:root: PARENT=generated
+INFO:root: PARENT=.
 INFO:root: ARGS: {'mergeimports': True}
-INFO:root:  WRITING TO: generated/mixs.py
+INFO:root:  WRITING TO: ./mixs.py
 INFO:root:Generating: shex
 INFO:root: SCHEMA: model/schema/mixs.yaml
-INFO:root: PARENT=generated/shex
+INFO:root: PARENT=./shex
 INFO:root: ARGS: {'mergeimports': True}
-INFO:root:  WRITING TO: generated/shex/mixs.shex
+INFO:root:  WRITING TO: ./shex/mixs.shex
 INFO:root:Generating: shacl
 INFO:root: SCHEMA: model/schema/mixs.yaml
-INFO:root: PARENT=generated/shacl
+INFO:root: PARENT=./shacl
 INFO:root: ARGS: {'mergeimports': True}
 INFO:root:Loading schema water from model/schema/mixs.yaml
 INFO:root:Loading schema terms from model/schema/mixs.yaml
@@ -678,10 +678,10 @@ INFO:root:Loading schema built_environment from model/schema/mixs.yaml
 INFO:root:Loading schema air from model/schema/mixs.yaml
 INFO:root:Loading schema core from model/schema/mixs.yaml
 INFO:root:Loading schema checklists from model/schema/mixs.yaml
-INFO:root:  WRITING TO: generated/shacl/mixs.shacl.ttl
+INFO:root:  WRITING TO: ./shacl/mixs.shacl.ttl
 INFO:root:Generating: sqlddl
 INFO:root: SCHEMA: model/schema/mixs.yaml
-INFO:root: PARENT=generated/sqlschema
+INFO:root: PARENT=./sqlschema
 INFO:root: ARGS: {'mergeimports': True}
 ERROR:root:No PK for quantity_value
 ERROR:root:No PK for quantity_value
@@ -6671,10 +6671,10 @@ ERROR:root:No PK for quantity_value
 ERROR:root:No PK for quantity_value
 ERROR:root:No PK for quantity_value
 ERROR:root:No PK for quantity_value
-INFO:root:  WRITING TO: generated/sqlschema/mixs.sql
+INFO:root:  WRITING TO: ./sqlschema/mixs.sql
 INFO:root:Generating: java
 INFO:root: SCHEMA: model/schema/mixs.yaml
-INFO:root: PARENT=generated/java
+INFO:root: PARENT=./java
 INFO:root: ARGS: {'mergeimports': True}
 ERROR:root:No PK for quantity_value
 ERROR:root:No PK for quantity_value
@@ -12664,10 +12664,10 @@ ERROR:root:No PK for quantity_value
 ERROR:root:No PK for quantity_value
 ERROR:root:No PK for quantity_value
 ERROR:root:No PK for quantity_value
-INFO:root:  WRITING TO: generated/java/mixs.sql
+INFO:root:  WRITING TO: ./java/mixs.sql
 INFO:root:Generating: excel
 INFO:root: SCHEMA: model/schema/mixs.yaml
-INFO:root: PARENT=generated/excel
+INFO:root: PARENT=./excel
 INFO:root: ARGS: {'mergeimports': True}
 ERROR:root:No PK for quantity_value
 ERROR:root:No PK for quantity_value
@@ -18657,4 +18657,4 @@ ERROR:root:No PK for quantity_value
 ERROR:root:No PK for quantity_value
 ERROR:root:No PK for quantity_value
 ERROR:root:No PK for quantity_value
-INFO:root:  WRITING TO: generated/excel/mixs.xlsx
+INFO:root:  WRITING TO: ./excel/mixs.xlsx
