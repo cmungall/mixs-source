@@ -7,3 +7,4 @@ target/
 tests/outputs/*yaml
 venv
 docs/
+.DS_Store
