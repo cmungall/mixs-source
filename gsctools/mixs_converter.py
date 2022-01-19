@@ -432,22 +432,20 @@ class MIxS6Converter:
                 if s_id not in core_slots:
                     c['slots'].append(s_id)
 
-        n_cls = len(cls_slot_req.keys())
-        inf_core_slots = []
-        for s_id, s in slot_cls_req.items():
-            packages_str = ', '.join(list(s.keys()))
-            if len(s.keys()) == n_cls:
-                inf_core_slots.append(s_id)
-                cmt = "This field is used in all packages"
-            elif len(s.keys()) == 1:
-                cmt = f"This field is used uniquely in: {packages_str}"
-            else:
-                cmt = f"This field is used in: {len(s.keys())} packages: {packages_str}"
-            # slots[s_id]['comments'].append(cmt)
-            # slots[s_id]['annotations'] = {}
-            # if 'annotations' not in slots[s_id]:
-            #     slots[s_id]['annotations'] = {}
-            # slots[s_id]['annotations']['associated_packages'] = cmt
+
+        # n_cls = len(cls_slot_req.keys())
+        # inf_core_slots = []
+        # for s_id, s in slot_cls_req.items():
+        #     packages_str = ', '.join(list(s.keys()))
+        #     if len(s.keys()) == n_cls:
+        #         inf_core_slots.append(s_id)
+        #         cmt = "This field is used in all packages"
+        #     elif len(s.keys()) == 1:
+        #         cmt = f"This field is used uniquely in: {packages_str}"
+        #     else:
+        #         cmt = f"This field is used in: {len(s.keys())} packages: {packages_str}"
+        #     slots[s_id]['comments'].append(cmt)
+
 
 
         for p in env_packages:
