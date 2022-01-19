@@ -26,7 +26,6 @@ GEN_OPTS =
 # ----------------------------------------
 # TOP LEVEL TARGETS
 # ----------------------------------------
-# all: env.lock gen unlock
 all: clean env.lock generated mkdocs unlock
 
 # ---------------------------------------
@@ -60,13 +59,23 @@ gen: $(patsubst %,gen-%,$(TGTS))
 # CLEAN: clear out all of the targets
 # ---------------------------------------
 clean:
-	rm -rf target/
-	rm -rf generated/
-	rm -f env.lock
-	rm -rf downloads/mixs6*
-	rm -f model/schema/mixs.yaml
-#	pipenv --rm
-.PHONY: clean
+	rm -rf generated/*
+	rm -rf excel/*
+	rm -rf graphql/*
+	rm -rf java/*
+	rm -rf jsonld/*
+	rm -rf jsonschema/*
+	rm -rf owl/*
+	rm -rf prefixmap/*
+	rm -rf protobuf/*
+	rm -rf shacl/*
+	rm -rf shex/*
+	rm -rf sqlschema/*
+	rm -rf generation.log
+	rm -rf docs/*
+	rm -rf docs_stage/*
+	rm -rf mixs.py
+
 
 # ---------------------------------------
 # SQUEAKY_CLEAN: remove all of the final targets to make sure we don't leave old artifacts around
