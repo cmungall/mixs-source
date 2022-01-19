@@ -64,7 +64,6 @@ slots:
     aliases:
     - investigation type
     deprecated: Deprecated in mixs6
-    string_serialization: '[eukaryote|bacteria_archaea|plasmid|virus|organelle|metagenome|metatranscriptome|mimarks-survey|mimarks-specimen|misag|mimag|miuvig]'
     slot_uri: MIXS:0000007
   samp_name:
     is_a: investigation field
@@ -258,8 +257,6 @@ slots:
     - 'Expected value: enumeration or text'
     aliases:
     - negative control type
-    string_serialization: '[distilled water|phosphate buffer|empty collection device|empty
-      collection tube|DNA-free PCR mix|sterile swab |sterile syringe]'
     slot_uri: MIXS:0001321
   pos_cont_type:
     is_a: investigation field
@@ -361,9 +358,6 @@ slots:
     aliases:
     - environmental package
     deprecated: Deprecated in mixs6
-    string_serialization: '[air|built environment|host-associated|human-associated|human-skin|human-oral|human-gut|human-vaginal|hydrocarbon
-      resources-cores|hydrocarbon resources-fluids/swabs|microbial mat/biofilm|misc
-      environment|plant-associated|sediment|soil|wastewater/sludge|water]'
     slot_uri: MIXS:0000019
   subspecf_gen_lin:
     is_a: nucleic acid sequence source field
@@ -520,7 +514,6 @@ slots:
     - 'Expected value: enumeration'
     aliases:
     - observed biotic relationship
-    string_serialization: '[free living|parasitism|commensalism|symbiotic|mutualism]'
     slot_uri: MIXS:0000028
   specific_host:
     is_a: nucleic acid sequence source field
@@ -563,8 +556,6 @@ slots:
     aliases:
     - health or disease status of specific host at time of collection
     deprecated: Deprecated in mixs6
-    string_serialization: '[healthy|diseased|dead|disease-free|undetermined|recovering|resolving|pre-existing
-      condition|pathological|life threatening|congenital]'
     slot_uri: MIXS:0000031
   host_disease_stat:
     is_a: nucleic acid sequence source field
@@ -596,7 +587,6 @@ slots:
     - 'Expected value: enumeration'
     aliases:
     - trophic level
-    string_serialization: '[autotroph|carboxydotroph|chemoautotroph|chemoheterotroph|chemolithoautotroph|chemolithotroph|chemoorganoheterotroph|chemoorganotroph|chemosynthetic|chemotroph|copiotroph|diazotroph|facultative|autotroph|heterotroph|lithoautotroph|lithoheterotroph|lithotroph|methanotroph|methylotroph|mixotroph|obligate|chemoautolithotroph|oligotroph|organoheterotroph|organotroph|photoautotroph|photoheterotroph|photolithoautotroph|photolithotroph|photosynthetic|phototroph]'
     slot_uri: MIXS:0000032
   propagation:
     is_a: nucleic acid sequence source field
@@ -644,8 +634,6 @@ slots:
     - 'Expected value: enumeration'
     aliases:
     - relationship to oxygen
-    string_serialization: '[aerobe|anaerobe|facultative|microaerophilic|microanaerobe|obligate
-      aerobe|obligate anaerobe]'
     slot_uri: MIXS:0000015
   isol_growth_condt:
     is_a: nucleic acid sequence source field
@@ -766,11 +754,6 @@ slots:
     - 'Expected value: enumeration'
     aliases:
     - source of UViGs
-    string_serialization: '[metagenome (not viral targeted)|viral fraction metagenome
-      (virome)|sequence-targeted metagenome|metatranscriptome (not viral targeted)|viral
-      fraction RNA metagenome (RNA virome)|sequence-targeted RNA metagenome|microbial
-      single amplified genome (SAG)|viral single amplified genome (vSAG)|isolate microbial
-      genome|other]'
     slot_uri: MIXS:0000035
   virus_enrich_appr:
     is_a: nucleic acid sequence source field
@@ -784,9 +767,6 @@ slots:
     - 'Expected value: enumeration'
     aliases:
     - virus enrichment approach
-    string_serialization: '[filtration|ultrafiltration|centrifugation|ultracentrifugation|PEG
-      Precipitation|FeCl Precipitation|CsCl density gradient|DNAse|RNAse|targeted
-      sequence capture|other|none]'
     slot_uri: MIXS:0000036
   nucl_acid_ext:
     is_a: sequencing field
@@ -859,7 +839,6 @@ slots:
     - 'Expected value: enumeration'
     aliases:
     - library layout
-    string_serialization: '[paired|single|vector|other]'
     slot_uri: MIXS:0000041
   lib_vector:
     is_a: sequencing field
@@ -1046,7 +1025,6 @@ slots:
     - 'Expected value: enumeration'
     aliases:
     - taxonomic identity marker
-    string_serialization: '[16S rRNA gene|multi-marker approach|other]'
     slot_uri: MIXS:0000053
   assembly_qual:
     is_a: sequencing field
@@ -1076,8 +1054,6 @@ slots:
     - 'Expected value: enumeration'
     aliases:
     - assembly quality
-    string_serialization: '[Finished genome|High-quality draft genome|Medium-quality
-      draft genome|Low-quality draft genome|Genome fragment(s)]'
     slot_uri: MIXS:0000056
   assembly_name:
     is_a: sequencing field
@@ -1271,7 +1247,6 @@ slots:
     - 'Expected value: quality;percent completeness'
     aliases:
     - completeness score
-    string_serialization: '[high|med|low];{percentage}'
     slot_uri: MIXS:0000069
   compl_software:
     is_a: sequencing field
@@ -1303,7 +1278,6 @@ slots:
     - 'Expected value: text'
     aliases:
     - completeness approach
-    string_serialization: '[marker gene|reference based|other]'
     slot_uri: MIXS:0000071
   contam_score:
     is_a: sequencing field
@@ -1351,7 +1325,6 @@ slots:
     - 'Expected value: enumeration;value or name'
     aliases:
     - contamination screening parameters
-    string_serialization: '[ref db|kmer|coverage|combination];{text|integer}'
     slot_uri: MIXS:0000073
   decontam_software:
     is_a: sequencing field
@@ -1365,7 +1338,6 @@ slots:
     - 'Expected value: enumeration'
     aliases:
     - decontamination software
-    string_serialization: '[checkm/refinem|anvi''o|prodege|bbtools:decontaminate.sh|acdc|combination]'
     slot_uri: MIXS:0000074
   sort_tech:
     is_a: sequencing field
@@ -1379,8 +1351,6 @@ slots:
     - 'Expected value: enumeration'
     aliases:
     - sorting technology
-    string_serialization: '[flow cytometric cell sorting|microfluidics|lazer-tweezing|optical
-      manipulation|micromanipulation|other]'
     slot_uri: MIXS:0000075
   single_cell_lysis_appr:
     is_a: sequencing field
@@ -1394,7 +1364,6 @@ slots:
     - 'Expected value: enumeration'
     aliases:
     - single cell or viral particle lysis approach
-    string_serialization: '[chemical|enzymatic|physical|combination]'
     slot_uri: MIXS:0000076
   single_cell_lysis_prot:
     is_a: sequencing field
@@ -1452,7 +1421,6 @@ slots:
     - 'Expected value: enumeration'
     aliases:
     - binning parameters
-    string_serialization: '[homology search|kmer|coverage|codon usage|combination]'
     slot_uri: MIXS:0000077
   bin_software:
     is_a: sequencing field
@@ -1497,7 +1465,6 @@ slots:
     - 'Expected value: enumeration'
     aliases:
     - MAG coverage software
-    string_serialization: '[bwa|bbmap|bowtie|other]'
     slot_uri: MIXS:0000080
   vir_ident_software:
     is_a: sequencing field
@@ -1526,7 +1493,6 @@ slots:
     - 'Expected value: enumeration'
     aliases:
     - predicted genome type
-    string_serialization: '[DNA|dsDNA|ssDNA|RNA|dsRNA|ssRNA|ssRNA (+)|ssRNA (-)|mixed|uncharacterized]'
     slot_uri: MIXS:0000082
   pred_genome_struc:
     is_a: sequencing field
@@ -1540,7 +1506,6 @@ slots:
     - 'Expected value: enumeration'
     aliases:
     - predicted genome structure
-    string_serialization: '[segmented|non-segmented|undetermined]'
     slot_uri: MIXS:0000083
   detec_type:
     is_a: sequencing field
@@ -1615,8 +1580,6 @@ slots:
     - 'Expected value: enumeration'
     aliases:
     - host prediction approach
-    string_serialization: '[provirus|host sequence similarity|CRISPR spacer match|kmer
-      similarity|co-occurrence|combination|other]'
     slot_uri: MIXS:0000088
   host_pred_est_acc:
     is_a: sequencing field
@@ -1769,7 +1732,6 @@ slots:
       number of cells per cubic centimeter'
     aliases:
     - organism count
-    string_serialization: '{text};{float} {unit};[qPCR|ATP|MPN|other]'
     slot_uri: MIXS:0000103
   oxygen:
     is_a: core field
@@ -1797,7 +1759,6 @@ slots:
     - 'Expected value: enumeration'
     aliases:
     - oxygenation status of sample
-    string_serialization: '[aerobic|anaerobic|other]'
     slot_uri: MIXS:0000753
   perturbation:
     is_a: core field
@@ -2048,8 +2009,6 @@ slots:
     - 'Expected value: enumeration'
     aliases:
     - surface material
-    string_serialization: '[adobe|carpet|cinder blocks|concrete|hay bales|glass|metal|paint|plastic|stainless
-      steel|stone|stucco|tile|vinyl|wood]'
     slot_uri: MIXS:0000758
   surf_air_cont:
     is_a: core field
@@ -2063,8 +2022,6 @@ slots:
     - 'Expected value: enumeration'
     aliases:
     - surface-air contaminant
-    string_serialization: '[dust|organic matter|particulate matter|volatile organic
-      compounds|biological contaminants|radon|nutrients|biocides]'
     slot_uri: MIXS:0000759
   rel_air_humidity:
     is_a: core field
@@ -2164,8 +2121,6 @@ slots:
     - 'Expected value: enumeration'
     aliases:
     - building occupancy type
-    string_serialization: '[office|market|restaurant|residence|school|residential|commercial|low
-      rise|high rise|wood framed|office|health care|school|airport|sports complex]'
     slot_uri: MIXS:0000761
   surf_moisture:
     is_a: core field
@@ -2209,7 +2164,6 @@ slots:
     - 'Expected value: enumeration'
     aliases:
     - indoor space
-    string_serialization: '[bedroom|office|bathroom|foyer|kitchen|locker room|hallway|elevator]'
     slot_uri: MIXS:0000763
   indoor_surf:
     is_a: core field
@@ -2223,7 +2177,6 @@ slots:
     - 'Expected value: enumeration'
     aliases:
     - indoor surface
-    string_serialization: '[cabinet|ceiling|counter top|door|shelving|vent cover|window|wall]'
     slot_uri: MIXS:0000764
   filter_type:
     is_a: core field
@@ -2237,8 +2190,6 @@ slots:
     - 'Expected value: enumeration'
     aliases:
     - filter type
-    string_serialization: '[particulate air filter|chemical air filter|low-MERV pleated
-      media|HEPA|electrostatic|gas-phase or ultraviolet air treatments]'
     slot_uri: MIXS:0000765
   heat_cool_type:
     is_a: core field
@@ -2252,8 +2203,6 @@ slots:
     - 'Expected value: enumeration'
     aliases:
     - heating and cooling system type
-    string_serialization: '[radiant system|heat pump|forced air system|steam forced
-      heat|wood stove]'
     slot_uri: MIXS:0000766
   substructure_type:
     is_a: core field
@@ -2268,7 +2217,6 @@ slots:
     - 'Expected value: enumeration'
     aliases:
     - substructure type
-    string_serialization: '[crawlspace|slab on grade|basement]'
     slot_uri: MIXS:0000767
   building_setting:
     is_a: core field
@@ -2282,7 +2230,6 @@ slots:
     - 'Expected value: enumeration'
     aliases:
     - building setting
-    string_serialization: '[urban|suburban|exurban|rural]'
     slot_uri: MIXS:0000768
   light_type:
     is_a: core field
@@ -2299,8 +2246,6 @@ slots:
     - 'Expected value: enumeration'
     aliases:
     - light type
-    string_serialization: '[natural light|electric light|desk lamp|flourescent lights|natural
-      light|none]'
     slot_uri: MIXS:0000769
   samp_sort_meth:
     is_a: core field
@@ -2445,7 +2390,6 @@ slots:
     - 'Expected value: enumeration'
     aliases:
     - architectural structure
-    string_serialization: '[building|shed|home]'
     slot_uri: MIXS:0000774
   avg_occup:
     is_a: core field
@@ -2588,7 +2532,6 @@ slots:
     - 'Expected value: enumeration'
     aliases:
     - ceiling condition
-    string_serialization: '[new|visible wear|needs repair|damaged|rupture]'
     slot_uri: MIXS:0000779
   ceil_finish_mat:
     is_a: core field
@@ -2602,8 +2545,6 @@ slots:
     - 'Expected value: enumeration'
     aliases:
     - ceiling finish material
-    string_serialization: '[drywall|mineral fibre|tiles|PVC|plasterboard|metal|fiberglass|stucco|mineral
-      wool/calcium silicate|wood]'
     slot_uri: MIXS:0000780
   ceil_water_mold:
     is_a: core field
@@ -2645,8 +2586,6 @@ slots:
     - 'Expected value: enumeration'
     aliases:
     - ceiling texture
-    string_serialization: '[crows feet|crows-foot stomp|double skip|hawk and trowel|knockdown|popcorn|orange
-      peel|rosebud stomp|Santa-Fe texture|skip trowel|smooth|stomp knockdown|swirl]'
     slot_uri: MIXS:0000783
   ceil_thermal_mass:
     is_a: core field
@@ -2677,7 +2616,6 @@ slots:
     - 'Expected value: enumeration'
     aliases:
     - ceiling type
-    string_serialization: '[cathedral|dropped|concave|barrel-shaped|coffered|cove|stretched]'
     slot_uri: MIXS:0000784
   cool_syst_id:
     is_a: core field
@@ -2717,9 +2655,6 @@ slots:
     - 'Expected value: enumeration'
     aliases:
     - design, construction, and operation documents
-    string_serialization: '[building information model|commissioning report|complaint
-      logs|contract administration|cost estimate|janitorial schedules or logs|maintenance
-      plans|schedule|sections|shop drawings|submittals|ventilation system|windows]'
     slot_uri: MIXS:0000787
   door_size:
     is_a: core field
@@ -2747,7 +2682,6 @@ slots:
     - 'Expected value: enumeration'
     aliases:
     - door condition
-    string_serialization: '[damaged|needs repair|new|rupture|visible wear]'
     slot_uri: MIXS:0000788
   door_direct:
     is_a: core field
@@ -2761,7 +2695,6 @@ slots:
     - 'Expected value: enumeration'
     aliases:
     - door direction of opening
-    string_serialization: '[inward|outward|sideways]'
     slot_uri: MIXS:0000789
   door_loc:
     is_a: core field
@@ -2775,7 +2708,6 @@ slots:
     - 'Expected value: enumeration'
     aliases:
     - door location
-    string_serialization: '[north|south|east|west]'
     slot_uri: MIXS:0000790
   door_mat:
     is_a: core field
@@ -2789,8 +2721,6 @@ slots:
     - 'Expected value: enumeration'
     aliases:
     - door material
-    string_serialization: '[aluminum|cellular PVC|engineered plastic|fiberboard|fiberglass|metal|thermoplastic
-      alloy|vinyl|wood|wood/plastic composite]'
     slot_uri: MIXS:0000791
   door_move:
     is_a: core field
@@ -2804,7 +2734,6 @@ slots:
     - 'Expected value: enumeration'
     aliases:
     - door movement
-    string_serialization: '[collapsible|folding|revolving|rolling shutter|sliding|swinging]'
     slot_uri: MIXS:0000792
   door_water_mold:
     is_a: core field
@@ -2832,7 +2761,6 @@ slots:
     - 'Expected value: enumeration'
     aliases:
     - door type
-    string_serialization: '[composite|metal|wooden]'
     slot_uri: MIXS:0000794
   door_comp_type:
     is_a: core field
@@ -2846,7 +2774,6 @@ slots:
     - 'Expected value: enumeration'
     aliases:
     - door type, composite
-    string_serialization: '[metal covered|revolving|sliding|telescopic]'
     slot_uri: MIXS:0000795
   door_type_metal:
     is_a: core field
@@ -2860,8 +2787,6 @@ slots:
     - 'Expected value: enumeration'
     aliases:
     - door type, metal
-    string_serialization: '[collapsible|corrugated steel|hollow|rolling shutters|steel
-      plate]'
     slot_uri: MIXS:0000796
   door_type_wood:
     is_a: core field
@@ -2875,9 +2800,6 @@ slots:
     - 'Expected value: enumeration'
     aliases:
     - door type, wood
-    string_serialization: '[bettened and ledged|battened|ledged and braced|battened|ledged
-      and framed|battened|ledged, braced and frame|framed and paneled|glashed or sash|flush|louvered|wire
-      gauged]'
     slot_uri: MIXS:0000797
   drawings:
     is_a: core field
@@ -2892,8 +2814,6 @@ slots:
     - 'Expected value: enumeration'
     aliases:
     - drawings
-    string_serialization: '[operation|as built|construction|bid|design|building navigation
-      map|diagram|sketch]'
     slot_uri: MIXS:0000798
   elevator:
     is_a: core field
@@ -3016,7 +2936,6 @@ slots:
     - 'Expected value: enumeration'
     aliases:
     - floor condition
-    string_serialization: '[new|visible wear|needs repair|damaged|rupture]'
     slot_uri: MIXS:0000803
   floor_count:
     is_a: core field
@@ -3044,9 +2963,6 @@ slots:
     - 'Expected value: enumeration'
     aliases:
     - floor finish material
-    string_serialization: '[tile|wood strip or parquet|carpet|rug|laminate wood|lineoleum|vinyl
-      composition tile|sheet vinyl|stone|bamboo|cork|terrazo|concrete|none;specify
-      unfinished|sealed|clear finish|paint]'
     slot_uri: MIXS:0000804
   floor_water_mold:
     is_a: core field
@@ -3060,8 +2976,6 @@ slots:
     - 'Expected value: enumeration'
     aliases:
     - floor signs of water/mold
-    string_serialization: '[mold odor|wet floor|water stains|wall discoloration|floor
-      discoloration|ceiling discoloration|peeling paint or wallpaper|bulging walls|condensation]'
     slot_uri: MIXS:0000805
   floor_struc:
     is_a: core field
@@ -3076,8 +2990,6 @@ slots:
     - 'Expected value: enumeration'
     aliases:
     - floor structure
-    string_serialization: '[balcony|floating floor|glass floor|raised floor|sprung
-      floor|wood-framed|concrete]'
     slot_uri: MIXS:0000806
   floor_thermal_mass:
     is_a: core field
@@ -3106,7 +3018,6 @@ slots:
     - 'Expected value: enumeration or {text}'
     aliases:
     - frequency of cleaning
-    string_serialization: '[ Daily| Weekly| Monthly| Quarterly | Annually| other]'
     slot_uri: MIXS:0000226
   freq_cook:
     is_a: core field
@@ -3133,7 +3044,6 @@ slots:
     - 'Expected value: enumeration'
     aliases:
     - furniture
-    string_serialization: '[cabinet|chair|desks]'
     slot_uri: MIXS:0000807
   gender_restroom:
     is_a: core field
@@ -3147,7 +3057,6 @@ slots:
     - 'Expected value: enumeration'
     aliases:
     - gender of restroom
-    string_serialization: '[all gender|female|gender neurtral|male|male and female|unisex]'
     slot_uri: MIXS:0000808
   hall_count:
     is_a: core field
@@ -3174,7 +3083,6 @@ slots:
     - 'Expected value: enumeration'
     aliases:
     - handidness
-    string_serialization: '[ambidexterity|left handedness|mixed-handedness|right handedness]'
     slot_uri: MIXS:0000809
   heat_deliv_loc:
     is_a: core field
@@ -3188,7 +3096,6 @@ slots:
     - 'Expected value: enumeration'
     aliases:
     - heating delivery locations
-    string_serialization: '[north|south|east|west]'
     slot_uri: MIXS:0000810
   heat_sys_deliv_meth:
     is_a: core field
@@ -3258,7 +3165,6 @@ slots:
     - 'Expected value: enumeration'
     aliases:
     - interior wall condition
-    string_serialization: '[new|visible wear|needs repair|damaged|rupture]'
     slot_uri: MIXS:0000813
   last_clean:
     is_a: core field
@@ -3298,7 +3204,6 @@ slots:
     - 'Expected value: enumeration'
     aliases:
     - mechanical structure
-    string_serialization: '[subway|coach|carriage|elevator|escalator|boat|train|car|bus]'
     slot_uri: MIXS:0000815
   number_plants:
     is_a: core field
@@ -3351,7 +3256,6 @@ slots:
     - 'Expected value: enumeration'
     aliases:
     - occupancy documentation
-    string_serialization: '[automated count|estimate|manual count|videos]'
     slot_uri: MIXS:0000816
   ext_wall_orient:
     is_a: core field
@@ -3365,7 +3269,6 @@ slots:
     - 'Expected value: enumeration'
     aliases:
     - orientations of exterior wall
-    string_serialization: '[north|south|east|west|northeast|southeast|southwest|northwest]'
     slot_uri: MIXS:0000817
   ext_window_orient:
     is_a: core field
@@ -3379,7 +3282,6 @@ slots:
     - 'Expected value: enumeration'
     aliases:
     - orientations of exterior window
-    string_serialization: '[north|south|east|west|northeast|southeast|southwest|northwest]'
     slot_uri: MIXS:0000818
   rel_humidity_out:
     is_a: core field
@@ -3408,7 +3310,6 @@ slots:
     - 'Expected value: enumeration;count'
     aliases:
     - presence of pets, animals, or insects
-    string_serialization: '[cat|dog|rodent|snake|other];{integer}'
     slot_uri: MIXS:0000819
   quad_pos:
     is_a: core field
@@ -3422,7 +3323,6 @@ slots:
     - 'Expected value: enumeration'
     aliases:
     - quadrant position
-    string_serialization: '[North side|West side|South side|East side]'
     slot_uri: MIXS:0000820
   rel_samp_loc:
     is_a: core field
@@ -3436,7 +3336,6 @@ slots:
     - 'Expected value: enumeration'
     aliases:
     - relative sampling location
-    string_serialization: '[edge of car|center of car|under a seat]'
     slot_uri: MIXS:0000821
   room_air_exch_rate:
     is_a: core field
@@ -3479,8 +3378,6 @@ slots:
     - 'Expected value: enumeration'
     aliases:
     - room condition
-    string_serialization: '[new|visible wear|needs repair|damaged|rupture|visible
-      signs of mold/mildew]'
     slot_uri: MIXS:0000822
   room_count:
     is_a: core field
@@ -3539,7 +3436,6 @@ slots:
     - 'Expected value: enumeration'
     aliases:
     - room location in building
-    string_serialization: '[corner room|interior room|exterior wall]'
     slot_uri: MIXS:0000823
   room_moist_dam_hist:
     is_a: core field
@@ -3596,8 +3492,6 @@ slots:
     - 'Expected value: enumeration'
     aliases:
     - room sampling position
-    string_serialization: '[north corner|south corner|west corner|east corner|northeast
-      corner|northwest corner|southeast corner|southwest corner|center]'
     slot_uri: MIXS:0000824
   room_type:
     is_a: core field
@@ -3612,9 +3506,6 @@ slots:
     - 'Expected value: enumeration'
     aliases:
     - room type
-    string_serialization: '[attic|bathroom|closet|conference room|elevator|examining
-      room|hallway|kitchen|mail room|private office|open office|stairwell|,restroom|lobby|vestibule|mechanical
-      or electrical room|data center|laboratory_wet|laboratory_dry|gymnasium|natatorium|auditorium|lockers|cafe|warehouse]'
     slot_uri: MIXS:0000825
   room_vol:
     is_a: core field
@@ -3656,8 +3547,6 @@ slots:
     - 'Expected value: enumeration'
     aliases:
     - rooms connected by a doorway
-    string_serialization: '[attic|bathroom|closet|conference room|elevator|examining
-      room|hallway|kitchen|mail room|office|stairwell]'
     slot_uri: MIXS:0000826
   room_hallway:
     is_a: core field
@@ -3716,7 +3605,6 @@ slots:
     - 'Expected value: enumeration'
     aliases:
     - sampling day weather
-    string_serialization: '[clear sky|cloudy|foggy|hail|rain|snow|sleet|sunny|windy]'
     slot_uri: MIXS:0000827
   samp_floor:
     is_a: core field
@@ -3730,7 +3618,6 @@ slots:
     - 'Expected value: enumeration'
     aliases:
     - sampling floor
-    string_serialization: '[1st floor|2nd floor|{integer} floor|basement|lobby]'
     slot_uri: MIXS:0000828
   samp_room_id:
     is_a: core field
@@ -3788,7 +3675,6 @@ slots:
     - 'Expected value: enumeration'
     aliases:
     - seasonal use
-    string_serialization: '[Spring|Summer|Fall|Winter]'
     slot_uri: MIXS:0000830
   shading_device_cond:
     is_a: core field
@@ -3802,7 +3688,6 @@ slots:
     - 'Expected value: enumeration'
     aliases:
     - shading device condition
-    string_serialization: '[damaged|needs repair|new|rupture|visible wear]'
     slot_uri: MIXS:0000831
   shading_device_loc:
     is_a: core field
@@ -3858,9 +3743,6 @@ slots:
     - 'Expected value: enumeration'
     aliases:
     - shading device type
-    string_serialization: '[bahama shutters|exterior roll blind|gambrel awning|hood
-      awning|porchroller awning|sarasota shutters|slatted aluminum|solid aluminum
-      awning|sun screen|tree|trellis|venetian awning]'
     slot_uri: MIXS:0000835
   specific_humidity:
     is_a: core field
@@ -3891,7 +3773,6 @@ slots:
     - 'Expected value: enumeration'
     aliases:
     - specifications
-    string_serialization: '[operation|as built|construction|bid|design|photos]'
     slot_uri: MIXS:0000836
   temp_out:
     is_a: core field
@@ -3919,7 +3800,6 @@ slots:
     - 'Expected value: enumeration'
     aliases:
     - train line
-    string_serialization: '[red|green|orange]'
     slot_uri: MIXS:0000837
   train_stat_loc:
     is_a: core field
@@ -3933,8 +3813,6 @@ slots:
     - 'Expected value: enumeration'
     aliases:
     - train station collection location
-    string_serialization: '[south station above ground|south station underground|south
-      station amtrak|forest hills|riverside]'
     slot_uri: MIXS:0000838
   train_stop_loc:
     is_a: core field
@@ -3948,7 +3826,6 @@ slots:
     - 'Expected value: enumeration'
     aliases:
     - train stop collection location
-    string_serialization: '[end|mid|downtown]'
     slot_uri: MIXS:0000839
   vis_media:
     is_a: core field
@@ -3962,8 +3839,6 @@ slots:
     - 'Expected value: enumeration'
     aliases:
     - visual media
-    string_serialization: '[photos|videos|commonly of the building|site context (adjacent
-      buildings, vegetation, terrain, streets)|interiors|equipment|3D scans]'
     slot_uri: MIXS:0000840
   wall_area:
     is_a: core field
@@ -3992,8 +3867,6 @@ slots:
     - 'Expected value: enumeration'
     aliases:
     - wall construction type
-    string_serialization: '[frame construction|joisted masonry|light noncombustible|masonry
-      noncombustible|modified fire resistive|fire resistive]'
     slot_uri: MIXS:0000841
   wall_finish_mat:
     is_a: core field
@@ -4007,8 +3880,6 @@ slots:
     - 'Expected value: enumeration'
     aliases:
     - wall finish material
-    string_serialization: '[plaster|gypsum plaster|veneer plaster|gypsum board|tile|terrazzo|stone
-      facing|acoustical treatment|wood|metal|masonry]'
     slot_uri: MIXS:0000842
   wall_height:
     is_a: core field
@@ -4036,7 +3907,6 @@ slots:
     - 'Expected value: enumeration'
     aliases:
     - wall location
-    string_serialization: '[north|south|east|west]'
     slot_uri: MIXS:0000843
   wall_water_mold:
     is_a: core field
@@ -4064,7 +3934,6 @@ slots:
     - 'Expected value: enumeration'
     aliases:
     - wall surface treatment
-    string_serialization: '[painted|wall paper|no treatment|paneling|stucco|fabric]'
     slot_uri: MIXS:0000845
   wall_texture:
     is_a: core field
@@ -4078,8 +3947,6 @@ slots:
     - 'Expected value: enumeration'
     aliases:
     - wall texture
-    string_serialization: '[crows feet|crows-foot stomp||double skip|hawk and trowel|knockdown|popcorn|orange
-      peel|rosebud stomp|Santa-Fe texture|skip trowel|smooth|stomp knockdown|swirl]'
     slot_uri: MIXS:0000846
   wall_thermal_mass:
     is_a: core field
@@ -4123,7 +3990,6 @@ slots:
     - 'Expected value: enumeration'
     aliases:
     - water feature type
-    string_serialization: '[fountain|pool|standing feature|stream|waterfall]'
     slot_uri: MIXS:0000847
   weekday:
     is_a: core field
@@ -4137,7 +4003,6 @@ slots:
     - 'Expected value: enumeration'
     aliases:
     - weekday
-    string_serialization: '[Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday]'
     slot_uri: MIXS:0000848
   window_size:
     is_a: core field
@@ -4166,7 +4031,6 @@ slots:
     - 'Expected value: enumeration'
     aliases:
     - window condition
-    string_serialization: '[damaged|needs repair|new|rupture|visible wear]'
     slot_uri: MIXS:0000849
   window_cover:
     is_a: core field
@@ -4180,7 +4044,6 @@ slots:
     - 'Expected value: enumeration'
     aliases:
     - window covering
-    string_serialization: '[blinds|curtains|none]'
     slot_uri: MIXS:0000850
   window_horiz_pos:
     is_a: core field
@@ -4194,7 +4057,6 @@ slots:
     - 'Expected value: enumeration'
     aliases:
     - window horizontal position
-    string_serialization: '[left|middle|right]'
     slot_uri: MIXS:0000851
   window_loc:
     is_a: core field
@@ -4208,7 +4070,6 @@ slots:
     - 'Expected value: enumeration'
     aliases:
     - window location
-    string_serialization: '[north|south|east|west]'
     slot_uri: MIXS:0000852
   window_mat:
     is_a: core field
@@ -4222,7 +4083,6 @@ slots:
     - 'Expected value: enumeration'
     aliases:
     - window material
-    string_serialization: '[clad|fiberglass|metal|vinyl|wood]'
     slot_uri: MIXS:0000853
   window_open_freq:
     is_a: core field
@@ -4278,7 +4138,6 @@ slots:
     - 'Expected value: enumeration'
     aliases:
     - window type
-    string_serialization: '[single-hung sash window|horizontal sash window|fixed window]'
     slot_uri: MIXS:0000856
   window_vert_pos:
     is_a: core field
@@ -4292,7 +4151,6 @@ slots:
     - 'Expected value: enumeration'
     aliases:
     - window vertical position
-    string_serialization: '[bottom|middle|top|low|middle|high]'
     slot_uri: MIXS:0000857
   ances_data:
     is_a: core field
@@ -4322,8 +4180,6 @@ slots:
     - 'Expected value: enumeration'
     aliases:
     - biological status
-    string_serialization: '[wild|natural|semi-natural|inbred line|breeder''s line|hybrid|clonal
-      selection|mutant]'
     slot_uri: MIXS:0000858
   genetic_mod:
     is_a: core field
@@ -4368,8 +4224,6 @@ slots:
     - 'Expected value: enumeration'
     aliases:
     - sample capture status
-    string_serialization: '[active surveillance in response to an outbreak|active
-      surveillance not initiated by an outbreak|farm sample|market sample|other]'
     slot_uri: MIXS:0000860
   samp_dis_stage:
     is_a: core field
@@ -4384,7 +4238,6 @@ slots:
     - 'Expected value: enumeration'
     aliases:
     - sample disease stage
-    string_serialization: '[dissemination|growth and reproduction|infection|inoculation|penetration|other]'
     slot_uri: MIXS:0000249
   host_taxid:
     is_a: core field
@@ -4455,8 +4308,6 @@ slots:
     - 'Expected value: enumeration'
     aliases:
     - host sex
-    string_serialization: '[female|hermaphrodite|non-binary|male|transgender|transgender
-      (female to male)|transgender (male to female) |undeclared]'
     slot_uri: MIXS:0000811
   host_body_habitat:
     is_a: core field
@@ -4868,7 +4719,6 @@ slots:
     - 'Expected value: drug name;frequency'
     aliases:
     - drug usage
-    string_serialization: '{text};{integer}/[year|month|week|day|hour]'
     slot_uri: MIXS:0000894
   host_body_mass_index:
     is_a: core field
@@ -5017,8 +4867,6 @@ slots:
       to follow up (4)other-specify'
     aliases:
     - study completion status
-    string_serialization: '{boolean};[adverse event|non-compliance|lost to follow
-      up|other-specify]'
     slot_uri: MIXS:0000898
   pulmonary_disord:
     is_a: core field
@@ -5230,7 +5078,6 @@ slots:
     - 'Expected value: enumeration'
     aliases:
     - special diet
-    string_serialization: '[low carb|reduced calorie|vegetarian|other(to be specified)]'
     slot_uri: MIXS:0000905
   time_last_toothbrush:
     is_a: core field
@@ -5288,7 +5135,6 @@ slots:
     - 'Expected value: enumeration'
     aliases:
     - dominant hand
-    string_serialization: '[left|right|ambidextrous]'
     slot_uri: MIXS:0000944
   menarche:
     is_a: core field
@@ -5449,8 +5295,6 @@ slots:
     - 'Expected value: enumeration'
     aliases:
     - hydrocarbon resource type
-    string_serialization: '[Oil Reservoir|Gas Reservoir|Oil Sand|Coalbed|Shale|Tight
-      Oil Reservoir|Tight Gas Reservoir|other]'
     slot_uri: MIXS:0000988
   hc_produced:
     is_a: core field
@@ -5465,7 +5309,6 @@ slots:
     - 'Expected value: enumeration'
     aliases:
     - hydrocarbon type produced
-    string_serialization: '[Oil|Gas-Condensate|Gas|Bitumen|Coalbed Methane|other]'
     slot_uri: MIXS:0000989
   basin:
     is_a: core field
@@ -5614,7 +5457,6 @@ slots:
     - 'Expected value: enumeration'
     aliases:
     - lithology
-    string_serialization: '[Basement|Chalk|Chert|Coal|Conglomerate|Diatomite|Dolomite|Limestone|Sandstone|Shale|Siltstone|Volcanic|other]'
     slot_uri: MIXS:0000990
   depos_env:
     is_a: core field
@@ -5629,10 +5471,6 @@ slots:
     - 'Expected value: enumeration'
     aliases:
     - depositional environment
-    string_serialization: '[Continental - Alluvial|Continental - Aeolian|Continental
-      - Fluvial|Continental - Lacustrine|Transitional - Deltaic|Transitional - Tidal|Transitional
-      - Lagoonal|Transitional - Beach|Transitional - Lake|Marine - Shallow|Marine
-      - Deep|Marine - Reef|Other - Evaporite|Other - Glacial|Other - Volcanic|other]'
     slot_uri: MIXS:0000992
   hcr_geol_age:
     is_a: core field
@@ -5647,7 +5485,6 @@ slots:
     - 'Expected value: enumeration'
     aliases:
     - hydrocarbon resource geological age
-    string_serialization: '[Archean|Cambrian|Carboniferous|Cenozoic|Cretaceous|Devonian|Jurassic|Mesozoic|Neogene|Ordovician|Paleogene|Paleozoic|Permian|Precambrian|Proterozoic|Silurian|Triassic|other]'
     slot_uri: MIXS:0000993
   owc_tvdss:
     is_a: core field
@@ -5722,7 +5559,6 @@ slots:
     - 'Expected value: enumeration'
     aliases:
     - source rock kerogen type
-    string_serialization: '[Type I|Type II|Type III|Type IV|other]'
     slot_uri: MIXS:0000994
   sr_lithology:
     is_a: core field
@@ -5737,7 +5573,6 @@ slots:
     - 'Expected value: enumeration'
     aliases:
     - source rock lithology
-    string_serialization: '[Clastic|Carbonate|Coal|Biosilicieous|other]'
     slot_uri: MIXS:0000995
   sr_dep_env:
     is_a: core field
@@ -5752,7 +5587,6 @@ slots:
     - 'Expected value: enumeration'
     aliases:
     - source rock depositional environment
-    string_serialization: '[Lacustine|Fluvioldeltaic|Fluviomarine|Marine|other]'
     slot_uri: MIXS:0000996
   sr_geol_age:
     is_a: core field
@@ -5767,7 +5601,6 @@ slots:
     - 'Expected value: enumeration'
     aliases:
     - source rock geological age
-    string_serialization: '[Archean|Cambrian|Carboniferous|Cenozoic|Cretaceous|Devonian|Jurassic|Mesozoic|Neogene|Ordovician|Paleogene|Paleozoic|Permian|Precambrian|Proterozoic|Silurian|Triassic|other]'
     slot_uri: MIXS:0000997
   samp_well_name:
     is_a: core field
@@ -5833,7 +5666,6 @@ slots:
     - 'Expected value: enumeration'
     aliases:
     - sample subtype
-    string_serialization: '[oil phase|water phase|biofilm|not applicable|other]'
     slot_uri: MIXS:0000999
   pressure:
     is_a: core field
@@ -5884,7 +5716,6 @@ slots:
     - 'Preferred unit: meter'
     aliases:
     - sample measured depth
-    string_serialization: '{float} {unit};[GL|DF|RT|KB|MSL|other]'
     slot_uri: MIXS:0000413
   samp_transport_cond:
     is_a: core field
@@ -6601,8 +6432,6 @@ slots:
     - 'Expected value: enumeration;timestamp'
     aliases:
     - secondary and tertiary recovery methods and start date
-    string_serialization: '[Water Injection|Dump Flood|Gas Injection|Wag Immiscible
-      Injection|Polymer Addition|Surfactant Addition|Not Applicable|other];{timestamp}'
     slot_uri: MIXS:0001009
   iw_bt_date_well:
     is_a: core field
@@ -6720,8 +6549,6 @@ slots:
     - 'Expected value: enumeration'
     aliases:
     - sample collection point
-    string_serialization: '[well|test well|drilling rig|wellhead|separator|storage
-      tank|other]'
     slot_uri: MIXS:0001015
   samp_preserv:
     is_a: core field
@@ -7417,7 +7244,6 @@ slots:
     - 'Expected value: enumeration'
     aliases:
     - growth habit
-    string_serialization: '[erect|semi-erect|spreading|prostrate]'
     slot_uri: MIXS:0001044
   growth_hormone_regm:
     is_a: core field
@@ -7614,8 +7440,6 @@ slots:
     - 'Expected value: EO or enumeration'
     aliases:
     - plant growth medium
-    string_serialization: '{termLabel} {[termID]} or [husk|other artificial liquid
-      medium|other artificial solid medium|peat moss|perlite|pumice|sand|soil|vermiculite|water]'
     slot_uri: MIXS:0001057
   plant_product:
     is_a: core field
@@ -7644,7 +7468,6 @@ slots:
     - 'Expected value: enumeration'
     aliases:
     - plant sex
-    string_serialization: '[Androdioecious|Androecious|Androgynous|Androgynomonoecious|Andromonoecious|Bisexual|Dichogamous|Diclinous|Dioecious|Gynodioecious|Gynoecious|Gynomonoecious|Hermaphroditic|Imperfect|Monoclinous|Monoecious|Perfect|Polygamodioecious|Polygamomonoecious|Polygamous|Protandrous|Protogynous|Subandroecious|Subdioecious|Subgynoecious|Synoecious|Trimonoecious|Trioecious|Unisexual]'
     slot_uri: MIXS:0001059
   plant_struc:
     is_a: core field
@@ -7956,7 +7779,6 @@ slots:
     - 'Expected value: enumeration'
     aliases:
     - sediment type
-    string_serialization: '[biogenous|cosmogenous|hydrogenous|lithogenous]'
     slot_uri: MIXS:0001078
   tidal_stage:
     is_a: core field
@@ -7970,7 +7792,6 @@ slots:
     - 'Expected value: enumeration'
     aliases:
     - tidal stage
-    string_serialization: '[low tide|ebb tide|flood tide|high tide]'
     slot_uri: MIXS:0000750
   tot_depth_water_col:
     is_a: core field
@@ -7998,19 +7819,6 @@ slots:
     - 'Expected value: enumeration'
     aliases:
     - current land use
-    string_serialization: '[cities|farmstead|industrial areas|roads/railroads|rock|sand|gravel|mudflats|salt
-      flats|badlands|permanent snow or ice|saline seeps|mines/quarries|oil waste areas|small
-      grains|row crops|vegetable crops|horticultural plants (e.g. tulips)|marshlands
-      (grass,sedges,rushes)|tundra (mosses,lichens)|rangeland|pastureland (grasslands
-      used for livestock grazing)|hayland|meadows (grasses,alfalfa,fescue,bromegrass,timothy)|shrub
-      land (e.g. mesquite,sage-brush,creosote bush,shrub oak,eucalyptus)|successional
-      shrub land (tree saplings,hazels,sumacs,chokecherry,shrub dogwoods,blackberries)|shrub
-      crops (blueberries,nursery ornamentals,filberts)|vine crops (grapes)|conifers
-      (e.g. pine,spruce,fir,cypress)|hardwoods (e.g. oak,hickory,elm,aspen)|intermixed
-      hardwood and conifers|tropical (e.g. mangrove,palms)|rainforest (evergreen forest
-      receiving >406 cm annual rainfall)|swamp (permanent or semi-permanent water
-      body dominated by woody plants)|crop trees (nuts,fruit,christmas trees,nursery
-      trees)]'
     slot_uri: MIXS:0001080
   cur_vegetation:
     is_a: core field
@@ -8110,8 +7918,6 @@ slots:
     - 'Expected value: enumeration'
     aliases:
     - history/tillage
-    string_serialization: '[drill|cutting disc|ridge till|strip tillage|zonal tillage|chisel|tined|mouldboard|disc
-      plough]'
     slot_uri: MIXS:0001081
   fire:
     is_a: core field
@@ -8166,7 +7972,6 @@ slots:
     - 'Expected value: enumeration'
     aliases:
     - soil horizon
-    string_serialization: '[O horizon|A horizon|E horizon|B horizon|C horizon|R layer|Permafrost]'
     slot_uri: MIXS:0001082
   horizon_meth:
     is_a: core field
@@ -8340,7 +8145,6 @@ slots:
     - 'Expected value: enumeration'
     aliases:
     - soil_taxonomic/FAO classification
-    string_serialization: '[Acrisols|Andosols|Arenosols|Cambisols|Chernozems|Ferralsols|Fluvisols|Gleysols|Greyzems|Gypsisols|Histosols|Kastanozems|Lithosols|Luvisols|Nitosols|Phaeozems|Planosols|Podzols|Podzoluvisols|Rankers|Regosols|Rendzinas|Solonchaks|Solonetz|Vertisols|Yermosols]'
     slot_uri: MIXS:0001083
   local_class:
     is_a: core field
@@ -8447,7 +8251,6 @@ slots:
     - 'Expected value: enumeration'
     aliases:
     - profile position
-    string_serialization: '[summit|shoulder|backslope|footslope|toeslope]'
     slot_uri: MIXS:0001084
   drainage_class:
     is_a: core field
@@ -8461,8 +8264,6 @@ slots:
     - 'Expected value: enumeration'
     aliases:
     - drainage classification
-    string_serialization: '[very poorly|poorly|somewhat poorly|moderately well|well|excessively
-      drained]'
     slot_uri: MIXS:0001085
   soil_text_measure:
     is_a: core field
