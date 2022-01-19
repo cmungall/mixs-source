@@ -39,6 +39,7 @@ unlock:
 generated: model/schema/mixs.yaml
 	$(RUN) gen-project --dir . $< 2> generated.log
 
+
 # ---------------------------------------
 # GEN: run generator for each target
 # ---------------------------------------
