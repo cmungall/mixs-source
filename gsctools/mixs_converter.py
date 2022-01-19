@@ -260,6 +260,8 @@ class MIxS6Converter:
             if len(vals) > 2:
                 enum_name = f'{s_id}_enum'
                 slot['range'] = enum_name
+                # slot['string_serialization'] = ''
+                del slot['string_serialization']
                 enums[enum_name] = {
                     'permissible_values': {v: {} for v in vals}
                 }
