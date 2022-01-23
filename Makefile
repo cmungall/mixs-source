@@ -13,7 +13,7 @@ RUN = pipenv run
 SCHEMA_NAME = mixs
 SCHEMA_SRC = $(SCHEMA_DIR)/$(SCHEMA_NAME).yaml
 #PKG_TGTS = graphql json  jsonschema owl rdf jsonld shex
-PKG_TGTS = graphql json  jsonschema owl
+PKG_TGTS =  json  jsonschema owl
 TGTS = docs $(PKG_TGTS)
 
 # Global generation options
@@ -22,7 +22,8 @@ GEN_OPTS =
 # ----------------------------------------
 # TOP LEVEL TARGETS
 # ----------------------------------------
-all: env.lock gen unlock
+# all: env.lock gen unlock
+all: clean env.lock generated unlock
 
 # ---------------------------------------
 # env.lock:  set up pipenv
@@ -35,6 +36,10 @@ unlock:
 #	pipenv --rm
 	rm env.lock
 
+generated: model/schema/mixs.yaml
+	$(RUN) gen-project --dir . $< 2> generated.log
+
+
 # ---------------------------------------
 # GEN: run generator for each target
 # ---------------------------------------
@@ -45,7 +50,10 @@ gen: $(patsubst %,gen-%,$(TGTS))
 # ---------------------------------------
 clean:
 	rm -rf target/
+	rm -rf generated/
 	rm -f env.lock
+	rm -rf downloads/mixs6*
+	rm -f model/schema/mixs.yaml
 #	pipenv --rm
 .PHONY: clean
 

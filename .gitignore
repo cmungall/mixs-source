@@ -1,7 +1,9 @@
-.idea
-tests/outputs/*yaml
-target/
 *.old
-venv
-__pycache__
+.idea
 /docs/    ## do not check  in - deploy directly
+__pycache__
+downloads/
+target/
+tests/outputs/*yaml
+venv
+docs/
