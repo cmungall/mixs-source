@@ -22,6 +22,12 @@ imports:
 - soil
 - wastewater_sludge
 - water
+- symbiont_associated
+- food_human_foods
+- food_animal_and_animal_feed
+- food_food_production_facility
+- food_farm_environment
+- agriculture
 prefixes:
   linkml: https://w3id.org/linkml/
   mixs.vocab: https://w3id.org/mixs/vocab/

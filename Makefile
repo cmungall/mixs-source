@@ -14,6 +14,7 @@ SOURCE_FILES := $(shell find $(SCHEMA_DIR) -name '*.yaml')
 SCHEMA_NAMES = $(patsubst $(SCHEMA_DIR)/%.yaml, %, $(SOURCE_FILES))
 RUN = pipenv run
 
+
 SCHEMA_NAME = mixs
 SCHEMA_SRC = $(SCHEMA_DIR)/$(SCHEMA_NAME).yaml
 #PKG_TGTS = graphql json  jsonschema owl rdf jsonld shex
@@ -47,7 +48,7 @@ generated:  model/schema/mixs.yaml
 	$(RUN) gen-project --include markdown --dir docs_stage $(schema) 2>> $(log)
 
 mkdocs: generated
-	poetry run mkdocs build
+	$(RUN) mkdocs build
 
 
 # ---------------------------------------
@@ -59,22 +60,23 @@ gen: $(patsubst %,gen-%,$(TGTS))
 # CLEAN: clear out all of the targets
 # ---------------------------------------
 clean:
-	rm -rf generated/*
+	rm -rf docs/*
+	rm -rf docs_stage/*
+	rm -rf downloads/*tsv
 	rm -rf excel/*
+	rm -rf generated/*
+	rm -rf generation.log
 	rm -rf graphql/*
 	rm -rf java/*
 	rm -rf jsonld/*
 	rm -rf jsonschema/*
+	rm -rf mixs.py
 	rm -rf owl/*
 	rm -rf prefixmap/*
 	rm -rf protobuf/*
 	rm -rf shacl/*
 	rm -rf shex/*
 	rm -rf sqlschema/*
-	rm -rf generation.log
-	rm -rf docs/*
-	rm -rf docs_stage/*
-	rm -rf mixs.py
 
 
 # ---------------------------------------
@@ -126,10 +128,14 @@ gh-deploy:
 # ---------------------------------------
 # for seeding
 
+# old 345753674
+# new 750683809
 downloads/mixs6.tsv:
-	curl -L -s 'https://docs.google.com/spreadsheets/d/1QDeeUcDqXes69Y2RjU2aWgOpCVWo5OVsBX9MKmMqi_o/export?format=tsv&gid=345753674' > $@
+	curl -L -s 'https://docs.google.com/spreadsheets/d/1QDeeUcDqXes69Y2RjU2aWgOpCVWo5OVsBX9MKmMqi_o/export?format=tsv&gid=750683809' > $@
+# old 567040283
+# new 178015749
 downloads/mixs6_core.tsv:
-	curl -L -s 'https://docs.google.com/spreadsheets/d/1QDeeUcDqXes69Y2RjU2aWgOpCVWo5OVsBX9MKmMqi_o/export?format=tsv&gid=567040283' > $@
+	curl -L -s 'https://docs.google.com/spreadsheets/d/1QDeeUcDqXes69Y2RjU2aWgOpCVWo5OVsBX9MKmMqi_o/export?format=tsv&gid=178015749' > $@
 
 model/schema/mixs.yaml: downloads/mixs6.tsv downloads/mixs6_core.tsv
 	$(RUN) python -m gsctools.mixs_converter

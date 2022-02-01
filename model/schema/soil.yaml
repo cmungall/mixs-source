@@ -68,7 +68,6 @@ classes:
     - microbial_biomass
     - micro_biomass_meth
     - link_addit_analys
-    - extreme_salinity
     - salinity_meth
     - heavy_metals
     - heavy_metals_meth
@@ -173,8 +172,6 @@ classes:
       micro_biomass_meth:
         required: false
       link_addit_analys:
-        required: false
-      extreme_salinity:
         required: false
       salinity_meth:
         required: false

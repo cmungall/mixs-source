@@ -47,8 +47,6 @@ classes:
     - host_growth_cond
     - host_substrate
     - host_family_relation
-    - host_infra_spec_name
-    - host_infra_spec_rank
     - host_subspecf_genlin
     - host_genotype
     - host_phenotype
@@ -60,7 +58,6 @@ classes:
     - host_shape
     - gravidity
     - perturbation
-    - samp_salinity
     - salinity
     - oxy_stat_samp
     - organism_count
@@ -128,10 +125,6 @@ classes:
         required: false
       host_family_relation:
         required: false
-      host_infra_spec_name:
-        required: false
-      host_infra_spec_rank:
-        required: false
       host_subspecf_genlin:
         required: false
       host_genotype:
@@ -153,8 +146,6 @@ classes:
       gravidity:
         required: false
       perturbation:
-        required: false
-      samp_salinity:
         required: false
       salinity:
         required: false
