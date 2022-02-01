@@ -1,0 +1,30 @@
+ERROR:root:No slot_uri for Environmental package                          food-food production facility
+Structured comment name                                    prod_label_claims
+Package item                                      production labeling claims
+Definition                 Labeling claims containing descriptors such as...
+Expected value                                                          text
+Value syntax                                                          {text}
+Example                                                           free range
+Section                                                                     
+Requirement                                                                X
+Preferred unit                                                              
+Occurrence                                                                 m
+MIXS ID                                                                     
+github ticket                                                   MIXS:0001337
+Unnamed: 13                                                             #298
+Name: 1431, dtype: object
+ERROR:root:No slot_uri for Environmental package                                  food-farm environment
+Structured comment name                                    prod_label_claims
+Package item                                      production labeling claims
+Definition                 Labeling claims containing descriptors such as...
+Expected value                                                          text
+Value syntax                                                          {text}
+Example                                                           free range
+Section                                                                     
+Requirement                                                                X
+Preferred unit                                                              
+Occurrence                                                                 m
+MIXS ID                                                                     
+github ticket                                                   MIXS:0001337
+Unnamed: 13                                                             #298
+Name: 1541, dtype: object

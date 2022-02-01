@@ -27,7 +27,7 @@ GEN_OPTS =
 # ----------------------------------------
 # TOP LEVEL TARGETS
 # ----------------------------------------
-all: clean env.lock generated mkdocs unlock
+all: clean env.lock model/schema/mixs.yaml generated mkdocs unlock
 
 # ---------------------------------------
 # env.lock:  set up pipenv
@@ -40,37 +40,30 @@ unlock:
 #	pipenv --rm
 	rm env.lock
 
-# generated: model/schema/mixs.yaml
-#	$(RUN) gen-project --dir . $< 2> generated.log
-	
 generated:  model/schema/mixs.yaml
 	$(RUN) gen-project --exclude markdown --dir . $(schema) 2> $(log)
 	$(RUN) gen-project --include markdown --dir docs_stage $(schema) 2>> $(log)
 
 mkdocs: generated
-	$(RUN) mkdocs build
+	$(RUN) mkdocs build 2> mkdocs.log
 
-
-# ---------------------------------------
-# GEN: run generator for each target
-# ---------------------------------------
-gen: $(patsubst %,gen-%,$(TGTS))
 
 # ---------------------------------------
 # CLEAN: clear out all of the targets
 # ---------------------------------------
 clean:
+	rm -rf *log
 	rm -rf docs/*
 	rm -rf docs_stage/*
 	rm -rf downloads/*tsv
 	rm -rf excel/*
 	rm -rf generated/*
-	rm -rf generation.log
 	rm -rf graphql/*
 	rm -rf java/*
 	rm -rf jsonld/*
 	rm -rf jsonschema/*
 	rm -rf mixs.py
+	rm -rf model/schema/*yaml
 	rm -rf owl/*
 	rm -rf prefixmap/*
 	rm -rf protobuf/*
@@ -89,8 +82,6 @@ squeaky_clean: clean $(patsubst %,squeaky_clean-%,$(PKG_TGTS))
 
 squeaky_clean-%: clean
 	find $(PKG_DIR)/$* ! -name 'README.*' ! -name $*  -type f -exec rm -f {} +
-
-
 
 
 # ---------------------------------------
@@ -113,6 +104,7 @@ gen-docs: docs/index.md env.lock
 docs/index.md: target/docs/index.md
 	cp -R $(MODEL_DOCS_DIR)/*.md target/docs
 	$(RUN) mkdocs build
+
 target/docs/index.md: $(SCHEMA_DIR)/$(SCHEMA_NAME).yaml tdir-docs env.lock
 	$(RUN) gen-markdown -M slot=term -M class=package -M mixin=checklist -M enum=dropdown $(GEN_OPTS) --no-mergeimports --dir target/docs $<
 
@@ -138,4 +130,4 @@ downloads/mixs6_core.tsv:
 	curl -L -s 'https://docs.google.com/spreadsheets/d/1QDeeUcDqXes69Y2RjU2aWgOpCVWo5OVsBX9MKmMqi_o/export?format=tsv&gid=178015749' > $@
 
 model/schema/mixs.yaml: downloads/mixs6.tsv downloads/mixs6_core.tsv
-	$(RUN) python -m gsctools.mixs_converter
+	$(RUN) python -m gsctools.mixs_converter 2> conversion.log
