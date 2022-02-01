@@ -1,0 +1,37 @@
+INFO     -  Cleaning site directory
+INFO     -  Building documentation to directory: /Users/MAM/Documents/gitrepos/turbomam/mixs-source/docs
+[33mWARNING  -  [0mDocumentation file 'Soil.md' contains a link to 'soil_ph.md' which is not found in the documentation files.
+[33mWARNING  -  [0mDocumentation file 'SoilMIGSBacteria.md' contains a link to 'soil_ph.md' which is not found in the documentation files.
+[33mWARNING  -  [0mDocumentation file 'SoilMIGSEukaryote.md' contains a link to 'soil_ph.md' which is not found in the documentation files.
+[33mWARNING  -  [0mDocumentation file 'SoilMIGSOrg.md' contains a link to 'soil_ph.md' which is not found in the documentation files.
+[33mWARNING  -  [0mDocumentation file 'SoilMIGSPlant.md' contains a link to 'soil_ph.md' which is not found in the documentation files.
+[33mWARNING  -  [0mDocumentation file 'SoilMIGSVirus.md' contains a link to 'soil_ph.md' which is not found in the documentation files.
+[33mWARNING  -  [0mDocumentation file 'SoilMIMAG.md' contains a link to 'soil_ph.md' which is not found in the documentation files.
+[33mWARNING  -  [0mDocumentation file 'SoilMIMARKSSpecimen.md' contains a link to 'soil_ph.md' which is not found in the documentation files.
+[33mWARNING  -  [0mDocumentation file 'SoilMIMARKSSurvey.md' contains a link to 'soil_ph.md' which is not found in the documentation files.
+[33mWARNING  -  [0mDocumentation file 'SoilMIMS.md' contains a link to 'soil_ph.md' which is not found in the documentation files.
+[33mWARNING  -  [0mDocumentation file 'SoilMISAG.md' contains a link to 'soil_ph.md' which is not found in the documentation files.
+[33mWARNING  -  [0mDocumentation file 'SoilMIUVIG.md' contains a link to 'soil_ph.md' which is not found in the documentation files.
+[33mWARNING  -  [0mDocumentation file 'Water.md' contains a link to 'water_ph.md' which is not found in the documentation files.
+[33mWARNING  -  [0mDocumentation file 'WaterMIGSBacteria.md' contains a link to 'water_ph.md' which is not found in the documentation files.
+[33mWARNING  -  [0mDocumentation file 'WaterMIGSEukaryote.md' contains a link to 'water_ph.md' which is not found in the documentation files.
+[33mWARNING  -  [0mDocumentation file 'WaterMIGSOrg.md' contains a link to 'water_ph.md' which is not found in the documentation files.
+[33mWARNING  -  [0mDocumentation file 'WaterMIGSPlant.md' contains a link to 'water_ph.md' which is not found in the documentation files.
+[33mWARNING  -  [0mDocumentation file 'WaterMIGSVirus.md' contains a link to 'water_ph.md' which is not found in the documentation files.
+[33mWARNING  -  [0mDocumentation file 'WaterMIMAG.md' contains a link to 'water_ph.md' which is not found in the documentation files.
+[33mWARNING  -  [0mDocumentation file 'WaterMIMARKSSpecimen.md' contains a link to 'water_ph.md' which is not found in the documentation files.
+[33mWARNING  -  [0mDocumentation file 'WaterMIMARKSSurvey.md' contains a link to 'water_ph.md' which is not found in the documentation files.
+[33mWARNING  -  [0mDocumentation file 'WaterMIMS.md' contains a link to 'water_ph.md' which is not found in the documentation files.
+[33mWARNING  -  [0mDocumentation file 'WaterMISAG.md' contains a link to 'water_ph.md' which is not found in the documentation files.
+[33mWARNING  -  [0mDocumentation file 'WaterMIUVIG.md' contains a link to 'water_ph.md' which is not found in the documentation files.
+[33mWARNING  -  [0mDocumentation file 'agriculture_Food_Product_type.md' contains a link to 'Food_Product_type.md' which is not found in the documentation files.
+[33mWARNING  -  [0mDocumentation file 'agriculture_Food_source.md' contains a link to 'Food_source.md' which is not found in the documentation files.
+[33mWARNING  -  [0mDocumentation file 'core_field.md' contains a link to 'Food_Product_type.md' which is not found in the documentation files.
+[33mWARNING  -  [0mDocumentation file 'core_field.md' contains a link to 'Food_source.md' which is not found in the documentation files.
+[33mWARNING  -  [0mDocumentation file 'mixs.md' contains a link to 'Food_Product_type.md' which is not found in the documentation files.
+[33mWARNING  -  [0mDocumentation file 'mixs.md' contains a link to 'Food_source.md' which is not found in the documentation files.
+[33mWARNING  -  [0mDocumentation file 'mixs.md' contains a link to 'soil_ph.md' which is not found in the documentation files.
+[33mWARNING  -  [0mDocumentation file 'mixs.md' contains a link to 'water_ph.md' which is not found in the documentation files.
+[33mWARNING  -  [0mDocumentation file 'ph.md' contains a link to 'soil_ph.md' which is not found in the documentation files.
+[33mWARNING  -  [0mDocumentation file 'ph.md' contains a link to 'water_ph.md' which is not found in the documentation files.
+INFO     -  Documentation built in 920.64 seconds
