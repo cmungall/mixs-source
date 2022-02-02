@@ -66,7 +66,6 @@ classes:
     - organism_count
     - org_count_qpcr_info
     - ph
-    - samp_salinity
     - salinity
     - alkalinity
     - alkalinity_method
@@ -200,8 +199,6 @@ classes:
         required: false
       ph:
         required: false
-      samp_salinity:
-        required: true
       salinity:
         required: false
       alkalinity:

@@ -48,7 +48,6 @@ classes:
     - medic_hist_perform
     - host_pulse
     - perturbation
-    - samp_salinity
     - salinity
     - oxy_stat_samp
     - organism_count
@@ -111,8 +110,6 @@ classes:
       host_pulse:
         required: false
       perturbation:
-        required: false
-      samp_salinity:
         required: false
       salinity:
         required: false

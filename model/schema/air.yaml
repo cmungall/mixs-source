@@ -36,7 +36,6 @@ classes:
     - perturbation
     - pollutants
     - air particulate matter concentration
-    - samp_salinity
     - salinity
     - samp_store_dur
     - samp_store_loc
@@ -80,8 +79,6 @@ classes:
       pollutants:
         required: false
       air particulate matter concentration:
-        required: false
-      samp_salinity:
         required: false
       salinity:
         required: false

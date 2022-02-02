@@ -14,8 +14,6 @@ classes:
     description: Core package. Do not use this directly, this is used to build other
       packages
     slots:
-    - submitted_to_insdc
-    - investigation_type
     - samp_name
     - samp_taxon_id
     - project_name
@@ -32,7 +30,6 @@ classes:
     - env_broad_scale
     - env_local_scale
     - env_medium
-    - env_package
     - subspecf_gen_lin
     - ploidy
     - num_replicons
@@ -44,7 +41,6 @@ classes:
     - biotic_relationship
     - specific_host
     - host_spec_range
-    - health_disease_stat
     - host_disease_stat
     - trophic_level
     - propagation
